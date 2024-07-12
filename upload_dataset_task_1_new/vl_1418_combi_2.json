@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "count",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "count": 432,
+        "value": 0
+      },
+      {
+        "count": 324,
+        "value": 34
+      },
+      {
+        "count": 324,
+        "value": 16
+      },
+      {
+        "count": 324,
+        "value": 22
+      },
+      {
+        "count": 324,
+        "value": 30
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of data samples.",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

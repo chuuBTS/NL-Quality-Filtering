@@ -1,0 +1,146 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "audi 5000s (diesel)",
+        "MPG": 36.4,
+        "Cylinders": 5,
+        "Displacement": 121.0,
+        "Horsepower": 67,
+        "Weight": 2950,
+        "Acceleration": 19.9,
+        "Year": 1980,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "maxda glc deluxe",
+        "MPG": 34.1,
+        "Cylinders": 4,
+        "Displacement": 86.0,
+        "Horsepower": 65,
+        "Weight": 1975,
+        "Acceleration": 15.2,
+        "Year": 1979,
+        "Origin": "Japan"
+      },
+      {
+        "Model": "plymouth horizon miser",
+        "MPG": 38.0,
+        "Cylinders": 4,
+        "Displacement": 105.0,
+        "Horsepower": 63,
+        "Weight": 2125,
+        "Acceleration": 14.7,
+        "Year": 1982,
+        "Origin": "US"
+      },
+      {
+        "Model": "pontiac phoenix lj",
+        "MPG": 19.2,
+        "Cylinders": 6,
+        "Displacement": 231.0,
+        "Horsepower": 105,
+        "Weight": 3535,
+        "Acceleration": 19.2,
+        "Year": 1978,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the average weight of vehicles over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

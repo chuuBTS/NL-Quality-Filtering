@@ -1,0 +1,223 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sales",
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "sales": "Email",
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "sales": "Video Ads",
+        "weekday": "Wed",
+        "total": 201
+      },
+      {
+        "sales": "Email",
+        "weekday": "Wed",
+        "total": 101
+      },
+      {
+        "sales": "Search Engine",
+        "weekday": "Mon",
+        "total": 820
+      },
+      {
+        "sales": "Email",
+        "weekday": "Fri",
+        "total": 90
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of sales by weekday using an area chart, sorted by the days of the week from Monday to Sunday and by sales channels from Email to Search Engine.",
+  "refer_fileds": [
+    {
+      "field": "weekday",
+      "type": "temporal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative"
+    },
+    {
+      "field": "sales",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Email",
+          "Union Ads",
+          "Video Ads",
+          "Direct",
+          "Search Engine"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

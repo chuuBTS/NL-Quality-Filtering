@@ -1,0 +1,185 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals(Bn)",
+      "World GDP",
+      "World GDP(Bn)",
+      "Totals/WGDP",
+      "Totals%"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Totals(Bn)": 109.0238196,
+        "World GDP": NaN,
+        "World GDP(Bn)": NaN,
+        "Totals/WGDP": NaN,
+        "Totals%": NaN
+      },
+      {
+        "Date": "12/31/2013",
+        "GRA Purchases": 83899249061.0,
+        "PRGT 1/2/": 6174392682.0,
+        "Totals": 90073641743.0,
+        "Year": 2013.0,
+        "Totals(Bn)": 90.07364174,
+        "World GDP": 77600000000000.0,
+        "World GDP(Bn)": 77600.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.116074281
+      },
+      {
+        "Date": "12/31/1999",
+        "GRA Purchases": 51061861875.0,
+        "PRGT 1/2/": 6434274362.0,
+        "Totals": 57496136237.0,
+        "Year": 1999.0,
+        "Totals(Bn)": 57.49613624,
+        "World GDP": 32700000000000.0,
+        "World GDP(Bn)": 32700.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.175829163
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723.0,
+        "PRGT 1/2/": 3972372030.0,
+        "Totals": 21487336753.0,
+        "Year": 2008.0,
+        "Totals(Bn)": 21.48733675,
+        "World GDP": 64100000000000.0,
+        "World GDP(Bn)": 64100.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.033521586
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031.0,
+        "PRGT 1/2/": 3942792899.0,
+        "Totals": 29139537930.0,
+        "Year": 1993.0,
+        "Totals(Bn)": 29.13953793,
+        "World GDP": 25800000000000.0,
+        "World GDP(Bn)": 25800.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.112943945
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total percentage over time in a line chart, summing up the values for each period.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals%",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals%",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

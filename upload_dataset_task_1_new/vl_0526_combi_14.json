@@ -1,0 +1,156 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Nation",
+      "Quarter",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Nation": "England",
+        "Quarter": "2020Q1",
+        "Value": -2.6,
+        "Detail": "GDP change on 2019Q4 (%)"
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q2",
+        "Value": -17.44301288,
+        "Detail": NaN
+      },
+      {
+        "Nation": "England",
+        "Quarter": "2020Q2",
+        "Value": -21.07750473,
+        "Detail": NaN
+      },
+      {
+        "Nation": "England",
+        "Quarter": "2020Q4",
+        "Value": -6.452173913,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q1",
+        "Value": -3.2,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the GDP changes where the bars are sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Nation",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

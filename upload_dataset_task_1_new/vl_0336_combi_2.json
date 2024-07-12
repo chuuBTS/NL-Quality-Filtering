@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model name",
+      "Number of iterations",
+      "block"
+    ],
+    "table_samples": [
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 9,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 3",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 9,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 4",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 5",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the number of iterations for each block.",
+  "refer_fileds": [
+    {
+      "field": "Number of iterations",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "block",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number of iterations",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

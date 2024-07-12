@@ -1,0 +1,165 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "Oregon",
+        "Population": 4246155,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 6381.0,
+        "ValueC": 0.150277133
+      },
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Refugees",
+        "Value": 0.0,
+        "ValueC": 0.0
+      },
+      {
+        "State": "North Carolina",
+        "Population": 10551162,
+        "Type1": "Asylees",
+        "Value": 259.0,
+        "ValueC": 0.002454706
+      },
+      {
+        "State": "South Carolina",
+        "Population": 5190705,
+        "Type1": "Refugees",
+        "Value": 99.0,
+        "ValueC": 0.001907255
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total values for each category sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "ascending"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "sum",
+          "order": "ascending",
+          "field": "ValueC"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

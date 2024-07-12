@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "volkswagen dasher",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 79.0,
+        "Horsepower": 67,
+        "Weight": 1963,
+        "Acceleration": 15.5,
+        "Year": 1974,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "buick lesabre custom",
+        "MPG": 13.0,
+        "Cylinders": 8,
+        "Displacement": 350.0,
+        "Horsepower": 155,
+        "Weight": 4502,
+        "Acceleration": 13.5,
+        "Year": 1972,
+        "Origin": "US"
+      },
+      {
+        "Model": "toyota starlet",
+        "MPG": 39.1,
+        "Cylinders": 4,
+        "Displacement": 79.0,
+        "Horsepower": 58,
+        "Weight": 1755,
+        "Acceleration": 16.9,
+        "Year": 1981,
+        "Origin": "Japan"
+      },
+      {
+        "Model": "buick opel isuzu deluxe",
+        "MPG": 30.0,
+        "Cylinders": 4,
+        "Displacement": 111.0,
+        "Horsepower": 80,
+        "Weight": 2155,
+        "Acceleration": 14.8,
+        "Year": 1977,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of average weight over the years using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

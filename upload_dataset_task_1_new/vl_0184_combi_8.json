@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "date": "1976-01-01",
+        "value": 1.0
+      },
+      {
+        "date": NaN,
+        "value": NaN
+      },
+      {
+        "date": "1984-04-01",
+        "value": 0.8149
+      },
+      {
+        "date": "1979-07-01",
+        "value": 0.915640909
+      },
+      {
+        "date": "1982-10-01",
+        "value": 0.792705
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total values over time using a bar, line or area chart.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

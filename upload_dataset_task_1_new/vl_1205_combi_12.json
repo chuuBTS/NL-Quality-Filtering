@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Region",
+      "Year",
+      "Category",
+      "Technology",
+      "Amount (2020 USD million)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 200,
+        "Region": "Africa",
+        "Year": 2013,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 0.928327085
+      },
+      {
+        "Unnamed: 0": 8593,
+        "Region": "Africa",
+        "Year": 2014,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 17.53666284
+      },
+      {
+        "Unnamed: 0": 13928,
+        "Region": "Africa",
+        "Year": 2019,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 0.015731
+      },
+      {
+        "Unnamed: 0": 16447,
+        "Region": "Africa",
+        "Year": 2018,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 2.452457156
+      },
+      {
+        "Unnamed: 0": 11827,
+        "Region": "Africa",
+        "Year": 2009,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 6.484047824
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total investment over years in different energy categories, using a bar chart, area chart, or a pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Amount (2020 USD million)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Amount (2020 USD million)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Amount (2020 USD million)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

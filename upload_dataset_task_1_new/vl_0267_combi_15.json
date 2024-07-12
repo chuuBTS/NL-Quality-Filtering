@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Oct 1 2008",
+        "price": 21.57
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Jun 1 2005",
+        "price": 33.09
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Jan 1 2004",
+        "price": 11.28
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Aug 1 2005",
+        "price": 25.35
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart to show the trend of stock prices over time for each company.",
+  "refer_fileds": [
+    {
+      "field": "price",
+      "type": "quantitative"
+    },
+    {
+      "field": "symbol",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "price",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "price",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

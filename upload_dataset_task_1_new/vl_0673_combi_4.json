@@ -1,0 +1,157 @@
+{
+  "table_info": {
+    "table_columns": [
+      "CRI Rank",
+      "Country",
+      "CRI Score ",
+      "CO2 per cap",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "CRI Rank": 130,
+        "Country": "Albania",
+        "CRI Score ": 118.0,
+        "CO2 per cap": 1.62,
+        "Continent": "Europe"
+      },
+      {
+        "CRI Rank": 46,
+        "Country": "Peru",
+        "CRI Score ": 56.33,
+        "CO2 per cap": 1.67,
+        "Continent": "South America"
+      },
+      {
+        "CRI Rank": 130,
+        "Country": "Kazakhstan",
+        "CRI Score ": 118.0,
+        "CO2 per cap": 14.41,
+        "Continent": "Europe"
+      },
+      {
+        "CRI Rank": 112,
+        "Country": "Finland",
+        "CRI Score ": 97.83,
+        "CO2 per cap": 6.79,
+        "Continent": "Europe"
+      },
+      {
+        "CRI Rank": 18,
+        "Country": "Iran",
+        "CRI Score ": 27.0,
+        "CO2 per cap": 8.52,
+        "Continent": "Asia"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing CRI scores by continent.",
+  "refer_fileds": [
+    {
+      "field": "CRI Score ",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CRI Score ",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CRI Score ",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CRI Score ",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CRI Score ",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CRI Score ",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CRI Score ",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CRI Score ",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

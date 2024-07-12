@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "interaction_type",
+      "interaction_createdAt",
+      "cumulative_comments"
+    ],
+    "table_samples": [
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2020-12-17T00:00:00+00:00",
+        "cumulative_comments": 1.0
+      },
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2023-03-26T00:00:00+00:00",
+        "cumulative_comments": 152.0
+      },
+      {
+        "interaction_type": "issues",
+        "interaction_createdAt": "2021-08-11T00:00:00+00:00",
+        "cumulative_comments": 34.0
+      },
+      {
+        "interaction_type": "issues",
+        "interaction_createdAt": "2021-08-26T00:00:00+00:00",
+        "cumulative_comments": 34.0
+      },
+      {
+        "interaction_type": "issues",
+        "interaction_createdAt": "2022-11-23T00:00:00+00:00",
+        "cumulative_comments": 126.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of comments over time.",
+  "refer_fileds": [
+    {
+      "field": "interaction_createdAt",
+      "type": "temporal"
+    },
+    {
+      "field": "cumulative_comments",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "cumulative_comments",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "repo",
+      "username",
+      "closed"
+    ],
+    "table_samples": [
+      {
+        "repo": "numpy",
+        "username": "WarrenWeckesser",
+        "closed": 1
+      },
+      {
+        "repo": "numpy",
+        "username": "mattip",
+        "closed": 3
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "rossbar",
+        "closed": 2
+      },
+      {
+        "repo": "numpy",
+        "username": "rgommers",
+        "closed": 5
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "melissawm",
+        "closed": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart summarizing the total issues closed by each user.",
+  "refer_fileds": [
+    {
+      "field": "username",
+      "type": "nominal"
+    },
+    {
+      "field": "closed",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "closed",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "username",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

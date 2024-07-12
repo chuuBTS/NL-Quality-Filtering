@@ -1,0 +1,350 @@
+{
+  "table_info": {
+    "table_columns": [
+      "depth",
+      "score_type",
+      "accuracy"
+    ],
+    "table_samples": [
+      {
+        "depth": 1,
+        "score_type": "mean_train_score",
+        "accuracy": 0.8343487858719646
+      },
+      {
+        "depth": 5,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8459558823529412
+      },
+      {
+        "depth": 15,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8091911764705882
+      },
+      {
+        "depth": 7,
+        "score_type": "mean_train_score",
+        "accuracy": 0.9541147902869755
+      },
+      {
+        "depth": 3,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8044117647058824
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of accuracies for each score type and depth level.",
+  "refer_fileds": [
+    {
+      "field": "score_type",
+      "type": "nominal"
+    },
+    {
+      "field": "depth",
+      "type": "quantitative"
+    },
+    {
+      "field": "accuracy",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "accuracy",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "score_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "score_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "score_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "size": {
+          "field": "depth",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "score_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "depth",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "score_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "score_type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

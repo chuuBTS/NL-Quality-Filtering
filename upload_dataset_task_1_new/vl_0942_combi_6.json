@@ -1,0 +1,111 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "hp_growth",
+      "rtp_growth",
+      "rrp_growth"
+    ],
+    "table_samples": [
+      {
+        "Date": "2002 Q1",
+        "hp_growth": 0.06142,
+        "rtp_growth": 0.033,
+        "rrp_growth": 0.032
+      },
+      {
+        "Date": "2010 Q3",
+        "hp_growth": 0.09165,
+        "rtp_growth": 0.028,
+        "rrp_growth": 0.023
+      },
+      {
+        "Date": "2013 Q2",
+        "hp_growth": 0.00157,
+        "rtp_growth": 0.028,
+        "rrp_growth": 0.024
+      },
+      {
+        "Date": "2008 Q2",
+        "hp_growth": 0.04403,
+        "rtp_growth": 0.015,
+        "rrp_growth": 0.019
+      },
+      {
+        "Date": "2008 Q3",
+        "hp_growth": 0.00631,
+        "rtp_growth": 0.019,
+        "rrp_growth": 0.021
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of data samples where housing price growth is less than 0.25 and retail rental price growth is also below 0.25.",
+  "refer_fileds": [
+    {
+      "field": "hp_growth",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "hp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "rrp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "hp_growth",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

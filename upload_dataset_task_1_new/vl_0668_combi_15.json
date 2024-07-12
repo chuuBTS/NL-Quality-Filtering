@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country ",
+      "Year",
+      "ODA/GNI"
+    ],
+    "table_samples": [
+      {
+        "Country ": "FRA",
+        "Year": 1960,
+        "ODA/GNI": 1.347577
+      },
+      {
+        "Country ": "FRA",
+        "Year": 1995,
+        "ODA/GNI": 0.545846
+      },
+      {
+        "Country ": "DEU",
+        "Year": 1975,
+        "ODA/GNI": 0.404081
+      },
+      {
+        "Country ": "GBR",
+        "Year": 2008,
+        "ODA/GNI": 0.430369
+      },
+      {
+        "Country ": "GBR",
+        "Year": 1990,
+        "ODA/GNI": 0.273745
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart to show the trend of ODA/GNI for each country over the years.",
+  "refer_fileds": [
+    {
+      "field": "ODA/GNI",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country ",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ODA/GNI",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

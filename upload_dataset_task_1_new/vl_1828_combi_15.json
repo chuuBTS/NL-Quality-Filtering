@@ -1,0 +1,187 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "20 a 29",
+        "feminino": 12,
+        "masculino": 2,
+        "total": 14,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-01",
+        "classificacao": "mortos",
+        "faixa_etaria": "40 a 49",
+        "feminino": 34,
+        "masculino": 62,
+        "total": 96,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-13",
+        "classificacao": "mortos",
+        "faixa_etaria": "30 a 39",
+        "feminino": 1,
+        "masculino": 2,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-10",
+        "classificacao": "mortos",
+        "faixa_etaria": "30 a 39",
+        "feminino": 1,
+        "masculino": 2,
+        "total": 3,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the age group on one axis and the total number of deaths on the other.",
+  "refer_fileds": [
+    {
+      "field": "faixa_etaria",
+      "type": "nominal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "mortos"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    }
+  ]
+}

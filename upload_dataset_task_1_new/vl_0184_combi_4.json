@@ -1,0 +1,104 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "date": "1976-01-01",
+        "value": 1.0
+      },
+      {
+        "date": "1992-12-01",
+        "value": 1.0752628
+      },
+      {
+        "date": "1977-08-01",
+        "value": 1.0
+      },
+      {
+        "date": "1981-11-01",
+        "value": 0.837438095
+      },
+      {
+        "date": "1990-09-01",
+        "value": 0.909846205
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart to show the sum of the values over time.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

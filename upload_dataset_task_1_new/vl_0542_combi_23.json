@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Value",
+      "Type",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Country": "Australia",
+        "Value": 19.438,
+        "Type": "Beef",
+        "Detail": "Kilos per capita"
+      },
+      {
+        "Country": "Brazil",
+        "Value": 40.762,
+        "Type": "Poultry",
+        "Detail": NaN
+      },
+      {
+        "Country": "Brazil",
+        "Value": 0.521,
+        "Type": "Mutton/lamb",
+        "Detail": NaN
+      },
+      {
+        "Country": "Japan",
+        "Value": 16.13,
+        "Type": "Pork",
+        "Detail": NaN
+      },
+      {
+        "Country": "Canada",
+        "Value": 35.527,
+        "Type": "Poultry",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the composition of meat consumption by type.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "Indiana",
+        "Population": 6805985,
+        "Type1": "Naturalizations",
+        "Value": 6112.0,
+        "ValueC": 0.089803313
+      },
+      {
+        "State": "Pennsylvania",
+        "Population": 12964056,
+        "Type1": "Refugees",
+        "Value": 402.0,
+        "ValueC": 0.003100881
+      },
+      {
+        "State": "New Mexico",
+        "Population": 2115877,
+        "Type1": "Refugees",
+        "Value": 36.0,
+        "ValueC": 0.001701422
+      },
+      {
+        "State": "Washington",
+        "Population": 7738692,
+        "Type1": "Nonimmigrants",
+        "Value": 243103.0,
+        "ValueC": 3.141396505
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total composition of all categories based on percentage values as a bar chart, area chart, or pie chart, sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "ascending"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "sum",
+          "order": "ascending",
+          "field": "ValueC"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

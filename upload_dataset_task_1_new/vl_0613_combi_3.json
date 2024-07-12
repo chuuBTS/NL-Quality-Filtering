@@ -1,0 +1,192 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Country",
+      "Year",
+      "R&D Expenditure (% of GDP)",
+      "GDP per capita (PPP)",
+      "Population",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AUS",
+        "Country": "Australia",
+        "Year": 2019,
+        "R&D Expenditure (% of GDP)": 1.82928,
+        "GDP per capita (PPP)": 51810.77671,
+        "Population": 25340217.0,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "LKA",
+        "Country": "Sri Lanka",
+        "Year": 2018,
+        "R&D Expenditure (% of GDP)": 0.12836,
+        "GDP per capita (PPP)": 14081.61687,
+        "Population": 21670000.0,
+        "Continent": "Asia"
+      },
+      {
+        "ISO3": "PNG",
+        "Country": "Papua New Guinea",
+        "Year": 2016,
+        "R&D Expenditure (% of GDP)": 0.03158,
+        "GDP per capita (PPP)": 3851.264927,
+        "Population": 8899169.0,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "MNG",
+        "Country": "Mongolia",
+        "Year": 2020,
+        "R&D Expenditure (% of GDP)": 0.13301,
+        "GDP per capita (PPP)": 12305.71791,
+        "Population": 3294335.0,
+        "Continent": "Asia"
+      },
+      {
+        "ISO3": "EST",
+        "Country": "Estonia",
+        "Year": 2020,
+        "R&D Expenditure (% of GDP)": 1.79247,
+        "GDP per capita (PPP)": 37644.00382,
+        "Population": 1329522.0,
+        "Continent": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the countries with an R&D expenditure greater than 1.5% of GDP.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "R&D Expenditure (% of GDP)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "R&D Expenditure (% of GDP)",
+          "gt": 1.5
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "R&D Expenditure (% of GDP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "R&D Expenditure (% of GDP)",
+            "gt": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "R&D Expenditure (% of GDP)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "R&D Expenditure (% of GDP)",
+            "gt": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "R&D Expenditure (% of GDP)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "R&D Expenditure (% of GDP)",
+            "gt": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "R&D Expenditure (% of GDP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "R&D Expenditure (% of GDP)",
+            "gt": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "R&D Expenditure (% of GDP)",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "R&D Expenditure (% of GDP)",
+            "gt": 1.5
+          }
+        }
+      ]
+    }
+  ]
+}

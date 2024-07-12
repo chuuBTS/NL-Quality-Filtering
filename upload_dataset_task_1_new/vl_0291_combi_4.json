@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "country": "United Kingdom",
+        "date": 2021,
+        "value": 2593519346209.63
+      },
+      {
+        "country": "Italy",
+        "date": 2000,
+        "value": 897682311428.39
+      },
+      {
+        "country": "Germany",
+        "date": 2007,
+        "value": 2461242881105.5
+      },
+      {
+        "country": "Germany",
+        "date": 1998,
+        "value": 1673661220406.8
+      },
+      {
+        "country": "Germany",
+        "date": 1980,
+        "value": 757521751667.74
+      }
+    ]
+  },
+  "nl_utterance": "Show a line chart summing up the values for each country over time.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

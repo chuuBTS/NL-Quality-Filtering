@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "audi 100ls",
+        "MPG": 20.0,
+        "Cylinders": 4,
+        "Displacement": 114.0,
+        "Horsepower": 91,
+        "Weight": 2582,
+        "Acceleration": 14.0,
+        "Year": 1973,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "amc matador",
+        "MPG": 18.0,
+        "Cylinders": 6,
+        "Displacement": 232.0,
+        "Horsepower": 100,
+        "Weight": 3288,
+        "Acceleration": 15.5,
+        "Year": 1971,
+        "Origin": "US"
+      },
+      {
+        "Model": "audi 5000",
+        "MPG": 20.3,
+        "Cylinders": 5,
+        "Displacement": 131.0,
+        "Horsepower": 103,
+        "Weight": 2830,
+        "Acceleration": 15.9,
+        "Year": 1978,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "chevrolet woody",
+        "MPG": 24.5,
+        "Cylinders": 4,
+        "Displacement": 98.0,
+        "Horsepower": 60,
+        "Weight": 2164,
+        "Acceleration": 22.1,
+        "Year": 1976,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the relationship between the weight of the cars and the year they were made.",
+  "refer_fileds": [
+    {
+      "field": "Weight",
+      "type": "quantitative"
+    },
+    {
+      "field": "Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Weight",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

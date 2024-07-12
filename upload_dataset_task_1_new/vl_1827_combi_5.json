@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-01",
+        "classificacao": "confirmados",
+        "faixa_etaria": "10 a 19",
+        "feminino": 1263,
+        "masculino": 1097,
+        "total": 2360,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-30",
+        "classificacao": "mortos",
+        "faixa_etaria": "40 a 49",
+        "feminino": 15,
+        "masculino": 26,
+        "total": 41,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-27",
+        "classificacao": "mortos",
+        "faixa_etaria": "60 a 69",
+        "feminino": 3,
+        "masculino": 7,
+        "total": 10,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-24",
+        "classificacao": "confirmados",
+        "faixa_etaria": "40 a 49",
+        "feminino": 8461,
+        "masculino": 6855,
+        "total": 15316,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of confirmed cases.",
+  "refer_fileds": [
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "confirmados"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    }
+  ]
+}

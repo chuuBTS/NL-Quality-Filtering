@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Income group",
+      "Categories",
+      "Spending%"
+    ],
+    "table_samples": [
+      {
+        "Income group": "Bottom decile",
+        "Categories": "Food & Drink",
+        "Spending%": 21.4
+      },
+      {
+        "Income group": "Bottom decile",
+        "Categories": "Other goods and services",
+        "Spending%": 34.8
+      },
+      {
+        "Income group": "6th decile",
+        "Categories": "Food & Drink",
+        "Spending%": 17.7
+      },
+      {
+        "Income group": "4th decile",
+        "Categories": "Other goods and services",
+        "Spending%": 37.7
+      },
+      {
+        "Income group": "8th decile",
+        "Categories": "Food & Drink",
+        "Spending%": 17.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of spending percentages by categories using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Spending%",
+      "type": "quantitative"
+    },
+    {
+      "field": "Categories",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

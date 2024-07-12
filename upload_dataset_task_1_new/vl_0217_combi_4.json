@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "interaction_type",
+      "interaction_createdAt",
+      "cumulative_comments"
+    ],
+    "table_samples": [
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2020-12-17T00:00:00+00:00",
+        "cumulative_comments": 1.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2022-08-26T00:00:00+00:00",
+        "cumulative_comments": 13.0
+      },
+      {
+        "interaction_type": "issues",
+        "interaction_createdAt": "2021-07-04T00:00:00+00:00",
+        "cumulative_comments": 34.0
+      },
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2021-09-15T00:00:00+00:00",
+        "cumulative_comments": 9.0
+      },
+      {
+        "interaction_type": "issues",
+        "interaction_createdAt": "2020-07-05T00:00:00+00:00",
+        "cumulative_comments": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me an area chart summarizing the total cumulative comments for each interaction type over time.",
+  "refer_fileds": [
+    {
+      "field": "interaction_type",
+      "type": "nominal"
+    },
+    {
+      "field": "interaction_createdAt",
+      "type": "temporal"
+    },
+    {
+      "field": "cumulative_comments",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "cumulative_comments",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "interaction_type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

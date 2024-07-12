@@ -1,0 +1,114 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-03",
+        "classificacao": "mortos",
+        "faixa_etaria": "00 a 19",
+        "feminino": 2,
+        "masculino": 5,
+        "total": 7,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-18",
+        "classificacao": "mortos",
+        "faixa_etaria": "20 a 29",
+        "feminino": 4,
+        "masculino": 0,
+        "total": 4,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-17",
+        "classificacao": "mortos",
+        "faixa_etaria": "40 a 49",
+        "feminino": 11,
+        "masculino": 21,
+        "total": 32,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-01",
+        "classificacao": "mortos",
+        "faixa_etaria": "80 ou mais",
+        "feminino": 0,
+        "masculino": 0,
+        "total": 0,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total number of deaths.",
+  "refer_fileds": [
+    {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "mortos"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    }
+  ]
+}

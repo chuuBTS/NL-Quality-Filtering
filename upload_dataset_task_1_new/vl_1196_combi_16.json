@@ -1,0 +1,173 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billion",
+      "World GDP (current US$)",
+      "Total_%_WorldGDP "
+    ],
+    "table_samples": [
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": 89474552025.0,
+        "PRGT 1/2/": 14554823681.0,
+        "Totals": 104029375706.0,
+        "Year": 2021.0,
+        "Total_billion": 104.0293757,
+        "World GDP (current US$)": 96100100000000.0,
+        "Total_%_WorldGDP ": 0.108251069
+      },
+      {
+        "Date": "12/31/1985",
+        "GRA Purchases": 35194787249.0,
+        "PRGT 1/2/": 2470247948.0,
+        "Totals": 37665035197.0,
+        "Year": 1985.0,
+        "Total_billion": 37.6650352,
+        "World GDP (current US$)": 12860100000000.0,
+        "Total_%_WorldGDP ": 0.292883037
+      },
+      {
+        "Date": "12/31/2004",
+        "GRA Purchases": 55373766674.0,
+        "PRGT 1/2/": 6766029353.0,
+        "Totals": 62139796027.0,
+        "Year": 2004.0,
+        "Total_billion": 62.13979603,
+        "World GDP (current US$)": 44117600000000.0,
+        "Total_%_WorldGDP ": 0.140850351
+      },
+      {
+        "Date": "12/31/2020",
+        "GRA Purchases": 93408630285.0,
+        "PRGT 1/2/": 12481816684.0,
+        "Totals": 105890446969.0,
+        "Year": 2020.0,
+        "Total_billion": 105.890447,
+        "World GDP (current US$)": 84906800000000.0,
+        "Total_%_WorldGDP ": 0.124713721
+      },
+      {
+        "Date": "12/31/1994",
+        "GRA Purchases": 25611676952.0,
+        "PRGT 1/2/": 4599768498.0,
+        "Totals": 30211445450.0,
+        "Year": 1994.0,
+        "Total_billion": 30.21144545,
+        "World GDP (current US$)": 27872300000000.0,
+        "Total_%_WorldGDP ": 0.108392541
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total billions over time using a bar, line, or area chart and sum up the total billions for each period.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Total_billion",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_billion",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Czech Republic",
+        "region": "Europe",
+        "country_code": "CZE",
+        "year": 1997,
+        "lifeExp": 74.1,
+        "gdpPercap": 19900,
+        "pop": 10300000
+      },
+      {
+        "country": "Central African Republic",
+        "region": "Africa",
+        "country_code": "CAF",
+        "year": 2017,
+        "lifeExp": 50.9,
+        "gdpPercap": 668,
+        "pop": 4660000
+      },
+      {
+        "country": "Nigeria",
+        "region": "Africa",
+        "country_code": "NGA",
+        "year": 1997,
+        "lifeExp": 54.7,
+        "gdpPercap": 2820,
+        "pop": 114000000
+      },
+      {
+        "country": "Austria",
+        "region": "Europe",
+        "country_code": "AUT",
+        "year": 1987,
+        "lifeExp": 74.6,
+        "gdpPercap": 28300,
+        "pop": 7640000
+      }
+    ]
+  },
+  "nl_utterance": "Show the total population over the years for Afghanistan.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "pop",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "equal": "Afghanistan"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "pop",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "pop",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "equal": "Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "pop",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "equal": "Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "pop",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "equal": "Afghanistan"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pop",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "equal": "Afghanistan"
+          }
+        }
+      ]
+    }
+  ]
+}

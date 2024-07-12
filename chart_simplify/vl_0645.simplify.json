@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "arc",
+    "encoding": {
+        "theta": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Item",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/classes/main/E4E_macro/US_BEA_GDPsimple.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.Item != 'Net exports'"
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

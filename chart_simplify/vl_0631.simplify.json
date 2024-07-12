@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "GrowthLatest",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "ISO",
+            "type": "nominal",
+            "sort": "-x"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/e4e/ch2_Growth/globalGDP.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "p21",
+                "equal": 1
+            }
+        }
+    ],
+    "height": 300,
+    "width": 400
+}

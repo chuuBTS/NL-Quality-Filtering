@@ -1,0 +1,217 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Player",
+      "Progressive Carries",
+      "Touches",
+      "Expected Assists",
+      "Progressive Passes",
+      "Passes",
+      "Interceptions",
+      "Possession-Winning-Tackles",
+      "Aerials Won",
+      "Pos",
+      "Non-Penalty Expected Goals",
+      "cluster",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Player": "Max Aarons",
+        "Progressive Carries": 5.4375,
+        "Touches": 57.96875,
+        "Expected Assists": 0.04375,
+        "Progressive Passes": 2.9375,
+        "Passes": 33.96875,
+        "Interceptions": 1.75,
+        "Possession-Winning-Tackles": 1.15625,
+        "Aerials Won": 0.46875,
+        "Pos": "Defender",
+        "Non-Penalty Expected Goals": 0.02,
+        "cluster": 6,
+        "Component 1": -0.6794867331318681,
+        "Component 2": 0.4101967803346252
+      },
+      {
+        "Unnamed: 0": 643,
+        "Player": "Omar Mascarell",
+        "Progressive Carries": 2.4187725631768955,
+        "Touches": 52.77978339350181,
+        "Expected Assists": 0.0072202166064981,
+        "Progressive Passes": 2.3104693140794224,
+        "Passes": 37.68953068592058,
+        "Interceptions": 1.48014440433213,
+        "Possession-Winning-Tackles": 0.7942238267148015,
+        "Aerials Won": 1.588447653429603,
+        "Pos": "Midfielder",
+        "Non-Penalty Expected Goals": 0.02,
+        "cluster": 5,
+        "Component 1": -0.3581212929371755,
+        "Component 2": -1.1400748621788193
+      },
+      {
+        "Unnamed: 0": 1001,
+        "Player": "Daniel Vivian",
+        "Progressive Carries": 1.5384615384615383,
+        "Touches": 53.167420814479634,
+        "Expected Assists": 0.0090497737556561,
+        "Progressive Passes": 1.9457013574660635,
+        "Passes": 36.15384615384615,
+        "Interceptions": 1.7194570135746603,
+        "Possession-Winning-Tackles": 1.085972850678733,
+        "Aerials Won": 1.5384615384615383,
+        "Pos": "Defender",
+        "Non-Penalty Expected Goals": 0.08,
+        "cluster": 5,
+        "Component 1": -0.4568110732143855,
+        "Component 2": -1.3600258406490573
+      },
+      {
+        "Unnamed: 0": 237,
+        "Player": "Kerem Demirbay",
+        "Progressive Carries": 5.87719298245614,
+        "Touches": 73.90350877192982,
+        "Expected Assists": 0.1798245614035087,
+        "Progressive Passes": 5.482456140350877,
+        "Passes": 46.97368421052632,
+        "Interceptions": 2.236842105263158,
+        "Possession-Winning-Tackles": 1.7105263157894737,
+        "Aerials Won": 0.5701754385964912,
+        "Pos": "Midfielder",
+        "Non-Penalty Expected Goals": 0.08,
+        "cluster": 2,
+        "Component 1": -1.5397769473517582,
+        "Component 2": 1.890500168206233
+      },
+      {
+        "Unnamed: 0": 678,
+        "Player": "Santi Mina",
+        "Progressive Carries": 2.167300380228137,
+        "Touches": 38.745247148288975,
+        "Expected Assists": 0.0760456273764258,
+        "Progressive Passes": 1.4068441064638784,
+        "Passes": 17.30038022813688,
+        "Interceptions": 0.5703422053231939,
+        "Possession-Winning-Tackles": 0.7984790874524714,
+        "Aerials Won": 5.361216730038023,
+        "Pos": "Forward",
+        "Non-Penalty Expected Goals": 0.27,
+        "cluster": 0,
+        "Component 1": 2.3322379130036124,
+        "Component 2": -2.4541120783517054
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that displays the 'Component 2' value for each player position.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Pos",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

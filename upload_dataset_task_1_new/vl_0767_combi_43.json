@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type1",
+      "Type2",
+      "Type3",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Type1": "Mandatory",
+        "Type2": "Social Security",
+        "Type3": "Average, 1973-2022",
+        "Value": 4.4
+      },
+      {
+        "Type1": "Discretionary",
+        "Type2": "Nondefense",
+        "Type3": "Actual, 2022",
+        "Value": 3.6
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Other",
+        "Type3": "Actual, 2022",
+        "Value": 5.8
+      },
+      {
+        "Type1": "Discretionary",
+        "Type2": "Nondefense",
+        "Type3": "Average, 1973-2022",
+        "Value": 3.8
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Social Security",
+        "Type3": "Actual, 2022",
+        "Value": 4.8
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart to compare the composition of values by different categories.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type2",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

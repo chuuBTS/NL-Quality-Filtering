@@ -1,0 +1,236 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "original",
+        "tracker": "CN",
+        "precision": 72.4,
+        "AUC": 44.2
+      },
+      {
+        "stage": "denoise",
+        "tracker": "ECO_HC",
+        "precision": 79.4,
+        "AUC": 57.2
+      },
+      {
+        "stage": "denoise",
+        "tracker": "KCF",
+        "precision": 67.8,
+        "AUC": 40.8
+      },
+      {
+        "stage": "demosaic",
+        "tracker": "CN",
+        "precision": 65.5,
+        "AUC": 40.7
+      },
+      {
+        "stage": "denoise",
+        "tracker": "AutoTrack",
+        "precision": 78.7,
+        "AUC": 57.2
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the sum of AUC values for each tracker, sorted by trackers CN, KCF, Staple, ECO_HC, AutoTrack, and ordered by the stages original, demosaic, denoise, transform, gamut map, tone map.",
+  "refer_fileds": [
+    {
+      "field": "tracker",
+      "type": "nominal"
+    },
+    {
+      "field": [
+        "AUC",
+        "precision"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "AUC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "CN",
+          "KCF",
+          "Staple",
+          "ECO_HC",
+          "AutoTrack"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "original",
+          "demosaic",
+          "denoise",
+          "transform",
+          "gamut map",
+          "tone map"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tracker",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tracker",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "tracker",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "tracker",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

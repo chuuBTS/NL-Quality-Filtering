@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "original",
+        "tracker": "CN",
+        "precision": 72.4,
+        "AUC": 44.2
+      },
+      {
+        "stage": "denoise",
+        "tracker": "CN",
+        "precision": 70.0,
+        "AUC": 43.0
+      },
+      {
+        "stage": "tone map",
+        "tracker": "CN",
+        "precision": 62.0,
+        "AUC": 37.0
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "CN",
+        "precision": 72.3,
+        "AUC": 44.4
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "AutoTrack",
+        "precision": 78.9,
+        "AUC": 57.6
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with small multiples for each stage showing AUC values.",
+  "refer_fileds": [
+    {
+      "field": "AUC",
+      "type": "quantitative"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "AUC",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "AUC",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "AUC",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

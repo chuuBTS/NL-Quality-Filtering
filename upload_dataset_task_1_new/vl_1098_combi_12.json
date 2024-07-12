@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value1",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Year": 2016,
+        "Country": "Canada",
+        "Value1": 1528000,
+        "Value2": 1467883.2,
+        "Detail": "V1: GDP ($ million)"
+      },
+      {
+        "Year": 2019,
+        "Country": "Japan",
+        "Value1": 5148780,
+        "Value2": 11863680.3,
+        "Detail": NaN
+      },
+      {
+        "Year": 2020,
+        "Country": "Canada",
+        "Value1": 1643410,
+        "Value2": 2051874.9,
+        "Detail": NaN
+      },
+      {
+        "Year": 2019,
+        "Country": "France",
+        "Value1": 2717200,
+        "Value2": 2737115.0,
+        "Detail": NaN
+      },
+      {
+        "Year": 2017,
+        "Country": "France",
+        "Value1": 2594240,
+        "Value2": 2597390.0,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart or an area chart with the sum of the second values on the y-axis, or an arc chart with the sum as the segments, encoding countries by color for each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value2",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

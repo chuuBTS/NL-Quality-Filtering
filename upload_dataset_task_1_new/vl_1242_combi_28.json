@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "all off",
+        "tracker": "CN",
+        "precision": 44.7,
+        "AUC": 25.3
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "Staple",
+        "precision": 65.8,
+        "AUC": 41.0
+      },
+      {
+        "stage": "tone map",
+        "tracker": "KCF",
+        "precision": 67.1,
+        "AUC": 40.5
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "KCF",
+        "precision": 64.1,
+        "AUC": 38.3
+      },
+      {
+        "stage": "transform",
+        "tracker": "KCF",
+        "precision": 65.7,
+        "AUC": 39.4
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart summing up the precision values and sort them by the specific stages of processing and tracker algorithms.",
+  "refer_fileds": [
+    {
+      "field": "precision",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precision",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "CN",
+          "KCF",
+          "Staple",
+          "ECO_HC",
+          "AutoTrack"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "original",
+          "demosaic",
+          "denoise",
+          "transform",
+          "gamut map",
+          "tone map"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

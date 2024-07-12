@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "TIME",
+      "Value",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "GBR",
+        "TIME": 1970,
+        "Value": 47.57803918,
+        "Year": 1970
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 2014,
+        "Value": 17.38274257,
+        "Year": 2014
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 2005,
+        "Value": 22.0639582,
+        "Year": 2005
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 2014,
+        "Value": 17.45120551,
+        "Year": 2014
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 1972,
+        "Value": 45.67779473,
+        "Year": 1972
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of values over the years for the United Kingdom.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

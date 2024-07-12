@@ -1,0 +1,485 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "tradePartner",
+      "tradeTotal",
+      "Balance",
+      "Balance_absolute",
+      "Balance_pctTrade",
+      "Exports",
+      "Exports_absolute",
+      "Imports",
+      "Imports_absolute",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "tradePartner": 1,
+        "tradeTotal": 124564,
+        "Balance": -20774.0,
+        "Balance_absolute": 20774,
+        "Balance_pctTrade": -0.17,
+        "Exports": 51895.0,
+        "Exports_absolute": 51895.0,
+        "Imports": 72669.0,
+        "Imports_absolute": 72669.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+      },
+      {
+        "Country": "Singapore",
+        "tradePartner": 17,
+        "tradeTotal": 12635,
+        "Balance": 1198.0,
+        "Balance_absolute": 1198,
+        "Balance_pctTrade": 0.09,
+        "Exports": 6917.0,
+        "Exports_absolute": 6917.0,
+        "Imports": 5719.0,
+        "Imports_absolute": 5719.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Jordan*",
+        "tradePartner": 67,
+        "tradeTotal": 764,
+        "Balance": -234.0,
+        "Balance_absolute": 234,
+        "Balance_pctTrade": -0.31,
+        "Exports": 265.0,
+        "Exports_absolute": 265.0,
+        "Imports": 499.0,
+        "Imports_absolute": 499.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Congo (Kinshasa)",
+        "tradePartner": 131,
+        "tradeTotal": 49,
+        "Balance": 6.0,
+        "Balance_absolute": 6,
+        "Balance_pctTrade": 0.12,
+        "Exports": 27.0,
+        "Exports_absolute": 27.0,
+        "Imports": 21.0,
+        "Imports_absolute": 21.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Canada",
+        "tradePartner": 2,
+        "tradeTotal": 121089,
+        "Balance": -12323.0,
+        "Balance_absolute": 12323,
+        "Balance_pctTrade": -0.1,
+        "Exports": 54383.0,
+        "Exports_absolute": 54383.0,
+        "Imports": 66706.0,
+        "Imports_absolute": 66706.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/exh4s.xlsx"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the details of countries that have less than 21 trade partners.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "tradePartner",
+          "lt": 21
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "tradePartner"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "tradeTotal"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Balance"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Balance_absolute"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Balance_pctTrade"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Exports"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Exports_absolute"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Imports"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Imports_absolute"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "tradePartner"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "tradeTotal"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Balance"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Balance_absolute"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Balance_pctTrade"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Exports"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Exports_absolute"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Imports"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Imports_absolute"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    }
+  ]
+}

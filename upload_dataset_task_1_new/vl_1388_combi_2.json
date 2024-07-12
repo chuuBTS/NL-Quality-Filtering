@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Sales",
+      "Series"
+    ],
+    "table_samples": [
+      {
+        "Time": "1-Jan-2010",
+        "Sales": 90,
+        "Series": "A"
+      },
+      {
+        "Time": "1-Feb-2011",
+        "Sales": 67,
+        "Series": "C"
+      },
+      {
+        "Time": "1-Aug-2010",
+        "Sales": 95,
+        "Series": "A"
+      },
+      {
+        "Time": "1-Jul-2010",
+        "Sales": 73,
+        "Series": "A"
+      },
+      {
+        "Time": "1-Mar-2011",
+        "Sales": 55,
+        "Series": "C"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average sales for each series.",
+  "refer_fileds": [
+    {
+      "field": "Sales",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Series",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Sales",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Series",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Series",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "x": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

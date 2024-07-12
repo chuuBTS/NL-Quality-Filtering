@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Mali",
+        "CAF_2021": 38,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Guinea",
+        "CAF_2021": 47,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Kenya",
+        "CAF_2021": 61,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Kyrgyzstan",
+        "CAF_2021": 44,
+        "2021": "Islam"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average Cultural Access Facility value for each major religion in 2021.",
+  "refer_fileds": [
+    {
+      "field": "CAF_2021",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "2021",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

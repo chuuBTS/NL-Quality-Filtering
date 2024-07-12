@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Institution",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Institution": "University College London[b]",
+        "Total": 41095
+      },
+      {
+        "Institution": "University of South Wales",
+        "Total": 23090
+      },
+      {
+        "Institution": "Northumbria University",
+        "Total": 28330
+      },
+      {
+        "Institution": "Bournemouth University",
+        "Total": 17390
+      },
+      {
+        "Institution": "University of Worcester",
+        "Total": 10180
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with the institutions listed in descending order by total number of data samples.",
+  "refer_fileds": [
+    {
+      "field": "Institution",
+      "type": "nominal"
+    },
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Institution",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Institution",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Institution",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Institution",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Institution",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

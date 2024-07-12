@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Party",
+      "seats"
+    ],
+    "table_samples": [
+      {
+        "Year": 1918,
+        "Party": "Conservative",
+        "seats": 382
+      },
+      {
+        "Year": 1997,
+        "Party": "Liberal Democrats",
+        "seats": 46
+      },
+      {
+        "Year": 1922,
+        "Party": "Conservative",
+        "seats": 344
+      },
+      {
+        "Year": 1918,
+        "Party": "Labour",
+        "seats": 57
+      },
+      {
+        "Year": 1987,
+        "Party": "Liberal Democrats",
+        "seats": 22
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of seats won by each party over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "seats",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Party",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "seats",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

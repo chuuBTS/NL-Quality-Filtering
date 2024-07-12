@@ -1,0 +1,342 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "The Adventures of Pinocchio",
+        "Worldwide Gross": 36682170,
+        "Production Budget": 25000000,
+        "Release Year": 1996,
+        "Content Rating": "G",
+        "Running Time": 94,
+        "Genre": "Adventure",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 27,
+        "IMDB Rating": 5.3
+      },
+      {
+        "Title": "Me and Orson Welles",
+        "Worldwide Gross": 1190003,
+        "Production Budget": 25000000,
+        "Release Year": 2009,
+        "Content Rating": "PG-13",
+        "Running Time": 107,
+        "Genre": "Drama",
+        "Creative Type": "Historical Fiction",
+        "Rotten Tomatoes Rating": 84,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "The Perfect Storm",
+        "Worldwide Gross": 328711434,
+        "Production Budget": 120000000,
+        "Release Year": 2000,
+        "Content Rating": "PG-13",
+        "Running Time": 130,
+        "Genre": "Drama",
+        "Creative Type": "Dramatization",
+        "Rotten Tomatoes Rating": 47,
+        "IMDB Rating": 6.2
+      },
+      {
+        "Title": "Nick and Norah's Infinite Playlist",
+        "Worldwide Gross": 31487293,
+        "Production Budget": 10000000,
+        "Release Year": 2008,
+        "Content Rating": "PG-13",
+        "Running Time": 90,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 73,
+        "IMDB Rating": 6.8
+      }
+    ]
+  },
+  "nl_utterance": "Show me the worldwide gross for each genre broken down by release year.",
+  "refer_fileds": [
+    {
+      "field": "Worldwide Gross",
+      "type": "quantitative"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    },
+    {
+      "field": "Release Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Release Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Release Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Worldwide Gross",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

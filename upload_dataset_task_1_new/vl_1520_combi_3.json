@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "SNP1",
+      "SNP2",
+      "Alt",
+      "Ref",
+      "Total",
+      "PcentAlt",
+      "PcentRef"
+    ],
+    "table_samples": [
+      {
+        "SNP1": 55,
+        "SNP2": 55,
+        "Alt": 249,
+        "Ref": 156,
+        "Total": 442,
+        "PcentAlt": 56.0,
+        "PcentRef": 35.0
+      },
+      {
+        "SNP1": 519,
+        "SNP2": 84,
+        "Alt": 263,
+        "Ref": 133,
+        "Total": 547,
+        "PcentAlt": 48.0,
+        "PcentRef": 24.0
+      },
+      {
+        "SNP1": 55,
+        "SNP2": 741,
+        "Alt": 205,
+        "Ref": 94,
+        "Total": 442,
+        "PcentAlt": 46.0,
+        "PcentRef": 21.0
+      },
+      {
+        "SNP1": 428,
+        "SNP2": 519,
+        "Alt": 279,
+        "Ref": 6,
+        "Total": 512,
+        "PcentAlt": 54.0,
+        "PcentRef": 1.0
+      },
+      {
+        "SNP1": 519,
+        "SNP2": 111,
+        "Alt": 250,
+        "Ref": 94,
+        "Total": 547,
+        "PcentAlt": 46.0,
+        "PcentRef": 17.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with the SNP2 values on one axis and the percentage of Alt on the other axis.",
+  "refer_fileds": [
+    {
+      "field": "SNP2",
+      "type": "quantitative"
+    },
+    {
+      "field": "PcentAlt",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "SNP2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "PcentAlt",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "SNP2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "PcentAlt",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "PcentAlt",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "SNP2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "PcentAlt",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "SNP2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "SNP2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "PcentAlt",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "PcentAlt",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "SNP2",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

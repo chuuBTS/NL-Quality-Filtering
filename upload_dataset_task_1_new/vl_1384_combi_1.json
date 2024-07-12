@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sales",
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "sales": "Email",
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "sales": "Video Ads",
+        "weekday": "Fri",
+        "total": 190
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Sun",
+        "total": 310
+      },
+      {
+        "sales": "Search Engine",
+        "weekday": "Sat",
+        "total": 1330
+      },
+      {
+        "sales": "Video Ads",
+        "weekday": "Thu",
+        "total": 154
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of total sales for each weekday grouped by the type of sales.",
+  "refer_fileds": [
+    {
+      "field": "weekday",
+      "type": "temporal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "sales",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "weekday",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weekday",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sales",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

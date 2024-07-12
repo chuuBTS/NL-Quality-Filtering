@@ -1,0 +1,250 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Ecuador",
+        "region": "Americas",
+        "country_code": "ECU",
+        "year": 1962,
+        "lifeExp": 59.0,
+        "gdpPercap": 4570,
+        "pop": 4810000
+      },
+      {
+        "country": "Georgia",
+        "region": "Europe",
+        "country_code": "GEO",
+        "year": 1982,
+        "lifeExp": 69.6,
+        "gdpPercap": 9350,
+        "pop": 5090000
+      },
+      {
+        "country": "China",
+        "region": "Asia",
+        "country_code": "CHN",
+        "year": 1952,
+        "lifeExp": 42.6,
+        "gdpPercap": 632,
+        "pop": 582000000
+      },
+      {
+        "country": "Palestine",
+        "region": "Asia",
+        "country_code": "PSE",
+        "year": 1957,
+        "lifeExp": 53.0,
+        "gdpPercap": 1180,
+        "pop": 1020000
+      }
+    ]
+  },
+  "nl_utterance": "Show me a distribution of regions with a boxplot chart for the year 2017.",
+  "refer_fileds": [
+    {
+      "field": "region",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "boxplot chart",
+      "c_list": [
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "y": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "year"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "lifeExp"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "gdpPercap"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "pop"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Value",
+      "Price Index"
+    ],
+    "table_samples": [
+      {
+        "Date": "1989 JAN",
+        "Value": 4.9,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "1992 MAR",
+        "Value": 7.1,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2012 OCT",
+        "Value": 2.7,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "1993 JUL",
+        "Value": 2.6,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2012 NOV",
+        "Value": 3.0,
+        "Price Index": "RPI"
+      }
+    ]
+  },
+  "nl_utterance": "Create a visual composition that shows the sum of values over time, differentiated by price index type.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Price Index",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Price Index",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

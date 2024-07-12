@@ -1,0 +1,400 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ID",
+      "category",
+      "launched"
+    ],
+    "table_samples": [
+      {
+        "ID": 1000256230,
+        "category": "Software",
+        "launched": "2017-06-02 12:20:21"
+      },
+      {
+        "ID": 499140382,
+        "category": "Software",
+        "launched": "2015-06-30 16:11:40"
+      },
+      {
+        "ID": 1620430208,
+        "category": "Robots",
+        "launched": "2015-02-23 16:19:51"
+      },
+      {
+        "ID": 1814415080,
+        "category": "Software",
+        "launched": "2014-12-13 15:54:17"
+      },
+      {
+        "ID": 715075939,
+        "category": "Software",
+        "launched": "2015-06-03 17:48:49"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a count of software projects launched between 2013 and 2018, including project IDs and launch dates.",
+  "refer_fileds": [
+    {
+      "field": "ID",
+      "type": "quantitative"
+    },
+    {
+      "field": "launched",
+      "type": "temporal"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "gt": 2013
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "lt": 2018
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "launched",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "ID",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "launched",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "ID",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "ID",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "ID",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    }
+  ]
+}

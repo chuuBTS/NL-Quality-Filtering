@@ -1,0 +1,687 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "country_code",
+      "continent",
+      "population",
+      "indicator",
+      "weekly_count",
+      "year_week",
+      "rate_14_day",
+      "cumulative_count",
+      "source"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "country_code": "AFG",
+        "continent": "Asia",
+        "population": 38928341,
+        "indicator": "cases",
+        "weekly_count": 0,
+        "year_week": "2020-01",
+        "rate_14_day": NaN,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Uzbekistan",
+        "country_code": "UZB",
+        "continent": "Asia",
+        "population": 33469199,
+        "indicator": "cases",
+        "weekly_count": 5008,
+        "year_week": "2020-31",
+        "rate_14_day": 26.478077,
+        "cumulative_count": 25828,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Denmark",
+        "country_code": "DNK",
+        "continent": "Europe",
+        "population": 5822763,
+        "indicator": "deaths",
+        "weekly_count": 13,
+        "year_week": "2021-12",
+        "rate_14_day": 3.778275,
+        "cumulative_count": 2415,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Angola",
+        "country_code": "AGO",
+        "continent": "Africa",
+        "population": 32866268,
+        "indicator": "deaths",
+        "weekly_count": 15,
+        "year_week": "2020-37",
+        "rate_14_day": 0.76065832,
+        "cumulative_count": 132,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Burkina Faso",
+        "country_code": "BFA",
+        "continent": "Africa",
+        "population": 20903278,
+        "indicator": "deaths",
+        "weekly_count": 0,
+        "year_week": "2020-35",
+        "rate_14_day": 0.0,
+        "cumulative_count": 55,
+        "source": "Epidemic intelligence, national weekly data"
+      }
+    ]
+  },
+  "nl_utterance": "Show the total weekly cases for United Kingdom, France, Germany, and India over different weeks.",
+  "refer_fileds": [
+    {
+      "field": "year_week",
+      "type": "nominal"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    },
+    {
+      "field": "weekly_count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "United Kingdom",
+            "France",
+            "Germany",
+            "India"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "indicator",
+          "oneOf": [
+            "cases"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "weekly_count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "weekly_count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

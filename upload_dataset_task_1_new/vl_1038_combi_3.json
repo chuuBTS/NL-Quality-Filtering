@@ -1,0 +1,390 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "ConstituencyName",
+      "RegionName",
+      "MedianHPrice",
+      "MedianWeeklyWage",
+      "YearlySalary",
+      "Housepriceincreaseover5years",
+      "%Growth5years",
+      "%affordability",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "ConstituencyName": "Aldershot",
+        "RegionName": "South East",
+        "MedianHPrice": 335000,
+        "MedianWeeklyWage": 576,
+        "YearlySalary": 29968,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.2496118035031694,
+        "Component 2": -0.5133032835863713
+      },
+      {
+        "Unnamed: 0": 329,
+        "ConstituencyName": "North West Norfolk",
+        "RegionName": "East of England",
+        "MedianHPrice": 245000,
+        "MedianWeeklyWage": 524,
+        "YearlySalary": 27248,
+        "Housepriceincreaseover5years": 7300,
+        "%Growth5years": 4,
+        "%affordability": 11,
+        "Component 1": -0.1729001502497278,
+        "Component 2": 0.2040115586214712
+      },
+      {
+        "Unnamed: 0": 454,
+        "ConstituencyName": "Sutton and Cheam",
+        "RegionName": "London",
+        "MedianHPrice": 440000,
+        "MedianWeeklyWage": 628,
+        "YearlySalary": 32640,
+        "Housepriceincreaseover5years": 10000,
+        "%Growth5years": 3,
+        "%affordability": 7,
+        "Component 1": 2.4689026268750385,
+        "Component 2": 0.0710984514572458
+      },
+      {
+        "Unnamed: 0": 511,
+        "ConstituencyName": "Winchester",
+        "RegionName": "South East",
+        "MedianHPrice": 461500,
+        "MedianWeeklyWage": 577,
+        "YearlySalary": 29988,
+        "Housepriceincreaseover5years": 6300,
+        "%Growth5years": 1,
+        "%affordability": 6,
+        "Component 1": 2.061408221845016,
+        "Component 2": -0.4104361473133069
+      },
+      {
+        "Unnamed: 0": 495,
+        "ConstituencyName": "Wellingborough",
+        "RegionName": "East Midlands",
+        "MedianHPrice": 230000,
+        "MedianWeeklyWage": 551,
+        "YearlySalary": 28626,
+        "Housepriceincreaseover5years": 7450,
+        "%Growth5years": 4,
+        "%affordability": 12,
+        "Component 1": 0.0414671377994572,
+        "Component 2": -0.127365119098103
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the relationship between Component 1 and Component 2 for each region.",
+  "refer_fileds": [
+    {
+      "field": "Component 1",
+      "type": "quantitative"
+    },
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "RegionName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

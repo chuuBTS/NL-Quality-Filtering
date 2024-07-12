@@ -1,0 +1,180 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Date",
+      "type",
+      "value",
+      "area"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Date": "01-Jan-05",
+        "type": "northwest_error",
+        "value": -1.1494446,
+        "area": "Northwest"
+      },
+      {
+        "Unnamed: 0": 495,
+        "Date": "01-Apr-13",
+        "type": "northwest_error",
+        "value": 0.036949158,
+        "area": "Northwest"
+      },
+      {
+        "Unnamed: 0": 342,
+        "Date": "01-Sep-10",
+        "type": "london_error",
+        "value": -3.0679092,
+        "area": "London"
+      },
+      {
+        "Unnamed: 0": 841,
+        "Date": "01-Jan-19",
+        "type": "westmidlands_error",
+        "value": -0.17984772,
+        "area": "Westmidlands"
+      },
+      {
+        "Unnamed: 0": 373,
+        "Date": "01-Mar-11",
+        "type": "southwest_error",
+        "value": -0.91753387,
+        "area": "Southwest"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total value over time using a line chart for each area and type.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "type",
+      "type": "nominal"
+    },
+    {
+      "field": "area",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

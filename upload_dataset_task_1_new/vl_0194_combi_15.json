@@ -1,0 +1,131 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Israel",
+        "region": "Asia",
+        "country_code": "ISR",
+        "year": 2002,
+        "lifeExp": 78.5,
+        "gdpPercap": 25000,
+        "pop": 6240000
+      },
+      {
+        "country": "Palestine",
+        "region": "Asia",
+        "country_code": "PSE",
+        "year": 1967,
+        "lifeExp": 59.9,
+        "gdpPercap": 1040,
+        "pop": 1170000
+      },
+      {
+        "country": "Fiji",
+        "region": "Asia",
+        "country_code": "FJI",
+        "year": 1952,
+        "lifeExp": 55.2,
+        "gdpPercap": 2920,
+        "pop": 305000
+      },
+      {
+        "country": "Guinea-Bissau",
+        "region": "Africa",
+        "country_code": "GNB",
+        "year": 1962,
+        "lifeExp": 39.3,
+        "gdpPercap": 1310,
+        "pop": 630000
+      }
+    ]
+  },
+  "nl_utterance": "Show the distribution of regions for the year 2017 in a bar chart or boxplot.",
+  "refer_fileds": [
+    {
+      "field": "region",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

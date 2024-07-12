@@ -1,0 +1,212 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "tradePartner",
+      "tradeTotal",
+      "Balance",
+      "Balance_absolute",
+      "Balance_pctTrade",
+      "Exports",
+      "Exports_absolute",
+      "Imports",
+      "Imports_absolute",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "tradePartner": 1,
+        "tradeTotal": 124564,
+        "Balance": -20774.0,
+        "Balance_absolute": 20774,
+        "Balance_pctTrade": -0.17,
+        "Exports": 51895.0,
+        "Exports_absolute": 51895.0,
+        "Imports": 72669.0,
+        "Imports_absolute": 72669.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+      },
+      {
+        "Country": "Hungary",
+        "tradePartner": 45,
+        "tradeTotal": 2042,
+        "Balance": -1204.0,
+        "Balance_absolute": 1204,
+        "Balance_pctTrade": -0.59,
+        "Exports": 419.0,
+        "Exports_absolute": 419.0,
+        "Imports": 1623.0,
+        "Imports_absolute": 1623.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Israel",
+        "tradePartner": 25,
+        "tradeTotal": 5542,
+        "Balance": -1191.0,
+        "Balance_absolute": 1191,
+        "Balance_pctTrade": -0.21,
+        "Exports": 2175.0,
+        "Exports_absolute": 2175.0,
+        "Imports": 3366.0,
+        "Imports_absolute": 3366.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Switzerland",
+        "tradePartner": 14,
+        "tradeTotal": 14577,
+        "Balance": -2895.0,
+        "Balance_absolute": 2895,
+        "Balance_pctTrade": -0.2,
+        "Exports": 5841.0,
+        "Exports_absolute": 5841.0,
+        "Imports": 8736.0,
+        "Imports_absolute": 8736.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Portugal",
+        "tradePartner": 54,
+        "tradeTotal": 1289,
+        "Balance": -524.0,
+        "Balance_absolute": 524,
+        "Balance_pctTrade": -0.41,
+        "Exports": 382.0,
+        "Exports_absolute": 382.0,
+        "Imports": 906.0,
+        "Imports_absolute": 906.0,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the total trade values for locations with trade partners numbered less than 21.",
+  "refer_fileds": [
+    {
+      "field": "tradeTotal",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Country",
+        "tradePartner"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "tradePartner",
+          "lt": 21
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tradePartner",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    }
+  ]
+}

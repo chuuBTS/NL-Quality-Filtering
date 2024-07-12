@@ -1,0 +1,270 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Week",
+      "Measure",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Week": "2016-01-17",
+        "Measure": "Bird Feeder",
+        "Value": 18
+      },
+      {
+        "Week": "2019-04-07",
+        "Measure": "Bird Feeder",
+        "Value": 31
+      },
+      {
+        "Week": "2017-06-25",
+        "Measure": "Bird Seed",
+        "Value": 9
+      },
+      {
+        "Week": "2020-01-26",
+        "Measure": "Bird Bath",
+        "Value": 9
+      },
+      {
+        "Week": "2018-12-23",
+        "Measure": "Bird Seed",
+        "Value": 11
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values over time between December 1, 2010 and December 30, 2020.",
+  "refer_fileds": [
+    {
+      "field": "Week",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Week",
+          "range": [
+            {
+              "year": 2010,
+              "month": "dec",
+              "date": 1
+            },
+            {
+              "year": 2020,
+              "month": "dec",
+              "date": 30
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Week",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

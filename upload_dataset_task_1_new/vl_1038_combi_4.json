@@ -1,0 +1,193 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "ConstituencyName",
+      "RegionName",
+      "MedianHPrice",
+      "MedianWeeklyWage",
+      "YearlySalary",
+      "Housepriceincreaseover5years",
+      "%Growth5years",
+      "%affordability",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "ConstituencyName": "Aldershot",
+        "RegionName": "South East",
+        "MedianHPrice": 335000,
+        "MedianWeeklyWage": 576,
+        "YearlySalary": 29968,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.2496118035031694,
+        "Component 2": -0.5133032835863713
+      },
+      {
+        "Unnamed: 0": 163,
+        "ConstituencyName": "Epping Forest",
+        "RegionName": "East of England",
+        "MedianHPrice": 500000,
+        "MedianWeeklyWage": 550,
+        "YearlySalary": 28590,
+        "Housepriceincreaseover5years": 10010,
+        "%Growth5years": 2,
+        "%affordability": 6,
+        "Component 1": 1.8803983375501176,
+        "Component 2": 0.6793135251151979
+      },
+      {
+        "Unnamed: 0": 419,
+        "ConstituencyName": "South West Bedfordshire",
+        "RegionName": "East of England",
+        "MedianHPrice": 310000,
+        "MedianWeeklyWage": 453,
+        "YearlySalary": 23561,
+        "Housepriceincreaseover5years": 6200,
+        "%Growth5years": 2,
+        "%affordability": 8,
+        "Component 1": -0.3885733744651025,
+        "Component 2": 0.5156807600525947
+      },
+      {
+        "Unnamed: 0": 44,
+        "ConstituencyName": "Blaydon",
+        "RegionName": "North East",
+        "MedianHPrice": 150000,
+        "MedianWeeklyWage": 469,
+        "YearlySalary": 24393,
+        "Housepriceincreaseover5years": 1000,
+        "%Growth5years": 1,
+        "%affordability": 16,
+        "Component 1": -1.561425793101842,
+        "Component 2": -1.613303697197967
+      },
+      {
+        "Unnamed: 0": 288,
+        "ConstituencyName": "Mid Worcestershire",
+        "RegionName": "West Midlands",
+        "MedianHPrice": 275000,
+        "MedianWeeklyWage": 582,
+        "YearlySalary": 30264,
+        "Housepriceincreaseover5years": 2800,
+        "%Growth5years": 1,
+        "%affordability": 11,
+        "Component 1": 0.8768938962324507,
+        "Component 2": -1.702605584937134
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing Component 2 by Region.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "RegionName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

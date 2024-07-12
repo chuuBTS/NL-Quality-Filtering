@@ -1,0 +1,185 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions",
+      "Unnamed: 6",
+      "GDP",
+      "Unnamed: 8",
+      "Totals_GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196,
+        "Unnamed: 6": NaN,
+        "GDP": 3376.003,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.229375673
+      },
+      {
+        "Date": "12/31/2015",
+        "GRA Purchases": 50757840741,
+        "PRGT 1/2/": 6575911158,
+        "Totals": 57333751899,
+        "Year": 2015,
+        "Totals_billions": 57.3337519,
+        "Unnamed: 6": NaN,
+        "GDP": 2880.357,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 1.990508534
+      },
+      {
+        "Date": "12/31/1987",
+        "GRA Purchases": 28751979125,
+        "PRGT 1/2/": 1866342930,
+        "Totals": 30618322055,
+        "Year": 1987,
+        "Totals_billions": 30.61832206,
+        "Unnamed: 6": NaN,
+        "GDP": 813.147,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.765410443
+      },
+      {
+        "Date": "12/31/1998",
+        "GRA Purchases": 60451017051,
+        "PRGT 1/2/": 6288825925,
+        "Totals": 66739842976,
+        "Year": 1998,
+        "Totals_billions": 66.73984298,
+        "Unnamed: 6": NaN,
+        "GDP": 1644.331,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 4.058783966
+      },
+      {
+        "Date": "12/31/2004",
+        "GRA Purchases": 55373766674,
+        "PRGT 1/2/": 6766029353,
+        "Totals": 62139796027,
+        "Year": 2004,
+        "Totals_billions": 62.13979603,
+        "Unnamed: 6": NaN,
+        "GDP": 2422.908,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 2.564678313
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total GDP percentage over time by summing it up for each period.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals_GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

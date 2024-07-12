@@ -1,0 +1,114 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "date": "1976-01-01",
+        "value": 1.0
+      },
+      {
+        "date": "1986-03-01",
+        "value": 0.909716667
+      },
+      {
+        "date": "1982-09-01",
+        "value": 0.798281818
+      },
+      {
+        "date": "1987-06-01",
+        "value": 0.904304762
+      },
+      {
+        "date": "1993-02-01",
+        "value": 1.03081745
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of values over time.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

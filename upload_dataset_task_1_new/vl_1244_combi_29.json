@@ -1,0 +1,107 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "CN",
+        "precision": 67.7,
+        "AUC": 41.9
+      },
+      {
+        "stage": "subs.+g.c.",
+        "tracker": "AutoTrack",
+        "precision": 79.2,
+        "AUC": 57.0
+      },
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "KCF",
+        "precision": 67.8,
+        "AUC": 40.7
+      },
+      {
+        "stage": "subs.+g.c.",
+        "tracker": "KCF",
+        "precision": 64.2,
+        "AUC": 39.3
+      },
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "AutoTrack",
+        "precision": 81.2,
+        "AUC": 58.5
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart with the sum of AUC for each stage.",
+  "refer_fileds": [
+    {
+      "field": "AUC",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "AUC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884,
+        "PRGT 1/2/": 1773964293,
+        "Totals": 26523969177,
+        "Year": 1988,
+        "Totals_billions": 26.52396918
+      },
+      {
+        "Date": "12/31/1991",
+        "GRA Purchases": 23378573926,
+        "PRGT 1/2/": 3285717796,
+        "Totals": 26664291722,
+        "Year": 1991,
+        "Totals_billions": 26.66429172
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237,
+        "PRGT 1/2/": 6282121668,
+        "Totals": 34714264905,
+        "Year": 2005,
+        "Totals_billions": 34.71426491
+      },
+      {
+        "Date": "12/31/2003",
+        "GRA Purchases": 65032062712,
+        "PRGT 1/2/": 6880893268,
+        "Totals": 71912955980,
+        "Year": 2003,
+        "Totals_billions": 71.91295598
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of financial totals in billions over time.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

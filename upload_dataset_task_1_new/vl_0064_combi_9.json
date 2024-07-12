@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Bruno Alves",
+        "Position": "Defender",
+        "Club": "Fenerbah\u00e7e",
+        "Country": "Portugal",
+        "Age": 34,
+        "Salary": 2200000,
+        "Goals": 10
+      },
+      {
+        "Foot": "Right",
+        "Name": "Fyodor Smolov",
+        "Position": "Forward",
+        "Club": "Krasnodar",
+        "Country": "Russia",
+        "Age": 26,
+        "Salary": 8000000,
+        "Goals": 5
+      },
+      {
+        "Foot": "Right",
+        "Name": "Mario Mand\u017euki\u0107",
+        "Position": "Forward",
+        "Club": "Juventus",
+        "Country": "Croatia",
+        "Age": 30,
+        "Salary": 19000000,
+        "Goals": 21
+      },
+      {
+        "Foot": "Right",
+        "Name": "James Chester",
+        "Position": "Defender",
+        "Club": "West Bromwich Albion",
+        "Country": "Wales",
+        "Age": 27,
+        "Salary": 5000000,
+        "Goals": 0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the average salary for players from each country.",
+  "refer_fileds": [
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Salary",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

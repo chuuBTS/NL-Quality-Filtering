@@ -1,0 +1,126 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Region",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1960,
+        "Region": "Middle East & N. Africa",
+        "Value": 0.459097,
+        "Detail": "Capture fisheries production (million tonnes per year)"
+      },
+      {
+        "Time": 1960,
+        "Region": "Europe & Central Asia",
+        "Value": 7.822578,
+        "Detail": NaN
+      },
+      {
+        "Time": 1972,
+        "Region": "East Asia & Pacific",
+        "Value": 20.804507,
+        "Detail": NaN
+      },
+      {
+        "Time": 2014,
+        "Region": "Europe & Central Asia",
+        "Value": 14.7103791,
+        "Detail": NaN
+      },
+      {
+        "Time": 1992,
+        "Region": "South Asia",
+        "Value": 4.4727981,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the values over time.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

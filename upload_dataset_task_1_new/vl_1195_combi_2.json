@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year ",
+      "Totals"
+    ],
+    "table_samples": [
+      {
+        "Year ": 2021,
+        "Totals": 0.11
+      },
+      {
+        "Year ": 1994,
+        "Totals": 0.11
+      },
+      {
+        "Year ": 1989,
+        "Totals": 0.12
+      },
+      {
+        "Year ": 2010,
+        "Totals": 0.09
+      },
+      {
+        "Year ": 1990,
+        "Totals": 0.1
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total sum of all the values in the dataset.",
+  "refer_fileds": [
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

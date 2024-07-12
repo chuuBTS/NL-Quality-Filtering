@@ -1,0 +1,921 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "country_code",
+      "continent",
+      "population",
+      "indicator",
+      "weekly_count",
+      "year_week",
+      "rate_14_day",
+      "cumulative_count",
+      "source"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "country_code": "AFG",
+        "continent": "Asia",
+        "population": 38928341,
+        "indicator": "cases",
+        "weekly_count": 0,
+        "year_week": "2020-01",
+        "rate_14_day": NaN,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Belarus",
+        "country_code": "BLR",
+        "continent": "Europe",
+        "population": 9449321,
+        "indicator": "deaths",
+        "weekly_count": 57,
+        "year_week": "2020-53",
+        "rate_14_day": 13.440119,
+        "cumulative_count": 1451,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Mexico",
+        "country_code": "MEX",
+        "continent": "America",
+        "population": 128932753,
+        "indicator": "deaths",
+        "weekly_count": 4367,
+        "year_week": "2020-28",
+        "rate_14_day": 64.824493,
+        "cumulative_count": 35006,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Grenada",
+        "country_code": "GRD",
+        "continent": "America",
+        "population": 112519,
+        "indicator": "deaths",
+        "weekly_count": 0,
+        "year_week": "2021-14",
+        "rate_14_day": 0.0,
+        "cumulative_count": 1,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Costa Rica",
+        "country_code": "CRI",
+        "continent": "America",
+        "population": 5094114,
+        "indicator": "deaths",
+        "weekly_count": 60,
+        "year_week": "2020-36",
+        "rate_14_day": 24.145514,
+        "cumulative_count": 478,
+        "source": "Epidemic intelligence, national weekly data"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the 14-day rate of COVID-19 cases over various weeks for specific countries on a chart.",
+  "refer_fileds": [
+    {
+      "field": "year_week",
+      "type": "nominal"
+    },
+    {
+      "field": "rate_14_day",
+      "type": "quantitative"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "United Kingdom",
+            "France",
+            "Germany",
+            "India",
+            "America (total)"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "indicator",
+          "oneOf": [
+            "cases"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "rate_14_day",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "rate_14_day",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India",
+              "America (total)"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

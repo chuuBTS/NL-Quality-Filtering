@@ -1,0 +1,191 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "number",
+      "org/repo"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "number": 17,
+        "org/repo": "numpy/numpy"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "number": 1,
+        "org/repo": "numpy/numpy.org"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "number": 2,
+        "org/repo": "numpy/numpydoc"
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the number of data samples for each repository in ascending order of numpy, numpydoc, and numpy.org.",
+  "refer_fileds": [
+    {
+      "field": [
+        "repo",
+        "org/repo"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "number",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "numpy",
+          "numpydoc",
+          "numpy.org"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "org/repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "org/repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "org/repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "org/repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "org/repo",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

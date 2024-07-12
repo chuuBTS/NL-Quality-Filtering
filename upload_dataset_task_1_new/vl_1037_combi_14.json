@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109.0238196,
+        "Year": 2022
+      },
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": 89474552025,
+        "PRGT 1/2/": 14554823681,
+        "Totals": 104.0293757,
+        "Year": 2021
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031,
+        "PRGT 1/2/": 3942792899,
+        "Totals": 29.13953793,
+        "Year": 1993
+      },
+      {
+        "Date": "12/31/2012",
+        "GRA Purchases": 90042348252,
+        "PRGT 1/2/": 5766292503,
+        "Totals": 95.80864076,
+        "Year": 2012
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393,
+        "PRGT 1/2/": 2769874900,
+        "Totals": 37.70664729,
+        "Year": 1984
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total sum over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

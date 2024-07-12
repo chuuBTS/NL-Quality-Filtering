@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "region_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 1970,
+        "Attack Count": 1,
+        "region_txt": "Central America & Caribbean"
+      },
+      {
+        "iyear": 1981,
+        "Attack Count": 1,
+        "region_txt": "Central America & Caribbean"
+      },
+      {
+        "iyear": 2012,
+        "Attack Count": 1,
+        "region_txt": "South Asia"
+      },
+      {
+        "iyear": 2011,
+        "Attack Count": 1,
+        "region_txt": "Sub-Saharan Africa"
+      },
+      {
+        "iyear": 1996,
+        "Attack Count": 1,
+        "region_txt": "South Asia"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of attack counts by region.",
+  "refer_fileds": [
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "region_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "region_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "region_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "region_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "region_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "region_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "table_info": {
+    "table_columns": [
+      "index",
+      "value",
+      "position",
+      "category"
+    ],
+    "table_samples": [
+      {
+        "index": 1,
+        "value": 28,
+        "position": 1,
+        "category": "A"
+      },
+      {
+        "index": 4,
+        "value": 91,
+        "position": 4,
+        "category": "A"
+      },
+      {
+        "index": 15,
+        "value": 17,
+        "position": 3,
+        "category": "C"
+      },
+      {
+        "index": 17,
+        "value": 68,
+        "position": 5,
+        "category": "C"
+      },
+      {
+        "index": 3,
+        "value": 43,
+        "position": 3,
+        "category": "A"
+      }
+    ]
+  },
+  "nl_utterance": "What is the total sum of the values grouped by numerical properties?",
+  "refer_fileds": [
+    {
+      "field": [
+        "index",
+        "position"
+      ],
+      "type": "quantitative"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "position",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "position",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "position",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "index",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "position",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "position",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Date",
+      "type",
+      "value",
+      "area"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Date": "01-Jan-05",
+        "type": "northwest_error",
+        "value": -1.1494446,
+        "area": "Northwest"
+      },
+      {
+        "Unnamed: 0": 17,
+        "Date": "01-Apr-05",
+        "type": "london_error",
+        "value": -0.56056976,
+        "area": "London"
+      },
+      {
+        "Unnamed: 0": 376,
+        "Date": "01-Apr-11",
+        "type": "westmidlands_error",
+        "value": -1.1601639,
+        "area": "Westmidlands"
+      },
+      {
+        "Unnamed: 0": 263,
+        "Date": "01-May-09",
+        "type": "southwest_error",
+        "value": 2.5719528,
+        "area": "Southwest"
+      },
+      {
+        "Unnamed: 0": 927,
+        "Date": "01-Jun-20",
+        "type": "london_error",
+        "value": -1.1939087,
+        "area": "London"
+      }
+    ]
+  },
+  "nl_utterance": "Show the sum of values by date for each type and area.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "type",
+      "type": "nominal"
+    },
+    {
+      "field": "area",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "area",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "area",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

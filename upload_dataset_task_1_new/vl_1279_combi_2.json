@@ -1,0 +1,73 @@
+{
+  "table_info": {
+    "table_columns": [
+      "team",
+      "team_tournament",
+      "tournament",
+      "tupg"
+    ],
+    "table_samples": [
+      {
+        "team": "Virginia A",
+        "team_tournament": "2014 Virginia A",
+        "tournament": "ACF Nationals 2014",
+        "tupg": 15.64
+      },
+      {
+        "team": "Chicago A",
+        "team_tournament": "2016 Chicago A",
+        "tournament": "ACF Nationals 2016",
+        "tupg": 15.1
+      },
+      {
+        "team": "Illinois A",
+        "team_tournament": "2013 Illinois A",
+        "tournament": "ACF Nationals 2013",
+        "tupg": 14.5
+      },
+      {
+        "team": "Yale A",
+        "team_tournament": "2012 Yale A",
+        "tournament": "ACF Nationals 2012",
+        "tupg": 14.33
+      },
+      {
+        "team": "Michigan A",
+        "team_tournament": "2016 Michigan A",
+        "tournament": "ACF Nationals 2016",
+        "tupg": 14.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of teams based on their TU per game.",
+  "refer_fileds": [
+    {
+      "field": "tupg",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "ppg"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "tupg",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

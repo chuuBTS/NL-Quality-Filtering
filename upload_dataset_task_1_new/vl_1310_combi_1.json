@@ -1,0 +1,109 @@
+{
+  "table_info": {
+    "table_columns": [
+      "field",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "field": "id",
+        "count": 129880
+      },
+      {
+        "field": "Departure Delay in Minutes",
+        "count": 466
+      },
+      {
+        "field": "Arrival Delay in Minutes",
+        "count": 472
+      },
+      {
+        "field": "Departure/Arrival time convenient",
+        "count": 6
+      },
+      {
+        "field": "Food and drink",
+        "count": 6
+      }
+    ]
+  },
+  "nl_utterance": "Can you show me a chart with the number of occurrences for each category?",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative"
+    },
+    {
+      "field": "field",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

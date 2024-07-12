@@ -1,0 +1,185 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPG",
+      "player",
+      "ppg",
+      "team",
+      "team_tournament",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPG": 90.76923076923076,
+        "player": "Andrew Yaphe",
+        "ppg": 90.77,
+        "team": "Stanford A",
+        "team_tournament": "2010 Andrew Yaphe",
+        "tournament": "ACF Nationals 2010"
+      },
+      {
+        "PPG": 98.33333333333331,
+        "player": "Matt Weiner",
+        "ppg": 98.33,
+        "team": "VCU A",
+        "team_tournament": "2005 Matt Weiner",
+        "tournament": "ACF Nationals 2005"
+      },
+      {
+        "PPG": 96.25,
+        "player": "Matt Weiner",
+        "ppg": 96.25,
+        "team": "VCU A",
+        "team_tournament": "2007 Matt Weiner",
+        "tournament": "ACF Nationals 2007"
+      },
+      {
+        "PPG": 86.66666666666667,
+        "player": "Ike Jose",
+        "ppg": 86.67,
+        "team": "Illinois A",
+        "team_tournament": "2012 Ike Jose",
+        "tournament": "ACF Nationals 2012"
+      },
+      {
+        "PPG": 91.25,
+        "player": "John Lawrence",
+        "ppg": 91.25,
+        "team": "London",
+        "team_tournament": "2013 John Lawrence",
+        "tournament": "ACF Nationals 2013"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing player points per game in descending order for each competition.",
+  "refer_fileds": [
+    {
+      "field": [
+        "team_tournament",
+        "tournament"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "ppg",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "ppg",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Medal",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "United States",
+        "Medal": "Gold",
+        "Total": 48
+      },
+      {
+        "Unnamed: 0": 37,
+        "Country": "Netherlands",
+        "Medal": "Silver",
+        "Total": 6
+      },
+      {
+        "Unnamed: 0": 44,
+        "Country": "Ukraine",
+        "Medal": "Bronze",
+        "Total": 10
+      },
+      {
+        "Unnamed: 0": 54,
+        "Country": "Czech Republic",
+        "Medal": "Gold",
+        "Total": 4
+      },
+      {
+        "Unnamed: 0": 49,
+        "Country": "Spain",
+        "Medal": "Silver",
+        "Total": 10
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing the highest number of gold medals won by each country.",
+  "refer_fileds": [
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Medal",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

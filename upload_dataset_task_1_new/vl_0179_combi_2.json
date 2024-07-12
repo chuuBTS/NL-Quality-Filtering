@@ -1,0 +1,379 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "year",
+      "fertilityRate"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "year": 1800,
+        "fertilityRate": 7.0
+      },
+      {
+        "country": "Cuba",
+        "region": "Americas",
+        "year": 2005,
+        "fertilityRate": 1.57
+      },
+      {
+        "country": "Vietnam",
+        "region": "Asia",
+        "year": 1894,
+        "fertilityRate": 4.7
+      },
+      {
+        "country": "Albania",
+        "region": "Europe",
+        "year": 1968,
+        "fertilityRate": 5.22
+      },
+      {
+        "country": "Ireland",
+        "region": "Europe",
+        "year": 1926,
+        "fertilityRate": 2.76
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total fertility rate over the years for Iran and the United States.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "fertilityRate",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "Iran",
+            "United States"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "fertilityRate",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "year",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "year",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

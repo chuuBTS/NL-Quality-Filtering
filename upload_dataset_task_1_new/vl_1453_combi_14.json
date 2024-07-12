@@ -1,0 +1,177 @@
+{
+  "table_info": {
+    "table_columns": [
+      "region",
+      "marginal_region",
+      "marginal_bmu",
+      "bmu_name",
+      "bmu_type",
+      "intensity"
+    ],
+    "table_samples": [
+      {
+        "region": "North Scotland",
+        "marginal_region": "North Scotland",
+        "marginal_bmu": "T_BDCHW-1",
+        "bmu_name": "Bad a Cheo Wind Farm ",
+        "bmu_type": "Wind (Onshore)",
+        "intensity": 0.0
+      },
+      {
+        "region": "East England",
+        "marginal_region": "South East England",
+        "marginal_bmu": "T_MEDP-1",
+        "bmu_name": "Medway ",
+        "bmu_type": "CCGT",
+        "intensity": 394.9
+      },
+      {
+        "region": "South Wales",
+        "marginal_region": "South Wales",
+        "marginal_bmu": "2__KANGE001",
+        "bmu_name": "South Wales GSP Group - Limejump Energy Limited ",
+        "bmu_type": "GSP: South Wales",
+        "intensity": 0.0
+      },
+      {
+        "region": "South East England",
+        "marginal_region": "South East England",
+        "marginal_bmu": "T_MEDP-1",
+        "bmu_name": "Medway ",
+        "bmu_type": "CCGT",
+        "intensity": 394.9
+      },
+      {
+        "region": "North East England",
+        "marginal_region": "East Midlands",
+        "marginal_bmu": "T_STAY-3",
+        "bmu_name": "Staythorpe Unit 3 ",
+        "bmu_type": "CCGT",
+        "intensity": 378.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the intensity by marginal region in ascending order of North Scotland, South Scotland, Northern, North Western, Yorkshire, Merseyside and North Wales, South Wales, Midlands, East Midlands, Eastern, South Western, Southern, London, Southern Eastern.",
+  "refer_fileds": [
+    {
+      "field": "intensity",
+      "type": "quantitative"
+    },
+    {
+      "field": "marginal_region",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "North Scotland",
+          "South Scotland",
+          "Northern",
+          "North Western",
+          "Yorkshire",
+          "Merseyside and North Wales",
+          "South Wales",
+          "Midlands",
+          "East Midlands",
+          "Eastern",
+          "South Western",
+          "Southern",
+          "London",
+          "Southern Eastern"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

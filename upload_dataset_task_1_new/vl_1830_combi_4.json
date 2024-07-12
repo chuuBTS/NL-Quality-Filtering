@@ -1,0 +1,219 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Week",
+      "Measure",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Week": "2016-01-17",
+        "Measure": "Bird Feeder",
+        "Value": 18
+      },
+      {
+        "Week": "2018-07-29",
+        "Measure": "Bird Feeder",
+        "Value": 20
+      },
+      {
+        "Week": "2017-12-24",
+        "Measure": "Bird Feeder",
+        "Value": 22
+      },
+      {
+        "Week": "2018-08-05",
+        "Measure": "Bird Feeder",
+        "Value": 17
+      },
+      {
+        "Week": "2017-12-03",
+        "Measure": "Bird Seed",
+        "Value": 9
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total quantity from December 1st, 2010 to December 30th, 2020 over time.",
+  "refer_fileds": [
+    {
+      "field": "Week",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Week",
+          "range": [
+            {
+              "year": 2010,
+              "month": "dec",
+              "date": 1
+            },
+            {
+              "year": 2020,
+              "month": "dec",
+              "date": 30
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Week",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

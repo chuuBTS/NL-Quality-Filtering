@@ -1,0 +1,158 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Medal",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "United States",
+        "Medal": "Gold",
+        "Total": 48
+      },
+      {
+        "Unnamed: 0": 44,
+        "Country": "Ukraine",
+        "Medal": "Bronze",
+        "Total": 10
+      },
+      {
+        "Unnamed: 0": 36,
+        "Country": "Netherlands",
+        "Medal": "Gold",
+        "Total": 6
+      },
+      {
+        "Unnamed: 0": 31,
+        "Country": "Japan",
+        "Medal": "Silver",
+        "Total": 14
+      },
+      {
+        "Unnamed: 0": 10,
+        "Country": "Russia",
+        "Medal": "Silver",
+        "Total": 21
+      }
+    ]
+  },
+  "nl_utterance": "Show me a summary of the total medals won by medal type, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    {
+      "field": "Medal",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

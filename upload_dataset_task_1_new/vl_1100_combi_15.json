@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Value",
+      "Source",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1850,
+        "Value": 569,
+        "Source": "Coal",
+        "Detail": "TWh Direct Energy"
+      },
+      {
+        "Time": 2007,
+        "Value": 47958,
+        "Source": "Oil",
+        "Detail": NaN
+      },
+      {
+        "Time": 2009,
+        "Value": 29411,
+        "Source": "Gas",
+        "Detail": NaN
+      },
+      {
+        "Time": 1981,
+        "Value": 34296,
+        "Source": "Oil",
+        "Detail": NaN
+      },
+      {
+        "Time": 1983,
+        "Value": 14703,
+        "Source": "Gas",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show a composition of values over time with a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

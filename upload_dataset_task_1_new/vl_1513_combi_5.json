@@ -1,0 +1,691 @@
+{
+  "table_info": {
+    "table_columns": [
+      "metabolite",
+      "sample_id",
+      "flux",
+      "description"
+    ],
+    "table_samples": [
+      {
+        "metabolite": "glyc3p_m",
+        "sample_id": "Cancer7",
+        "flux": 0.0297717982,
+        "description": "Glycerol 3-phosphate"
+      },
+      {
+        "metabolite": "ptrc_m",
+        "sample_id": "Healthy7",
+        "flux": 0.0404576483,
+        "description": "Putrescine"
+      },
+      {
+        "metabolite": "his_L_m",
+        "sample_id": "Cancer6",
+        "flux": 0.0149999975,
+        "description": "L-histidine"
+      },
+      {
+        "metabolite": "k_m",
+        "sample_id": "Cancer6",
+        "flux": 0.0011556158,
+        "description": "potassium"
+      },
+      {
+        "metabolite": "thymd_m",
+        "sample_id": "Cancer6",
+        "flux": 1e-06,
+        "description": "Thymidine"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the flux levels for each sample and grouped by chemical compounds or their descriptions.",
+  "refer_fileds": [
+    {
+      "field": "sample_id",
+      "type": "nominal"
+    },
+    {
+      "field": [
+        "metabolite",
+        "description"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "flux",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "sample_id",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "sample_id",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

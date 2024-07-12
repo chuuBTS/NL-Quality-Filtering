@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "date": "1976-01-01",
+        "value": 1.0
+      },
+      {
+        "date": "1985-05-01",
+        "value": 0.806982609
+      },
+      {
+        "date": "1992-09-01",
+        "value": 0.98614965
+      },
+      {
+        "date": "1990-04-01",
+        "value": 0.970797547
+      },
+      {
+        "date": "1994-08-01",
+        "value": 0.987522059
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the values over time.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

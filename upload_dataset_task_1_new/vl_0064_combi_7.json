@@ -1,0 +1,199 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Ovidiu Hoban",
+        "Position": "Midfielder",
+        "Club": "Hapoel Be'er Sheva",
+        "Country": "Romania",
+        "Age": 33,
+        "Salary": 800000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Right",
+        "Name": "Albin Ekdal",
+        "Position": "Midfielder",
+        "Club": "Hamburger SV",
+        "Country": "Sweden",
+        "Age": 26,
+        "Salary": 4500000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Left",
+        "Name": "Ermir Lenjani",
+        "Position": "Midfielder",
+        "Club": "Nantes",
+        "Country": "Albania",
+        "Age": 26,
+        "Salary": 1250000,
+        "Goals": 3
+      },
+      {
+        "Foot": "Both",
+        "Name": "Arda Turan",
+        "Position": "Midfielder",
+        "Club": "Barcelona",
+        "Country": "Turkey",
+        "Age": 29,
+        "Salary": 35000000,
+        "Goals": 17
+      }
+    ]
+  },
+  "nl_utterance": "Show me the distribution of players by country",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Age",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Age",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Salary",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Salary",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Goals",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Goals",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Age"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Salary"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Goals"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "type": "nominal",
+            "field": "faixa_etaria"
+        },
+        "y": {
+            "type": "quantitative",
+            "field": "total"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/covid19pb/covid19pb.github.io/b81a2ebf15d37c2dfe5aa48dab561b928b0763a9/data/paraiba/dados_pb_covid19_boletim_FaixaEtaria.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "classificacao",
+                "equal": "mortos"
+            }
+        }
+    ],
+    "width": "container"
+}

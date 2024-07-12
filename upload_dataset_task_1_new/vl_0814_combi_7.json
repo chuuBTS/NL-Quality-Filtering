@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Programming Language",
+      "Date",
+      "Ratings %"
+    ],
+    "table_samples": [
+      {
+        "Programming Language": "R",
+        "Date": 2007,
+        "Ratings %": 0.06
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2013,
+        "Ratings %": 0.44
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2013,
+        "Ratings %": 4.17
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2016,
+        "Ratings %": 1.05
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2011,
+        "Ratings %": 0.54
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the popularity ratings over time for the R programming language.",
+  "refer_fileds": [
+    {
+      "field": "Ratings %",
+      "type": "quantitative"
+    },
+    {
+      "field": "Programming Language",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

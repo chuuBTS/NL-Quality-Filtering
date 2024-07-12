@@ -1,0 +1,149 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "West Virginia",
+        "Population": 1782959,
+        "Type1": "Nonimmigrants",
+        "Value": 8205.0,
+        "ValueC": 0.460190055
+      },
+      {
+        "State": "Michigan",
+        "Population": 10050811,
+        "Type1": "Refugees",
+        "Value": 534.0,
+        "ValueC": 0.005313004
+      },
+      {
+        "State": "Oklahoma",
+        "Population": 3986639,
+        "Type1": "Refugees",
+        "Value": 25.0,
+        "ValueC": 0.000627095
+      },
+      {
+        "State": "Colorado",
+        "Population": 5812069,
+        "Type1": "Asylees",
+        "Value": 135.0,
+        "ValueC": 0.002322753
+      }
+    ]
+  },
+  "nl_utterance": "Show a composition chart of the total relative values by type, sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "ascending"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "sum",
+          "order": "ascending",
+          "field": "ValueC"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

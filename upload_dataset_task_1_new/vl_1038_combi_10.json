@@ -1,0 +1,193 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "ConstituencyName",
+      "RegionName",
+      "MedianHPrice",
+      "MedianWeeklyWage",
+      "YearlySalary",
+      "Housepriceincreaseover5years",
+      "%Growth5years",
+      "%affordability",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "ConstituencyName": "Aldershot",
+        "RegionName": "South East",
+        "MedianHPrice": 335000,
+        "MedianWeeklyWage": 576,
+        "YearlySalary": 29968,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.2496118035031694,
+        "Component 2": -0.5133032835863713
+      },
+      {
+        "Unnamed: 0": 392,
+        "ConstituencyName": "Sheffield, Hallam",
+        "RegionName": "Yorkshire and The Humber",
+        "MedianHPrice": 308250,
+        "MedianWeeklyWage": 489,
+        "YearlySalary": 25438,
+        "Housepriceincreaseover5years": 4650,
+        "%Growth5years": 2,
+        "%affordability": 8,
+        "Component 1": 0.0029312137814054,
+        "Component 2": -0.0229360067671198
+      },
+      {
+        "Unnamed: 0": 414,
+        "ConstituencyName": "South Shields",
+        "RegionName": "North East",
+        "MedianHPrice": 137250,
+        "MedianWeeklyWage": 433,
+        "YearlySalary": 22495,
+        "Housepriceincreaseover5years": 2650,
+        "%Growth5years": 2,
+        "%affordability": 16,
+        "Component 1": -2.13441819055406,
+        "Component 2": -0.8114953225482937
+      },
+      {
+        "Unnamed: 0": 492,
+        "ConstituencyName": "Waveney",
+        "RegionName": "East of England",
+        "MedianHPrice": 225000,
+        "MedianWeeklyWage": 494,
+        "YearlySalary": 25698,
+        "Housepriceincreaseover5years": 9000,
+        "%Growth5years": 5,
+        "%affordability": 11,
+        "Component 1": -0.6851791149079277,
+        "Component 2": 0.9450396113673716
+      },
+      {
+        "Unnamed: 0": 412,
+        "ConstituencyName": "South Northamptonshire",
+        "RegionName": "East Midlands",
+        "MedianHPrice": 315000,
+        "MedianWeeklyWage": 575,
+        "YearlySalary": 29879,
+        "Housepriceincreaseover5years": 5401,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.0888139439200408,
+        "Component 2": -0.7570405542567473
+      }
+    ]
+  },
+  "nl_utterance": "Show a scatter plot illustrating the correlation between component scores and regions.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "RegionName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

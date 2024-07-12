@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sector",
+      "amount"
+    ],
+    "table_samples": [
+      {
+        "sector": "Hypermarkets and Supermarkets",
+        "amount": 72900000
+      },
+      {
+        "sector": "Public administration services",
+        "amount": 32600000
+      },
+      {
+        "sector": "Health care services",
+        "amount": 7100000
+      },
+      {
+        "sector": "Technology, Culture and Entertainment",
+        "amount": 7200000
+      },
+      {
+        "sector": "Catering services, restaurants and similar establishments",
+        "amount": 6800000
+      }
+    ]
+  },
+  "nl_utterance": "Show the sales amount in descending order by sector.",
+  "refer_fileds": [
+    {
+      "field": "amount",
+      "type": "quantitative"
+    },
+    {
+      "field": "sector",
+      "type": "nominal",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "sector",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "amount",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "amount",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

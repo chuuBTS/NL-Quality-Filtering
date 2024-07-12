@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": "-x"
+        },
+        "x": {
+            "field": "Output per worker ($)",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/gdp_perWorker_2021.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Labour Force (000s)",
+                "gt": 5000
+            }
+        }
+    ],
+    "height": 350,
+    "width": 300
+}

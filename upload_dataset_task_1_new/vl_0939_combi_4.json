@@ -1,0 +1,275 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Totals_bil_SDR",
+      "Year",
+      "Conversion rate",
+      "Unnamed: 7",
+      "Totals_USD",
+      "World GDP",
+      "World aggregate real GDP (billion USD)",
+      "Unnamed: 11",
+      "Total_USD/GDP",
+      "Percentage",
+      "Unnamed: 14",
+      "World nominal GDP",
+      "Unnamed: 16",
+      "Unnamed: 17",
+      "Percentages"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Totals_bil_SDR": 109.02,
+        "Year": 2022,
+        "Conversion rate": 1.28252,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 139.8203304,
+        "World GDP": 86700000000000.0,
+        "World aggregate real GDP (billion USD)": 86652.9,
+        "Unnamed: 11": 0.001258123,
+        "Total_USD/GDP": 0.001613568,
+        "Percentage": 0.161356781,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 98100000000000.0,
+        "Unnamed: 16": 98100,
+        "Unnamed: 17": 0.001425284,
+        "Percentages": 0.142528369
+      },
+      {
+        "Date": "12/31/2003",
+        "GRA Purchases": 65032062712,
+        "PRGT 1/2/": 6880893268,
+        "Totals": 71912955980.0,
+        "Totals_bil_SDR": 71.91,
+        "Year": 2003,
+        "Conversion rate": 1.48597,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 106.8561027,
+        "World GDP": 51900000000000.0,
+        "World aggregate real GDP (billion USD)": 51915.9,
+        "Unnamed: 11": 0.001385125,
+        "Total_USD/GDP": 0.002058254,
+        "Percentage": 0.205825388,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 39147000000000.0,
+        "Unnamed: 16": 39147,
+        "Unnamed: 17": 0.002729612,
+        "Percentages": 0.272961153
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463,
+        "PRGT 1/2/": 6292755583,
+        "Totals": 75334319046.0,
+        "Totals_bil_SDR": 75.33,
+        "Year": 2014,
+        "Conversion rate": 1.44881,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 109.1388573,
+        "World GDP": 72900000000000.0,
+        "World aggregate real GDP (billion USD)": 72932.2,
+        "Unnamed: 11": 0.001032877,
+        "Total_USD/GDP": 0.001496443,
+        "Percentage": 0.149644269,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 79709000000000.0,
+        "Unnamed: 16": 79709,
+        "Unnamed: 17": 0.001369216,
+        "Percentages": 0.136921624
+      },
+      {
+        "Date": "12/31/2019",
+        "GRA Purchases": 66945509865,
+        "PRGT 1/2/": 6590835450,
+        "Totals": 73536345315.0,
+        "Totals_bil_SDR": 73.54,
+        "Year": 2019,
+        "Conversion rate": 1.38283,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 101.6933182,
+        "World GDP": 84700000000000.0,
+        "World aggregate real GDP (billion USD)": 84670.7,
+        "Unnamed: 11": 0.000868541,
+        "Total_USD/GDP": 0.001201045,
+        "Percentage": 0.120104497,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 87653000000000.0,
+        "Unnamed: 16": 87653,
+        "Unnamed: 17": 0.001160181,
+        "Percentages": 0.116018069
+      },
+      {
+        "Date": "12/31/1994",
+        "GRA Purchases": 25611676952,
+        "PRGT 1/2/": 4599768498,
+        "Totals": 30211445450.0,
+        "Totals_bil_SDR": 30.21,
+        "Year": 1994,
+        "Conversion rate": 1.45985,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 44.1020685,
+        "World GDP": 39100000000000.0,
+        "World aggregate real GDP (billion USD)": 39072.4,
+        "Unnamed: 11": 0.00077318,
+        "Total_USD/GDP": 0.001128727,
+        "Percentage": 0.112872689,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 27872000000000.0,
+        "Unnamed: 16": 27872,
+        "Unnamed: 17": 0.001582307,
+        "Percentages": 0.158230728
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total sum of amounts in USD across all dates.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals_USD",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_USD",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

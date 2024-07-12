@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "arc",
+    "encoding": {
+        "theta": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Item",
+            "type": "nominal",
+            "sort": {
+                "field": "pieNumber",
+                "order": "ascending"
+            }
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/classes/main/E4E_macro/US_BEA_GDPdetail.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Number",
+                "oneOf": [
+                    4,
+                    5,
+                    6,
+                    10,
+                    11,
+                    12,
+                    13,
+                    24,
+                    25,
+                    26
+                ]
+            }
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

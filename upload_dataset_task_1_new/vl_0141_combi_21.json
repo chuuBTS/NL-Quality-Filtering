@@ -1,0 +1,188 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Robert Lewandowski",
+        "Position": "Forward",
+        "Club": "Bayern Munich",
+        "Country": "Poland",
+        "Age": 27,
+        "Salary": 75000000,
+        "Goals": 34
+      },
+      {
+        "Foot": "Right",
+        "Name": "Michal \u010euri\u0161",
+        "Position": "Forward",
+        "Club": "Republic Viktoria Plze\u0148",
+        "Country": "Slovakia",
+        "Age": 28,
+        "Salary": 350000,
+        "Goals": 3
+      },
+      {
+        "Foot": "Right",
+        "Name": "Cenk Tosun",
+        "Position": "Forward",
+        "Club": "Be\u015fikta\u015f",
+        "Country": "Turkey",
+        "Age": 25,
+        "Salary": 7000000,
+        "Goals": 3
+      },
+      {
+        "Foot": "Right",
+        "Name": "Mateo Kova\u010di\u0107",
+        "Position": "Midfielder",
+        "Club": "Real Madrid",
+        "Country": "Croatia",
+        "Age": 22,
+        "Salary": 20000000,
+        "Goals": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the total goals scored by players from France, with each bar representing a player.",
+  "refer_fileds": [
+    {
+      "field": "Goals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "France"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Goals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "France"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

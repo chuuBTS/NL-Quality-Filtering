@@ -1,0 +1,174 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Aug 1 2009",
+        "price": 81.19
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Mar 1 2000",
+        "price": 33.95
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Jul 1 2009",
+        "price": 23.18
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Dec 1 2008",
+        "price": 85.35
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the stock prices for GOOG from the year 2006 onwards.",
+  "refer_fileds": [
+    {
+      "field": "price",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "GOOG"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "date",
+          "range": [
+            {
+              "year": 2006
+            },
+            null
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              {
+                "year": 2006
+              },
+              null
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              {
+                "year": 2006
+              },
+              null
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

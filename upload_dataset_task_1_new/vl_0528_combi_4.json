@@ -1,0 +1,152 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "food_emissions",
+      "Type"
+    ],
+    "table_samples": [
+      {
+        "Entity": NaN,
+        "food_emissions": NaN,
+        "Type": NaN
+      },
+      {
+        "Entity": "Palm Oil",
+        "food_emissions": 2.1,
+        "Type": "Farm"
+      },
+      {
+        "Entity": "Coffee",
+        "food_emissions": 0.0,
+        "Type": "Animal Feed"
+      },
+      {
+        "Entity": "Rice",
+        "food_emissions": 3.6,
+        "Type": "Farm"
+      },
+      {
+        "Entity": "Palm Oil",
+        "food_emissions": 1.3,
+        "Type": "Processing"
+      }
+    ]
+  },
+  "nl_utterance": "Show a chart with the total food emissions per Type, sorted from the highest to the lowest.",
+  "refer_fileds": [
+    {
+      "field": "food_emissions",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "food_emissions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "food_emissions",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

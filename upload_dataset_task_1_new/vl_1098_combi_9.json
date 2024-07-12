@@ -1,0 +1,144 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value1",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Year": 2016,
+        "Country": "Canada",
+        "Value1": 1528000,
+        "Value2": 1467883.2,
+        "Detail": "V1: GDP ($ million)"
+      },
+      {
+        "Year": 2017,
+        "Country": "UK",
+        "Value1": 2664710,
+        "Value2": 2428456.8,
+        "Detail": NaN
+      },
+      {
+        "Year": 2019,
+        "Country": "UK",
+        "Value1": 2833300,
+        "Value2": 2571855.2,
+        "Detail": NaN
+      },
+      {
+        "Year": 2020,
+        "Country": "UK",
+        "Value1": 2710970,
+        "Value2": 2978889.6,
+        "Detail": NaN
+      },
+      {
+        "Year": 2017,
+        "Country": "Canada",
+        "Value1": 1649270,
+        "Value2": 1502398.3,
+        "Detail": "V2: National gross debt ($ million)"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the second value against each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value2",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

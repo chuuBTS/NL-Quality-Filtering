@@ -1,0 +1,443 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Airline",
+      "Category",
+      "Year",
+      "Passengers"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Airline": "Ryanair",
+        "Category": "LCC",
+        "Year": 2021,
+        "Passengers": 72.4
+      },
+      {
+        "Unnamed: 0": 305,
+        "Airline": "Nordwind Airlines",
+        "Category": "LCC",
+        "Year": 2016,
+        "Passengers": 1.79
+      },
+      {
+        "Unnamed: 0": 180,
+        "Airline": "Ural Airlines",
+        "Category": "FSC",
+        "Year": 2017,
+        "Passengers": 8.0
+      },
+      {
+        "Unnamed: 0": 103,
+        "Airline": "Wizz Air",
+        "Category": "LCC",
+        "Year": 2014,
+        "Passengers": 15.8
+      },
+      {
+        "Unnamed: 0": 2,
+        "Airline": "Ryanair",
+        "Category": "LCC",
+        "Year": 2019,
+        "Passengers": 152.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of passengers over the years by airline category.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "Passengers",
+        "Unnamed: 0"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Passengers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Unnamed: 0",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

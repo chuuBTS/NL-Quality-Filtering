@@ -1,0 +1,200 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Couples Retreat",
+        "Worldwide Gross": 172450423,
+        "Production Budget": 60000000,
+        "Release Year": 2009,
+        "Content Rating": "PG-13",
+        "Running Time": 113,
+        "Genre": "Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 12,
+        "IMDB Rating": 5.5
+      },
+      {
+        "Title": "The Story of Us",
+        "Worldwide Gross": 27100030,
+        "Production Budget": 50000000,
+        "Release Year": 1999,
+        "Content Rating": "R",
+        "Running Time": 74,
+        "Genre": "Romantic Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 28,
+        "IMDB Rating": 5.6
+      },
+      {
+        "Title": "Love in the Time of Cholera",
+        "Worldwide Gross": 31077418,
+        "Production Budget": 45000000,
+        "Release Year": 2007,
+        "Content Rating": "R",
+        "Running Time": 139,
+        "Genre": "Drama",
+        "Creative Type": "Historical Fiction",
+        "Rotten Tomatoes Rating": 27,
+        "IMDB Rating": 6.2
+      },
+      {
+        "Title": "The Corruptor",
+        "Worldwide Gross": 15164492,
+        "Production Budget": 10000000,
+        "Release Year": 1999,
+        "Content Rating": "R",
+        "Running Time": 110,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 48,
+        "IMDB Rating": 5.8
+      }
+    ]
+  },
+  "nl_utterance": "Show me an average worldwide gross per year line chart categorized by film attributes.",
+  "refer_fileds": [
+    {
+      "field": "Worldwide Gross",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": [
+        "Genre",
+        "Creative Type",
+        "Content Rating"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "Release Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Worldwide Gross",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

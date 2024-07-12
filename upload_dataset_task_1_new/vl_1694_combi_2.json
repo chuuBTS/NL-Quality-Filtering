@@ -1,0 +1,88 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "precipitation",
+      "temp_max",
+      "temp_min",
+      "wind",
+      "weather"
+    ],
+    "table_samples": [
+      {
+        "date": "2012-01-01",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": 5.0,
+        "wind": 4.7,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2012-09-11",
+        "precipitation": 0.0,
+        "temp_max": 20.0,
+        "temp_min": 8.9,
+        "wind": 4.2,
+        "weather": "sun"
+      },
+      {
+        "date": "2015-04-16",
+        "precipitation": 0.0,
+        "temp_max": 17.8,
+        "temp_min": 3.9,
+        "wind": 3.1,
+        "weather": "sun"
+      },
+      {
+        "date": "2015-01-26",
+        "precipitation": 0.0,
+        "temp_max": 16.1,
+        "temp_min": 6.1,
+        "wind": 2.2,
+        "weather": "fog"
+      },
+      {
+        "date": "2014-08-26",
+        "precipitation": 0.0,
+        "temp_max": 31.1,
+        "temp_min": 15.6,
+        "wind": 1.8,
+        "weather": "sun"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average precipitation.",
+  "refer_fileds": [
+    {
+      "field": "precipitation",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precipitation",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precipitation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

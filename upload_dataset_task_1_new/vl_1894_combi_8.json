@@ -1,0 +1,136 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Country",
+      "Value",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1901,
+        "Country": "Brazil",
+        "Value": 0.113601872,
+        "Value2": "National",
+        "Detail": "CO2 emissions per capita, 1901-2019"
+      },
+      {
+        "Time": 1911,
+        "Country": "World",
+        "Value": 1.754682785,
+        "Value2": "Global",
+        "Detail": NaN
+      },
+      {
+        "Time": 1983,
+        "Country": "China",
+        "Value": 1.588412587,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1957,
+        "Country": "China",
+        "Value": 0.405571416,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1964,
+        "Country": "India",
+        "Value": 0.285749257,
+        "Value2": "National",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total CO2 emissions over time for each country using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

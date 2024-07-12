@@ -1,0 +1,247 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Qatar",
+        "region": "Asia",
+        "country_code": "QAT",
+        "year": 2012,
+        "lifeExp": 80.2,
+        "gdpPercap": 125000,
+        "pop": 2110000
+      },
+      {
+        "country": "Uruguay",
+        "region": "Americas",
+        "country_code": "URY",
+        "year": 1962,
+        "lifeExp": 68.2,
+        "gdpPercap": 7730,
+        "pop": 2600000
+      },
+      {
+        "country": "Colombia",
+        "region": "Americas",
+        "country_code": "COL",
+        "year": 1977,
+        "lifeExp": 67.9,
+        "gdpPercap": 5420,
+        "pop": 25900000
+      },
+      {
+        "country": "Central African Republic",
+        "region": "Africa",
+        "country_code": "CAF",
+        "year": 1987,
+        "lifeExp": 49.6,
+        "gdpPercap": 931,
+        "pop": 2760000
+      }
+    ]
+  },
+  "nl_utterance": "Show a distribution of counts with a bar chart for the year 2017 using bar charts.",
+  "refer_fileds": [
+    {
+      "field": [
+        "gdpPercap",
+        "lifeExp",
+        "pop"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "pop",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

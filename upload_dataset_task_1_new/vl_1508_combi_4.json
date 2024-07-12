@@ -1,0 +1,207 @@
+{
+  "table_info": {
+    "table_columns": [
+      "coef",
+      "metabolite",
+      "description"
+    ],
+    "table_samples": [
+      {
+        "coef": -1.403220164,
+        "metabolite": "pydx[e]",
+        "description": "Pyridoxal"
+      },
+      {
+        "coef": -0.2062304347,
+        "metabolite": "acmana[e]",
+        "description": "N-acetyl-D-mannosamine"
+      },
+      {
+        "coef": -0.017417445,
+        "metabolite": "man[e]",
+        "description": "D-Mannose"
+      },
+      {
+        "coef": -0.7426755129,
+        "metabolite": "glutar[e]",
+        "description": "Glutarate"
+      },
+      {
+        "coef": -0.8255619351,
+        "metabolite": "glc_D[e]",
+        "description": "D-glucose"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of chemical compounds and their effects, with the effect sizes in descending order.",
+  "refer_fileds": [
+    {
+      "field": [
+        "metabolite",
+        "description"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "coef",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "coef",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "description",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

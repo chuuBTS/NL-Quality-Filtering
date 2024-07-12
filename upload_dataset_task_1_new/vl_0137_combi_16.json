@@ -1,0 +1,170 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "year",
+      "internetUsers"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "year": 1990,
+        "internetUsers": 0.0
+      },
+      {
+        "country": "Kyrgyz Republic",
+        "region": "Asia",
+        "year": 2012,
+        "internetUsers": 0.198
+      },
+      {
+        "country": "Uganda",
+        "region": "Africa",
+        "year": 2000,
+        "internetUsers": 0.00164
+      },
+      {
+        "country": "Malaysia",
+        "region": "Asia",
+        "year": 2001,
+        "internetUsers": 0.267
+      },
+      {
+        "country": "China",
+        "region": "Asia",
+        "year": 2002,
+        "internetUsers": 0.046
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of internet usage over the years for South Korea after summing up all valid internet user data.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "internetUsers",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "internetUsers",
+          "valid": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "equal": "South Korea"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "internetUsers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "internetUsers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "internetUsers",
+            "valid": true
+          }
+        },
+        {
+          "filter": {
+            "field": "country",
+            "equal": "South Korea"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "internetUsers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "internetUsers",
+            "valid": true
+          }
+        },
+        {
+          "filter": {
+            "field": "country",
+            "equal": "South Korea"
+          }
+        }
+      ]
+    }
+  ]
+}

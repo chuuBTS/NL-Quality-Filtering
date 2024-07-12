@@ -1,0 +1,180 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Sebastian Pr\u00f6dl",
+        "Position": "Defender",
+        "Club": "Watford",
+        "Country": "Austria",
+        "Age": 28,
+        "Salary": 4000000,
+        "Goals": 4
+      },
+      {
+        "Foot": "Right",
+        "Name": "Tom Heaton",
+        "Position": "Goalkeeper",
+        "Club": "Burnley",
+        "Country": "England",
+        "Age": 30,
+        "Salary": 3000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Artur Boruc",
+        "Position": "Goalkeeper",
+        "Club": "Bournemouth",
+        "Country": "Poland",
+        "Age": 36,
+        "Salary": 1000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Both",
+        "Name": "Pavel Mamayev",
+        "Position": "Midfielder",
+        "Club": "Krasnodar",
+        "Country": "Russia",
+        "Age": 27,
+        "Salary": 12000000,
+        "Goals": 0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the salaries for each country, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Salary",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

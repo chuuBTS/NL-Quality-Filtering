@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "yield",
+      "variety",
+      "year",
+      "site"
+    ],
+    "table_samples": [
+      {
+        "yield": 27.0,
+        "variety": "Manchuria",
+        "year": 1931,
+        "site": "University Farm"
+      },
+      {
+        "yield": 20.63333,
+        "variety": "Trebi",
+        "year": 1932,
+        "site": "Grand Rapids"
+      },
+      {
+        "yield": 29.33333,
+        "variety": "Wisconsin No. 38",
+        "year": 1932,
+        "site": "Duluth"
+      },
+      {
+        "yield": 26.76667,
+        "variety": "Peatland",
+        "year": 1932,
+        "site": "Grand Rapids"
+      },
+      {
+        "yield": 46.76667,
+        "variety": "No. 475",
+        "year": 1931,
+        "site": "Waseca"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total yield for each variety in a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "yield",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "variety",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "yield",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

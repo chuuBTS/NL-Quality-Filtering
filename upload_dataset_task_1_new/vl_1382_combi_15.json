@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 5.0,
+        "item": "munchkin"
+      },
+      {
+        "time": 2,
+        "quantity": 10.309573444801934,
+        "item": "witch"
+      },
+      {
+        "time": 14,
+        "quantity": 33.9280507756976,
+        "item": "witch"
+      },
+      {
+        "time": 5,
+        "quantity": 22.127049995800743,
+        "item": "munchkin"
+      },
+      {
+        "time": 7,
+        "quantity": 21.189151347155786,
+        "item": "witch"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the composition of quantities over time.",
+  "refer_fileds": [
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

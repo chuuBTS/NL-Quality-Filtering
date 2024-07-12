@@ -1,0 +1,114 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "time": "2015/01/01 01:00:00",
+        "count": 2
+      },
+      {
+        "time": "2015/01/18 18:00:00",
+        "count": 2
+      },
+      {
+        "time": "2015/05/11 21:00:00",
+        "count": 4
+      },
+      {
+        "time": "2015/02/14 02:00:00",
+        "count": 1
+      },
+      {
+        "time": "2015/03/11 07:00:00",
+        "count": 2
+      }
+    ]
+  },
+  "nl_utterance": "Show me a summary of the total counts over time.",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "time",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

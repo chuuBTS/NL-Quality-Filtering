@@ -1,0 +1,440 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "country": "UK",
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "country": "KR",
+        "COUNT": 1,
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the COUNT of participants by gender in descending order of country.",
+  "refer_fileds": [
+    {
+      "field": "country",
+      "type": "nominal",
+      "sort": "descending"
+    },
+    {
+      "field": "COUNT",
+      "type": "quantitative"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "country",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "column": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "column": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "COUNT",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "size": {
+          "field": "COUNT",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "column": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "country",
+          "type": "nominal",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

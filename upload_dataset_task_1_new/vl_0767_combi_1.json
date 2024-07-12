@@ -1,0 +1,326 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type1",
+      "Type2",
+      "Type3",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Type1": "Mandatory",
+        "Type2": "Social Security",
+        "Type3": "Average, 1973-2022",
+        "Value": 4.4
+      },
+      {
+        "Type1": "Discretionary",
+        "Type2": "Nondefense",
+        "Type3": "Average, 1973-2022",
+        "Value": 3.8
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Major Health Care programs",
+        "Type3": "Average, 1973-2022",
+        "Value": 3.3
+      },
+      {
+        "Type1": "Discretionary",
+        "Type2": "Defense",
+        "Type3": "Average, 1973-2022",
+        "Value": 4.3
+      },
+      {
+        "Type1": "Net interest",
+        "Type2": "Net interest",
+        "Type3": "Average, 1973-2022",
+        "Value": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Sum the values for each category over the different time periods and show me the total spending in a chart.",
+  "refer_fileds": [
+    {
+      "field": "Type3",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Type2",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Value",
+      "Price Index"
+    ],
+    "table_samples": [
+      {
+        "Date": "1989 JAN",
+        "Value": 4.9,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2004 APR",
+        "Value": 1.1,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "1989 FEB",
+        "Value": 7.8,
+        "Price Index": "RPI"
+      },
+      {
+        "Date": "2000 DEC",
+        "Value": 0.8,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2014 SEP",
+        "Value": 1.2,
+        "Price Index": "CPI"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the composition of values over time.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

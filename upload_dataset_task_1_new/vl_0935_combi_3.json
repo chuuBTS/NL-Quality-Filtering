@@ -1,0 +1,378 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Life Expectancy",
+      "Income",
+      "Infant Mortality",
+      "Fertility",
+      "Gini Coefficient",
+      "Reduced Dimension 1",
+      "Reduced Dimension 2",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "Country": "Afghanistan",
+        "Life Expectancy": 64.3,
+        "Income": 1990,
+        "Infant Mortality": 54.2,
+        "Fertility": 3.77,
+        "Gini Coefficient": 39.5,
+        "Reduced Dimension 1": 2.058474218,
+        "Reduced Dimension 2": -0.617822572,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Belgium",
+        "Life Expectancy": 81.9,
+        "Income": 52400,
+        "Infant Mortality": 3.15,
+        "Fertility": 1.81,
+        "Gini Coefficient": 29.2,
+        "Reduced Dimension 1": -2.375437615,
+        "Reduced Dimension 2": -0.84893546,
+        "Continent": "Europe"
+      },
+      {
+        "Country": "Lesotho",
+        "Life Expectancy": 53.0,
+        "Income": 2480,
+        "Infant Mortality": 69.9,
+        "Fertility": 2.83,
+        "Gini Coefficient": 47.0,
+        "Reduced Dimension 1": 3.074469374,
+        "Reduced Dimension 2": 0.273205986,
+        "Continent": "Africa"
+      },
+      {
+        "Country": "Turkmenistan",
+        "Life Expectancy": 71.2,
+        "Income": 15300,
+        "Infant Mortality": 42.8,
+        "Fertility": 2.63,
+        "Gini Coefficient": 44.7,
+        "Reduced Dimension 1": 0.789865865,
+        "Reduced Dimension 2": 0.402220035,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Guinea-Bissau",
+        "Life Expectancy": 61.9,
+        "Income": 1980,
+        "Infant Mortality": 73.6,
+        "Fertility": 4.2,
+        "Gini Coefficient": 53.5,
+        "Reduced Dimension 1": 3.288465393,
+        "Reduced Dimension 2": 0.701758171,
+        "Continent": "Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot with Reduced Dimension 1 on the x-axis, Reduced Dimension 2 on the y-axis, and different continents by color.",
+  "refer_fileds": [
+    {
+      "field": "Reduced Dimension 1",
+      "type": "quantitative"
+    },
+    {
+      "field": "Reduced Dimension 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Reduced Dimension 1",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

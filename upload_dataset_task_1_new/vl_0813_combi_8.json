@@ -1,0 +1,184 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Team",
+      "Year",
+      "Goals Scored"
+    ],
+    "table_samples": [
+      {
+        "Team": "Arsenal",
+        "Year": "02/03",
+        "Goals Scored": 85
+      },
+      {
+        "Team": "Tottenham",
+        "Year": "17/18",
+        "Goals Scored": 74
+      },
+      {
+        "Team": "Man United",
+        "Year": "06/07",
+        "Goals Scored": 83
+      },
+      {
+        "Team": "Man United",
+        "Year": "02/03",
+        "Goals Scored": 74
+      },
+      {
+        "Team": "Man City",
+        "Year": "19/20",
+        "Goals Scored": 102
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total goals scored by each team over the years in a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "nominal"
+    },
+    {
+      "field": "Goals Scored",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Team",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Goals Scored",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

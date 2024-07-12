@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "weaptype1_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 2004,
+        "Attack Count": 1,
+        "weaptype1_txt": "Firearms"
+      },
+      {
+        "iyear": 2005,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2008,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2015,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2011,
+        "Attack Count": 1,
+        "weaptype1_txt": "Firearms"
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart that sums up the Attack Count for each year and displays the weapon type used.",
+  "refer_fileds": [
+    {
+      "field": "iyear",
+      "type": "temporal"
+    },
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "weaptype1_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

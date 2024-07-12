@@ -1,0 +1,84 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Value",
+      "Order"
+    ],
+    "table_samples": [
+      {
+        "Country": "Australia",
+        "Value": 0.25,
+        "Order": 1
+      },
+      {
+        "Country": "Canada",
+        "Value": 0.47,
+        "Order": 4
+      },
+      {
+        "Country": "Spain",
+        "Value": 0.86,
+        "Order": 14
+      },
+      {
+        "Country": "Germany",
+        "Value": 0.86,
+        "Order": 8
+      },
+      {
+        "Country": "New Zealand",
+        "Value": 0.35,
+        "Order": 12
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total value in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

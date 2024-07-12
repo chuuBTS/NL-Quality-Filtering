@@ -1,0 +1,234 @@
+{
+  "table_info": {
+    "table_columns": [
+      "library",
+      "variant_class",
+      "func_score",
+      "count",
+      "mean_func_score"
+    ],
+    "table_samples": [
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -11.6082,
+        "count": 1.0879177562792605e-05,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": "stop",
+        "func_score": -4.65924081632653,
+        "count": 0.0787904577428848,
+        "mean_func_score": -3.462648581560284
+      },
+      {
+        "library": "Lib-3",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -2.0990979591836734,
+        "count": 0.0816205811559521,
+        "mean_func_score": -0.7397690468549423
+      },
+      {
+        "library": "Lib-4",
+        "variant_class": "stop",
+        "func_score": 3.752657142857144,
+        "count": 6.742854292391225e-06,
+        "mean_func_score": -4.079077449295291
+      },
+      {
+        "library": "Lib-1",
+        "variant_class": ">1 nonsynonymous",
+        "func_score": -6.487914285714286,
+        "count": 0.0126532458772407,
+        "mean_func_score": -0.8920306873525129
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart with the sum of counts for each variant class, and show the functional score associated with each.",
+  "refer_fileds": [
+    {
+      "field": "variant_class",
+      "type": "nominal"
+    },
+    {
+      "field": "func_score",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

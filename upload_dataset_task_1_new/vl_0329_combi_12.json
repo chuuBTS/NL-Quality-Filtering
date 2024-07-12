@@ -1,0 +1,144 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "TIME",
+      "Value",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "GBR",
+        "TIME": 1970,
+        "Value": 47.57803918,
+        "Year": 1970
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 1986,
+        "Value": 32.19021491,
+        "Year": 1986
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 1983,
+        "Value": 34.28645028,
+        "Year": 1983
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 1994,
+        "Value": 23.88451444,
+        "Year": 1994
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 1999,
+        "Value": 26.08972842,
+        "Year": 1999
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the sum of values over time for each location using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

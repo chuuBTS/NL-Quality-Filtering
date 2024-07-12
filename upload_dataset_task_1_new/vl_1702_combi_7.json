@@ -1,0 +1,102 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Jun 1 2001",
+        "price": 29.7
+      },
+      {
+        "symbol": "GOOG",
+        "date": "Feb 1 2007",
+        "price": 449.45
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Dec 1 2009",
+        "price": 210.73
+      },
+      {
+        "symbol": "IBM",
+        "date": "May 1 2003",
+        "price": 80.48
+      }
+    ]
+  },
+  "nl_utterance": "Show the price of GOOG for the years 2006 to 2007.",
+  "refer_fileds": [
+    {
+      "field": "price",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "GOOG"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "date",
+          "range": [
+            2006,
+            2007
+          ],
+          "timeUnit": "year"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "price",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              2006,
+              2007
+            ],
+            "timeUnit": "year"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Entity",
+      "Year",
+      "Geo Biomass Other - TWh (zero filled)",
+      "Biofuels Consumption - TWh - Total (zero filled)",
+      "Solar Consumption - TWh (zero filled)",
+      "Wind Consumption - TWh (zero filled)",
+      "Hydro Consumption - TWh (zero filled)",
+      "Nuclear Consumption - TWh (zero filled)",
+      "Gas Consumption - TWh (zero filled)",
+      "Coal Consumption - TWh (zero filled)",
+      "Oil Consumption - TWh (zero filled)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Entity": "Africa",
+        "Year": 1965,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 41.11881256,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 9.543754578,
+        "Coal Consumption - TWh (zero filled)": 323.4961243,
+        "Oil Consumption - TWh (zero filled)": 341.2627563
+      },
+      {
+        "Unnamed: 0": 2502,
+        "Entity": "Ireland",
+        "Year": 2016,
+        "Geo Biomass Other - TWh (zero filled)": 0.680999994,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.015916666,
+        "Wind Consumption - TWh (zero filled)": 16.46110344,
+        "Hydro Consumption - TWh (zero filled)": 1.823129416,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 49.20653152,
+        "Coal Consumption - TWh (zero filled)": 24.50440979,
+        "Oil Consumption - TWh (zero filled)": 86.18897247
+      },
+      {
+        "Unnamed: 0": 2249,
+        "Entity": "India",
+        "Year": 1991,
+        "Geo Biomass Other - TWh (zero filled)": 0.095071323,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.3338736,
+        "Hydro Consumption - TWh (zero filled)": 218.5773468,
+        "Nuclear Consumption - TWh (zero filled)": 15.36163902,
+        "Gas Consumption - TWh (zero filled)": 129.108017,
+        "Coal Consumption - TWh (zero filled)": 1357.877686,
+        "Oil Consumption - TWh (zero filled)": 706.1010742
+      },
+      {
+        "Unnamed: 0": 4039,
+        "Entity": "Other Asia Pacific (BP)",
+        "Year": 2017,
+        "Geo Biomass Other - TWh (zero filled)": 0.500738919,
+        "Biofuels Consumption - TWh - Total (zero filled)": 16.24008751,
+        "Solar Consumption - TWh (zero filled)": 1.299314976,
+        "Wind Consumption - TWh (zero filled)": 0.56812197,
+        "Hydro Consumption - TWh (zero filled)": 170.5471191,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 106.5925446,
+        "Coal Consumption - TWh (zero filled)": 266.3575134,
+        "Oil Consumption - TWh (zero filled)": 243.204895
+      },
+      {
+        "Unnamed: 0": 1540,
+        "Entity": "Estonia",
+        "Year": 1966,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 0.0,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 0.0,
+        "Coal Consumption - TWh (zero filled)": 0.0,
+        "Oil Consumption - TWh (zero filled)": 0.0
+      }
+    ]
+  },
+  "nl_utterance": "Show an area chart summarizing the total oil consumption over the years for each entity.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Oil Consumption - TWh (zero filled)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Entity",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

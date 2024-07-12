@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Institution",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Institution": "University College London[b]",
+        "Total": 41095
+      },
+      {
+        "Institution": "Heriot-Watt University",
+        "Total": 11155
+      },
+      {
+        "Institution": "Glasgow Caledonian University",
+        "Total": 17540
+      },
+      {
+        "Institution": "University of the West of England",
+        "Total": 30680
+      },
+      {
+        "Institution": "University of York",
+        "Total": 19790
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the total number of students for each institution, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Institution",
+      "type": "nominal"
+    },
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Institution",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

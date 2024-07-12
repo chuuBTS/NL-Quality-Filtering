@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Sales",
+      "Series"
+    ],
+    "table_samples": [
+      {
+        "Time": "1-Jan-2010",
+        "Sales": 90,
+        "Series": "A"
+      },
+      {
+        "Time": "1-Dec-2011",
+        "Sales": 28,
+        "Series": "C"
+      },
+      {
+        "Time": "1-Aug-2011",
+        "Sales": 36,
+        "Series": "C"
+      },
+      {
+        "Time": "1-Nov-2011",
+        "Sales": 66,
+        "Series": "C"
+      },
+      {
+        "Time": "1-May-2011",
+        "Sales": 99,
+        "Series": "C"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average sales trend per series over time using a line, bar, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Sales",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Series",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Sales",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Time"
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Time"
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "INDICATOR",
+      "SUBJECT",
+      "MEASURE",
+      "FREQUENCY",
+      "TIME",
+      "Value",
+      "Flag Codes"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "AUS",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1970,
+        "Value": 27.859639,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "CHE",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2011,
+        "Value": 68.896991,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "ITA",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1999,
+        "Value": 51.279218,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "JPN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1996,
+        "Value": 35.880452,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "CRI",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2012,
+        "Value": 17.694625,
+        "Flag Codes": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total GDP per hour worked by country.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

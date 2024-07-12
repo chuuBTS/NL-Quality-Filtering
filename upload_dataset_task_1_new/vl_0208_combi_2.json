@@ -1,0 +1,290 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Fat Albert",
+        "Worldwide Gross": 48563556,
+        "Production Budget": 45000000,
+        "Release Year": 2004,
+        "Content Rating": "PG",
+        "Running Time": 93,
+        "Genre": "Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 21,
+        "IMDB Rating": 4.0
+      },
+      {
+        "Title": "12 Rounds",
+        "Worldwide Gross": 18184083,
+        "Production Budget": 20000000,
+        "Release Year": 2009,
+        "Content Rating": "PG-13",
+        "Running Time": 108,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 28,
+        "IMDB Rating": 5.4
+      },
+      {
+        "Title": "Driven",
+        "Worldwide Gross": 54616869,
+        "Production Budget": 72000000,
+        "Release Year": 2001,
+        "Content Rating": "PG-13",
+        "Running Time": 117,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 13,
+        "IMDB Rating": 4.2
+      },
+      {
+        "Title": "Man on Fire",
+        "Worldwide Gross": 118706816,
+        "Production Budget": 60000000,
+        "Release Year": 2004,
+        "Content Rating": "R",
+        "Running Time": 146,
+        "Genre": "Thriller",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 38,
+        "IMDB Rating": 7.7
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average Worldwide Gross for each Genre over the years.",
+  "refer_fileds": [
+    {
+      "field": "Genre",
+      "type": "nominal"
+    },
+    {
+      "field": "Release Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Worldwide Gross",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Worldwide Gross",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Release Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Release Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

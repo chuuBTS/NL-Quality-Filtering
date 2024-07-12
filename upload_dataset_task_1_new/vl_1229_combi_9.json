@@ -1,0 +1,144 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Airline",
+      "Category",
+      "Year",
+      "Passengers"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Airline": "Ryanair",
+        "Category": "LCC",
+        "Year": 2021,
+        "Passengers": 72.4
+      },
+      {
+        "Unnamed: 0": 305,
+        "Airline": "Nordwind Airlines",
+        "Category": "LCC",
+        "Year": 2016,
+        "Passengers": 1.79
+      },
+      {
+        "Unnamed: 0": 178,
+        "Airline": "Ural Airlines",
+        "Category": "FSC",
+        "Year": 2019,
+        "Passengers": 9.62
+      },
+      {
+        "Unnamed: 0": 47,
+        "Airline": "Aeroflot Group",
+        "Category": "FSC",
+        "Year": 2006,
+        "Passengers": 8.7
+      },
+      {
+        "Unnamed: 0": 207,
+        "Airline": "Aegean Airlines",
+        "Category": "FSC",
+        "Year": 2006,
+        "Passengers": 10.1
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart to compare the number of passengers over different years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Passengers",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Passengers",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

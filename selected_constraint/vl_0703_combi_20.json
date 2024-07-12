@@ -1,0 +1,117 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "source",
+            "type": "nominal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "pct",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "dist_group",
+            "type": "nominal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": [
+                "main_mode",
+                "mode"
+            ],
+            "type": "nominal",
+            "nl_ref_type": "ambiguous",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "mark",
+            "c_name": "bar chart",
+            "c_list": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal",
+                            "ignore": true
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "x": "y"
+                    }
+                },
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "y": {},
+                        "x": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal",
+                            "ignore": true
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "y": "x"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "pct",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "sort",
+            "c_list": [
+                [
+                    "10000+",
+                    "5000 - 10000",
+                    "3000 - 5000",
+                    "1000 - 3000",
+                    "0 - 1000"
+                ]
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

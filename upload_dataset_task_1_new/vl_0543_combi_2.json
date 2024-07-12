@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Time": 1984,
+        "Value": 2.5
+      },
+      {
+        "Time": 2004,
+        "Value": 5.74
+      },
+      {
+        "Time": 2009,
+        "Value": 7.47
+      },
+      {
+        "Time": 1994,
+        "Value": 4.06
+      },
+      {
+        "Time": 1999,
+        "Value": 7.67
+      }
+    ]
+  },
+  "nl_utterance": "Show the total value over the time period in the dataset.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

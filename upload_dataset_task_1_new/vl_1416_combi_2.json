@@ -1,0 +1,71 @@
+{
+  "table_info": {
+    "table_columns": [
+      "index",
+      "Accuracy",
+      "Experiment"
+    ],
+    "table_samples": [
+      {
+        "index": 0,
+        "Accuracy": 0.681,
+        "Experiment": "1"
+      },
+      {
+        "index": 24,
+        "Accuracy": 0.918,
+        "Experiment": "100"
+      },
+      {
+        "index": 14,
+        "Accuracy": 0.918,
+        "Experiment": "50"
+      },
+      {
+        "index": 9,
+        "Accuracy": 0.893,
+        "Experiment": "20-augx10"
+      },
+      {
+        "index": 5,
+        "Accuracy": 0.846,
+        "Experiment": "5-augx10"
+      }
+    ]
+  },
+  "nl_utterance": "Sort the data by the average accuracy in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Accuracy",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Accuracy",
+          "op": "average",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

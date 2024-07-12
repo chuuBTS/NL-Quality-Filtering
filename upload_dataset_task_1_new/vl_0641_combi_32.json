@@ -1,0 +1,417 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Item",
+      "shortName",
+      "pieNumber",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Item": "Gross domestic income",
+        "shortName": "GDI",
+        "pieNumber": NaN,
+        "Value": 25844.7
+      },
+      {
+        "Line": 12,
+        "Item": "Business current transfer payments (net)",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 177.7
+      },
+      {
+        "Line": 5,
+        "Item": "To the rest of the world",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 20.8
+      },
+      {
+        "Line": 8,
+        "Item": "Less: Subsidies1",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 114.5
+      },
+      {
+        "Line": 21,
+        "Item": "Consumption of fixed capital",
+        "shortName": "Depreciation",
+        "pieNumber": 4.0,
+        "Value": 4358.1
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart like a bar, area, or pie chart to display the values of different economic indicators, only for the specified lines and arranged by pie numbers in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Item",
+        "shortName"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "pieNumber",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Line",
+          "oneOf": [
+            3,
+            6,
+            7,
+            9,
+            21
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "pieNumber",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

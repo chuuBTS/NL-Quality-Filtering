@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Hairspray",
+        "Worldwide Gross": 202823091,
+        "Production Budget": 75000000,
+        "Release Year": 2007,
+        "Content Rating": "PG",
+        "Running Time": 117,
+        "Genre": "Musical",
+        "Creative Type": "Historical Fiction",
+        "Rotten Tomatoes Rating": 91,
+        "IMDB Rating": 7.2
+      },
+      {
+        "Title": "One True Thing",
+        "Worldwide Gross": 26708196,
+        "Production Budget": 30000000,
+        "Release Year": 1998,
+        "Content Rating": "R",
+        "Running Time": 127,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 88,
+        "IMDB Rating": 6.9
+      },
+      {
+        "Title": "My Fellow Americans",
+        "Worldwide Gross": 22331846,
+        "Production Budget": 21500000,
+        "Release Year": 1996,
+        "Content Rating": "PG-13",
+        "Running Time": 102,
+        "Genre": "Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 50,
+        "IMDB Rating": 6.3
+      },
+      {
+        "Title": "The Jackal",
+        "Worldwide Gross": 159356941,
+        "Production Budget": 60000000,
+        "Release Year": 1997,
+        "Content Rating": "R",
+        "Running Time": 124,
+        "Genre": "Thriller",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 12,
+        "IMDB Rating": 6.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart of the average worldwide gross for each genre over the release years.",
+  "refer_fileds": [
+    {
+      "field": "Worldwide Gross",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    },
+    {
+      "field": "Release Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Worldwide Gross",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

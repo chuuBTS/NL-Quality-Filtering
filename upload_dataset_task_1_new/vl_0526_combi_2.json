@@ -1,0 +1,406 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Nation",
+      "Quarter",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Nation": "England",
+        "Quarter": "2020Q1",
+        "Value": -2.6,
+        "Detail": "GDP change on 2019Q4 (%)"
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q2",
+        "Value": -17.44301288,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Scotland",
+        "Quarter": "2020Q4",
+        "Value": -6.410115379,
+        "Detail": NaN
+      },
+      {
+        "Nation": "England",
+        "Quarter": "2020Q2",
+        "Value": -21.07750473,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Scotland",
+        "Quarter": "2020Q3",
+        "Value": -8.543887617,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the change in GDP, sorted by the largest decrease, for each quarter in England and Northern Ireland.",
+  "refer_fileds": [
+    {
+      "field": "Quarter",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Nation",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Quarter",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Quarter",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

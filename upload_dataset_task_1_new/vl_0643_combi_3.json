@@ -1,0 +1,320 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Number",
+      "pieNumber",
+      "Type",
+      "Value",
+      "Share"
+    ],
+    "table_samples": [
+      {
+        "Item": "Gross domestic product",
+        "Number": 1,
+        "pieNumber": 99,
+        "Type": "GDP",
+        "Value": 25723.9,
+        "Share": "100%"
+      },
+      {
+        "Item": "Durable goods",
+        "Number": 4,
+        "pieNumber": 3,
+        "Type": "C",
+        "Value": 2195.8,
+        "Share": "9%"
+      },
+      {
+        "Item": "Goods",
+        "Number": 17,
+        "pieNumber": 99,
+        "Type": "NX",
+        "Value": 2141.2,
+        "Share": "8%"
+      },
+      {
+        "Item": "National defense",
+        "Number": 24,
+        "pieNumber": 9,
+        "Type": "G",
+        "Value": 935.3,
+        "Share": "4%"
+      },
+      {
+        "Item": "Federal",
+        "Number": 23,
+        "pieNumber": 99,
+        "Type": "G",
+        "Value": 1657.1,
+        "Share": "6%"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for each item, only including numbers 4, 5, 6, 10, 11, 12, 13, 24, 25, and 26.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Item",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Number",
+          "oneOf": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

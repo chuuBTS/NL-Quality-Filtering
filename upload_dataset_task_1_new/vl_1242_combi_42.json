@@ -1,0 +1,180 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "all off",
+        "tracker": "CN",
+        "precision": 44.7,
+        "AUC": 25.3
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "CN",
+        "precision": 44.6,
+        "AUC": 26.0
+      },
+      {
+        "stage": "tone map",
+        "tracker": "AutoTrack",
+        "precision": 74.9,
+        "AUC": 48.3
+      },
+      {
+        "stage": "all off",
+        "tracker": "Staple",
+        "precision": 63.2,
+        "AUC": 40.6
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "Staple",
+        "precision": 65.8,
+        "AUC": 41.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a small multiple of bar charts for each stage, sorted by the stages from original through transform, displaying the precision values on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "precision",
+      "type": "quantitative"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "CN",
+          "KCF",
+          "Staple",
+          "ECO_HC",
+          "AutoTrack"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "original",
+          "demosaic",
+          "denoise",
+          "transform",
+          "gamut map",
+          "tone map"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precision",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

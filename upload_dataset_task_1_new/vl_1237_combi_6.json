@@ -1,0 +1,158 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Datum",
+      "World_GDP",
+      "Debt_to_GDP(%)"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109023819611.0,
+        "Datum": 2022.0,
+        "World_GDP": NaN,
+        "Debt_to_GDP(%)": "#DIV/0!"
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393.0,
+        "PRGT 1/2/": 2769874900.0,
+        "Totals": 37706647293.0,
+        "Datum": 1984.0,
+        "World_GDP": 12271600000000.0,
+        "Debt_to_GDP(%)": "0.307266811"
+      },
+      {
+        "Date": "12/31/1985",
+        "GRA Purchases": 35194787249.0,
+        "PRGT 1/2/": 2470247948.0,
+        "Totals": 37665035197.0,
+        "Datum": 1985.0,
+        "World_GDP": 12862200000000.0,
+        "Debt_to_GDP(%)": "0.292835946"
+      },
+      {
+        "Date": "12/31/2016",
+        "GRA Purchases": 49267630851.0,
+        "PRGT 1/2/": 6482647937.0,
+        "Totals": 55750278788.0,
+        "Datum": 2016.0,
+        "World_GDP": 76461500000000.0,
+        "Debt_to_GDP(%)": "0.072912832"
+      },
+      {
+        "Date": "12/31/2020",
+        "GRA Purchases": 93408630285.0,
+        "PRGT 1/2/": 12481816684.0,
+        "Totals": 105890446969.0,
+        "Datum": 2020.0,
+        "World_GDP": 85105600000000.0,
+        "Debt_to_GDP(%)": "0.124422415"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart that shows the sum of the years by the debt to GDP percentage.",
+  "refer_fileds": [
+    {
+      "field": "Debt_to_GDP(%)",
+      "type": "nominal"
+    },
+    {
+      "field": "Datum",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Datum",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Debt_to_GDP(%)",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Datum",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

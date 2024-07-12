@@ -1,0 +1,187 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Rounders",
+        "Worldwide Gross": 22921898,
+        "Production Budget": 12000000,
+        "Release Year": 1998,
+        "Content Rating": "R",
+        "Running Time": 120,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 64,
+        "IMDB Rating": 7.3
+      },
+      {
+        "Title": "Harry Potter and the Goblet of Fire",
+        "Worldwide Gross": 896013036,
+        "Production Budget": 150000000,
+        "Release Year": 2005,
+        "Content Rating": "PG-13",
+        "Running Time": 157,
+        "Genre": "Adventure",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 88,
+        "IMDB Rating": 7.6
+      },
+      {
+        "Title": "Basic",
+        "Worldwide Gross": 42598498,
+        "Production Budget": 50000000,
+        "Release Year": 2003,
+        "Content Rating": "R",
+        "Running Time": 98,
+        "Genre": "Thriller",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 21,
+        "IMDB Rating": 6.3
+      },
+      {
+        "Title": "Alone in the Dark",
+        "Worldwide Gross": 8178569,
+        "Production Budget": 20000000,
+        "Release Year": 2005,
+        "Content Rating": "R",
+        "Running Time": 96,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 1,
+        "IMDB Rating": 2.3
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart comparing the production budgets across different genres.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model name",
+      "Number of iterations",
+      "block"
+    ],
+    "table_samples": [
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 9,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 3",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 4",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 9,
+        "block": "name"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart summing up the number of iterations for each model name and block combination.",
+  "refer_fileds": [
+    {
+      "field": "Model name",
+      "type": "nominal"
+    },
+    {
+      "field": "Number of iterations",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "block",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number of iterations",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

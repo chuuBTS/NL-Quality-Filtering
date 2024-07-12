@@ -1,0 +1,187 @@
+{
+  "table_info": {
+    "table_columns": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "x3",
+      "y3",
+      "gx",
+      "gy",
+      "x",
+      "y2r",
+      "y3r"
+    ],
+    "table_samples": [
+      {
+        "x1": 0.1127757847533637,
+        "y1": 3.219650288092189,
+        "x2": 0.7414215246636786,
+        "y2": 4.408505721830985,
+        "x3": 0.115946188340807,
+        "y3": 1.9641485275288084,
+        "gx": 2.9805187319884734,
+        "gy": 51.74731182795699,
+        "x": 1.0,
+        "y2r": 4.339083506722151,
+        "y3r": 1.9470763977806225
+      },
+      {
+        "x1": 44.9299783258595,
+        "y1": -0.3440234208279982,
+        "x2": NaN,
+        "y2": NaN,
+        "x3": NaN,
+        "y3": NaN,
+        "gx": NaN,
+        "gy": NaN,
+        "x": NaN,
+        "y2r": NaN,
+        "y3r": NaN
+      },
+      {
+        "x1": 57.79102242152467,
+        "y1": -1.3839103513124202,
+        "x2": NaN,
+        "y2": NaN,
+        "x3": NaN,
+        "y3": NaN,
+        "gx": NaN,
+        "gy": NaN,
+        "x": NaN,
+        "y2r": NaN,
+        "y3r": NaN
+      },
+      {
+        "x1": 23.21550672645741,
+        "y1": 1.3929782530409724,
+        "x2": 49.85436995515696,
+        "y2": 2.12625040012804,
+        "x3": NaN,
+        "y3": NaN,
+        "gx": NaN,
+        "gy": NaN,
+        "x": 37.0,
+        "y2r": 2.34608741463935,
+        "y3r": -1.6946222791293222
+      },
+      {
+        "x1": 58.41966816143498,
+        "y1": -1.4186214588668378,
+        "x2": NaN,
+        "y2": NaN,
+        "x3": NaN,
+        "y3": NaN,
+        "gx": NaN,
+        "gy": NaN,
+        "x": NaN,
+        "y2r": NaN,
+        "y3r": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total of gy aggregated across all data points plotted against gx values.",
+  "refer_fileds": [
+    {
+      "field": "gx",
+      "type": "quantitative"
+    },
+    {
+      "field": "gy",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "gy",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gx",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "gy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "gx",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gy",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "gx",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gx",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "gy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "gx",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

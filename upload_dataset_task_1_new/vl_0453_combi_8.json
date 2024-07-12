@@ -1,0 +1,867 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 14.0,
+        "division": 2,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-03-1989",
+        "date4": "1989-03-01",
+        "year": 1989.0,
+        "month": 3.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 266.0,
+        "division": 2,
+        "up": 584,
+        "down": 492,
+        "level": 2789,
+        "up_ch": 0.054201521,
+        "down_ch": -0.064635813,
+        "total": 3865,
+        "up_sh": 0.15109961,
+        "down_sh": 0.12729625,
+        "level_sh": 0.72160417,
+        "change_sh": 0.27839586,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-03-2010",
+        "date4": "2010-03-01",
+        "year": 2010.0,
+        "month": 3.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 130.0,
+        "division": 1,
+        "up": 2744,
+        "down": 3203,
+        "level": 17906,
+        "up_ch": 0.14422098,
+        "down_ch": -0.14814818,
+        "total": 23853,
+        "up_sh": 0.11503794,
+        "down_sh": 0.1342808,
+        "level_sh": 0.75068128,
+        "change_sh": 0.24931875,
+        "division_s": "Food and non-alcoholic beverages",
+        "division_sh": "Food & drink",
+        "date2": "01-11-1998",
+        "date4": "1998-11-01",
+        "year": 1998.0,
+        "month": 11.0,
+        "quarter": 4.0
+      },
+      {
+        "date": 390.0,
+        "division": 5,
+        "up": 1035,
+        "down": 874,
+        "level": 8910,
+        "up_ch": 0.23401,
+        "down_ch": -0.20010005,
+        "total": 10819,
+        "up_sh": 0.09566503,
+        "down_sh": 0.080783807,
+        "level_sh": 0.82355118,
+        "change_sh": 0.17644884,
+        "division_s": "Furnishings, household equipment and maintenance",
+        "division_sh": "Household",
+        "date2": "01-07-2020",
+        "date4": "2020-07-01",
+        "year": 2020.0,
+        "month": 7.0,
+        "quarter": 3.0
+      }
+    ]
+  },
+  "nl_utterance": "Show the count of data samples where the proportion values are less than 0.25 for both the up and down directions.",
+  "refer_fileds": [
+    {
+      "field": [
+        "up_sh",
+        "down_sh",
+        "level_sh",
+        "change_sh"
+      ],
+      "type": "quantitative"
+    },
+    {
+      "field": "down_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "up_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "down_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "level_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "level_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "level_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "level_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "level_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "level_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "change_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

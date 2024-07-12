@@ -1,0 +1,55 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "shortName",
+            "type": "nominal",
+            "sort": {
+                "field": "Number",
+                "order": "ascending"
+            }
+        },
+        "color": {
+            "field": "privatePublic",
+            "sort": {
+                "field": "Number",
+                "order": "ascending"
+            },
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/classes/main/E4E_macro/US_BEA_GDP_GVAbyIndustry.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Number",
+                "oneOf": [
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    17,
+                    18
+                ]
+            }
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

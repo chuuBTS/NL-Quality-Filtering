@@ -1,0 +1,157 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ID",
+      "category",
+      "launched"
+    ],
+    "table_samples": [
+      {
+        "ID": 1000256230,
+        "category": "Software",
+        "launched": "2017-06-02 12:20:21"
+      },
+      {
+        "ID": 404220709,
+        "category": "Software",
+        "launched": "2014-10-07 17:08:57"
+      },
+      {
+        "ID": 1241576654,
+        "category": "Software",
+        "launched": "2016-06-01 23:02:42"
+      },
+      {
+        "ID": 1415770844,
+        "category": "3D Printing",
+        "launched": "2015-04-06 17:42:43"
+      },
+      {
+        "ID": 142177966,
+        "category": "Software",
+        "launched": "2014-11-18 21:19:52"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of projects by category on a bar, line, or area chart for those launched after 2013 but before 2018.",
+  "refer_fileds": [
+    {
+      "field": "ID",
+      "type": "quantitative"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "gt": 2013
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "lt": 2018
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "launched"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "launched"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    }
+  ]
+}

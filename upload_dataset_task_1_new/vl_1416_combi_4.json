@@ -1,0 +1,135 @@
+{
+  "table_info": {
+    "table_columns": [
+      "index",
+      "Accuracy",
+      "Experiment"
+    ],
+    "table_samples": [
+      {
+        "index": 0,
+        "Accuracy": 0.681,
+        "Experiment": "1"
+      },
+      {
+        "index": 12,
+        "Accuracy": 0.918,
+        "Experiment": "40"
+      },
+      {
+        "index": 10,
+        "Accuracy": 0.893,
+        "Experiment": "30"
+      },
+      {
+        "index": 21,
+        "Accuracy": 0.912,
+        "Experiment": "80-augx10"
+      },
+      {
+        "index": 4,
+        "Accuracy": 0.838,
+        "Experiment": "5"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart that sorts experiments by average accuracy in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Experiment",
+      "type": "nominal"
+    },
+    {
+      "field": "Accuracy",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Accuracy",
+          "op": "average",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Experiment",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

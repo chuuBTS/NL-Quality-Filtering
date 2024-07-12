@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "purchase count",
+      "referrer channel",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "purchase count": 0,
+        "referrer channel": "typed_bookmarked",
+        "gender": "M"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "internal",
+        "gender": "F"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "external",
+        "gender": "F"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "internal",
+        "gender": "F"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "internal",
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the total purchase count for each gender.",
+  "refer_fileds": [
+    {
+      "field": "purchase count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "purchase count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

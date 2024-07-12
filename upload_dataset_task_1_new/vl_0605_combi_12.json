@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Job Titles",
+      "Department",
+      "Full or Part-Time",
+      "Salary or Hourly",
+      "Typical Hours",
+      "Annual Salary",
+      "Hourly Rate",
+      "Rank",
+      "share",
+      "cumShareIncome",
+      "cumSharePeople",
+      "shortName"
+    ],
+    "table_samples": [
+      {
+        "Name": "ADELMAN, BRUCE E",
+        "Job Titles": "LEGISLATIVE AIDE",
+        "Department": "CITY COUNCIL",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 22248.0,
+        "Hourly Rate": NaN,
+        "Rank": 1,
+        "share": 9e-06,
+        "cumShareIncome": 9e-06,
+        "cumSharePeople": 4.124e-05,
+        "shortName": "0"
+      },
+      {
+        "Name": "PALACKIC, SABAHUDIN",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 97974.0,
+        "Hourly Rate": NaN,
+        "Rank": 9150,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.288395,
+        "cumSharePeople": 0.37736627,
+        "shortName": "Police"
+      },
+      {
+        "Name": "MARTIN, HAROLYN R",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 108822.0,
+        "Hourly Rate": NaN,
+        "Rank": 16695,
+        "share": 4.5e-05,
+        "cumShareIncome": 0.608304,
+        "cumSharePeople": 0.68853879,
+        "shortName": "Police"
+      },
+      {
+        "Name": "ROLDAN JR, HERIBERTO",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 97974.0,
+        "Hourly Rate": NaN,
+        "Rank": 9327,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.295579,
+        "cumSharePeople": 0.38466614,
+        "shortName": "Police"
+      },
+      {
+        "Name": "HERNANDEZ, JOSE P",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 97974.0,
+        "Hourly Rate": NaN,
+        "Rank": 10096,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.326794,
+        "cumSharePeople": 0.41638141,
+        "shortName": "Police"
+      }
+    ]
+  },
+  "nl_utterance": "Show the distribution of annual salaries using a bar chart or a boxplot.",
+  "refer_fileds": [
+    {
+      "field": "Annual Salary",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "Annual Salary",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Annual Salary",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

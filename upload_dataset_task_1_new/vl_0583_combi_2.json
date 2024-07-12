@@ -1,0 +1,92 @@
+{
+  "table_info": {
+    "table_columns": [
+      "DATE",
+      "DJIA"
+    ],
+    "table_samples": [
+      {
+        "DATE": "1914-12-01",
+        "DJIA": 55.0
+      },
+      {
+        "DATE": "1952-10-01",
+        "DJIA": 267.77
+      },
+      {
+        "DATE": "1927-12-01",
+        "DJIA": 198.0
+      },
+      {
+        "DATE": "1924-07-01",
+        "DJIA": 99.25
+      },
+      {
+        "DATE": "1922-05-01",
+        "DJIA": 93.95
+      }
+    ]
+  },
+  "nl_utterance": "Show me the Dow Jones Industrial Average values between January 1, 1914, and October 1, 1929.",
+  "refer_fileds": [
+    {
+      "field": "DJIA",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "DATE",
+          "range": [
+            {
+              "year": 1914,
+              "month": 1,
+              "day": 1
+            },
+            {
+              "year": 1929,
+              "month": 10,
+              "day": 1
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "DJIA",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "DATE",
+            "range": [
+              {
+                "year": 1914,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 1929,
+                "month": 10,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

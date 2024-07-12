@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "all off",
+        "tracker": "CN",
+        "precision": 44.7,
+        "AUC": 25.3
+      },
+      {
+        "stage": "all off",
+        "tracker": "Staple",
+        "precision": 63.2,
+        "AUC": 40.6
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "Staple",
+        "precision": 65.8,
+        "AUC": 41.0
+      },
+      {
+        "stage": "denoise",
+        "tracker": "Staple",
+        "precision": 66.7,
+        "AUC": 42.0
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "KCF",
+        "precision": 64.1,
+        "AUC": 38.3
+      }
+    ]
+  },
+  "nl_utterance": "Show me a small multiple of bar charts comparing the precision for each stage.",
+  "refer_fileds": [
+    {
+      "field": "precision",
+      "type": "quantitative"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "precision",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precision",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

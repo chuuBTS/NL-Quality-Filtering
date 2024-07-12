@@ -1,0 +1,564 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Number",
+      "Item",
+      "shortName",
+      "Value",
+      "privatePublic",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Number": 1,
+        "Item": "Gross domestic product",
+        "shortName": "GDP",
+        "Value": 25723.9,
+        "privatePublic": "Private",
+        "Source": "U.S. Bureau of Economic Analysis, \"Value Added by Industry\" (accessed Monday, January 23, 2023)."
+      },
+      {
+        "Line": 6,
+        "Number": 4,
+        "Item": "Mining",
+        "shortName": "Mining",
+        "Value": 520.1,
+        "privatePublic": "Private",
+        "Source": NaN
+      },
+      {
+        "Line": 40,
+        "Number": 10,
+        "Item": "Transportation and warehousing",
+        "shortName": "Transport",
+        "Value": 829.9,
+        "privatePublic": "Private",
+        "Source": NaN
+      },
+      {
+        "Line": 98,
+        "Number": 19,
+        "Item": "Private goods-producing industries1",
+        "shortName": "Goods",
+        "Value": 4634.2,
+        "privatePublic": "XYZ",
+        "Source": NaN
+      },
+      {
+        "Line": 95,
+        "Number": 18,
+        "Item": "State and local",
+        "shortName": "State and local",
+        "Value": 2056.5,
+        "privatePublic": "Government",
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing the values by sector and their public or private classification for line numbers 3 to 18, sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "shortName",
+      "type": "nominal"
+    },
+    {
+      "field": "privatePublic",
+      "type": "nominal"
+    },
+    {
+      "field": "Number",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Number",
+          "oneOf": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Number",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Number",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "privatePublic",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "privatePublic",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "privatePublic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "privatePublic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "privatePublic",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "privatePublic",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "privatePublic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "privatePublic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

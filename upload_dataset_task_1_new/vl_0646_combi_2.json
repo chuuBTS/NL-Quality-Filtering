@@ -1,0 +1,70 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Value",
+      "Share",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Item": "Consumption",
+        "Value": 17542.7,
+        "Share": 0.68,
+        "Source": "U.S. Bureau of Economic Analysis, \"Table 1.1.5. Gross Domestic Product\" (accessed Sunday, January 22, 2023). "
+      },
+      {
+        "Item": "Investment",
+        "Value": 4579.1,
+        "Share": 0.18,
+        "Source": NaN
+      },
+      {
+        "Item": "Government",
+        "Value": 4493.0,
+        "Share": 0.17,
+        "Source": NaN
+      },
+      {
+        "Item": "Net exports",
+        "Value": -890.8,
+        "Share": -0.03,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show the value for each item excluding net exports.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.Item != 'Net exports'"
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Item != 'Net exports'"
+        }
+      ]
+    }
+  ]
+}

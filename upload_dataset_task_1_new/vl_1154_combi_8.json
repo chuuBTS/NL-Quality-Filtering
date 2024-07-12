@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "honap",
+      "honap_angol",
+      "datum",
+      "honap_szam",
+      "homerseklet",
+      "ertek"
+    ],
+    "table_samples": [
+      {
+        "honap": "Aug.",
+        "honap_angol": "Aug.",
+        "datum": "2021-08-01",
+        "honap_szam": 8,
+        "homerseklet": "Havi naps\u00fct\u00e9ses \u00f3r\u00e1k sz\u00e1ma",
+        "ertek": 26.2
+      },
+      {
+        "honap": "Jan.",
+        "honap_angol": "Jan.",
+        "datum": "2021-01-01",
+        "honap_szam": 1,
+        "homerseklet": "Rekord max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 14.0
+      },
+      {
+        "honap": "\u00c1pr.",
+        "honap_angol": "Apr.",
+        "datum": "2021-04-01",
+        "honap_szam": 4,
+        "homerseklet": "Rekord min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": -8.4
+      },
+      {
+        "honap": "Jan.",
+        "honap_angol": "Jan.",
+        "datum": "2021-01-01",
+        "honap_szam": 1,
+        "homerseklet": "\u00c1tlagos max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 0.3
+      },
+      {
+        "honap": "J\u00fal.",
+        "honap_angol": "Jul.",
+        "datum": "2021-07-01",
+        "honap_szam": 7,
+        "homerseklet": "Rekord min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 5.2
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of values for each category in the dataset.",
+  "refer_fileds": [
+    {
+      "field": "ertek",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "homerseklet",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ertek",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "honap_angol"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "datum"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

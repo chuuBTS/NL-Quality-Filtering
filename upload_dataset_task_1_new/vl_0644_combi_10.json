@@ -1,0 +1,1328 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Number",
+      "pieNumber",
+      "Type",
+      "Value",
+      "Share"
+    ],
+    "table_samples": [
+      {
+        "Item": "Gross domestic product",
+        "Number": 1,
+        "pieNumber": 99,
+        "Type": "GDP",
+        "Value": 25723.9,
+        "Share": "100%"
+      },
+      {
+        "Item": "Imports",
+        "Number": 19,
+        "pieNumber": 99,
+        "Type": "NX",
+        "Value": 3955.8,
+        "Share": "15%"
+      },
+      {
+        "Item": "National defense",
+        "Number": 24,
+        "pieNumber": 9,
+        "Type": "G",
+        "Value": 935.3,
+        "Share": "4%"
+      },
+      {
+        "Item": "State and local",
+        "Number": 26,
+        "pieNumber": 8,
+        "Type": "G",
+        "Value": 2836.0,
+        "Share": "11%"
+      },
+      {
+        "Item": "Services",
+        "Number": 18,
+        "pieNumber": 99,
+        "Type": "NX",
+        "Value": 923.8,
+        "Share": "4%"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for different economic indicators sorted in ascending order only for the items numbered 4, 5, 6, 10, 11, 12, 13, 24, 25, and 26.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Item",
+        "Type"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "Number",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Number",
+          "oneOf": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Number",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

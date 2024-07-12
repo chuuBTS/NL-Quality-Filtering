@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      " GDP ( Billions of US $)",
+      "Totals",
+      "Totals (Billions)",
+      "Debt/GDP",
+      "Years"
+    ],
+    "table_samples": [
+      {
+        "date": "31/12/2021",
+        " GDP ( Billions of US $)": 96100.091,
+        "Totals": 104029000000.0,
+        "Totals (Billions)": 104.0293757,
+        "Debt/GDP": 0.108251069,
+        "Years": 2021
+      },
+      {
+        "date": "31/12/2015",
+        " GDP ( Billions of US $)": 75179.26627,
+        "Totals": 57333751899.0,
+        "Totals (Billions)": 57.3337519,
+        "Debt/GDP": 0.076262718,
+        "Years": 2015
+      },
+      {
+        "date": "31/12/2016",
+        " GDP ( Billions of US $)": 76465.59001,
+        "Totals": 55750278788.0,
+        "Totals (Billions)": 55.75027879,
+        "Debt/GDP": 0.072908976,
+        "Years": 2016
+      },
+      {
+        "date": "31/12/1997",
+        " GDP ( Billions of US $)": 31620.44366,
+        "Totals": 52568901205.0,
+        "Totals (Billions)": 52.56890121,
+        "Debt/GDP": 0.166249727,
+        "Years": 1997
+      },
+      {
+        "date": "31/12/1984",
+        " GDP ( Billions of US $)": 12269.79237,
+        "Totals": 37706647293.0,
+        "Totals (Billions)": 37.70664729,
+        "Debt/GDP": 0.307312839,
+        "Years": 1984
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the debt-to-GDP ratio for each year.",
+  "refer_fileds": [
+    {
+      "field": "Years",
+      "type": "temporal"
+    },
+    {
+      "field": "Debt/GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt/GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Debt/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

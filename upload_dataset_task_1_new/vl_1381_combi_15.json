@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 2.0,
+        "item": "monkey"
+      },
+      {
+        "time": 12,
+        "quantity": 34.62768266080517,
+        "item": "slipper"
+      },
+      {
+        "time": 5,
+        "quantity": 16.194870523363548,
+        "item": "monkey"
+      },
+      {
+        "time": 17,
+        "quantity": 35.95707936800063,
+        "item": "broom"
+      },
+      {
+        "time": 8,
+        "quantity": 27.13058987556147,
+        "item": "monkey"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of quantities over time for each item using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "item",
+      "type": "nominal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "quantity",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

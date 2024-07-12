@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "index",
+      "value",
+      "position",
+      "category"
+    ],
+    "table_samples": [
+      {
+        "index": 1,
+        "value": 28,
+        "position": 1,
+        "category": "A"
+      },
+      {
+        "index": 6,
+        "value": 53,
+        "position": 6,
+        "category": "A"
+      },
+      {
+        "index": 8,
+        "value": 87,
+        "position": 2,
+        "category": "B"
+      },
+      {
+        "index": 12,
+        "value": 49,
+        "position": 6,
+        "category": "B"
+      },
+      {
+        "index": 9,
+        "value": 52,
+        "position": 3,
+        "category": "B"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with the index on one axis and the values on the other axis.",
+  "refer_fileds": [
+    {
+      "field": "index",
+      "type": "quantitative"
+    },
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "index",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "index",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

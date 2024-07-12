@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions",
+      "Unnamed: 6",
+      "GDP",
+      "Unnamed: 8",
+      "Totals_GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196,
+        "Unnamed: 6": NaN,
+        "GDP": 3376.003,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.229375673
+      },
+      {
+        "Date": "12/31/1986",
+        "GRA Purchases": 33334905644,
+        "PRGT 1/2/": 2013169931,
+        "Totals": 35348075575,
+        "Year": 1986,
+        "Totals_billions": 35.34807558,
+        "Unnamed: 6": NaN,
+        "GDP": 654.684,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 5.399257592
+      },
+      {
+        "Date": "12/31/1985",
+        "GRA Purchases": 35194787249,
+        "PRGT 1/2/": 2470247948,
+        "Totals": 37665035197,
+        "Year": 1985,
+        "Totals_billions": 37.6650352,
+        "Unnamed: 6": NaN,
+        "GDP": 536.592,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 7.019306139
+      },
+      {
+        "Date": "12/31/1996",
+        "GRA Purchases": 36127472805,
+        "PRGT 1/2/": 5881609752,
+        "Totals": 42009082557,
+        "Year": 1996,
+        "Totals_billions": 42.00908256,
+        "Unnamed: 6": NaN,
+        "GDP": 1422.969,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 2.952213475
+      },
+      {
+        "Date": "12/31/2002",
+        "GRA Purchases": 63601058794,
+        "PRGT 1/2/": 6868671012,
+        "Totals": 70469729806,
+        "Year": 2002,
+        "Totals_billions": 70.46972981,
+        "Unnamed: 6": NaN,
+        "GDP": 1786.893,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.943701711
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total GDP over time as a bar, line, or area chart with the sum of the values.",
+  "refer_fileds": [
+    {
+      "field": "Totals_GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

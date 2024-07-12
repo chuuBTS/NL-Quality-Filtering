@@ -1,0 +1,182 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Harry Potter and the Order of the Phoenix",
+        "Worldwide Gross": 938468864,
+        "Production Budget": 150000000,
+        "Release Year": 2007,
+        "Content Rating": "PG-13",
+        "Running Time": 138,
+        "Genre": "Adventure",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 78,
+        "IMDB Rating": 7.4
+      },
+      {
+        "Title": "Scooby-Doo",
+        "Worldwide Gross": 276294164,
+        "Production Budget": 84000000,
+        "Release Year": 2002,
+        "Content Rating": "PG",
+        "Running Time": 86,
+        "Genre": "Comedy",
+        "Creative Type": "Kids Fiction",
+        "Rotten Tomatoes Rating": 28,
+        "IMDB Rating": 4.7
+      },
+      {
+        "Title": "Step Up",
+        "Worldwide Gross": 115328121,
+        "Production Budget": 12000000,
+        "Release Year": 2006,
+        "Content Rating": "PG-13",
+        "Running Time": 98,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 19,
+        "IMDB Rating": 6.1
+      },
+      {
+        "Title": "Jerry Maguire",
+        "Worldwide Gross": 274000000,
+        "Production Budget": 50000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 138,
+        "Genre": "Romantic Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 84,
+        "IMDB Rating": 7.2
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart showing the sum of production budgets categorised by film attributes.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": [
+        "Genre",
+        "Creative Type",
+        "Content Rating"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Production Budget",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

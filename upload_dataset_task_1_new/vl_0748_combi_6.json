@@ -1,0 +1,166 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Myanmar",
+        "CAF_2021": 52,
+        "2021": "Buddhism"
+      },
+      {
+        "Country": "Bosnia and Herzegovina",
+        "CAF_2021": 44,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Sierra Leone",
+        "CAF_2021": 51,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Serbia",
+        "CAF_2021": 46,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the religions sorted by the Cultural Access Factor score in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "2021",
+      "type": "nominal"
+    },
+    {
+      "field": "CAF_2021",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

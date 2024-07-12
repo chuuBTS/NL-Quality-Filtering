@@ -1,0 +1,166 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "volkswagen rabbit l",
+        "MPG": 36.0,
+        "Cylinders": 4,
+        "Displacement": 105.0,
+        "Horsepower": 74,
+        "Weight": 1980,
+        "Acceleration": 15.3,
+        "Year": 1982,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "mercury marquis",
+        "MPG": 11.0,
+        "Cylinders": 8,
+        "Displacement": 429.0,
+        "Horsepower": 208,
+        "Weight": 4633,
+        "Acceleration": 11.0,
+        "Year": 1972,
+        "Origin": "US"
+      },
+      {
+        "Model": "dodge aspen se",
+        "MPG": 20.0,
+        "Cylinders": 6,
+        "Displacement": 225.0,
+        "Horsepower": 100,
+        "Weight": 3651,
+        "Acceleration": 17.7,
+        "Year": 1976,
+        "Origin": "US"
+      },
+      {
+        "Model": "amc concord dl 2",
+        "MPG": 18.1,
+        "Cylinders": 6,
+        "Displacement": 258.0,
+        "Horsepower": 120,
+        "Weight": 3410,
+        "Acceleration": 15.1,
+        "Year": 1978,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of the average weight over the years using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

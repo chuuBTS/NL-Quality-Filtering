@@ -1,0 +1,166 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Medal",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "United States",
+        "Medal": "Gold",
+        "Total": 48
+      },
+      {
+        "Unnamed: 0": 13,
+        "Country": "South Korea",
+        "Medal": "Silver",
+        "Total": 9
+      },
+      {
+        "Unnamed: 0": 29,
+        "Country": "Hungary",
+        "Medal": "Bronze",
+        "Total": 5
+      },
+      {
+        "Unnamed: 0": 14,
+        "Country": "South Korea",
+        "Medal": "Bronze",
+        "Total": 8
+      },
+      {
+        "Unnamed: 0": 46,
+        "Country": "Cuba",
+        "Medal": "Silver",
+        "Total": 3
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the sum of medals for each country, with colors representing the different types of medals.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Medal",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "table_info": {
+    "table_columns": [
+      "cloth size",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "cloth size": NaN,
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "cloth size": NaN,
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": "xs",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": "s",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": "29",
+        "COUNT": 1,
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of items for each gender after filtering out the specific cloth sizes.",
+  "refer_fileds": [
+    {
+      "field": "COUNT",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "cloth size",
+          "oneOf": [
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "36",
+            "l",
+            "m",
+            "s",
+            "xl",
+            "xs",
+            "xxs"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "COUNT",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

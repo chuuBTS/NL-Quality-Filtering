@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Value",
+      "Price Index"
+    ],
+    "table_samples": [
+      {
+        "Date": "1989 JAN",
+        "Value": 4.9,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2003 APR",
+        "Value": 1.4,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2006 OCT",
+        "Value": 3.7,
+        "Price Index": "RPI"
+      },
+      {
+        "Date": "2012 MAR",
+        "Value": 3.5,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2003 JUN",
+        "Value": 1.1,
+        "Price Index": "CPI"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total values over time for each Price Index.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Price Index",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Price Index",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Price Index",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "TIME",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "LOCATION",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/productivity/data_GDPperHourOECD.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.LOCATION!='OECD'"
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

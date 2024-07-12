@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model name",
+      "Number of iterations",
+      "block"
+    ],
+    "table_samples": [
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 9,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 3",
+        "Number of iterations": 6,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 4",
+        "Number of iterations": 6,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 4",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 9,
+        "block": "name"
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart showing the number of iterations for each block category.",
+  "refer_fileds": [
+    {
+      "field": "Number of iterations",
+      "type": "quantitative"
+    },
+    {
+      "field": "block",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

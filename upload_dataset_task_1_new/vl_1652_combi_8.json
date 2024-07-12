@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Sep 1 2004",
+        "price": 40.86
+      },
+      {
+        "symbol": "IBM",
+        "date": "Dec 1 2000",
+        "price": 76.47
+      },
+      {
+        "symbol": "GOOG",
+        "date": "Aug 1 2009",
+        "price": 461.67
+      },
+      {
+        "symbol": "IBM",
+        "date": "Jun 1 2007",
+        "price": 100.25
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total price over time for each company symbol.",
+  "refer_fileds": [
+    {
+      "field": "symbol",
+      "type": "nominal"
+    },
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "price",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "price",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

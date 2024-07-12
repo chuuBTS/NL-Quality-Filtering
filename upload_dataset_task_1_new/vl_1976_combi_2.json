@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "label",
+      "group",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "label": "2020-05-20",
+        "group": "A",
+        "value": 8
+      },
+      {
+        "label": "2020-06-05",
+        "group": "D",
+        "value": 1
+      },
+      {
+        "label": "2020-06-02",
+        "group": "G",
+        "value": 1
+      },
+      {
+        "label": "2020-06-08",
+        "group": "D",
+        "value": 2
+      },
+      {
+        "label": "2020-06-12",
+        "group": "G",
+        "value": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total value for each group.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

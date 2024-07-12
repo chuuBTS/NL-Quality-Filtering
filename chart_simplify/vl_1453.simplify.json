@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "aggregate": "sum",
+            "field": "intensity",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "marginal_region",
+            "sort": [
+                "North Scotland",
+                "South Scotland",
+                "Northern",
+                "North Western",
+                "Yorkshire",
+                "Merseyside and North Wales",
+                "South Wales",
+                "Midlands",
+                "East Midlands",
+                "Eastern",
+                "South Western",
+                "Southern",
+                "London",
+                "Southern Eastern"
+            ],
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/GraemeHawker/GBEnergyDataManager/20f06b76bfae3b354000dc3729656e9674c244cc/BMRA/static/BMRA/regional_data_3.csv",
+        "name": "regional_generation_bytype",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "height": 400,
+    "width": 500
+}

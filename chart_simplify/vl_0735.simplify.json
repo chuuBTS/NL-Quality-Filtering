@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Region",
+            "sort": {
+                "op": "mean",
+                "order": "ascending",
+                "field": "democracy_eiu"
+            },
+            "type": "nominal"
+        },
+        "x": {
+            "aggregate": "mean",
+            "field": "democracy_eiu",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Regime",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/maddyht20/maddyht20.github.io/main/Global_democracy_vs_gdp3.csv"
+    },
+    "height": 300,
+    "width": 500
+}

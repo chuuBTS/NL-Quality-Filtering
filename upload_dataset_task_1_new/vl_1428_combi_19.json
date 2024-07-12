@@ -1,0 +1,373 @@
+{
+  "table_info": {
+    "table_columns": [
+      "library",
+      "variant_class",
+      "func_score",
+      "count",
+      "mean_func_score"
+    ],
+    "table_samples": [
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -11.6082,
+        "count": 1.0879177562792605e-05,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": "synonymous",
+        "func_score": -9.413791836734694,
+        "count": 0.0008919707680385,
+        "mean_func_score": -0.175838406764575
+      },
+      {
+        "library": "Lib-4",
+        "variant_class": "1 nonsynonymous",
+        "func_score": 3.752657142857144,
+        "count": 0.0001890344807092,
+        "mean_func_score": -0.738583238299554
+      },
+      {
+        "library": "Lib-3",
+        "variant_class": ">1 nonsynonymous",
+        "func_score": -5.756444897959184,
+        "count": 0.0236697373023175,
+        "mean_func_score": -1.7542309930194084
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": ">1 nonsynonymous",
+        "func_score": -3.562036734693878,
+        "count": 0.0386877962232112,
+        "mean_func_score": -1.0701678219079478
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart to compare the functional score and count across different variant classes.",
+  "refer_fileds": [
+    {
+      "field": "variant_class",
+      "type": "nominal"
+    },
+    {
+      "field": "func_score",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

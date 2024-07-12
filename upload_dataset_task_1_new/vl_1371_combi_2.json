@@ -1,0 +1,109 @@
+{
+  "table_info": {
+    "table_columns": [
+      "targtype1_txt",
+      "Attack Count"
+    ],
+    "table_samples": [
+      {
+        "targtype1_txt": "Airports & Aircraft",
+        "Attack Count": 5
+      },
+      {
+        "targtype1_txt": "Tourists",
+        "Attack Count": 3
+      },
+      {
+        "targtype1_txt": "Terrorists/Non-State Militia",
+        "Attack Count": 348
+      },
+      {
+        "targtype1_txt": "Police",
+        "Attack Count": 962
+      },
+      {
+        "targtype1_txt": "Violent Political Party",
+        "Attack Count": 35
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart comparing the attack counts for different target types.",
+  "refer_fileds": [
+    {
+      "field": "targtype1_txt",
+      "type": "nominal"
+    },
+    {
+      "field": "Attack Count",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Attack Count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "targtype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "targtype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "targtype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "targtype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "targtype1_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

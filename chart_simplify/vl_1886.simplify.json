@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year_week",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "rate_14_day",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "country",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/covidGlobalCases.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "country",
+                "oneOf": [
+                    "United Kingdom",
+                    "France",
+                    "Germany",
+                    "India",
+                    "America (total)"
+                ]
+            }
+        },
+        {
+            "filter": {
+                "field": "indicator",
+                "oneOf": [
+                    "cases"
+                ]
+            }
+        }
+    ],
+    "height": 300,
+    "width": 800
+}

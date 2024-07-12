@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "pontiac phoenix",
+        "MPG": 33.5,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 90,
+        "Weight": 2556,
+        "Acceleration": 13.2,
+        "Year": 1979,
+        "Origin": "US"
+      },
+      {
+        "Model": "mazda glc 4",
+        "MPG": 34.1,
+        "Cylinders": 4,
+        "Displacement": 91.0,
+        "Horsepower": 68,
+        "Weight": 1985,
+        "Acceleration": 16.0,
+        "Year": 1981,
+        "Origin": "Japan"
+      },
+      {
+        "Model": "amc matador",
+        "MPG": 18.0,
+        "Cylinders": 6,
+        "Displacement": 232.0,
+        "Horsepower": 100,
+        "Weight": 3288,
+        "Acceleration": 15.5,
+        "Year": 1971,
+        "Origin": "US"
+      },
+      {
+        "Model": "ford torino",
+        "MPG": 17.0,
+        "Cylinders": 8,
+        "Displacement": 302.0,
+        "Horsepower": 140,
+        "Weight": 3449,
+        "Acceleration": 10.5,
+        "Year": 1970,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Show me how the weight compares over the years.",
+  "refer_fileds": [
+    {
+      "field": "Weight",
+      "type": "quantitative"
+    },
+    {
+      "field": "Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Weight",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "column": {
+            "field": "Quarter",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "sum",
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "Nation",
+            "sort": "-y",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/DATA_BP_C2_formatted.csv"
+    },
+    "height": 275,
+    "width": {
+        "step": 15
+    }
+}

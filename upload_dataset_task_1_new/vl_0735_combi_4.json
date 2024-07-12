@@ -1,0 +1,183 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Year",
+      "democracy_eiu",
+      "Country",
+      "GDP",
+      "Region",
+      "Regime",
+      "Sources"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AFG",
+        "Year": 2021,
+        "democracy_eiu": 0.32,
+        "Country": "Afghanistan",
+        "GDP": 14786861638.0,
+        "Region": "South Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "UKR",
+        "Year": 2021,
+        "democracy_eiu": 5.57,
+        "Country": "Ukraine",
+        "GDP": 200000000000.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "AZE",
+        "Year": 2021,
+        "democracy_eiu": 2.68,
+        "Country": "Azerbaijan",
+        "GDP": 54622176471.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "PRK",
+        "Year": 2021,
+        "democracy_eiu": 1.08,
+        "Country": "Korea (Democratic People's Republic of)",
+        "GDP": NaN,
+        "Region": "East Asia & Pacific",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "ZAF",
+        "Year": 2021,
+        "democracy_eiu": 7.05,
+        "Country": "South Africa",
+        "GDP": 419000000000.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Flawed Democracy",
+        "Sources": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show a chart with the average democracy index sorted in ascending order by regimes.",
+  "refer_fileds": [
+    {
+      "field": "democracy_eiu",
+      "type": "quantitative",
+      "aggregate": "mean",
+      "sort": "ascending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "democracy_eiu",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "mean",
+          "order": "ascending",
+          "field": "democracy_eiu"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

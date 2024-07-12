@@ -1,0 +1,163 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Year",
+      "Cost",
+      "Energy Cost",
+      "Capacity",
+      "Energy Source"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 490,
+        "Year": 2010,
+        "Cost": 0.07818927,
+        "Energy Cost": "Bioenergy",
+        "Capacity": 1025434.392,
+        "Energy Source": "Hydropower"
+      },
+      {
+        "Unnamed: 0": 914,
+        "Year": 2018,
+        "Cost": 0.14910279,
+        "Energy Cost": "Concentrated solar power",
+        "Capacity": 5810.934,
+        "Energy Source": "Concentrated solar power"
+      },
+      {
+        "Unnamed: 0": 686,
+        "Year": 2014,
+        "Cost": 0.08237512,
+        "Energy Cost": "Bioenergy",
+        "Capacity": 1175547.927,
+        "Energy Source": "Hydropower"
+      },
+      {
+        "Unnamed: 0": 677,
+        "Year": 2013,
+        "Cost": 0.042512473,
+        "Energy Cost": "Hydropower",
+        "Capacity": 84412.695,
+        "Energy Source": "Bioenergy"
+      },
+      {
+        "Unnamed: 0": 771,
+        "Year": 2015,
+        "Cost": 0.036572017,
+        "Energy Cost": "Hydropower",
+        "Capacity": 404451.601,
+        "Energy Source": "Onshore wind energy"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot that displays the correlation between cost and type of energy cost.",
+  "refer_fileds": [
+    {
+      "field": "Energy Cost",
+      "type": "nominal"
+    },
+    {
+      "field": "Cost",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Cost",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Cost",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Cost",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Cost",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Cost",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Cost",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Cost",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Energy Cost",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

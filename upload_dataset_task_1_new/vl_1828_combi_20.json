@@ -1,0 +1,226 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-05",
+        "classificacao": "mortos",
+        "faixa_etaria": "80 ou mais",
+        "feminino": 1,
+        "masculino": 0,
+        "total": 1,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-24",
+        "classificacao": "confirmados",
+        "faixa_etaria": "50 a 59",
+        "feminino": 5876,
+        "masculino": 4895,
+        "total": 10771,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-22",
+        "classificacao": "mortos",
+        "faixa_etaria": "60 a 69",
+        "feminino": 125,
+        "masculino": 186,
+        "total": 311,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-06-06",
+        "classificacao": "mortos",
+        "faixa_etaria": "80 ou mais",
+        "feminino": 63,
+        "masculino": 63,
+        "total": 126,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart that sums up the gender and total numbers for each age group excluding survivors.",
+  "refer_fileds": [
+    {
+      "field": "faixa_etaria",
+      "type": "nominal"
+    },
+    {
+      "field": [
+        "feminino",
+        "masculino",
+        "total"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "mortos"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "feminino",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "masculino",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    }
+  ]
+}

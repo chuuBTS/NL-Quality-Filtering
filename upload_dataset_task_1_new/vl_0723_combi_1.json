@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2022",
+      "2022"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2022": 68.0,
+        "2022": "Islam"
+      },
+      {
+        "Country": "Tunisia",
+        "CAF_2022": 28.0,
+        "2022": "Islam"
+      },
+      {
+        "Country": "Russian Federation",
+        "CAF_2022": 46.0,
+        "2022": "Christianity"
+      },
+      {
+        "Country": "Portugal",
+        "CAF_2022": 26.0,
+        "2022": "Christianity"
+      },
+      {
+        "Country": "Albania",
+        "CAF_2022": 34.0,
+        "2022": "Islam"
+      }
+    ]
+  },
+  "nl_utterance": "What is the average cultural acceptance factor for religions represented in 2022?",
+  "refer_fileds": [
+    {
+      "field": "CAF_2022",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "2022",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "CAF_2022",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2022",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2022",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CAF_2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "x": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

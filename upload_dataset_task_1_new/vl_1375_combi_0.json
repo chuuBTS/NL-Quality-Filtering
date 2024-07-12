@@ -1,0 +1,320 @@
+{
+  "table_info": {
+    "table_columns": [
+      "purchase count",
+      "referrer channel",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "purchase count": 0,
+        "referrer channel": "typed_bookmarked",
+        "gender": "M"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "internal",
+        "gender": "M"
+      },
+      {
+        "purchase count": 1,
+        "referrer channel": "internal",
+        "gender": "F"
+      },
+      {
+        "purchase count": 0,
+        "referrer channel": "typed_bookmarked",
+        "gender": "F"
+      },
+      {
+        "purchase count": 1,
+        "referrer channel": "internal",
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total purchase count broken down by referrer channel and gender.",
+  "refer_fileds": [
+    {
+      "field": "purchase count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "referrer channel",
+      "type": "nominal"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "purchase count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "referrer channel",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "referrer channel",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "referrer channel",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "referrer channel",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "referrer channel",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "referrer channel",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

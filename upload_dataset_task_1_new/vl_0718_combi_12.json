@@ -1,0 +1,161 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "Florida",
+        "Population": 21781128,
+        "Type1": "Nonimmigrants",
+        "Value": 3157503.0,
+        "ValueC": 14.49650817
+      },
+      {
+        "State": "South Dakota",
+        "Population": 895376,
+        "Type1": "Naturalizations",
+        "Value": 960.0,
+        "ValueC": 0.107217526
+      },
+      {
+        "State": "North Dakota",
+        "Population": 774948,
+        "Type1": "Naturalizations",
+        "Value": 1324.0,
+        "ValueC": 0.170850173
+      },
+      {
+        "State": "Maine",
+        "Population": 1372247,
+        "Type1": "Naturalizations",
+        "Value": 1153.0,
+        "ValueC": 0.084022774
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the sum of ValueC for each Type1, sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "ascending"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "sum",
+          "order": "ascending",
+          "field": "ValueC"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

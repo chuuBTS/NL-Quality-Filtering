@@ -1,0 +1,156 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Billions",
+      "World GDP (current US$)",
+      "Years",
+      "World GDP Billions",
+      "Totals (Relative to GDP) (Billions)"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Billions": 109.0238196,
+        "World GDP (current US$)": NaN,
+        "Years": NaN,
+        "World GDP Billions": NaN,
+        "Totals (Relative to GDP) (Billions)": NaN
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237,
+        "PRGT 1/2/": 6282121668,
+        "Totals": 34714264905.0,
+        "Billions": 34.71426491,
+        "World GDP (current US$)": 47779700000000.0,
+        "Years": 2005.0,
+        "World GDP Billions": 47779.71479,
+        "Totals (Relative to GDP) (Billions)": 0.072654818
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031,
+        "PRGT 1/2/": 3942792899,
+        "Totals": 29139537930.0,
+        "Billions": 29.13953793,
+        "World GDP (current US$)": 25822000000000.0,
+        "Years": 1993.0,
+        "World GDP Billions": 25821.97892,
+        "Totals (Relative to GDP) (Billions)": 0.112847811
+      },
+      {
+        "Date": "12/31/1997",
+        "GRA Purchases": 46559033783,
+        "PRGT 1/2/": 6009867422,
+        "Totals": 52568901205.0,
+        "Billions": 52.56890121,
+        "World GDP (current US$)": 31620400000000.0,
+        "Years": 1997.0,
+        "World GDP Billions": 31620.44366,
+        "Totals (Relative to GDP) (Billions)": 0.166249727
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": 9822640239,
+        "PRGT 1/2/": 3844020520,
+        "Totals": 13666660759.0,
+        "Billions": 13.66666076,
+        "World GDP (current US$)": 51779800000000.0,
+        "Years": 2006.0,
+        "World GDP Billions": 51779.84559,
+        "Totals (Relative to GDP) (Billions)": 0.026393784
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the totals relative to GDP for each year.",
+  "refer_fileds": [
+    {
+      "field": "Years",
+      "type": "temporal"
+    },
+    {
+      "field": "Totals (Relative to GDP) (Billions)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

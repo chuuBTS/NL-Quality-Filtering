@@ -1,0 +1,171 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Japan",
+        "CAF_2021": 20,
+        "2021": "Shintoism"
+      },
+      {
+        "Country": "Canada",
+        "CAF_2021": 51,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Mexico",
+        "CAF_2021": 44,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Lithuania",
+        "CAF_2021": 37,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the average score on the y-axis, sorted in ascending order, and mark the countries and belief systems along the x-axis.",
+  "refer_fileds": [
+    {
+      "field": "CAF_2021",
+      "type": "quantitative",
+      "aggregate": "mean",
+      "sort": "ascending"
+    },
+    {
+      "field": [
+        "2021",
+        "CAF_2021"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

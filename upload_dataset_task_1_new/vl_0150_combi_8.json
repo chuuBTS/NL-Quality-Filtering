@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "year",
+      "source",
+      "net_generation"
+    ],
+    "table_samples": [
+      {
+        "year": "2001-01-01",
+        "source": "Fossil Fuels",
+        "net_generation": 35361
+      },
+      {
+        "year": "2001-01-01",
+        "source": "Renewables",
+        "net_generation": 1437
+      },
+      {
+        "year": "2010-01-01",
+        "source": "Nuclear Energy",
+        "net_generation": 4451
+      },
+      {
+        "year": "2012-01-01",
+        "source": "Nuclear Energy",
+        "net_generation": 4347
+      },
+      {
+        "year": "2012-01-01",
+        "source": "Renewables",
+        "net_generation": 14949
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total net generation by source over the years using either a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "source",
+      "type": "nominal"
+    },
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "net_generation",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "net_generation",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "California",
+        "Population": 39237836,
+        "Type1": "Asylees",
+        "Value": 5197.0,
+        "ValueC": 0.013244869
+      },
+      {
+        "State": "Georgia",
+        "Population": 10799566,
+        "Type1": "Asylees",
+        "Value": 136.0,
+        "ValueC": 0.00125931
+      },
+      {
+        "State": "North Carolina",
+        "Population": 10551162,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 15732.0,
+        "ValueC": 0.149102061
+      },
+      {
+        "State": "Indiana",
+        "Population": 6805985,
+        "Type1": "Nonimmigrants",
+        "Value": 77584.0,
+        "ValueC": 1.139937864
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the quantitative values of each type of individual.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ValueC",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

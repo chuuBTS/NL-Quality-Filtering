@@ -1,0 +1,38 @@
+{
+  "gpt_result": {
+    "nl_utterance": "Show me the total amount of weekend alcohol consumption along with the grades over the period.",
+    "encoded_fields": [
+      {
+        "field": [
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "type": "quantitative",
+        "nl_ref_type": "ambiguous",
+        "nl_ref_phrase": "grades over the period"
+      },
+      {
+        "field": "Walc",
+        "type": "quantitative",
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "weekend alcohol consumption"
+      }
+    ],
+    "constraints": [
+      {
+        "c_type": "transform",
+        "c_name": "aggregate",
+        "c_list": [
+          {
+            "field": "Walc",
+            "aggregate": "sum"
+          }
+        ],
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "total amount"
+      }
+    ]
+  },
+  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"school\": \"GP\",\n      \"sex\": \"F\",\n      \"age\": 18,\n      \"address\": \"U\",\n      \"famsize\": \"GT3\",\n      \"Pstatus\": \"A\",\n      \"Medu\": 4,\n      \"Fedu\": 4,\n      \"Mjob\": \"at_home\",\n      \"Fjob\": \"teacher\",\n      \"reason\": \"course\",\n      \"guardian\": \"mother\",\n      \"traveltime\": 2,\n      \"studytime\": 2,\n      \"failures\": 0,\n      \"schoolsup\": \"yes\",\n      \"famsup\": \"no\",\n      \"paid\": \"no\",\n      \"activities\": \"no\",\n      \"nursery\": \"yes\",\n      \"higher\": \"yes\",\n      \"internet\": \"no\",\n      \"romantic\": \"no\",\n      \"famrel\": 4,\n      \"freetime\": 3,\n      \"goout\": 4,\n      \"Dalc\": 1,\n      \"Walc\": 1,\n      \"health\": 3,\n      \"absences\": 4,\n      \"G1\": 0,\n      \"G2\": 11,\n      \"G3\": 11\n    },\n    {\n      \"school\": \"GP\",\n      \"sex\": \"F\",\n      \"age\": 17,\n      \"address\": \"R\",\n      \"famsize\": \"GT3\",\n      \"Pstatus\": \"T\",\n      \"Medu\": 2,\n      \"Fedu\": 2,\n      \"Mjob\": \"other\",\n      \"Fjob\": \"other\",\n      \"reason\": \"reputation\",\n      \"guardian\": \"mother\",\n      \"traveltime\": 1,\n      \"studytime\": 1,\n      \"failures\": 0,\n      \"schoolsup\": \"no\",\n      \"famsup\": \"yes\",\n      \"paid\": \"no\",\n      \"activities\": \"no\",\n      \"nursery\": \"yes\",\n      \"higher\": \"yes\",\n      \"internet\": \"yes\",\n      \"romantic\": \"no\",\n      \"famrel\": 5,\n      \"freetime\": 3,\n      \"goout\": 2,\n      \"Dalc\": 1,\n      \"Walc\": 2,\n      \"health\": 3,\n      \"absences\": 21,\n      \"G1\": 13,\n      \"G2\": 13,\n      \"G3\": 13\n    },\n    {\n      \"school\": \"GP\",\n      \"sex\": \"M\",\n      \"age\": 15,\n      \"address\": \"U\",\n      \"famsize\": \"LE3\",\n      \"Pstatus\": \"T\",\n      \"Medu\": 1,\n      \"Fedu\": 2,\n      \"Mjob\": \"other\",\n      \"Fjob\": \"other\",\n      \"reason\": \"course\",\n      \"guardian\": \"mother\",\n      \"traveltime\": 2,\n      \"studytime\": 1,\n      \"failures\": 0,\n      \"schoolsup\": \"no\",\n      \"famsup\": \"no\",\n      \"paid\": \"no\",\n      \"activities\": \"yes\",\n      \"nursery\": \"yes\",\n      \"higher\": \"yes\",\n      \"internet\": \"no\",\n      \"romantic\": \"no\",\n      \"famrel\": 4,\n      \"freetime\": 4,\n      \"goout\": 4,\n      \"Dalc\": 2,\n      \"Walc\": 4,\n      \"health\": 5,\n      \"absences\": 2,\n      \"G1\": 8,\n      \"G2\": 9,\n      \"G3\": 10\n    }\n  ],\n  \"column names\": [\n    \"school\",\n    \"sex\",\n    \"age\",\n    \"address\",\n    \"famsize\",\n    \"Pstatus\",\n    \"Medu\",\n    \"Fedu\",\n    \"Mjob\",\n    \"Fjob\",\n    \"reason\",\n    \"guardian\",\n    \"traveltime\",\n    \"studytime\",\n    \"failures\",\n    \"schoolsup\",\n    \"famsup\",\n    \"paid\",\n    \"activities\",\n    \"nursery\",\n    \"higher\",\n    \"internet\",\n    \"romantic\",\n    \"famrel\",\n    \"freetime\",\n    \"goout\",\n    \"Dalc\",\n    \"Walc\",\n    \"health\",\n    \"absences\",\n    \"G1\",\n    \"G2\",\n    \"G3\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart, it can be a question or a command. One NL 'utterance' is in one or two sentences. \n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": [\n        \"G1\",\n        \"G2\",\n        \"G3\"\n      ],\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"ambiguous\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": \"Walc\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"aggregate\",\n      \"c_list\": [\n        {\n          \"field\": \"Walc\",\n          \"aggregate\": \"sum\"\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
+}

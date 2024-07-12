@@ -1,0 +1,161 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billion"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109023819611.0,
+        "Year": 2022.0,
+        "Total_billion": 109.0238196
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393.0,
+        "PRGT 1/2/": 2769874900.0,
+        "Totals": 37706647293.0,
+        "Year": 1984.0,
+        "Total_billion": 37.70664729
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": 9822640239.0,
+        "PRGT 1/2/": 3844020520.0,
+        "Totals": 13666660759.0,
+        "Year": 2006.0,
+        "Total_billion": 13.66666076
+      },
+      {
+        "Date": "12/31/2012",
+        "GRA Purchases": 90042348252.0,
+        "PRGT 1/2/": 5766292503.0,
+        "Totals": 95808640755.0,
+        "Year": 2012.0,
+        "Total_billion": 95.80864076
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237.0,
+        "PRGT 1/2/": 6282121668.0,
+        "Totals": 34714264905.0,
+        "Year": 2005.0,
+        "Total_billion": 34.71426491
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total amount in billions over time using a line chart.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Total_billion",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_billion",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

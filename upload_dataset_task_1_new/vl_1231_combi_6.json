@@ -1,0 +1,158 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Indicator Name",
+      "Year",
+      "GDP growth (annual %)"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1961,
+        "GDP growth (annual %)": 5.638743553
+      },
+      {
+        "Country Name": "Sweden",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1999,
+        "GDP growth (annual %)": 4.165978928
+      },
+      {
+        "Country Name": "Sweden",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1983,
+        "GDP growth (annual %)": 1.85451508
+      },
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1993,
+        "GDP growth (annual %)": -0.32195993
+      },
+      {
+        "Country Name": "Norway",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 2010,
+        "GDP growth (annual %)": -0.54479433
+      }
+    ]
+  },
+  "nl_utterance": "Show me the GDP growth rates in descending order by year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal",
+      "sort": "descending"
+    },
+    {
+      "field": "GDP growth (annual %)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Year",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

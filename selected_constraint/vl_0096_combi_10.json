@@ -1,0 +1,63 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "date",
+            "type": "temporal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": [
+                "temp_max",
+                "temp_min"
+            ],
+            "type": "quantitative",
+            "nl_ref_type": "ambiguous",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "mark",
+            "c_name": "rect chart",
+            "c_list": [
+                {
+                    "mark": "rect",
+                    "encoding": {
+                        "x": {},
+                        "y": {},
+                        "color": {
+                            "type": "quantitative"
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "(x,y)": "color"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "temp_max",
+                    "aggregate": "max"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

@@ -1,0 +1,231 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "St. Lucia",
+        "region": "Americas",
+        "country_code": "LCA",
+        "year": 1952,
+        "lifeExp": 54.1,
+        "gdpPercap": 1630,
+        "pop": 84800
+      },
+      {
+        "country": "Egypt",
+        "region": "Africa",
+        "country_code": "EGY",
+        "year": 1977,
+        "lifeExp": 56.2,
+        "gdpPercap": 3690,
+        "pop": 41000000
+      },
+      {
+        "country": "Azerbaijan",
+        "region": "Europe",
+        "country_code": "AZE",
+        "year": 1997,
+        "lifeExp": 65.6,
+        "gdpPercap": 3490,
+        "pop": 7930000
+      },
+      {
+        "country": "Guinea-Bissau",
+        "region": "Africa",
+        "country_code": "GNB",
+        "year": 2012,
+        "lifeExp": 56.7,
+        "gdpPercap": 1420,
+        "pop": 1640000
+      }
+    ]
+  },
+  "nl_utterance": "Show the distribution of numerical values in 2017 using either a bar chart or a boxplot.",
+  "refer_fileds": [
+    {
+      "field": [
+        "gdpPercap",
+        "lifeExp",
+        "pop"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "pop",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "lifeExp",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pop",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

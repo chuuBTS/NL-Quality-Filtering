@@ -1,0 +1,140 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "all off",
+        "tracker": "CN",
+        "precision": 44.7,
+        "AUC": 25.3
+      },
+      {
+        "stage": "transform",
+        "tracker": "KCF",
+        "precision": 65.7,
+        "AUC": 39.4
+      },
+      {
+        "stage": "all off",
+        "tracker": "KCF",
+        "precision": 63.6,
+        "AUC": 38.6
+      },
+      {
+        "stage": "transform",
+        "tracker": "ECO_HC",
+        "precision": 64.8,
+        "AUC": 43.7
+      },
+      {
+        "stage": "demosaic",
+        "tracker": "CN",
+        "precision": 52.7,
+        "AUC": 32.1
+      }
+    ]
+  },
+  "nl_utterance": "What is the sum of precision values for each stage?",
+  "refer_fileds": [
+    {
+      "field": "precision",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precision",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

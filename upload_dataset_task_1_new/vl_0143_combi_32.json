@@ -1,0 +1,242 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Eritrea",
+        "region": "Africa",
+        "country_code": "ERI",
+        "year": 1992,
+        "lifeExp": 54.0,
+        "gdpPercap": 1110,
+        "pop": 3120000
+      },
+      {
+        "country": "Portugal",
+        "region": "Europe",
+        "country_code": "PRT",
+        "year": 1977,
+        "lifeExp": 70.3,
+        "gdpPercap": 13300,
+        "pop": 9480000
+      },
+      {
+        "country": "Slovenia",
+        "region": "Europe",
+        "country_code": "SVN",
+        "year": 2012,
+        "lifeExp": 80.0,
+        "gdpPercap": 28000,
+        "pop": 2060000
+      },
+      {
+        "country": "South Africa",
+        "region": "Africa",
+        "country_code": "ZAF",
+        "year": 1952,
+        "lifeExp": 47.7,
+        "gdpPercap": 7190,
+        "pop": 14300000
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the distribution of measurements for 2017, with a count aggregation.",
+  "refer_fileds": [
+    {
+      "field": [
+        "gdpPercap",
+        "lifeExp",
+        "pop"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "lifeExp",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "pop",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "lifeExp",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pop",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

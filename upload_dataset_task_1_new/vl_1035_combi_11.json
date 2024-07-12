@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Date",
+      "Unemployment Rate"
+    ],
+    "table_samples": [
+      {
+        "Country": "GBR",
+        "Date": "2005-01",
+        "Unemployment Rate": 4.8
+      },
+      {
+        "Country": "USA",
+        "Date": "2017-10",
+        "Unemployment Rate": 4.2
+      },
+      {
+        "Country": "GBR",
+        "Date": "2016-05",
+        "Unemployment Rate": 4.9
+      },
+      {
+        "Country": "USA",
+        "Date": "2006-11",
+        "Unemployment Rate": 4.5
+      },
+      {
+        "Country": "GBR",
+        "Date": "2005-02",
+        "Unemployment Rate": 4.7
+      }
+    ]
+  },
+  "nl_utterance": "Create a visualization showing the composition of unemployment rates over time using either a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Unemployment Rate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Unemployment Rate",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

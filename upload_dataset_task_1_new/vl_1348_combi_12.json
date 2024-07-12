@@ -1,0 +1,1609 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Bacteria",
+      "Gram Staining",
+      "Antibiotic",
+      "MIC"
+    ],
+    "table_samples": [
+      {
+        "Bacteria": "Aerobacter aerogenes",
+        "Gram Staining": "negative",
+        "Antibiotic": "Penicilin",
+        "MIC": 870.0
+      },
+      {
+        "Bacteria": "Streptococcus viridans",
+        "Gram Staining": "positive",
+        "Antibiotic": "Streptomycin",
+        "MIC": 10.0
+      },
+      {
+        "Bacteria": "Salmonella (Eberthella) typhosa ",
+        "Gram Staining": "negative",
+        "Antibiotic": "Neomycin",
+        "MIC": 0.008
+      },
+      {
+        "Bacteria": "Brucella anthracis",
+        "Gram Staining": "positive",
+        "Antibiotic": "Penicilin",
+        "MIC": 0.001
+      },
+      {
+        "Bacteria": "Aerobacter aerogenes",
+        "Gram Staining": "negative",
+        "Antibiotic": "Neomycin",
+        "MIC": 1.6
+      }
+    ]
+  },
+  "nl_utterance": "Show me a small multiple of bar charts that sum up the MIC values for each Bacteria, broken down by Antibiotic and Gram Staining.",
+  "refer_fileds": [
+    {
+      "field": "Bacteria",
+      "type": "nominal"
+    },
+    {
+      "field": "Gram Staining",
+      "type": "nominal"
+    },
+    {
+      "field": "Antibiotic",
+      "type": "nominal"
+    },
+    {
+      "field": "MIC",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "MIC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Bacteria",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Antibiotic",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gram Staining",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "MIC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Bacteria",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

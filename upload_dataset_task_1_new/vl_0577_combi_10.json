@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "DATE",
+      "DJIA"
+    ],
+    "table_samples": [
+      {
+        "DATE": "1914-12-01",
+        "DJIA": 55.0
+      },
+      {
+        "DATE": "1945-05-01",
+        "DJIA": 166.08
+      },
+      {
+        "DATE": "1945-06-01",
+        "DJIA": 166.74
+      },
+      {
+        "DATE": "1915-01-01",
+        "DJIA": 56.55
+      },
+      {
+        "DATE": "1930-12-01",
+        "DJIA": 172.15
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the DJIA between January 1914 and October 1929 using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "DJIA",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "DATE",
+          "range": [
+            {
+              "year": 1914,
+              "month": 1,
+              "day": 1
+            },
+            {
+              "year": 1929,
+              "month": 10,
+              "day": 1
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "DATE"
+        },
+        "y": {
+          "field": "DJIA",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "DATE",
+            "range": [
+              {
+                "year": 1914,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 1929,
+                "month": 10,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "DATE"
+        },
+        "y": {
+          "field": "DJIA",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "DATE",
+            "range": [
+              {
+                "year": 1914,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 1929,
+                "month": 10,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

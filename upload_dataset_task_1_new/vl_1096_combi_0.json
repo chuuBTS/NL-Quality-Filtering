@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "River",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "River": "Amazon (Brazil, Peru, Colombia, Ecuador)",
+        "Value": 38900,
+        "Detail": "Plastic mass input from rivers (2015)"
+      },
+      {
+        "River": "Yangtze (China)",
+        "Value": 333000,
+        "Detail": NaN
+      },
+      {
+        "River": "Dong (China)",
+        "Value": 19100,
+        "Detail": NaN
+      },
+      {
+        "River": "Magdalena (Colombia)",
+        "Value": 16700,
+        "Detail": NaN
+      },
+      {
+        "River": "Huangpu (China)",
+        "Value": 40800,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with rivers ranked by the plastic mass input from highest to lowest.",
+  "refer_fileds": [
+    {
+      "field": "River",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "River",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "River",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "River",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "River",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "River",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

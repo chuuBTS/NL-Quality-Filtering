@@ -1,0 +1,240 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Entity",
+      "Year",
+      "Geo Biomass Other - TWh (zero filled)",
+      "Biofuels Consumption - TWh - Total (zero filled)",
+      "Solar Consumption - TWh (zero filled)",
+      "Wind Consumption - TWh (zero filled)",
+      "Hydro Consumption - TWh (zero filled)",
+      "Nuclear Consumption - TWh (zero filled)",
+      "Gas Consumption - TWh (zero filled)",
+      "Coal Consumption - TWh (zero filled)",
+      "Oil Consumption - TWh (zero filled)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Entity": "Africa",
+        "Year": 1965,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 41.11881256,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 9.543754578,
+        "Coal Consumption - TWh (zero filled)": 323.4961243,
+        "Oil Consumption - TWh (zero filled)": 341.2627563
+      },
+      {
+        "Unnamed: 0": 3492,
+        "Entity": "Non-OECD (BP)",
+        "Year": 1983,
+        "Geo Biomass Other - TWh (zero filled)": 11.08606052,
+        "Biofuels Consumption - TWh - Total (zero filled)": 44.50929642,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 1973.719604,
+        "Nuclear Consumption - TWh (zero filled)": 434.9570007,
+        "Gas Consumption - TWh (zero filled)": 6540.407715,
+        "Coal Consumption - TWh (zero filled)": 10564.2168,
+        "Oil Consumption - TWh (zero filled)": 12142.15723
+      },
+      {
+        "Unnamed: 0": 5391,
+        "Entity": "South Korea",
+        "Year": 2001,
+        "Geo Biomass Other - TWh (zero filled)": 0.088,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.018166667,
+        "Wind Consumption - TWh (zero filled)": 0.036986668,
+        "Hydro Consumption - TWh (zero filled)": 6.844866276,
+        "Nuclear Consumption - TWh (zero filled)": 316.1130676,
+        "Gas Consumption - TWh (zero filled)": 217.5775299,
+        "Coal Consumption - TWh (zero filled)": 531.7724609,
+        "Oil Consumption - TWh (zero filled)": 1227.475342
+      },
+      {
+        "Unnamed: 0": 1093,
+        "Entity": "Colombia",
+        "Year": 1975,
+        "Geo Biomass Other - TWh (zero filled)": 0.188999996,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 28.77830696,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 16.14225006,
+        "Coal Consumption - TWh (zero filled)": 26.38457298,
+        "Oil Consumption - TWh (zero filled)": 80.83759308
+      },
+      {
+        "Unnamed: 0": 2554,
+        "Entity": "Israel",
+        "Year": 2011,
+        "Geo Biomass Other - TWh (zero filled)": 0.072999999,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.529661655,
+        "Wind Consumption - TWh (zero filled)": 0.019305555,
+        "Hydro Consumption - TWh (zero filled)": 0.080001108,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 47.49200058,
+        "Coal Consumption - TWh (zero filled)": 92.2519455,
+        "Oil Consumption - TWh (zero filled)": 129.7403107
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of oil consumption by country as an area chart over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Oil Consumption - TWh (zero filled)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Entity",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

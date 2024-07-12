@@ -1,0 +1,283 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 391.0,
+        "division": 2,
+        "up": 975,
+        "down": 877,
+        "level": 2757,
+        "up_ch": 0.11111111,
+        "down_ch": -0.12916666,
+        "total": 4609,
+        "up_sh": 0.21154264,
+        "down_sh": 0.19027989,
+        "level_sh": 0.59817749,
+        "change_sh": 0.40182251,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-08-2020",
+        "date4": "2020-08-01",
+        "year": 2020.0,
+        "month": 8.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 366.0,
+        "division": 8,
+        "up": 50,
+        "down": 40,
+        "level": 367,
+        "up_ch": 0.48355243,
+        "down_ch": -0.26666668,
+        "total": 457,
+        "up_sh": 0.10940919,
+        "down_sh": 0.08752735,
+        "level_sh": 0.80306345,
+        "change_sh": 0.19693655,
+        "division_s": "Communication",
+        "division_sh": "Communication",
+        "date2": "01-07-2018",
+        "date4": "2018-07-01",
+        "year": 2018.0,
+        "month": 7.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 398.0,
+        "division": 2,
+        "up": 447,
+        "down": 609,
+        "level": 3641,
+        "up_ch": 0.16666667,
+        "down_ch": -0.13484849,
+        "total": 4697,
+        "up_sh": 0.09516713,
+        "down_sh": 0.12965722,
+        "level_sh": 0.77517563,
+        "change_sh": 0.22482435,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-03-2021",
+        "date4": "2021-03-01",
+        "year": 2021.0,
+        "month": 3.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 247.0,
+        "division": 7,
+        "up": 299,
+        "down": 75,
+        "level": 3133,
+        "up_ch": 0.090993457,
+        "down_ch": -0.083333336,
+        "total": 3507,
+        "up_sh": 0.085258052,
+        "down_sh": 0.0213858,
+        "level_sh": 0.89335614,
+        "change_sh": 0.10664386,
+        "division_s": "Transport",
+        "division_sh": "Transport",
+        "date2": "01-08-2008",
+        "date4": "2008-08-01",
+        "year": 2008.0,
+        "month": 8.0,
+        "quarter": 3.0
+      }
+    ]
+  },
+  "nl_utterance": "Show a distribution of counts for each percentage change in a bar chart.",
+  "refer_fileds": [
+    {
+      "field": [
+        "change_sh",
+        "up_ch",
+        "down_ch"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "up_ch",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "down_ch",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    }
+  ]
+}

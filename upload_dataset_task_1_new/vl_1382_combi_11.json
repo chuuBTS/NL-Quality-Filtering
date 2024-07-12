@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 5.0,
+        "item": "munchkin"
+      },
+      {
+        "time": 10,
+        "quantity": 19.127049995800743,
+        "item": "bear"
+      },
+      {
+        "time": 15,
+        "quantity": 26.45580618665162,
+        "item": "bear"
+      },
+      {
+        "time": 13,
+        "quantity": 18.74354294621998,
+        "item": "dog"
+      },
+      {
+        "time": 13,
+        "quantity": 29.205297528345778,
+        "item": "witch"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the composition of quantities over time in a bar chart, area chart, or pie chart with different items indicated by color.",
+  "refer_fileds": [
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

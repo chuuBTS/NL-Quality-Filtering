@@ -1,0 +1,215 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "World GDP data ",
+      "Totals ($bns)",
+      "world GDP Bns",
+      "Growth in Lending Relative to World GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": 89474552025,
+        "PRGT 1/2/": 14554823681,
+        "Totals": 104029000000.0,
+        "Year": 2021,
+        "World GDP data ": 96100100000000.0,
+        "Totals ($bns)": 104.0293757,
+        "world GDP Bns": 96100.091,
+        "Growth in Lending Relative to World GDP": 0.108251069
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884,
+        "PRGT 1/2/": 1773964293,
+        "Totals": 26523969177.0,
+        "Year": 1988,
+        "World GDP data ": 19338000000000.0,
+        "Totals ($bns)": 26.52396918,
+        "world GDP Bns": 19337.99747,
+        "Growth in Lending Relative to World GDP": 0.137159854
+      },
+      {
+        "Date": "12/31/1986",
+        "GRA Purchases": 33334905644,
+        "PRGT 1/2/": 2013169931,
+        "Totals": 35348075575.0,
+        "Year": 1986,
+        "World GDP data ": 15205300000000.0,
+        "Totals ($bns)": 35.34807558,
+        "world GDP Bns": 15205.31553,
+        "Growth in Lending Relative to World GDP": 0.232471832
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463,
+        "PRGT 1/2/": 6292755583,
+        "Totals": 75334319046.0,
+        "Year": 2014,
+        "World GDP data ": 79708800000000.0,
+        "Totals ($bns)": 75.33431905,
+        "world GDP Bns": 79708.81224,
+        "Growth in Lending Relative to World GDP": 0.094511908
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723,
+        "PRGT 1/2/": 3972372030,
+        "Totals": 21487336753.0,
+        "Year": 2008,
+        "World GDP data ": 64123700000000.0,
+        "Totals ($bns)": 21.48733675,
+        "world GDP Bns": 64123.70427,
+        "Growth in Lending Relative to World GDP": 0.033509194
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the growth in lending relative to world GDP over time.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Growth in Lending Relative to World GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Growth in Lending Relative to World GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Growth in Lending Relative to World GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

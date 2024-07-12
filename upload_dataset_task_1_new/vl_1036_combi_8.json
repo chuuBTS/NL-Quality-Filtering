@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Totals"
+    ],
+    "table_samples": [
+      {
+        "Year": 2021,
+        "Totals": 0.001082511
+      },
+      {
+        "Year": 1984,
+        "Totals": 0.003073128
+      },
+      {
+        "Year": 1993,
+        "Totals": 0.001128478
+      },
+      {
+        "Year": 2017,
+        "Totals": 0.000566406
+      },
+      {
+        "Year": 2018,
+        "Totals": 0.000715422
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total values over the years using a bar, line, or area chart and include the sum of the totals.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

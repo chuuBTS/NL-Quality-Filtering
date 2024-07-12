@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 2.0,
+        "item": "monkey"
+      },
+      {
+        "time": 17,
+        "quantity": 35.95707936800063,
+        "item": "broom"
+      },
+      {
+        "time": 8,
+        "quantity": 25.03516289842348,
+        "item": "slipper"
+      },
+      {
+        "time": 3,
+        "quantity": 8.727161387290321,
+        "item": "broom"
+      },
+      {
+        "time": 18,
+        "quantity": 36.59266228400805,
+        "item": "broom"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total quantity of each item over time.",
+  "refer_fileds": [
+    {
+      "field": "item",
+      "type": "nominal"
+    },
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "quantity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "item",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

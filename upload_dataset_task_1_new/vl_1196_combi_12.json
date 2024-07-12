@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billion",
+      "World GDP (current US$)",
+      "Total_%_WorldGDP "
+    ],
+    "table_samples": [
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": 89474552025.0,
+        "PRGT 1/2/": 14554823681.0,
+        "Totals": 104029375706.0,
+        "Year": 2021.0,
+        "Total_billion": 104.0293757,
+        "World GDP (current US$)": 96100100000000.0,
+        "Total_%_WorldGDP ": 0.108251069
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884.0,
+        "PRGT 1/2/": 1773964293.0,
+        "Totals": 26523969177.0,
+        "Year": 1988.0,
+        "Total_billion": 26.52396918,
+        "World GDP (current US$)": 19338000000000.0,
+        "Total_%_WorldGDP ": 0.137159854
+      },
+      {
+        "Date": "12/31/1995",
+        "GRA Purchases": 35929173412.0,
+        "PRGT 1/2/": 5657438528.0,
+        "Totals": 41586611940.0,
+        "Year": 1995.0,
+        "Total_billion": 41.58661194,
+        "World GDP (current US$)": 31043600000000.0,
+        "Total_%_WorldGDP ": 0.133961743
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463.0,
+        "PRGT 1/2/": 6292755583.0,
+        "Totals": 75334319046.0,
+        "Year": 2014.0,
+        "Total_billion": 75.33431905,
+        "World GDP (current US$)": 79708800000000.0,
+        "Total_%_WorldGDP ": 0.094511908
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723.0,
+        "PRGT 1/2/": 3972372030.0,
+        "Totals": 21487336753.0,
+        "Year": 2008.0,
+        "Total_billion": 21.48733675,
+        "World GDP (current US$)": 64123700000000.0,
+        "Total_%_WorldGDP ": 0.033509194
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total financial activity in billions over the years using a bar, line, or area chart, and include the sum of these totals.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Total_billion",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_billion",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "volkswagen 1131 deluxe sedan",
+        "Miles_per_Gallon": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46.0,
+        "Weight_in_lbs": 1835,
+        "Acceleration": 20.5,
+        "Year": "1970-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "peugeot 504",
+        "Miles_per_Gallon": 23.0,
+        "Cylinders": 4,
+        "Displacement": 120.0,
+        "Horsepower": 88.0,
+        "Weight_in_lbs": 2957,
+        "Acceleration": 17.0,
+        "Year": "1975-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "plymouth satellite (sw)",
+        "Miles_per_Gallon": NaN,
+        "Cylinders": 8,
+        "Displacement": 383.0,
+        "Horsepower": 175.0,
+        "Weight_in_lbs": 4166,
+        "Acceleration": 10.5,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "datsun 710",
+        "Miles_per_Gallon": 32.0,
+        "Cylinders": 4,
+        "Displacement": 83.0,
+        "Horsepower": 61.0,
+        "Weight_in_lbs": 2003,
+        "Acceleration": 19.0,
+        "Year": "1974-01-01",
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the miles per gallon for cars from different origins.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

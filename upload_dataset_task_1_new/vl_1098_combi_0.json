@@ -1,0 +1,260 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value1",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Year": 2016,
+        "Country": "Canada",
+        "Value1": 1528000,
+        "Value2": 1467883.2,
+        "Detail": "V1: GDP ($ million)"
+      },
+      {
+        "Year": 2016,
+        "Country": "Italy",
+        "Value1": 1876550,
+        "Value2": 2628474.5,
+        "Detail": NaN
+      },
+      {
+        "Year": 2018,
+        "Country": "United States",
+        "Value1": 20611880,
+        "Value2": 21972290.0,
+        "Detail": NaN
+      },
+      {
+        "Year": 2018,
+        "Country": "Canada",
+        "Value1": 1721820,
+        "Value2": 1565772.1,
+        "Detail": "Source: IMF World Economic Outlook"
+      },
+      {
+        "Year": 2020,
+        "Country": "UK",
+        "Value1": 2710970,
+        "Value2": 2978889.6,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of Value2 for each country over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value2",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

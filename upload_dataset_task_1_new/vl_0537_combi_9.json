@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "areaName",
+      "incomeDeprevation",
+      "employmentDeprivation",
+      "childPoverty",
+      "femaleLE",
+      "maleLE",
+      "disabilityRate"
+    ],
+    "table_samples": [
+      {
+        "areaName": "Anniesland, Jordanhill and Whiteinch",
+        "incomeDeprevation": 0.14,
+        "employmentDeprivation": 0.15,
+        "childPoverty": 0.14,
+        "femaleLE": 80.8,
+        "maleLE": 75.8,
+        "disabilityRate": 0.19
+      },
+      {
+        "areaName": "Maryhill Road Corridor",
+        "incomeDeprevation": 0.22,
+        "employmentDeprivation": 0.19,
+        "childPoverty": 0.39,
+        "femaleLE": 76.1,
+        "maleLE": 70.1,
+        "disabilityRate": 0.22
+      },
+      {
+        "areaName": "North Cardonald and Penilee",
+        "incomeDeprevation": 0.23,
+        "employmentDeprivation": 0.19,
+        "childPoverty": 0.33,
+        "femaleLE": 78.5,
+        "maleLE": 73.5,
+        "disabilityRate": 0.25
+      },
+      {
+        "areaName": "Govanhill",
+        "incomeDeprevation": 0.24,
+        "employmentDeprivation": 0.22,
+        "childPoverty": 0.33,
+        "femaleLE": 78.1,
+        "maleLE": 71.4,
+        "disabilityRate": 0.23
+      },
+      {
+        "areaName": "Carmunnock",
+        "incomeDeprevation": 0.15,
+        "employmentDeprivation": 0.1,
+        "childPoverty": 0.18,
+        "femaleLE": 81.2,
+        "maleLE": 75.4,
+        "disabilityRate": 0.21
+      }
+    ]
+  },
+  "nl_utterance": "Show a scatter plot that identifies the correlation between income deprivation and male life expectancy.",
+  "refer_fileds": [
+    {
+      "field": "incomeDeprevation",
+      "type": "quantitative"
+    },
+    {
+      "field": "maleLE",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "incomeDeprevation",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "maleLE",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "incomeDeprevation",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "maleLE",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "maleLE",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "incomeDeprevation",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "maleLE",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "incomeDeprevation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "incomeDeprevation",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "maleLE",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "maleLE",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "incomeDeprevation",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

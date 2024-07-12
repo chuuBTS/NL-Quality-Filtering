@@ -1,0 +1,209 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPB",
+      "axis_label",
+      "bhrd",
+      "bpts",
+      "game_id",
+      "negs",
+      "opponent",
+      "pa",
+      "packet",
+      "pf",
+      "result",
+      "round",
+      "status",
+      "team",
+      "tossups",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPB": 20.0,
+        "axis_label": "2017 Yale A (R14)",
+        "bhrd": 10.0,
+        "bpts": 200.0,
+        "game_id": 20171415.0,
+        "negs": 1.0,
+        "opponent": "Michigan A",
+        "pa": 310.0,
+        "packet": "Editors 5",
+        "pf": 295.0,
+        "result": "L",
+        "round": 14.0,
+        "status": NaN,
+        "team": "Yale A",
+        "tossups": 10.0,
+        "tournament": "ACF Nationals 2017"
+      },
+      {
+        "PPB": 20.0,
+        "axis_label": "2012 Penn A (R15)",
+        "bhrd": 10.0,
+        "bpts": 200.0,
+        "game_id": 20121507.0,
+        "negs": 2.0,
+        "opponent": "Yale A",
+        "pa": 330.0,
+        "packet": NaN,
+        "pf": 290.0,
+        "result": "L",
+        "round": 15.0,
+        "status": NaN,
+        "team": "Penn A",
+        "tossups": 10.0,
+        "tournament": "ACF Nationals 2012"
+      },
+      {
+        "PPB": 19.0,
+        "axis_label": "2016 MIT A (R15)",
+        "bhrd": 10.0,
+        "bpts": 190.0,
+        "game_id": 20161512.0,
+        "negs": 2.0,
+        "opponent": "Yale A",
+        "pa": 315.0,
+        "packet": "VCU + Virginia + Oxford",
+        "pf": 280.0,
+        "result": "L",
+        "round": 15.0,
+        "status": NaN,
+        "team": "MIT A",
+        "tossups": 10.0,
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPB": 21.11,
+        "axis_label": "2014 Chicago A (R21)",
+        "bhrd": 9.0,
+        "bpts": 190.0,
+        "game_id": 20142103.0,
+        "negs": 0.0,
+        "opponent": "Yale A",
+        "pa": 305.0,
+        "packet": NaN,
+        "pf": 280.0,
+        "result": "L",
+        "round": 21.0,
+        "status": NaN,
+        "team": "Chicago A",
+        "tossups": 9.0,
+        "tournament": "ACF Nationals 2014"
+      },
+      {
+        "PPB": 23.33,
+        "axis_label": "2013 Penn A (R14)",
+        "bhrd": 9.0,
+        "bpts": 210.0,
+        "game_id": 20131402.0,
+        "negs": 1.0,
+        "opponent": "Yale A",
+        "pa": 310.0,
+        "packet": "Editors 2",
+        "pf": 295.0,
+        "result": "L",
+        "round": 14.0,
+        "status": NaN,
+        "team": "Penn A",
+        "tossups": 9.0,
+        "tournament": "ACF Nationals 2013"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with the axis labels on one axis and the points for on the other axis, sorted by the points for.",
+  "refer_fileds": [
+    {
+      "field": "axis_label",
+      "type": "nominal"
+    },
+    {
+      "field": "pf",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "pf"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "axis_label",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

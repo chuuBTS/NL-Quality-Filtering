@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Year",
+      "democracy_eiu",
+      "Country",
+      "GDP",
+      "Region",
+      "Regime",
+      "Sources"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AFG",
+        "Year": 2021,
+        "democracy_eiu": 0.32,
+        "Country": "Afghanistan",
+        "GDP": 14786861638.0,
+        "Region": "South Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "UKR",
+        "Year": 2021,
+        "democracy_eiu": 5.57,
+        "Country": "Ukraine",
+        "GDP": 200000000000.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "SWE",
+        "Year": 2021,
+        "democracy_eiu": 9.26,
+        "Country": "Sweden",
+        "GDP": 636000000000.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Full Democracy",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "CMR",
+        "Year": 2021,
+        "democracy_eiu": 2.56,
+        "Country": "Cameroon",
+        "GDP": 45338283345.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "LTU",
+        "Year": 2021,
+        "democracy_eiu": 7.18,
+        "Country": "Lithuania",
+        "GDP": 66445256585.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Flawed Democracy",
+        "Sources": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing the democracy index and the regime type for each country.",
+  "refer_fileds": [
+    {
+      "field": "democracy_eiu",
+      "type": "quantitative"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "democracy_eiu",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "democracy_eiu",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

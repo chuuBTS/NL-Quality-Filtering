@@ -1,0 +1,129 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sector",
+      "amount"
+    ],
+    "table_samples": [
+      {
+        "sector": "Hypermarkets and Supermarkets",
+        "amount": 72900000
+      },
+      {
+        "sector": "Catering services, restaurants and similar establishments",
+        "amount": 6800000
+      },
+      {
+        "sector": "Telecommunications and utilities",
+        "amount": 10000000
+      },
+      {
+        "sector": "Consumer Goods",
+        "amount": 8700000
+      },
+      {
+        "sector": "Pharmacies and drug stores",
+        "amount": 11000000
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of sectors by their total spendings in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "emoji",
+      "type": "nominal"
+    },
+    {
+      "field": "amount",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "count",
+          "field": "amount",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "amount",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "emoji",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "emoji",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "emoji",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "amount",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "emoji",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "amount",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "emoji",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

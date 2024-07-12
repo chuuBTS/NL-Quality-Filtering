@@ -1,0 +1,192 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Hj\u00f6rtur Hermannsson",
+        "Position": "Defender",
+        "Club": "IFK G\u00f6teborg",
+        "Country": "Iceland",
+        "Age": 21,
+        "Salary": 200000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Blerim D\u017eemaili",
+        "Position": "Midfielder",
+        "Club": "Genoa",
+        "Country": "Switzerland",
+        "Age": 30,
+        "Salary": 3500000,
+        "Goals": 6
+      },
+      {
+        "Foot": "Right",
+        "Name": "D\u00e9nes Dibusz",
+        "Position": "Goalkeeper",
+        "Club": "Ferencv\u00e1ros",
+        "Country": "Hungary",
+        "Age": 25,
+        "Salary": 1200000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Hannes \u00de\u00f3r Halld\u00f3rsson",
+        "Position": "Goalkeeper",
+        "Club": "Bod\u00f8/Glimt",
+        "Country": "Iceland",
+        "Age": 32,
+        "Salary": 400000,
+        "Goals": 0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the median salary for players from Spain, Portugal, or Germany by club.",
+  "refer_fileds": [
+    {
+      "field": "Club",
+      "type": "nominal"
+    },
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "aggregate": "median"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "Spain",
+            "Portugal",
+            "Germany"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Salary",
+          "aggregate": "median"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Club",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "median"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

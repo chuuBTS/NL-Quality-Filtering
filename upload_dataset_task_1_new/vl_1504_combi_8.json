@@ -1,0 +1,349 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "kind",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "created",
+        "count": 17.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "closed",
+        "count": 0.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "kind": "created",
+        "count": 0.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "created",
+        "count": 1.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "kind": "created",
+        "count": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total count of activities for each repository and activity kind using small multiples.",
+  "refer_fileds": [
+    {
+      "field": "repo",
+      "type": "nominal"
+    },
+    {
+      "field": "kind",
+      "type": "nominal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

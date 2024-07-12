@@ -1,0 +1,109 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "number",
+      "org/repo"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "number": 17,
+        "org/repo": "numpy/numpy"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "number": 1,
+        "org/repo": "numpy/numpy.org"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "number": 2,
+        "org/repo": "numpy/numpydoc"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the number of data samples for each repository.",
+  "refer_fileds": [
+    {
+      "field": "repo",
+      "type": "nominal"
+    },
+    {
+      "field": "number",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

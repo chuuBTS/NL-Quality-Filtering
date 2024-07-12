@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Yemen",
+        "region": "Asia",
+        "country_code": "YEM",
+        "year": 2007,
+        "lifeExp": 65.8,
+        "gdpPercap": 4190,
+        "pop": 21800000
+      },
+      {
+        "country": "Burkina Faso",
+        "region": "Africa",
+        "country_code": "BFA",
+        "year": 1962,
+        "lifeExp": 39.8,
+        "gdpPercap": 717,
+        "pop": 4960000
+      },
+      {
+        "country": "Comoros",
+        "region": "Africa",
+        "country_code": "COM",
+        "year": 1977,
+        "lifeExp": 53.5,
+        "gdpPercap": 1520,
+        "pop": 276000
+      },
+      {
+        "country": "Mali",
+        "region": "Africa",
+        "country_code": "MLI",
+        "year": 2002,
+        "lifeExp": 54.4,
+        "gdpPercap": 1640,
+        "pop": 11600000
+      }
+    ]
+  },
+  "nl_utterance": "Show me the distribution of GDP per capita in 2017 as a bar chart or a box plot, with the count of data points.",
+  "refer_fileds": [
+    {
+      "field": "gdpPercap",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "equal": "2017"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "bin": true
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "equal": "2017"
+          }
+        }
+      ]
+    }
+  ]
+}

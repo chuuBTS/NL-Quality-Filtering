@@ -1,0 +1,133 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Number of Heads",
+      "Number of Ways"
+    ],
+    "table_samples": [
+      {
+        "Number of Heads": 0,
+        "Number of Ways": 0
+      },
+      {
+        "Number of Heads": 27,
+        "Number of Ways": 36
+      },
+      {
+        "Number of Heads": 19,
+        "Number of Ways": 379
+      },
+      {
+        "Number of Heads": 13,
+        "Number of Ways": 28
+      },
+      {
+        "Number of Heads": 29,
+        "Number of Ways": 5
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of ways for each head count.",
+  "refer_fileds": [
+    {
+      "field": "Number of Heads",
+      "type": "quantitative"
+    },
+    {
+      "field": "Number of Ways",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number of Ways",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number of Heads",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Number of Ways",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number of Ways",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Number of Heads",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Number of Ways",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Number of Heads",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of Heads",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Number of Ways",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of Ways",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Number of Heads",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

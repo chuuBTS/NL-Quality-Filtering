@@ -1,0 +1,133 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Amount",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "Amount": 19.5,
+        "count": 4
+      },
+      {
+        "Amount": 133.5,
+        "count": 1
+      },
+      {
+        "Amount": 114.5,
+        "count": 1
+      },
+      {
+        "Amount": 190.5,
+        "count": 38
+      },
+      {
+        "Amount": 152.5,
+        "count": 1
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows the total number of occurrences alongside their respective amounts.",
+  "refer_fileds": [
+    {
+      "field": "Amount",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Amount",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Amount",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Amount",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Amount",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Amount",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

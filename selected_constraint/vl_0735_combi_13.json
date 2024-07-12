@@ -1,0 +1,93 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "Region",
+            "type": "nominal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "democracy_eiu",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "Regime",
+            "type": "nominal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "mark",
+            "c_name": "bar chart",
+            "c_list": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal",
+                            "ignore": true
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "x": "y"
+                    }
+                },
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "y": {},
+                        "x": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal",
+                            "ignore": true
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "y": "x"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "democracy_eiu",
+                    "aggregate": "mean"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

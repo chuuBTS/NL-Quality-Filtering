@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Life Expectancy",
+      "Income",
+      "Infant Mortality",
+      "Fertility",
+      "Gini Coefficient",
+      "Reduced Dimension 1",
+      "Reduced Dimension 2",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "Country": "Afghanistan",
+        "Life Expectancy": 64.3,
+        "Income": 1990,
+        "Infant Mortality": 54.2,
+        "Fertility": 3.77,
+        "Gini Coefficient": 39.5,
+        "Reduced Dimension 1": 2.058474218,
+        "Reduced Dimension 2": -0.617822572,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Serbia",
+        "Life Expectancy": 76.1,
+        "Income": 20500,
+        "Infant Mortality": 4.87,
+        "Fertility": 1.64,
+        "Gini Coefficient": 32.2,
+        "Reduced Dimension 1": -1.257761138,
+        "Reduced Dimension 2": -0.429037129,
+        "Continent": "Europe"
+      },
+      {
+        "Country": "Brazil",
+        "Life Expectancy": 76.4,
+        "Income": 14700,
+        "Infant Mortality": 12.7,
+        "Fertility": 1.65,
+        "Gini Coefficient": 57.1,
+        "Reduced Dimension 1": -0.119766101,
+        "Reduced Dimension 2": 2.401305368,
+        "Continent": "South America"
+      },
+      {
+        "Country": "Guyana",
+        "Life Expectancy": 67.6,
+        "Income": 14700,
+        "Infant Mortality": 27.9,
+        "Fertility": 2.37,
+        "Gini Coefficient": 45.2,
+        "Reduced Dimension 1": 0.693699942,
+        "Reduced Dimension 2": 0.632203557,
+        "Continent": "South America"
+      },
+      {
+        "Country": "Seychelles",
+        "Life Expectancy": 73.8,
+        "Income": 28100,
+        "Infant Mortality": 13.4,
+        "Fertility": 2.16,
+        "Gini Coefficient": 32.1,
+        "Reduced Dimension 1": -0.860359888,
+        "Reduced Dimension 2": -0.69126584,
+        "Continent": "Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the Reduced Dimension 2 for each Continent.",
+  "refer_fileds": [
+    {
+      "field": "Reduced Dimension 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

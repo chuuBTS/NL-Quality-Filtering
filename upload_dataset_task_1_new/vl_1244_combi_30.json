@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "CN",
+        "precision": 67.7,
+        "AUC": 41.9
+      },
+      {
+        "stage": "subs.+g.c.",
+        "tracker": "AutoTrack",
+        "precision": 79.2,
+        "AUC": 57.0
+      },
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "AutoTrack",
+        "precision": 81.2,
+        "AUC": 58.5
+      },
+      {
+        "stage": "demos.+g.c.",
+        "tracker": "Staple",
+        "precision": 77.4,
+        "AUC": 56.4
+      },
+      {
+        "stage": "subs.+g.c.",
+        "tracker": "Staple",
+        "precision": 80.1,
+        "AUC": 57.5
+      }
+    ]
+  },
+  "nl_utterance": "Show me a small multiple of AUC values for different stages, sorted by tracker order and stage type.",
+  "refer_fileds": [
+    {
+      "field": "AUC",
+      "type": "quantitative"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "CN",
+          "KCF",
+          "Staple",
+          "ECO_HC",
+          "AutoTrack"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "demos.+g.c.",
+          "subs.+g.c."
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "AUC",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

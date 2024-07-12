@@ -1,0 +1,172 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Nation",
+      "Quarter",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Nation": "England",
+        "Quarter": "2020Q1",
+        "Value": -2.6,
+        "Detail": "GDP change on 2019Q4 (%)"
+      },
+      {
+        "Nation": "Scotland",
+        "Quarter": "2020Q4",
+        "Value": -6.410115379,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q1",
+        "Value": -3.2,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Wales",
+        "Quarter": "2020Q2",
+        "Value": -16.37080868,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Scotland",
+        "Quarter": "2020Q3",
+        "Value": -8.543887617,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the GDP changes sorted in descending order for each nation.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Nation",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

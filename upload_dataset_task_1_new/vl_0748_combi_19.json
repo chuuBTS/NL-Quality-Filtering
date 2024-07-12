@@ -1,0 +1,87 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Kyrgyzstan",
+        "CAF_2021": 44,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Ireland",
+        "CAF_2021": 49,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Czechia",
+        "CAF_2021": 48,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Venezuela (Bolivarian Republic of)",
+        "CAF_2021": 45,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the dominant religions by countries.",
+  "refer_fileds": [
+    {
+      "field": "2021",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2021",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2021",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "CAF_2021"
+        },
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

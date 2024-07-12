@@ -1,0 +1,169 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Year": 1990,
+        "Country": "Brazil",
+        "Value 1": 70.45802056,
+        "Value 2": 0.0
+      },
+      {
+        "Year": 1996,
+        "Country": "North Korea",
+        "Value 1": 67.44764669,
+        "Value 2": -0.7
+      },
+      {
+        "Year": 1993,
+        "Country": "Indonesia",
+        "Value 1": 62.57859205,
+        "Value 2": -4.4
+      },
+      {
+        "Year": 2000,
+        "Country": "Indonesia",
+        "Value 1": 55.90730692,
+        "Value 2": -14.6
+      },
+      {
+        "Year": 2014,
+        "Country": "Tanzania",
+        "Value 1": 54.70986904,
+        "Value 2": -15.6
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of measurements over time for each country, summing up the second values.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "Value 1",
+        "Value 2"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value 2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

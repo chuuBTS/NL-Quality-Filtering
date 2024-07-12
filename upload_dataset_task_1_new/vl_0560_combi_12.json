@@ -1,0 +1,202 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "tradePartner",
+      "tradeTotal",
+      "Balance",
+      "Balance_absolute",
+      "Balance_pctTrade",
+      "Exports",
+      "Exports_absolute",
+      "Imports",
+      "Imports_absolute",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "tradePartner": 1,
+        "tradeTotal": 124564,
+        "Balance": -20774.0,
+        "Balance_absolute": 20774,
+        "Balance_pctTrade": -0.17,
+        "Exports": 51895.0,
+        "Exports_absolute": 51895.0,
+        "Imports": 72669.0,
+        "Imports_absolute": 72669.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+      },
+      {
+        "Country": "Guyana",
+        "tradePartner": 66,
+        "tradeTotal": 809,
+        "Balance": -348.0,
+        "Balance_absolute": 348,
+        "Balance_pctTrade": -0.43,
+        "Exports": 231.0,
+        "Exports_absolute": 231.0,
+        "Imports": 579.0,
+        "Imports_absolute": 579.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Panama",
+        "tradePartner": 50,
+        "tradeTotal": 1700,
+        "Balance": 1544.0,
+        "Balance_absolute": 1544,
+        "Balance_pctTrade": 0.91,
+        "Exports": 1622.0,
+        "Exports_absolute": 1622.0,
+        "Imports": 78.0,
+        "Imports_absolute": 78.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Bosnia and Herzegovina",
+        "tradePartner": 159,
+        "tradeTotal": 25,
+        "Balance": -19.0,
+        "Balance_absolute": 19,
+        "Balance_pctTrade": -0.75,
+        "Exports": 3.0,
+        "Exports_absolute": 3.0,
+        "Imports": 22.0,
+        "Imports_absolute": 22.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Antigua and Barbuda",
+        "tradePartner": 104,
+        "tradeTotal": 137,
+        "Balance": 127.0,
+        "Balance_absolute": 127,
+        "Balance_pctTrade": 0.93,
+        "Exports": 132.0,
+        "Exports_absolute": 132.0,
+        "Imports": 5.0,
+        "Imports_absolute": 5.0,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show a bar chart sorted in descending order by the trade total for countries with less than 21 trade partners.",
+  "refer_fileds": [
+    {
+      "field": "tradeTotal",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "tradePartner",
+          "lt": 21
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "tradeTotal",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    }
+  ]
+}

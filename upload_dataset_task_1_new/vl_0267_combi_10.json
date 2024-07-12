@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "AMZN",
+        "date": "May 1 2002",
+        "price": 18.23
+      },
+      {
+        "symbol": "IBM",
+        "date": "Feb 1 2001",
+        "price": 89.98
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Nov 1 2008",
+        "price": 92.67
+      },
+      {
+        "symbol": "AMZN",
+        "date": "May 1 2003",
+        "price": 35.89
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average price trend of each symbol over time.",
+  "refer_fileds": [
+    {
+      "field": "price",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "symbol",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "price",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

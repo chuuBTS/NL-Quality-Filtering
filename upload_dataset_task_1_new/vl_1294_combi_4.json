@@ -1,0 +1,257 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPG",
+      "player",
+      "ppg",
+      "team",
+      "team_tournament",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPG": 90.76923076923076,
+        "player": "Andrew Yaphe",
+        "ppg": 90.77,
+        "team": "Stanford A",
+        "team_tournament": "2010 Andrew Yaphe",
+        "tournament": "ACF Nationals 2010"
+      },
+      {
+        "PPG": 88.0,
+        "player": "Jordan Brownstein",
+        "ppg": 88.0,
+        "team": "Maryland A",
+        "team_tournament": "2016 Jordan Brownstein",
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPG": 90.625,
+        "player": "Mike Sorice",
+        "ppg": 90.62,
+        "team": "Illinois A",
+        "team_tournament": "2007 Mike Sorice",
+        "tournament": "ACF Nationals 2007"
+      },
+      {
+        "PPG": 86.66666666666667,
+        "player": "Ike Jose",
+        "ppg": 86.67,
+        "team": "Illinois A",
+        "team_tournament": "2012 Ike Jose",
+        "tournament": "ACF Nationals 2012"
+      },
+      {
+        "PPG": 89.54545454545455,
+        "player": "Matt Bollinger",
+        "ppg": 89.55,
+        "team": "Virginia A",
+        "team_tournament": "2014 Matt Bollinger",
+        "tournament": "ACF Nationals 2014"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of performances by event, with the highest points per game on top.",
+  "refer_fileds": [
+    {
+      "field": [
+        "team_tournament",
+        "tournament"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "ppg",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "ppg",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "tournament",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

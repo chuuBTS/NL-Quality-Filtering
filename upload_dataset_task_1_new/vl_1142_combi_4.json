@@ -1,0 +1,221 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions",
+      "Unnamed: 6",
+      "GDP",
+      "Unnamed: 8",
+      "Totals_GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196,
+        "Unnamed: 6": NaN,
+        "GDP": 3376.003,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.229375673
+      },
+      {
+        "Date": "12/31/2010",
+        "GRA Purchases": 55620104510,
+        "PRGT 1/2/": 4819344134,
+        "Totals": 60439448644,
+        "Year": 2010,
+        "Totals_billions": 60.43944864,
+        "Unnamed: 6": NaN,
+        "GDP": 2719.642,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 2.222331051
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093,
+        "PRGT 1/2/": 2571911617,
+        "Totals": 23303762710,
+        "Year": 1990,
+        "Totals_billions": 23.30376271,
+        "Unnamed: 6": NaN,
+        "GDP": 1157.501,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 2.013282296
+      },
+      {
+        "Date": "12/31/1995",
+        "GRA Purchases": 35929173412,
+        "PRGT 1/2/": 5657438528,
+        "Totals": 41586611940,
+        "Year": 1995,
+        "Totals_billions": 41.58661194,
+        "Unnamed: 6": NaN,
+        "GDP": 1346.687,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.088068121
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884,
+        "PRGT 1/2/": 1773964293,
+        "Totals": 26523969177,
+        "Year": 1988,
+        "Totals_billions": 26.52396918,
+        "Unnamed: 6": NaN,
+        "GDP": 990.234,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 2.678555693
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total GDP contribution over time.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals_GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

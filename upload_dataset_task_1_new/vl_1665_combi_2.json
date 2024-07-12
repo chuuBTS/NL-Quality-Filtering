@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Apr 1 2002",
+        "price": 21.26
+      },
+      {
+        "symbol": "IBM",
+        "date": "Sep 1 2006",
+        "price": 77.26
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Jun 1 2000",
+        "price": 36.31
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Jul 1 2009",
+        "price": 85.76
+      }
+    ]
+  },
+  "nl_utterance": "What is the total price for each symbol?",
+  "refer_fileds": [
+    {
+      "field": "symbol",
+      "type": "nominal"
+    },
+    {
+      "field": "price",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "price",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "symbol",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

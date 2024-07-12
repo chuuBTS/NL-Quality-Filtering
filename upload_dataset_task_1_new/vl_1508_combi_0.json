@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "coef",
+      "metabolite",
+      "description"
+    ],
+    "table_samples": [
+      {
+        "coef": -1.403220164,
+        "metabolite": "pydx[e]",
+        "description": "Pyridoxal"
+      },
+      {
+        "coef": -1.2988432936,
+        "metabolite": "malt[e]",
+        "description": "Maltose"
+      },
+      {
+        "coef": -0.1555650235,
+        "metabolite": "gln_L[e]",
+        "description": "L-glutamine"
+      },
+      {
+        "coef": -0.2062304347,
+        "metabolite": "acmana[e]",
+        "description": "N-acetyl-D-mannosamine"
+      },
+      {
+        "coef": -0.92410626,
+        "metabolite": "HC02194[e]",
+        "description": "Ursodiol"
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows the metabolites sorted by their coefficients in descending order.",
+  "refer_fileds": [
+    {
+      "field": "metabolite",
+      "type": "nominal"
+    },
+    {
+      "field": "coef",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "coef",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

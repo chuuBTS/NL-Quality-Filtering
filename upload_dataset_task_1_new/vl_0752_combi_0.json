@@ -1,0 +1,156 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "RST",
+      "Totals",
+      "Year",
+      "Tot_billions",
+      "Tot_div_worldGDP",
+      "World_GDP_(current US$)"
+    ],
+    "table_samples": [
+      {
+        "Date": "10/31/2022",
+        "GRA Purchases": "93,054,287,423",
+        "PRGT 1/2/": "15,329,531,139",
+        "RST": 0,
+        "Totals": 108383818562,
+        "Year": 2022,
+        "Tot_billions": 108.38,
+        "Tot_div_worldGDP": NaN,
+        "World_GDP_(current US$)": NaN
+      },
+      {
+        "Date": "12/31/2011",
+        "GRA Purchases": "87,276,915,790",
+        "PRGT 1/2/": "5,308,609,594",
+        "RST": 0,
+        "Totals": 92585525384,
+        "Year": 2011,
+        "Tot_billions": 92.59,
+        "Tot_div_worldGDP": 0.125363279,
+        "World_GDP_(current US$)": 73900000000000.0
+      },
+      {
+        "Date": "12/31/2013",
+        "GRA Purchases": "83,899,249,061",
+        "PRGT 1/2/": "6,174,392,682",
+        "RST": 0,
+        "Totals": 90073641743,
+        "Year": 2013,
+        "Tot_billions": 90.07,
+        "Tot_div_worldGDP": 0.116063514,
+        "World_GDP_(current US$)": 77600000000000.0
+      },
+      {
+        "Date": "12/31/2009",
+        "GRA Purchases": "37,221,142,436",
+        "PRGT 1/2/": "5,079,705,286",
+        "RST": 0,
+        "Totals": 42300847722,
+        "Year": 2009,
+        "Tot_billions": 42.3,
+        "Tot_div_worldGDP": 0.069563338,
+        "World_GDP_(current US$)": 60800000000000.0
+      },
+      {
+        "Date": "12/31/2018",
+        "GRA Purchases": "55,395,611,392",
+        "PRGT 1/2/": "6,426,181,029",
+        "RST": 0,
+        "Totals": 61821792421,
+        "Year": 2018,
+        "Tot_billions": 61.82,
+        "Tot_div_worldGDP": 0.071542209,
+        "World_GDP_(current US$)": 86400000000000.0
+      }
+    ]
+  },
+  "nl_utterance": "Sum the total divided by world GDP across each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Tot_div_worldGDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Tot_div_worldGDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

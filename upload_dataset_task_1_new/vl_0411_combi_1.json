@@ -1,0 +1,191 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Percentile",
+      "modelValue"
+    ],
+    "table_samples": [
+      {
+        "Percentile": 1,
+        "modelValue": 1.965912874
+      },
+      {
+        "Percentile": 70,
+        "modelValue": 100.6008709
+      },
+      {
+        "Percentile": 40,
+        "modelValue": 58.8622429
+      },
+      {
+        "Percentile": 20,
+        "modelValue": 32.91526787
+      },
+      {
+        "Percentile": 80,
+        "modelValue": 128.8186569
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values where the model value is less than 300.",
+  "refer_fileds": [
+    {
+      "field": "Percentile",
+      "type": "quantitative"
+    },
+    {
+      "field": "modelValue",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "modelValue",
+          "lt": 300
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Percentile",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "modelValue",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Percentile",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "modelValue",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "modelValue",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Percentile",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "modelValue",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Percentile",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Percentile",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "modelValue",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "modelValue",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Percentile",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Iran (Islamic Republic of)",
+        "CAF_2021": 43,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Sierra Leone",
+        "CAF_2021": 51,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Uruguay",
+        "CAF_2021": 40,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "El Salvador",
+        "CAF_2021": 36,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the correlation between the Corruption Assessment for 2021 and the dominant religion in each country.",
+  "refer_fileds": [
+    {
+      "field": "CAF_2021",
+      "type": "quantitative"
+    },
+    {
+      "field": "2021",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

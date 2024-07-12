@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Value",
+      "Price Index"
+    ],
+    "table_samples": [
+      {
+        "Date": "1989 JAN",
+        "Value": 4.9,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "2000 MAR",
+        "Value": 2.6,
+        "Price Index": "RPI"
+      },
+      {
+        "Date": "1990 JUN",
+        "Value": 6.9,
+        "Price Index": "CPI"
+      },
+      {
+        "Date": "1991 OCT",
+        "Value": 3.7,
+        "Price Index": "RPI"
+      },
+      {
+        "Date": "2016 JAN",
+        "Value": 0.3,
+        "Price Index": "CPI"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the values over time for each price index as a line chart to observe the trend.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Price Index",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Price Index",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

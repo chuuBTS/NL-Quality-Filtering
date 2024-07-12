@@ -1,0 +1,190 @@
+{
+  "table_info": {
+    "table_columns": [
+      "dist_group",
+      "main_mode",
+      "trips",
+      "mode",
+      "scaled_trips",
+      "source",
+      "tripdistancegroupindex",
+      "pct"
+    ],
+    "table_samples": [
+      {
+        "dist_group": "0 - 1000",
+        "main_mode": "bike",
+        "trips": 9933,
+        "mode": "bike",
+        "scaled_trips": 39732,
+        "source": "sim",
+        "tripdistancegroupindex": 0,
+        "pct": 0.15
+      },
+      {
+        "dist_group": "1000 - 3000",
+        "main_mode": "car",
+        "trips": 45395,
+        "mode": "car",
+        "scaled_trips": 181580,
+        "source": "srv",
+        "tripdistancegroupindex": 1,
+        "pct": 0.3
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "car",
+        "trips": 45974,
+        "mode": "car",
+        "scaled_trips": 183896,
+        "source": "sim",
+        "tripdistancegroupindex": 3,
+        "pct": 0.59
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "walk",
+        "trips": 96,
+        "mode": "walk",
+        "scaled_trips": 384,
+        "source": "sim",
+        "tripdistancegroupindex": 3,
+        "pct": 0.01
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "car",
+        "trips": 45974,
+        "mode": "car",
+        "scaled_trips": 183896,
+        "source": "srv",
+        "tripdistancegroupindex": 3,
+        "pct": 0.62
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart that sums up the percentages and groups them by distance categories and primary modes of travel.",
+  "refer_fileds": [
+    {
+      "field": "pct",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "dist_group",
+      "type": "nominal"
+    },
+    {
+      "field": "main_mode",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "pct",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

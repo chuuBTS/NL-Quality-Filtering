@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "circle",
+    "encoding": {
+        "y": {
+            "field": "GDP per capita (PPP)",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "Human Capital Index",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Continent",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Population",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/growth-human_capital_2020.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Human Capital Index",
+                "gt": 0
+            }
+        },
+        {
+            "filter": {
+                "field": "GDP per capita (PPP)",
+                "gt": 1000
+            }
+        }
+    ],
+    "height": 300,
+    "width": 500
+}

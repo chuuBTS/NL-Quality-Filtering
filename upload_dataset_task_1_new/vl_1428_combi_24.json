@@ -1,0 +1,1253 @@
+{
+  "table_info": {
+    "table_columns": [
+      "library",
+      "variant_class",
+      "func_score",
+      "count",
+      "mean_func_score"
+    ],
+    "table_samples": [
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -11.6082,
+        "count": 1.0879177562792605e-05,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-4",
+        "variant_class": ">1 nonsynonymous",
+        "func_score": 0.0953102040816329,
+        "count": 0.2583587996547006,
+        "mean_func_score": -1.6098371530374345
+      },
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": 5.581330612244898,
+        "count": 8.614263825364779e-05,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -8.682322448979592,
+        "count": 0.0027637876985991,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-1",
+        "variant_class": "wildtype",
+        "func_score": 5.215595918367349,
+        "count": 9.478118931062964e-15,
+        "mean_func_score": -0.2163453610712577
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart showing the sum of counts for each library, broken down by variant class sorted in the order of wildtype, synonymous, 1 nonsynonymous, >1 nonsynonymous, deletion, and stop.",
+  "refer_fileds": [
+    {
+      "field": "library",
+      "type": "nominal"
+    },
+    {
+      "field": "variant_class",
+      "type": "nominal"
+    },
+    {
+      "field": "func_score",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "wildtype",
+          "synonymous",
+          "1 nonsynonymous",
+          ">1 nonsynonymous",
+          "deletion",
+          "stop"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "func_score",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "library",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "variant_class",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "row": {
+          "field": "library",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "symbol": "SE",
+        "date": "2020-01-01 00:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-04-09 23:00",
+        "value": 365.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-04-30 19:00",
+        "value": 477.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-03-14 18:30",
+        "value": 330.3571429
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-07-26 12:00",
+        "value": 336.3636364
+      }
+    ]
+  },
+  "nl_utterance": "Show me the value for the symbol SE over time.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "SE"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    }
+  ]
+}

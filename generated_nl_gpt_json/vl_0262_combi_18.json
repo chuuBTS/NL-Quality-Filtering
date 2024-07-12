@@ -1,0 +1,110 @@
+{
+  "gpt_result": {
+    "nl_utterance": "Show me a distribution of mobility using a bar chart, and count the number of records.",
+    "encoded_fields": [
+      {
+        "field": "Mobility",
+        "type": "quantitative",
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "mobility"
+      }
+    ],
+    "constraints": [
+      {
+        "c_type": "task",
+        "c_name": "distribution",
+        "c_list": [
+          {
+            "mark": "bar",
+            "encoding": {
+              "y": {
+                "aggregate": "count",
+                "type": "quantitative"
+              }
+            },
+            "x_y_reversable": true
+          },
+          {
+            "mark": "boxplot",
+            "encoding": {
+              "x": {
+                "type": "quantitative"
+              }
+            },
+            "x_y_reversable": true
+          }
+        ],
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "distribution"
+      },
+      {
+        "c_type": "mark",
+        "c_name": "bar chart",
+        "c_list": [
+          {
+            "mark": "bar",
+            "encoding": {
+              "x": {},
+              "y": {
+                "type": "quantitative"
+              },
+              "color": {
+                "type": "nominal",
+                "ignore": true
+              },
+              "column": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "row": {
+                "ignore": true,
+                "type": "nominal"
+              }
+            },
+            "unique_map": {
+              "x": "y"
+            }
+          },
+          {
+            "mark": "bar",
+            "encoding": {
+              "y": {},
+              "x": {
+                "type": "quantitative"
+              },
+              "color": {
+                "type": "nominal",
+                "ignore": true
+              },
+              "column": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "row": {
+                "ignore": true,
+                "type": "nominal"
+              }
+            },
+            "unique_map": {
+              "y": "x"
+            }
+          }
+        ],
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "bar chart"
+      },
+      {
+        "c_type": "transform",
+        "c_name": "aggregate",
+        "c_list": [
+          {
+            "aggregate": "count"
+          }
+        ],
+        "nl_ref_type": "explicit",
+        "nl_ref_phrase": "count the number of records"
+      }
+    ]
+  },
+  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"ID\": 100,\n      \"Name\": \"Johnson City\",\n      \"Mobility\": 0.0621988103,\n      \"State\": \"TN\",\n      \"Population\": 576081,\n      \"Urban\": 1,\n      \"Black\": 0.021,\n      \"Seg_racial\": 0.09,\n      \"Seg_income\": 0.035,\n      \"Seg_poverty\": 0.03,\n      \"Seg_affluence\": 0.038,\n      \"Commute\": 0.325,\n      \"Income\": 31560,\n      \"Gini\": 0.468,\n      \"Share01\": 13.459,\n      \"Gini_99\": 0.333,\n      \"Middle_class\": 0.548,\n      \"Local_tax_rate\": 0.02,\n      \"Local_gov_spending\": 1886.0,\n      \"Progressivity\": 0.0,\n      \"EITC\": 0.0,\n      \"School_spending\": 5.185,\n      \"Student_teacher_ratio\": NaN,\n      \"Test_scores\": 2.728,\n      \"HS_dropout\": -0.015,\n      \"Colleges\": 0.014,\n      \"Tuition\": 4817.0,\n      \"Graduation\": -0.002,\n      \"Labor_force_participation\": 0.587,\n      \"Manufacturing\": 0.237,\n      \"Chinese_imports\": 5.294,\n      \"Teenage_labor\": 0.004,\n      \"Migration_in\": 0.006,\n      \"Migration_out\": 0.005,\n      \"Foreign_born\": 0.012,\n      \"Social_capital\": -0.298,\n      \"Religious\": 0.514,\n      \"Violent_crime\": 0.001,\n      \"Single_mothers\": 0.19,\n      \"Divorced\": 0.11,\n      \"Married\": 0.601,\n      \"Longitude\": -82.4363861083984,\n      \"Latitude\": 36.4703712463379\n    },\n    {\n      \"ID\": 28800,\n      \"Name\": \"Fort Collins\",\n      \"Mobility\": 0.1153677776,\n      \"State\": \"CO\",\n      \"Population\": 459601,\n      \"Urban\": 1,\n      \"Black\": 0.005,\n      \"Seg_racial\": 0.123,\n      \"Seg_income\": 0.08,\n      \"Seg_poverty\": 0.077,\n      \"Seg_affluence\": 0.081,\n      \"Commute\": 0.388,\n      \"Income\": 37523,\n      \"Gini\": 0.398,\n      \"Share01\": 10.663,\n      \"Gini_99\": 0.291,\n      \"Middle_class\": 0.538,\n      \"Local_tax_rate\": 0.029,\n      \"Local_gov_spending\": 3164.0,\n      \"Progressivity\": 0.0,\n      \"EITC\": 1.429,\n      \"School_spending\": 5.458,\n      \"Student_teacher_ratio\": 18.9,\n      \"Test_scores\": 0.13,\n      \"HS_dropout\": NaN,\n      \"Colleges\": 0.009,\n      \"Tuition\": 2261.0,\n      \"Graduation\": 0.129,\n      \"Labor_force_participation\": 0.701,\n      \"Manufacturing\": 0.146,\n      \"Chinese_imports\": 1.907,\n      \"Teenage_labor\": 0.005,\n      \"Migration_in\": 0.04,\n      \"Migration_out\": 0.03,\n      \"Foreign_born\": 0.068,\n      \"Social_capital\": -0.078,\n      \"Religious\": 0.394,\n      \"Violent_crime\": 0.001,\n      \"Single_mothers\": 0.165,\n      \"Divorced\": 0.093,\n      \"Married\": 0.567,\n      \"Longitude\": -104.999366760254,\n      \"Latitude\": 40.085018157959\n    },\n    {\n      \"ID\": 10101,\n      \"Name\": \"Bainbridge\",\n      \"Mobility\": 0.0393333323,\n      \"State\": \"GA\",\n      \"Population\": 43992,\n      \"Urban\": 0,\n      \"Black\": 0.37,\n      \"Seg_racial\": 0.082,\n      \"Seg_income\": 0.016,\n      \"Seg_poverty\": 0.009,\n      \"Seg_affluence\": 0.014,\n      \"Commute\": 0.39,\n      \"Income\": 29034,\n      \"Gini\": 0.516,\n      \"Share01\": 11.659,\n      \"Gini_99\": 0.399,\n      \"Middle_class\": 0.395,\n      \"Local_tax_rate\": 0.019,\n      \"Local_gov_spending\": 1876.0,\n      \"Progressivity\": 0.0,\n      \"EITC\": 0.0,\n      \"School_spending\": 5.082,\n      \"Student_teacher_ratio\": 16.5,\n      \"Test_scores\": NaN,\n      \"HS_dropout\": 0.04,\n      \"Colleges\": 0.023,\n      \"Tuition\": 1280.0,\n      \"Graduation\": -0.196,\n      \"Labor_force_participation\": 0.577,\n      \"Manufacturing\": 0.21,\n      \"Chinese_imports\": 1.665,\n      \"Teenage_labor\": 0.003,\n      \"Migration_in\": 0.01,\n      \"Migration_out\": 0.013,\n      \"Foreign_born\": 0.018,\n      \"Social_capital\": -2.109,\n      \"Religious\": 0.481,\n      \"Violent_crime\": 0.003,\n      \"Single_mothers\": 0.311,\n      \"Divorced\": 0.109,\n      \"Married\": 0.522,\n      \"Longitude\": -84.7773666381836,\n      \"Latitude\": 31.0324802398682\n    }\n  ],\n  \"column names\": [\n    \"ID\",\n    \"Name\",\n    \"Mobility\",\n    \"State\",\n    \"Population\",\n    \"Urban\",\n    \"Black\",\n    \"Seg_racial\",\n    \"Seg_income\",\n    \"Seg_poverty\",\n    \"Seg_affluence\",\n    \"Commute\",\n    \"Income\",\n    \"Gini\",\n    \"Share01\",\n    \"Gini_99\",\n    \"Middle_class\",\n    \"Local_tax_rate\",\n    \"Local_gov_spending\",\n    \"Progressivity\",\n    \"EITC\",\n    \"School_spending\",\n    \"Student_teacher_ratio\",\n    \"Test_scores\",\n    \"HS_dropout\",\n    \"Colleges\",\n    \"Tuition\",\n    \"Graduation\",\n    \"Labor_force_participation\",\n    \"Manufacturing\",\n    \"Chinese_imports\",\n    \"Teenage_labor\",\n    \"Migration_in\",\n    \"Migration_out\",\n    \"Foreign_born\",\n    \"Social_capital\",\n    \"Religious\",\n    \"Violent_crime\",\n    \"Single_mothers\",\n    \"Divorced\",\n    \"Married\",\n    \"Longitude\",\n    \"Latitude\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart, it can be a question or a command. One NL 'utterance' is in one or two sentences. \n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": \"Mobility\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"task\",\n      \"c_name\": \"distribution\",\n      \"c_list\": [\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"y\": {\n              \"aggregate\": \"count\",\n              \"type\": \"quantitative\"\n            }\n          },\n          \"x_y_reversable\": true\n        },\n        {\n          \"mark\": \"boxplot\",\n          \"encoding\": {\n            \"x\": {\n              \"type\": \"quantitative\"\n            }\n          },\n          \"x_y_reversable\": true\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"mark\",\n      \"c_name\": \"bar chart\",\n      \"c_list\": [\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"x\": {},\n            \"y\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"x\": \"y\"\n          }\n        },\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"y\": {},\n            \"x\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"y\": \"x\"\n          }\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"aggregate\",\n      \"c_list\": [\n        {\n          \"aggregate\": \"count\"\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
+}

@@ -1,0 +1,199 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "StateInitials",
+      "Gini",
+      "DeathRate",
+      "Firearms_vs_avg",
+      "medIncome",
+      "Income_vs_med",
+      "ImprisonmentRate",
+      "PrisonRate",
+      "ImprisonmentRate.1",
+      "FirearmDeaths",
+      "GeographicDivision"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "StateInitials": "AL",
+        "Gini": 0.472,
+        "DeathRate": 21.5,
+        "Firearms_vs_avg": 1.64700475,
+        "medIncome": 47221,
+        "Income_vs_med": 0.799827233,
+        "ImprisonmentRate": 736,
+        "PrisonRate": 1.264604811,
+        "ImprisonmentRate.1": 0.736,
+        "FirearmDeaths": 0.215,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "Virginia",
+        "StateInitials": "VA",
+        "Gini": 0.459,
+        "DeathRate": 12.1,
+        "Firearms_vs_avg": 0.926918952,
+        "medIncome": 66451,
+        "Income_vs_med": 1.125544132,
+        "ImprisonmentRate": 576,
+        "PrisonRate": 0.989690722,
+        "ImprisonmentRate.1": 0.576,
+        "FirearmDeaths": 0.121,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "Colorado",
+        "StateInitials": "CO",
+        "Gini": 0.457,
+        "DeathRate": 14.3,
+        "Firearms_vs_avg": 1.095449671,
+        "medIncome": 70566,
+        "Income_vs_med": 1.195243822,
+        "ImprisonmentRate": 460,
+        "PrisonRate": 0.790378007,
+        "ImprisonmentRate.1": 0.46,
+        "FirearmDeaths": 0.143,
+        "GeographicDivision": "West"
+      },
+      {
+        "State": "Wyoming",
+        "StateInitials": "WY",
+        "Gini": 0.423,
+        "DeathRate": 17.4,
+        "Firearms_vs_avg": 1.332924774,
+        "medIncome": 57829,
+        "Income_vs_med": 0.979505073,
+        "ImprisonmentRate": 532,
+        "PrisonRate": 0.914089347,
+        "ImprisonmentRate.1": 0.532,
+        "FirearmDeaths": 0.174,
+        "GeographicDivision": "West"
+      },
+      {
+        "State": "Hawaii",
+        "StateInitials": "HI",
+        "Gini": 0.433,
+        "DeathRate": 4.5,
+        "Firearms_vs_avg": 0.344721924,
+        "medIncome": 72133,
+        "Income_vs_med": 1.221785599,
+        "ImprisonmentRate": 323,
+        "PrisonRate": 0.554982818,
+        "ImprisonmentRate.1": 0.323,
+        "FirearmDeaths": 0.045,
+        "GeographicDivision": "West"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot that represents the correlation between firearm deaths and geographic divisions.",
+  "refer_fileds": [
+    {
+      "field": "FirearmDeaths",
+      "type": "quantitative"
+    },
+    {
+      "field": "GeographicDivision",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

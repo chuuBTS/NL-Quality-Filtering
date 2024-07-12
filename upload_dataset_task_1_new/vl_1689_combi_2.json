@@ -1,0 +1,140 @@
+{
+  "table_info": {
+    "table_columns": [
+      "yield",
+      "variety",
+      "year",
+      "site"
+    ],
+    "table_samples": [
+      {
+        "yield": 27.0,
+        "variety": "Manchuria",
+        "year": 1931,
+        "site": "University Farm"
+      },
+      {
+        "yield": 43.26667,
+        "variety": "No. 457",
+        "year": 1931,
+        "site": "University Farm"
+      },
+      {
+        "yield": 25.7,
+        "variety": "Svansota",
+        "year": 1931,
+        "site": "Duluth"
+      },
+      {
+        "yield": 29.06667,
+        "variety": "Trebi",
+        "year": 1932,
+        "site": "University Farm"
+      },
+      {
+        "yield": 48.86667,
+        "variety": "Manchuria",
+        "year": 1931,
+        "site": "Waseca"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total yield for each variety.",
+  "refer_fileds": [
+    {
+      "field": "yield",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "variety",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "yield",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "variety",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "variety",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

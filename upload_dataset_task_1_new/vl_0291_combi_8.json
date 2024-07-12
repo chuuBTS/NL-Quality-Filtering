@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "country": "United Kingdom",
+        "date": 2021,
+        "value": 2593519346209.63
+      },
+      {
+        "country": "Italy",
+        "date": 2021,
+        "value": 1635542975868.19
+      },
+      {
+        "country": "United Kingdom",
+        "date": 1982,
+        "value": 447047826694.62
+      },
+      {
+        "country": "France",
+        "date": 2014,
+        "value": 2240092780994.89
+      },
+      {
+        "country": "Germany",
+        "date": 1978,
+        "value": 579499476144.11
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total value over time for each country.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

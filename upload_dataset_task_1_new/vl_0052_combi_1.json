@@ -1,0 +1,259 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Agency Name",
+      "Location Name",
+      "Address",
+      "City",
+      "Zip code",
+      "County",
+      "Congress Dist",
+      "Congressional Full Name",
+      "Rep Dist",
+      "Rep Full Name",
+      "Senate Dist",
+      "Senator Full Name",
+      "Bldg Status",
+      "Year Acquired",
+      "Year Constructed",
+      "Square Footage",
+      "Total Floors",
+      "Floors Above Grade",
+      "Floors Below Grade",
+      "Usage Description",
+      "Usage Description 2",
+      "Usage Description 3"
+    ],
+    "table_samples": [
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Anderson Lake Conservation Area - Fulton County",
+        "Address": "Anderson Lake C.a.",
+        "City": "Astoria",
+        "Zip code": 61501,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 93,
+        "Rep Full Name": "Hammond Norine K.",
+        "Senate Dist": 47,
+        "Senator Full Name": "Jil Tracy",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1975,
+        "Year Constructed": 1975,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Starved Rock State Park & Lodge - LaSalle County",
+        "Address": "Starved Rock Sp",
+        "City": "Utica",
+        "Zip code": 61373,
+        "County": "LaSalle",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 76,
+        "Rep Full Name": "Long Jerry Lee",
+        "Senate Dist": 38,
+        "Senator Full Name": "Sue Rezin",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1935,
+        "Year Constructed": 1935,
+        "Square Footage": 343,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Industrial",
+        "Usage Description 2": "Industrial",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Kankakee River Conservation Area and State Park",
+        "Address": "P.o. Box 37",
+        "City": "Bourbonnais",
+        "Zip code": 60914,
+        "County": "Kankakee",
+        "Congress Dist": 2,
+        "Congressional Full Name": "Robin Kelly",
+        "Rep Dist": 79,
+        "Rep Full Name": "Parkhurst Lindsay",
+        "Senate Dist": 40,
+        "Senator Full Name": "Toi W. Hutchinson",
+        "Bldg Status": "In Use",
+        "Year Acquired": 2000,
+        "Year Constructed": 2000,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Southern Illinois University",
+        "Location Name": "Southern Illinois University - Carbondale",
+        "Address": "2036 Charlet Lane",
+        "City": "Belleville",
+        "Zip code": 62221,
+        "County": "Jackson",
+        "Congress Dist": 12,
+        "Congressional Full Name": "Mike Bost",
+        "Rep Dist": 115,
+        "Rep Full Name": "Bryant Terri",
+        "Senate Dist": 58,
+        "Senator Full Name": "Paul Schimpf",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1952,
+        "Year Constructed": 1952,
+        "Square Footage": 2287,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Storage",
+        "Usage Description 2": "Storage",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Sheridan Correctional Center - LaSalle County",
+        "Address": "3897 East 2603 Road",
+        "City": "Sheridan",
+        "Zip code": 60551,
+        "County": "LaSalle",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 75,
+        "Rep Full Name": "Welter David A.",
+        "Senate Dist": 38,
+        "Senator Full Name": "Sue Rezin",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1952,
+        "Year Constructed": 1952,
+        "Square Footage": 1515,
+        "Total Floors": 2,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 1,
+        "Usage Description": "Residential",
+        "Usage Description 2": "Residential",
+        "Usage Description 3": "Not provided"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the square footage of buildings by their status.",
+  "refer_fileds": [
+    {
+      "field": "Bldg Status",
+      "type": "nominal"
+    },
+    {
+      "field": "Square Footage",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Square Footage",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

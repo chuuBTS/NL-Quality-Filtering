@@ -1,0 +1,464 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Happiness score",
+      "Country_temp",
+      "ISO3",
+      "GDP per capita (PPP)",
+      "Life Ladder",
+      "Social support",
+      "Perceptions of corruption",
+      "Population",
+      "Median Age",
+      "Total Fertility Rate",
+      "Life Expectancy",
+      "Infant Mortality",
+      "Child Mortality",
+      "Net Migration Rate",
+      "Continent",
+      "UN Region"
+    ],
+    "table_samples": [
+      {
+        "Country": "Finland",
+        "Happiness score": 7.821,
+        "Country_temp": "Finland",
+        "ISO3": "FIN",
+        "GDP per capita (PPP)": 55013.38586,
+        "Life Ladder": 7.7944,
+        "Social support": 0.9703,
+        "Perceptions of corruption": 0.1918,
+        "Population": 5535992.0,
+        "Median Age": 42.368,
+        "Total Fertility Rate": 1.389,
+        "Life Expectancy": 82.038,
+        "Infant Mortality": 1.932,
+        "Child Mortality": 2.353,
+        "Net Migration Rate": 2.7,
+        "Continent": "Europe",
+        "UN Region": "Northern Europe"
+      },
+      {
+        "Country": "South Korea",
+        "Happiness score": 5.935,
+        "Country_temp": "South Korea",
+        "ISO3": "KOR",
+        "GDP per capita (PPP)": 47242.52723,
+        "Life Ladder": 6.1127,
+        "Social support": 0.8107,
+        "Perceptions of corruption": 0.6851,
+        "Population": 51830139.0,
+        "Median Age": 43.35,
+        "Total Fertility Rate": 0.88,
+        "Life Expectancy": 83.698,
+        "Infant Mortality": 2.374,
+        "Child Mortality": 2.921,
+        "Net Migration Rate": 0.839,
+        "Continent": "Asia",
+        "UN Region": "Eastern Asia"
+      },
+      {
+        "Country": "Tajikistan",
+        "Happiness score": 5.377,
+        "Country_temp": "Tajikistan",
+        "ISO3": "TJK",
+        "GDP per capita (PPP)": 4288.16789,
+        "Life Ladder": 5.2868,
+        "Social support": 0.8829,
+        "Perceptions of corruption": 0.4989,
+        "Population": 9750064.0,
+        "Median Age": 21.468,
+        "Total Fertility Rate": 3.186,
+        "Life Expectancy": 71.594,
+        "Infant Mortality": 27.092,
+        "Child Mortality": 31.316,
+        "Net Migration Rate": -0.365,
+        "Continent": "Asia",
+        "UN Region": "Central Asia"
+      },
+      {
+        "Country": "Thailand",
+        "Happiness score": 5.891,
+        "Country_temp": "Thailand",
+        "ISO3": "THA",
+        "GDP per capita (PPP)": 18760.75522,
+        "Life Ladder": 5.6381,
+        "Social support": 0.8828,
+        "Perceptions of corruption": 0.9431,
+        "Population": 71601103.0,
+        "Median Age": 39.271,
+        "Total Fertility Rate": 1.331,
+        "Life Expectancy": 78.715,
+        "Infant Mortality": 7.079,
+        "Child Mortality": 8.319,
+        "Net Migration Rate": 0.016,
+        "Continent": "Asia",
+        "UN Region": "South-eastern Asia"
+      },
+      {
+        "Country": "Russia",
+        "Happiness score": 5.459,
+        "Country_temp": "Russia",
+        "ISO3": "RUS",
+        "GDP per capita (PPP)": 32862.62109,
+        "Life Ladder": 5.4483,
+        "Social support": 0.8617,
+        "Perceptions of corruption": 0.8078,
+        "Population": 145102755.0,
+        "Median Age": 38.811,
+        "Total Fertility Rate": 1.493,
+        "Life Expectancy": 69.419,
+        "Infant Mortality": 3.865,
+        "Child Mortality": 4.89,
+        "Net Migration Rate": 2.212,
+        "Continent": "Europe",
+        "UN Region": "Eastern Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the correlation between life expectancy and population on a scatter plot, categorized by continent.",
+  "refer_fileds": [
+    {
+      "field": "Life Expectancy",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    },
+    {
+      "field": "Population",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

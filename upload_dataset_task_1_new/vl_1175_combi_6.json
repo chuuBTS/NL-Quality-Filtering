@@ -1,0 +1,153 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 167,
+        "OpponentName": "None",
+        "start": "2019-08-24 18:52:20.608 +00:00",
+        "end": "2019-08-24 18:52:22.523 +00:00",
+        "PersonId": 167,
+        "Time (seconds)": 2.0,
+        "id.1": 167,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Cooking",
+        "Height": 72.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 107,
+        "OpponentName": "None",
+        "start": "2019-08-24 16:49:12.903 +00:00",
+        "end": "2019-08-24 16:49:14.831 +00:00",
+        "PersonId": 107,
+        "Time (seconds)": 2.0,
+        "id.1": 107,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Sports",
+        "Height": 53.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 300,
+        "OpponentName": "None",
+        "start": "2019-10-26 16:24:57.186 +00:00",
+        "end": "2019-10-26 16:24:59.641 +00:00",
+        "PersonId": 300,
+        "Time (seconds)": 2.0,
+        "id.1": 300,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Sports",
+        "Height": 63.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 173,
+        "OpponentName": "None",
+        "start": "2019-08-24 19:17:35.144 +00:00",
+        "end": "2019-08-24 19:17:37.070 +00:00",
+        "PersonId": 173,
+        "Time (seconds)": 2.0,
+        "id.1": 173,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Sports",
+        "Height": 42.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show the count of data points where the height is below 100 for each time duration in seconds.",
+  "refer_fileds": [
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Height",
+          "lt": 100
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    }
+  ]
+}

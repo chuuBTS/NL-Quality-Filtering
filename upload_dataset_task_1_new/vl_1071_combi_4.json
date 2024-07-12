@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Year",
+      "Urban Population"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 1960,
+        "Urban Population": 67926
+      },
+      {
+        "Country Name": "United States",
+        "Year": 1971,
+        "Urban Population": 152865492
+      },
+      {
+        "Country Name": "Argentina",
+        "Year": 1969,
+        "Urban Population": 18436398
+      },
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 2009,
+        "Urban Population": 6630162
+      },
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 1965,
+        "Urban Population": 116472
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of urban populations for each year in different countries.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Urban Population",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Urban Population",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "price",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://vega.github.io/vega-lite/data/stocks.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "symbol",
+                "equal": "GOOG"
+            }
+        },
+        {
+            "filter": {
+                "field": "date",
+                "range": [
+                    2006,
+                    null
+                ],
+                "timeUnit": "year"
+            }
+        }
+    ],
+    "width": 400
+}

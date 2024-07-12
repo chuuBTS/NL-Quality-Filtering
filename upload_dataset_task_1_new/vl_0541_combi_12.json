@@ -1,0 +1,192 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Region",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1960,
+        "Region": "Middle East & N. Africa",
+        "Value": 0.459097,
+        "Detail": "Capture fisheries production (million tonnes per year)"
+      },
+      {
+        "Time": 2012,
+        "Region": "Europe & Central Asia",
+        "Value": 14.00430217,
+        "Detail": NaN
+      },
+      {
+        "Time": 1993,
+        "Region": "Latin America & Caribbean",
+        "Value": 19.29066074,
+        "Detail": NaN
+      },
+      {
+        "Time": 1989,
+        "Region": "Middle East & N. Africa",
+        "Value": 1.59865732,
+        "Detail": NaN
+      },
+      {
+        "Time": 1975,
+        "Region": "Europe & Central Asia",
+        "Value": 12.416208,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show the total fisheries production by region as an area chart over time.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Region",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

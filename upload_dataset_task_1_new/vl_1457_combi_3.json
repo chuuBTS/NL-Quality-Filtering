@@ -1,0 +1,136 @@
+{
+  "table_info": {
+    "table_columns": [
+      "depth",
+      "score_type",
+      "accuracy"
+    ],
+    "table_samples": [
+      {
+        "depth": 1,
+        "score_type": "mean_train_score",
+        "accuracy": 0.8343487858719646
+      },
+      {
+        "depth": 19,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8091911764705882
+      },
+      {
+        "depth": 13,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8091911764705882
+      },
+      {
+        "depth": 10,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.8033088235294118
+      },
+      {
+        "depth": 19,
+        "score_type": "mean_train_score",
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with the depth on one axis and accuracy on the other axis.",
+  "refer_fileds": [
+    {
+      "field": "depth",
+      "type": "quantitative"
+    },
+    {
+      "field": "accuracy",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "depth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "depth",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

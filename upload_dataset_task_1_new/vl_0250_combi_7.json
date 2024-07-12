@@ -1,0 +1,217 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Player",
+      "Progressive Carries",
+      "Touches",
+      "Expected Assists",
+      "Progressive Passes",
+      "Passes",
+      "Interceptions",
+      "Possession-Winning-Tackles",
+      "Aerials Won",
+      "Pos",
+      "Non-Penalty Expected Goals",
+      "cluster",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Player": "Max Aarons",
+        "Progressive Carries": 5.4375,
+        "Touches": 57.96875,
+        "Expected Assists": 0.04375,
+        "Progressive Passes": 2.9375,
+        "Passes": 33.96875,
+        "Interceptions": 1.75,
+        "Possession-Winning-Tackles": 1.15625,
+        "Aerials Won": 0.46875,
+        "Pos": "Defender",
+        "Non-Penalty Expected Goals": 0.02,
+        "cluster": 6,
+        "Component 1": -0.6794867331318681,
+        "Component 2": 0.4101967803346252
+      },
+      {
+        "Unnamed: 0": 729,
+        "Player": "Bram Nuytinck",
+        "Progressive Carries": 1.238938053097345,
+        "Touches": 51.68141592920354,
+        "Expected Assists": 0.0088495575221238,
+        "Progressive Passes": 1.1946902654867255,
+        "Passes": 34.86725663716814,
+        "Interceptions": 1.4601769911504423,
+        "Possession-Winning-Tackles": 0.9734513274336284,
+        "Aerials Won": 1.6371681415929202,
+        "Pos": "Defender",
+        "Non-Penalty Expected Goals": 0.05,
+        "cluster": 5,
+        "Component 1": -0.252407444327722,
+        "Component 2": -1.5168652098675184
+      },
+      {
+        "Unnamed: 0": 483,
+        "Player": "Jo\u00e3o Pedro",
+        "Progressive Carries": 2.3848238482384825,
+        "Touches": 31.49051490514905,
+        "Expected Assists": 0.084010840108401,
+        "Progressive Passes": 1.4634146341463414,
+        "Passes": 14.173441734417343,
+        "Interceptions": 0.3523035230352304,
+        "Possession-Winning-Tackles": 0.4607046070460704,
+        "Aerials Won": 3.3879781420765025,
+        "Pos": "Forward",
+        "Non-Penalty Expected Goals": 0.23,
+        "cluster": 0,
+        "Component 1": 2.898666379184279,
+        "Component 2": -1.7886902576652797
+      },
+      {
+        "Unnamed: 0": 216,
+        "Player": "Mahmoud Dahoud",
+        "Progressive Carries": 4.239130434782609,
+        "Touches": 69.1304347826087,
+        "Expected Assists": 0.1847826086956522,
+        "Progressive Passes": 5.326086956521739,
+        "Passes": 46.03260869565218,
+        "Interceptions": 1.6847826086956523,
+        "Possession-Winning-Tackles": 1.5760869565217392,
+        "Aerials Won": 0.6521739130434783,
+        "Pos": "Midfielder",
+        "Non-Penalty Expected Goals": 0.06,
+        "cluster": 2,
+        "Component 1": -1.0132137855481669,
+        "Component 2": 1.3924826129191443
+      },
+      {
+        "Unnamed: 0": 463,
+        "Player": "Jo\u00e3o Pedro",
+        "Progressive Carries": 4.863387978142076,
+        "Touches": 49.61748633879781,
+        "Expected Assists": 0.084010840108401,
+        "Progressive Passes": 1.4634146341463414,
+        "Passes": 14.173441734417343,
+        "Interceptions": 1.0382513661202186,
+        "Possession-Winning-Tackles": 0.9289617486338796,
+        "Aerials Won": 3.3879781420765025,
+        "Pos": "Winger",
+        "Non-Penalty Expected Goals": 0.23,
+        "cluster": 0,
+        "Component 1": 1.630694198707892,
+        "Component 2": -0.8156738839752935
+      }
+    ]
+  },
+  "nl_utterance": "Show me the correlation between positions and Component 2 on a scatter plot.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Pos",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

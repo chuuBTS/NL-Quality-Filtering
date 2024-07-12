@@ -1,0 +1,464 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Happiness score",
+      "Country_temp",
+      "ISO3",
+      "GDP per capita (PPP)",
+      "Life Ladder",
+      "Social support",
+      "Perceptions of corruption",
+      "Population",
+      "Median Age",
+      "Total Fertility Rate",
+      "Life Expectancy",
+      "Infant Mortality",
+      "Child Mortality",
+      "Net Migration Rate",
+      "Continent",
+      "UN Region"
+    ],
+    "table_samples": [
+      {
+        "Country": "Finland",
+        "Happiness score": 7.821,
+        "Country_temp": "Finland",
+        "ISO3": "FIN",
+        "GDP per capita (PPP)": 55013.38586,
+        "Life Ladder": 7.7944,
+        "Social support": 0.9703,
+        "Perceptions of corruption": 0.1918,
+        "Population": 5535992.0,
+        "Median Age": 42.368,
+        "Total Fertility Rate": 1.389,
+        "Life Expectancy": 82.038,
+        "Infant Mortality": 1.932,
+        "Child Mortality": 2.353,
+        "Net Migration Rate": 2.7,
+        "Continent": "Europe",
+        "UN Region": "Northern Europe"
+      },
+      {
+        "Country": "South Africa",
+        "Happiness score": 5.194,
+        "Country_temp": "South Africa",
+        "ISO3": "ZAF",
+        "GDP per capita (PPP)": 14624.41517,
+        "Life Ladder": 5.5987,
+        "Social support": 0.9222,
+        "Perceptions of corruption": 0.8916,
+        "Population": 59392255.0,
+        "Median Age": 27.146,
+        "Total Fertility Rate": 2.374,
+        "Life Expectancy": 62.341,
+        "Infant Mortality": 26.658,
+        "Child Mortality": 35.068,
+        "Net Migration Rate": 0.184,
+        "Continent": "Africa",
+        "UN Region": "Southern Africa"
+      },
+      {
+        "Country": "Poland",
+        "Happiness score": 6.123,
+        "Country_temp": "Poland",
+        "ISO3": "POL",
+        "GDP per capita (PPP)": 37836.76295,
+        "Life Ladder": 5.9781,
+        "Social support": 0.9355,
+        "Perceptions of corruption": 0.7439,
+        "Population": 38307726.0,
+        "Median Age": 40.871,
+        "Total Fertility Rate": 1.459,
+        "Life Expectancy": 76.457,
+        "Infant Mortality": 3.476,
+        "Child Mortality": 4.029,
+        "Net Migration Rate": -0.077,
+        "Continent": "Europe",
+        "UN Region": "Eastern Europe"
+      },
+      {
+        "Country": "Jordan",
+        "Happiness score": 4.152,
+        "Country_temp": "Jordan",
+        "ISO3": "JOR",
+        "GDP per capita (PPP)": 10132.50388,
+        "Life Ladder": 3.9091,
+        "Social support": 0.7029,
+        "Perceptions of corruption": 0.6555,
+        "Population": 11148278.0,
+        "Median Age": 23.409,
+        "Total Fertility Rate": 2.83,
+        "Life Expectancy": 74.256,
+        "Infant Mortality": 12.389,
+        "Child Mortality": 14.354,
+        "Net Migration Rate": 1.29,
+        "Continent": "Asia",
+        "UN Region": "Western Asia"
+      },
+      {
+        "Country": "Mauritius",
+        "Happiness score": 6.071,
+        "Country_temp": "Mauritius",
+        "ISO3": "MUS",
+        "GDP per capita (PPP)": 23035.283,
+        "Life Ladder": 5.9491,
+        "Social support": 0.8865,
+        "Perceptions of corruption": 0.7835,
+        "Population": 1298915.0,
+        "Median Age": 36.814,
+        "Total Fertility Rate": 1.41,
+        "Life Expectancy": 73.555,
+        "Infant Mortality": 14.372,
+        "Child Mortality": 16.975,
+        "Net Migration Rate": -0.368,
+        "Continent": "Africa",
+        "UN Region": "Eastern Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show a scatter plot to explore the correlation between infant mortality and population size by continent.",
+  "refer_fileds": [
+    {
+      "field": "Infant Mortality",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    },
+    {
+      "field": "Population",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sales",
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "sales": "Email",
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "sales": "Search Engine",
+        "weekday": "Wed",
+        "total": 901
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Tue",
+        "total": 182
+      },
+      {
+        "sales": "Email",
+        "weekday": "Sat",
+        "total": 230
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Fri",
+        "total": 290
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart showing the total sales for each weekday, sorted by days of the week from Monday to Sunday, and also by sales channels from Email to Search Engine.",
+  "refer_fileds": [
+    {
+      "field": "weekday",
+      "type": "temporal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative"
+    },
+    {
+      "field": "sales",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Email",
+          "Union Ads",
+          "Video Ads",
+          "Direct",
+          "Search Engine"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sales",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

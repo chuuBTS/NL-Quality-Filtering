@@ -1,0 +1,192 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "country_code",
+      "continent",
+      "population",
+      "indicator",
+      "weekly_count",
+      "year_week",
+      "rate_14_day",
+      "cumulative_count",
+      "source"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "country_code": "AFG",
+        "continent": "Asia",
+        "population": 38928341,
+        "indicator": "cases",
+        "weekly_count": 0,
+        "year_week": "2020-01",
+        "rate_14_day": NaN,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Nicaragua",
+        "country_code": "NIC",
+        "continent": "America",
+        "population": 6624554,
+        "indicator": "deaths",
+        "weekly_count": 1,
+        "year_week": "2021-06",
+        "rate_14_day": 0.30190712,
+        "cumulative_count": 171,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Jamaica",
+        "country_code": "JAM",
+        "continent": "America",
+        "population": 2961161,
+        "indicator": "deaths",
+        "weekly_count": 17,
+        "year_week": "2020-43",
+        "rate_14_day": 16.547564,
+        "cumulative_count": 188,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Peru",
+        "country_code": "PER",
+        "continent": "America",
+        "population": 32971846,
+        "indicator": "cases",
+        "weekly_count": 44517,
+        "year_week": "2020-22",
+        "rate_14_day": 218.9838,
+        "cumulative_count": 164476,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Russia",
+        "country_code": "RUS",
+        "continent": "Europe",
+        "population": 145934460,
+        "indicator": "deaths",
+        "weekly_count": 0,
+        "year_week": "2020-01",
+        "rate_14_day": NaN,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the cases for United Kingdom, France, Germany, and India over time.",
+  "refer_fileds": [
+    {
+      "field": "year_week",
+      "type": "nominal"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "United Kingdom",
+            "France",
+            "Germany",
+            "India"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "indicator",
+          "oneOf": [
+            "cases"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "table_info": {
+    "table_columns": [
+      "index",
+      "Accuracy",
+      "Experiment"
+    ],
+    "table_samples": [
+      {
+        "index": 0,
+        "Accuracy": 0.681,
+        "Experiment": "1"
+      },
+      {
+        "index": 21,
+        "Accuracy": 0.912,
+        "Experiment": "80-augx10"
+      },
+      {
+        "index": 4,
+        "Accuracy": 0.838,
+        "Experiment": "5"
+      },
+      {
+        "index": 20,
+        "Accuracy": 0.907,
+        "Experiment": "80"
+      },
+      {
+        "index": 8,
+        "Accuracy": 0.882,
+        "Experiment": "20"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average accuracy of each experiment sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Experiment",
+      "type": "nominal"
+    },
+    {
+      "field": "Accuracy",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Accuracy",
+          "op": "average",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Experiment",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Experiment",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Experiment",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Experiment",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Accuracy",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Experiment",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

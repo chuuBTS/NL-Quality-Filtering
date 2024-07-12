@@ -1,0 +1,110 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type",
+      "Number",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Type": "Non-immigrant",
+        "Number": 43176853,
+        "Source": "https://www.dhs.gov/sites/default/files/2023-04/2023_0308_plcy_legal_immigration_adjustment_of_status_report_fy_2022q4_final_d.xlsx "
+      },
+      {
+        "Type": "Lawful Permanent Residents",
+        "Number": 1018004,
+        "Source": NaN
+      },
+      {
+        "Type": "Refugees",
+        "Number": 25465,
+        "Source": NaN
+      },
+      {
+        "Type": "Naturlisations",
+        "Number": 967130,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the quantity for each category.",
+  "refer_fileds": [
+    {
+      "field": "Number",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

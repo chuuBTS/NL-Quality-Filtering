@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Bracket",
+      "StampDuty"
+    ],
+    "table_samples": [
+      {
+        "Year": 1997,
+        "Bracket": "100k",
+        "StampDuty": 1.0
+      },
+      {
+        "Year": 2022,
+        "Bracket": "500k",
+        "StampDuty": 5.0
+      },
+      {
+        "Year": 2003,
+        "Bracket": "2m",
+        "StampDuty": 4.0
+      },
+      {
+        "Year": 2009,
+        "Bracket": "200k",
+        "StampDuty": 1.0
+      },
+      {
+        "Year": 2018,
+        "Bracket": "500k",
+        "StampDuty": 5.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of Stamp Duty for each Bracket over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "StampDuty",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Bracket",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "StampDuty",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "StampDuty",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Bracket",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

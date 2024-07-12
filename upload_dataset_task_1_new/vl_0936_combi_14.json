@@ -1,0 +1,212 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Total",
+      "Medal Type",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "USA",
+        "Total": 104,
+        "Medal Type": "Gold",
+        "Value": 46
+      },
+      {
+        "Unnamed: 0": 20,
+        "Country": "AUS",
+        "Total": 35,
+        "Medal Type": "Bronze",
+        "Value": 12
+      },
+      {
+        "Unnamed: 0": 19,
+        "Country": "AUS",
+        "Total": 35,
+        "Medal Type": "Silver",
+        "Value": 16
+      },
+      {
+        "Unnamed: 0": 29,
+        "Country": "ITA",
+        "Total": 28,
+        "Medal Type": "Bronze",
+        "Value": 11
+      },
+      {
+        "Unnamed: 0": 26,
+        "Country": "KOR",
+        "Total": 28,
+        "Medal Type": "Bronze",
+        "Value": 7
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the number of medals each country won, sorted from the most to the least, and categorized by the type of medal.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Medal Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Medal Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Medal Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

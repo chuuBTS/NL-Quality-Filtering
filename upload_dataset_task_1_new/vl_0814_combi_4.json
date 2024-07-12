@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Programming Language",
+      "Date",
+      "Ratings %"
+    ],
+    "table_samples": [
+      {
+        "Programming Language": "R",
+        "Date": 2007,
+        "Ratings %": 0.06
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2012,
+        "Ratings %": 0.6
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2010,
+        "Ratings %": 0.1
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2015,
+        "Ratings %": 2.61
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2022,
+        "Ratings %": 17.18
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the total Ratings % over time for each Programming Language.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Ratings %",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Programming Language",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Ratings %",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

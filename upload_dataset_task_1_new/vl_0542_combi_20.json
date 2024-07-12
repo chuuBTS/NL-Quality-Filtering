@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Value",
+      "Type",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Country": "Australia",
+        "Value": 19.438,
+        "Type": "Beef",
+        "Detail": "Kilos per capita"
+      },
+      {
+        "Country": "OECD",
+        "Value": 14.425,
+        "Type": "Beef",
+        "Detail": NaN
+      },
+      {
+        "Country": "Canada",
+        "Value": 35.527,
+        "Type": "Poultry",
+        "Detail": NaN
+      },
+      {
+        "Country": "Japan",
+        "Value": 7.643,
+        "Type": "Beef",
+        "Detail": "Source: OECD"
+      },
+      {
+        "Country": "BRICS",
+        "Value": 1.803,
+        "Type": "Mutton/lamb",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show a composition chart of the total consumption sorted in descending order by meat type.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

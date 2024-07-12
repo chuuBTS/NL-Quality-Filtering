@@ -1,0 +1,140 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Nation",
+      "Quarter",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Nation": "England",
+        "Quarter": "2020Q1",
+        "Value": -2.6,
+        "Detail": "GDP change on 2019Q4 (%)"
+      },
+      {
+        "Nation": "Wales",
+        "Quarter": "2020Q3",
+        "Value": -4.339250493,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q2",
+        "Value": -17.44301288,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Scotland",
+        "Quarter": "2020Q1",
+        "Value": -2.9,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q3",
+        "Value": -2.874132805,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total GDP change for each nation.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Nation",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

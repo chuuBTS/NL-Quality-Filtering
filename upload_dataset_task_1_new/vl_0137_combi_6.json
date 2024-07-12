@@ -1,0 +1,114 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "year",
+      "internetUsers"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "year": 1990,
+        "internetUsers": 0.0
+      },
+      {
+        "country": "Ecuador",
+        "region": "Americas",
+        "year": 1995,
+        "internetUsers": 0.000438
+      },
+      {
+        "country": "Antigua and Barbuda",
+        "region": "Americas",
+        "year": 2009,
+        "internetUsers": 0.42
+      },
+      {
+        "country": "Tanzania",
+        "region": "Africa",
+        "year": 2009,
+        "internetUsers": 0.024
+      },
+      {
+        "country": "Venezuela",
+        "region": "Americas",
+        "year": 1999,
+        "internetUsers": 0.0283999999999999
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of internet users for South Korea.",
+  "refer_fileds": [
+    {
+      "field": "internetUsers",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "internetUsers",
+          "valid": true
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "equal": "South Korea"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "internetUsers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "internetUsers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "internetUsers",
+            "valid": true
+          }
+        },
+        {
+          "filter": {
+            "field": "country",
+            "equal": "South Korea"
+          }
+        }
+      ]
+    }
+  ]
+}

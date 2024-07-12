@@ -1,0 +1,353 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Medal",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "United States",
+        "Medal": "Gold",
+        "Total": 48
+      },
+      {
+        "Unnamed: 0": 54,
+        "Country": "Czech Republic",
+        "Medal": "Gold",
+        "Total": 4
+      },
+      {
+        "Unnamed: 0": 11,
+        "Country": "Russia",
+        "Medal": "Bronze",
+        "Total": 27
+      },
+      {
+        "Unnamed: 0": 8,
+        "Country": "Great Britain*",
+        "Medal": "Bronze",
+        "Total": 18
+      },
+      {
+        "Unnamed: 0": 21,
+        "Country": "Australia",
+        "Medal": "Gold",
+        "Total": 8
+      }
+    ]
+  },
+  "nl_utterance": "Show the total sum of medals for each country, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    {
+      "field": "Medal",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Medal",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Medal",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

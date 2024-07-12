@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "RST",
+      "Totals",
+      "Year",
+      "Tot_billions",
+      "Tot_div_worldGDP",
+      "World_GDP_(current US$)"
+    ],
+    "table_samples": [
+      {
+        "Date": "10/31/2022",
+        "GRA Purchases": "93,054,287,423",
+        "PRGT 1/2/": "15,329,531,139",
+        "RST": 0,
+        "Totals": 108383818562,
+        "Year": 2022,
+        "Tot_billions": 108.38,
+        "Tot_div_worldGDP": NaN,
+        "World_GDP_(current US$)": NaN
+      },
+      {
+        "Date": "12/31/1998",
+        "GRA Purchases": "60,451,017,051",
+        "PRGT 1/2/": "6,288,825,925",
+        "RST": 0,
+        "Totals": 66739842976,
+        "Year": 1998,
+        "Tot_billions": 66.74,
+        "Tot_div_worldGDP": 0.211604097,
+        "World_GDP_(current US$)": 31500000000000.0
+      },
+      {
+        "Date": "12/31/1987",
+        "GRA Purchases": "28,751,979,125",
+        "PRGT 1/2/": "1,866,342,930",
+        "RST": 0,
+        "Totals": 30618322055,
+        "Year": 1987,
+        "Tot_billions": 30.62,
+        "Tot_div_worldGDP": 0.176910504,
+        "World_GDP_(current US$)": 17300000000000.0
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": "6,036,146,757",
+        "PRGT 1/2/": "3,796,945,581",
+        "RST": 0,
+        "Totals": 9833092338,
+        "Year": 2007,
+        "Tot_billions": 9.83,
+        "Tot_div_worldGDP": 0.016850467,
+        "World_GDP_(current US$)": 58400000000000.0
+      },
+      {
+        "Date": "12/31/1999",
+        "GRA Purchases": "51,061,861,875",
+        "PRGT 1/2/": "6,434,274,362",
+        "RST": 0,
+        "Totals": 57496136237,
+        "Year": 1999,
+        "Tot_billions": 57.5,
+        "Tot_div_worldGDP": 0.175628426,
+        "World_GDP_(current US$)": 32700000000000.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the sum of the total as a percentage of the world GDP over the years using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Tot_div_worldGDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Tot_div_worldGDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

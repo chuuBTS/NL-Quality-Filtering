@@ -1,0 +1,239 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "periodo_ingresso",
+      "sexo",
+      "contagem",
+      "porcentagem"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 146,
+        "periodo_ingresso": 2020.1,
+        "sexo": "Masculino",
+        "contagem": 86,
+        "porcentagem": 82.69
+      },
+      {
+        "Unnamed: 0": 140,
+        "periodo_ingresso": 2018.2,
+        "sexo": "Masculino",
+        "contagem": 96,
+        "porcentagem": 88.89
+      },
+      {
+        "Unnamed: 0": 92,
+        "periodo_ingresso": 2006.2,
+        "sexo": "Masculino",
+        "contagem": 30,
+        "porcentagem": 83.33
+      },
+      {
+        "Unnamed: 0": 138,
+        "periodo_ingresso": 2018.1,
+        "sexo": "Masculino",
+        "contagem": 87,
+        "porcentagem": 88.78
+      },
+      {
+        "Unnamed: 0": 125,
+        "periodo_ingresso": 2015.1,
+        "sexo": "Feminino",
+        "contagem": 14,
+        "porcentagem": 11.97
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart that represents the total count by gender for each entry period.",
+  "refer_fileds": [
+    {
+      "field": "periodo_ingresso",
+      "type": "quantitative"
+    },
+    {
+      "field": "contagem",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "sexo",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "contagem",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

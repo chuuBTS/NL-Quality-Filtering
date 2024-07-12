@@ -1,0 +1,169 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "index",
+      "Year",
+      "Country",
+      "GDP_CAP",
+      "refugees_asylum",
+      "continent"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "index": 18,
+        "Year": 2020,
+        "Country": "Afghanistan",
+        "GDP_CAP": 516.8665522,
+        "refugees_asylum": 72445,
+        "continent": "Asia"
+      },
+      {
+        "Unnamed: 0": 40,
+        "index": 1226,
+        "Year": 2020,
+        "Country": "Estonia",
+        "GDP_CAP": 23595.24368,
+        "refugees_asylum": 282,
+        "continent": "Europe"
+      },
+      {
+        "Unnamed: 0": 116,
+        "index": 3372,
+        "Year": 2020,
+        "Country": "Senegal",
+        "GDP_CAP": 1490.203137,
+        "refugees_asylum": 16274,
+        "continent": "Africa"
+      },
+      {
+        "Unnamed: 0": 29,
+        "index": 870,
+        "Year": 2020,
+        "Country": "Colombia",
+        "GDP_CAP": 5307.215228,
+        "refugees_asylum": 20890,
+        "continent": "South America"
+      },
+      {
+        "Unnamed: 0": 7,
+        "index": 248,
+        "Year": 2020,
+        "Country": "Austria",
+        "GDP_CAP": 48809.22688,
+        "refugees_asylum": 162526,
+        "continent": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing GDP per capita on one axis and the continents on the other axis.",
+  "refer_fileds": [
+    {
+      "field": "GDP_CAP",
+      "type": "quantitative"
+    },
+    {
+      "field": "continent",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "GDP_CAP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "GDP_CAP",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GDP_CAP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GDP_CAP",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP_CAP",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GDP_CAP",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "GDP_CAP",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "continent",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

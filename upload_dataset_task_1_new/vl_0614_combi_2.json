@@ -1,0 +1,204 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Country",
+      "GDP ($m)",
+      "Labour Force (000s)",
+      "Output per worker ($)",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AUS",
+        "Country": "Australia",
+        "GDP ($m)": 1595175.273,
+        "Labour Force (000s)": 13738.67,
+        "Output per worker ($)": 116108.42046573648,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "SWE",
+        "Country": "Sweden",
+        "GDP ($m)": 624677.494,
+        "Labour Force (000s)": 5609.575,
+        "Output per worker ($)": 111359.14824206826,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "CAN",
+        "Country": "Canada",
+        "GDP ($m)": 2029877.312,
+        "Labour Force (000s)": 20385.35,
+        "Output per worker ($)": 99575.29853546788,
+        "Continent": "America"
+      },
+      {
+        "ISO3": "NLD",
+        "Country": "Netherlands",
+        "GDP ($m)": 1111920.895,
+        "Labour Force (000s)": 9690.125,
+        "Output per worker ($)": 114747.838134183,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "NZL",
+        "Country": "New Zealand",
+        "GDP ($m)": 241154.582,
+        "Labour Force (000s)": 2899.575,
+        "Output per worker ($)": 83168.94096548633,
+        "Continent": "Oceania"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the output per worker in countries with a labor force greater than 5000, sorted by output per worker in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Output per worker ($)",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Labour Force (000s)",
+          "gt": 5000
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Output per worker ($)",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    }
+  ]
+}

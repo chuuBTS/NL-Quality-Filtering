@@ -1,0 +1,169 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rowid",
+      "date",
+      "currency_code",
+      "name",
+      "local_price",
+      "dollar_ex",
+      "dollar_price"
+    ],
+    "table_samples": [
+      {
+        "rowid": 1,
+        "date": "2000-04-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 2.5,
+        "dollar_ex": 1.0,
+        "dollar_price": 2.5
+      },
+      {
+        "rowid": 14993,
+        "date": "2008-06-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 3.36856,
+        "dollar_ex": 0.630497147,
+        "dollar_price": 5.342704588003469
+      },
+      {
+        "rowid": 9320,
+        "date": "2000-04-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 2.56,
+        "dollar_ex": 1.075268817,
+        "dollar_price": 2.38080000045235
+      },
+      {
+        "rowid": 3145,
+        "date": "2010-07-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 3.3800310710000003,
+        "dollar_ex": 0.78015291,
+        "dollar_price": 4.33252382664316
+      },
+      {
+        "rowid": 5440,
+        "date": "2004-05-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 4.36,
+        "dollar_ex": 2.95,
+        "dollar_price": 1.4779661016949202
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the local price for each currency code.",
+  "refer_fileds": [
+    {
+      "field": "local_price",
+      "type": "quantitative"
+    },
+    {
+      "field": "currency_code",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

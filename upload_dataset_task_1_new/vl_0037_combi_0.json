@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "a",
+      "b"
+    ],
+    "table_samples": [
+      {
+        "a": "C",
+        "b": 2
+      },
+      {
+        "a": "D",
+        "b": 2
+      },
+      {
+        "a": "D",
+        "b": 6
+      },
+      {
+        "a": "E",
+        "b": 4
+      },
+      {
+        "a": "C",
+        "b": 7
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average value of b for each category of a.",
+  "refer_fileds": [
+    {
+      "field": "a",
+      "type": "nominal"
+    },
+    {
+      "field": "b",
+      "type": "quantitative",
+      "aggregate": "average"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "b",
+          "aggregate": "average"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "b",
+          "type": "quantitative",
+          "aggregate": "average"
+        },
+        "color": {
+          "field": "a",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "a",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "b",
+          "type": "quantitative",
+          "aggregate": "average"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "a",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "b",
+          "type": "quantitative",
+          "aggregate": "average"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "b",
+          "type": "quantitative",
+          "aggregate": "average"
+        },
+        "y": {
+          "field": "a",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "b",
+          "type": "quantitative",
+          "aggregate": "average"
+        },
+        "x": {
+          "field": "a",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

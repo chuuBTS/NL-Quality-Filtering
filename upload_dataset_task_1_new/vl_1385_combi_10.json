@@ -1,0 +1,104 @@
+{
+  "table_info": {
+    "table_columns": [
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "weekday": "Fri",
+        "total": 70
+      },
+      {
+        "weekday": "Wed",
+        "total": 150
+      },
+      {
+        "weekday": "Thu",
+        "total": 80
+      },
+      {
+        "weekday": "Sat",
+        "total": 110
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total transactions on weekdays sorted from Monday to Sunday.",
+  "refer_fileds": [
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "weekday"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "weekday"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

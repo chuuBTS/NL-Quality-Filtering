@@ -1,0 +1,302 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Entity",
+      "Year",
+      "Geo Biomass Other - TWh (zero filled)",
+      "Biofuels Consumption - TWh - Total (zero filled)",
+      "Solar Consumption - TWh (zero filled)",
+      "Wind Consumption - TWh (zero filled)",
+      "Hydro Consumption - TWh (zero filled)",
+      "Nuclear Consumption - TWh (zero filled)",
+      "Gas Consumption - TWh (zero filled)",
+      "Coal Consumption - TWh (zero filled)",
+      "Oil Consumption - TWh (zero filled)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Entity": "Africa",
+        "Year": 1965,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 41.11881256,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 9.543754578,
+        "Coal Consumption - TWh (zero filled)": 323.4961243,
+        "Oil Consumption - TWh (zero filled)": 341.2627563
+      },
+      {
+        "Unnamed: 0": 1855,
+        "Entity": "France",
+        "Year": 1996,
+        "Geo Biomass Other - TWh (zero filled)": 2.423000097,
+        "Biofuels Consumption - TWh - Total (zero filled)": 2.605077028,
+        "Solar Consumption - TWh (zero filled)": 0.007833334,
+        "Wind Consumption - TWh (zero filled)": 0.021972222,
+        "Hydro Consumption - TWh (zero filled)": 195.2913971,
+        "Nuclear Consumption - TWh (zero filled)": 1127.45813,
+        "Gas Consumption - TWh (zero filled)": 380.1465149,
+        "Coal Consumption - TWh (zero filled)": 181.6605988,
+        "Oil Consumption - TWh (zero filled)": 1093.075073
+      },
+      {
+        "Unnamed: 0": 1291,
+        "Entity": "Czechia",
+        "Year": 2002,
+        "Geo Biomass Other - TWh (zero filled)": 0.493999988,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.004666667,
+        "Hydro Consumption - TWh (zero filled)": 7.273735523,
+        "Nuclear Consumption - TWh (zero filled)": 52.48386002,
+        "Gas Consumption - TWh (zero filled)": 90.27249908,
+        "Coal Consumption - TWh (zero filled)": 237.6306915,
+        "Oil Consumption - TWh (zero filled)": 96.75073242
+      },
+      {
+        "Unnamed: 0": 2685,
+        "Entity": "Kazakhstan",
+        "Year": 1971,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 0.0,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 0.0,
+        "Coal Consumption - TWh (zero filled)": 0.0,
+        "Oil Consumption - TWh (zero filled)": 0.0
+      },
+      {
+        "Unnamed: 0": 4879,
+        "Entity": "Qatar",
+        "Year": 2002,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 0.0,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 114.5382843,
+        "Coal Consumption - TWh (zero filled)": 0.0,
+        "Oil Consumption - TWh (zero filled)": 27.4902153
+      }
+    ]
+  },
+  "nl_utterance": "Show the total oil consumption for each entity over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Oil Consumption - TWh (zero filled)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Entity",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

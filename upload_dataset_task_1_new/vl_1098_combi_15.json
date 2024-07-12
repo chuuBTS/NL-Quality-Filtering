@@ -1,0 +1,144 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value1",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Year": 2016,
+        "Country": "Canada",
+        "Value1": 1528000,
+        "Value2": 1467883.2,
+        "Detail": "V1: GDP ($ million)"
+      },
+      {
+        "Year": 2019,
+        "Country": "Italy",
+        "Value1": 2005140,
+        "Value2": 2771385.0,
+        "Detail": NaN
+      },
+      {
+        "Year": 2020,
+        "Country": "Germany",
+        "Value1": 3803010,
+        "Value2": 2641297.0,
+        "Detail": NaN
+      },
+      {
+        "Year": 2016,
+        "Country": "France",
+        "Value1": 2472280,
+        "Value2": 2516775.0,
+        "Detail": NaN
+      },
+      {
+        "Year": 2018,
+        "Country": "Japan",
+        "Value1": 5036890,
+        "Value2": 11638728.9,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart, area chart, or pie chart showing the composition of different values for each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value2",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

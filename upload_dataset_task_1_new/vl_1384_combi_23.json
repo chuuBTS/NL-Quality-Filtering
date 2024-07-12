@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sales",
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "sales": "Email",
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "sales": "Search Engine",
+        "weekday": "Fri",
+        "total": 1290
+      },
+      {
+        "sales": "Direct",
+        "weekday": "Fri",
+        "total": 390
+      },
+      {
+        "sales": "Email",
+        "weekday": "Tue",
+        "total": 132
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Wed",
+        "total": 191
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of the total sales on each weekday using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "weekday",
+      "type": "temporal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "weekday",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

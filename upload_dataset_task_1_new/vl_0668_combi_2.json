@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country ",
+      "Year",
+      "ODA/GNI"
+    ],
+    "table_samples": [
+      {
+        "Country ": "FRA",
+        "Year": 1960,
+        "ODA/GNI": 1.347577
+      },
+      {
+        "Country ": "GBR",
+        "Year": 1978,
+        "ODA/GNI": 0.455306
+      },
+      {
+        "Country ": "DEU",
+        "Year": 1963,
+        "ODA/GNI": 0.407119
+      },
+      {
+        "Country ": "FRA",
+        "Year": 2019,
+        "ODA/GNI": 0.441062
+      },
+      {
+        "Country ": "FRA",
+        "Year": 1989,
+        "ODA/GNI": 0.605522
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total official development assistance as a percentage of gross national income for each country.",
+  "refer_fileds": [
+    {
+      "field": "ODA/GNI",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country ",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ODA/GNI",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

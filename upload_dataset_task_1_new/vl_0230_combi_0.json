@@ -1,0 +1,61 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Player",
+      "G-xG"
+    ],
+    "table_samples": [
+      {
+        "Player": "Yunis Abdelhamid",
+        "G-xG": 0.02
+      },
+      {
+        "Player": "Darko Bra\u0161anac",
+        "G-xG": -0.02
+      },
+      {
+        "Player": "Roger Ibanez",
+        "G-xG": 0.03
+      },
+      {
+        "Player": "Vincenzo Grifo",
+        "G-xG": -0.02
+      },
+      {
+        "Player": "Jordan Henderson",
+        "G-xG": 0.02
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of players based on their G-xG values.",
+  "refer_fileds": [
+    {
+      "field": "G-xG",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "G-xG",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

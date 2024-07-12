@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Amount",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "Amount": 19.5,
+        "count": 4
+      },
+      {
+        "Amount": 95.5,
+        "count": 17
+      },
+      {
+        "Amount": 38.5,
+        "count": 1
+      },
+      {
+        "Amount": 76.5,
+        "count": 1
+      },
+      {
+        "Amount": 114.5,
+        "count": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of counts.",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

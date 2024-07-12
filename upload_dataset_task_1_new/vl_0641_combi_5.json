@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Item",
+      "shortName",
+      "pieNumber",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Item": "Gross domestic income",
+        "shortName": "GDI",
+        "pieNumber": NaN,
+        "Value": 25844.7
+      },
+      {
+        "Line": 11,
+        "Item": "Net interest and miscellaneous payments, domestic industries",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 787.4
+      },
+      {
+        "Line": 21,
+        "Item": "Consumption of fixed capital",
+        "shortName": "Depreciation",
+        "pieNumber": 4.0,
+        "Value": 4358.1
+      },
+      {
+        "Line": 15,
+        "Item": "Corporate profits with inventory valuation and capital consumption adjustments, domestic industries",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 2553.2
+      },
+      {
+        "Line": 4,
+        "Item": "To persons",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 11238.7
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for the selected lines in our dataset.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Line",
+          "oneOf": [
+            3,
+            6,
+            7,
+            9,
+            21
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

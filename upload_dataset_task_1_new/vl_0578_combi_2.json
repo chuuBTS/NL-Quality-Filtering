@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "year",
+      "month",
+      "date2",
+      "Price",
+      "Dividend",
+      "Earnings",
+      "CPI",
+      "R",
+      "PriceReal",
+      "DividendReal",
+      "RealTotalReturn",
+      "EarningsReal",
+      "CAPE"
+    ],
+    "table_samples": [
+      {
+        "Date": 1871.01,
+        "year": 1871,
+        "month": 1,
+        "date2": "1871-1-01",
+        "Price": 4.44,
+        "Dividend": 0.26,
+        "Earnings": 0.4,
+        "CPI": 12.46406116,
+        "R": 5.32,
+        "PriceReal": 105.4820771,
+        "DividendReal": 6.176878388,
+        "RealTotalReturn": 105.4820771,
+        "EarningsReal": 9.502889827,
+        "CAPE": NaN
+      },
+      {
+        "Date": 1963.09,
+        "year": 1963,
+        "month": 9,
+        "date2": "1963-9-01",
+        "Price": 72.85,
+        "Dividend": 2.21,
+        "Earnings": 3.96,
+        "CPI": 30.7,
+        "R": 4.08,
+        "PriceReal": 702.6619796,
+        "DividendReal": 21.31616987,
+        "RealTotalReturn": 84968.98499,
+        "EarningsReal": 38.1954899,
+        "CAPE": 20.96036009
+      },
+      {
+        "Date": 1957.01,
+        "year": 1957,
+        "month": 1,
+        "date2": "1957-1-01",
+        "Price": 45.43,
+        "Dividend": 1.73667,
+        "Earnings": 3.40667,
+        "CPI": 27.6,
+        "R": 3.46,
+        "PriceReal": 487.4038205,
+        "DividendReal": 18.63217242,
+        "RealTotalReturn": 46969.95513,
+        "EarningsReal": 36.5490639,
+        "CAPE": 16.71778008
+      },
+      {
+        "Date": 1943.02,
+        "year": 1943,
+        "month": 2,
+        "date2": "1943-2-01",
+        "Price": 10.69,
+        "Dividend": 0.59,
+        "Earnings": 1.05667,
+        "CPI": 16.9,
+        "R": 2.470833333,
+        "PriceReal": 187.3036648,
+        "DividendReal": 10.33762041,
+        "RealTotalReturn": 8677.443397,
+        "EarningsReal": 18.51432773,
+        "CAPE": 10.708983
+      },
+      {
+        "Date": 1936.1,
+        "year": 1936,
+        "month": 10,
+        "date2": "1936-10-01",
+        "Price": 16.89,
+        "Dividend": 0.646667,
+        "Earnings": 0.966667,
+        "CPI": 14.0,
+        "R": 2.6725,
+        "PriceReal": 357.2373739,
+        "DividendReal": 13.67753824,
+        "RealTotalReturn": 11309.62039,
+        "EarningsReal": 20.4458011,
+        "CAPE": 20.91309185
+      }
+    ]
+  },
+  "nl_utterance": "Show me the CAPE values from January 1, 1900, to November 1, 2023.",
+  "refer_fileds": [
+    {
+      "field": "CAPE",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Date",
+          "range": [
+            {
+              "year": 1900,
+              "month": 1,
+              "day": 1
+            },
+            {
+              "year": 2023,
+              "month": 11,
+              "day": 1
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "CAPE",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Date",
+            "range": [
+              {
+                "year": 1900,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 2023,
+                "month": 11,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

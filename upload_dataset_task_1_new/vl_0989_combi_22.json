@@ -1,0 +1,394 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Entity",
+      "Year",
+      "Geo Biomass Other - TWh (zero filled)",
+      "Biofuels Consumption - TWh - Total (zero filled)",
+      "Solar Consumption - TWh (zero filled)",
+      "Wind Consumption - TWh (zero filled)",
+      "Hydro Consumption - TWh (zero filled)",
+      "Nuclear Consumption - TWh (zero filled)",
+      "Gas Consumption - TWh (zero filled)",
+      "Coal Consumption - TWh (zero filled)",
+      "Oil Consumption - TWh (zero filled)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Entity": "Africa",
+        "Year": 1965,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 41.11881256,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 9.543754578,
+        "Coal Consumption - TWh (zero filled)": 323.4961243,
+        "Oil Consumption - TWh (zero filled)": 341.2627563
+      },
+      {
+        "Unnamed: 0": 76,
+        "Entity": "Africa (BP)",
+        "Year": 1984,
+        "Geo Biomass Other - TWh (zero filled)": 0.233999997,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 131.556366,
+        "Nuclear Consumption - TWh (zero filled)": 11.13724613,
+        "Gas Consumption - TWh (zero filled)": 259.902771,
+        "Coal Consumption - TWh (zero filled)": 762.8978882,
+        "Oil Consumption - TWh (zero filled)": 981.7520142
+      },
+      {
+        "Unnamed: 0": 5432,
+        "Entity": "South and Central America (BP)",
+        "Year": 1985,
+        "Geo Biomass Other - TWh (zero filled)": 6.076121807,
+        "Biofuels Consumption - TWh - Total (zero filled)": 63.57527924,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 838.3311768,
+        "Nuclear Consumption - TWh (zero filled)": 25.95475006,
+        "Gas Consumption - TWh (zero filled)": 471.374054,
+        "Coal Consumption - TWh (zero filled)": 183.8200073,
+        "Oil Consumption - TWh (zero filled)": 1811.658081
+      },
+      {
+        "Unnamed: 0": 121,
+        "Entity": "Algeria",
+        "Year": 1972,
+        "Geo Biomass Other - TWh (zero filled)": 0.0,
+        "Biofuels Consumption - TWh - Total (zero filled)": 0.0,
+        "Solar Consumption - TWh (zero filled)": 0.0,
+        "Wind Consumption - TWh (zero filled)": 0.0,
+        "Hydro Consumption - TWh (zero filled)": 1.463709712,
+        "Nuclear Consumption - TWh (zero filled)": 0.0,
+        "Gas Consumption - TWh (zero filled)": 12.83012486,
+        "Coal Consumption - TWh (zero filled)": 0.232600003,
+        "Oil Consumption - TWh (zero filled)": 30.12141418
+      },
+      {
+        "Unnamed: 0": 3636,
+        "Entity": "North America (BP)",
+        "Year": 2013,
+        "Geo Biomass Other - TWh (zero filled)": 99.02339935,
+        "Biofuels Consumption - TWh - Total (zero filled)": 378.087616,
+        "Solar Consumption - TWh (zero filled)": 48.08913803,
+        "Wind Consumption - TWh (zero filled)": 503.8345947,
+        "Hydro Consumption - TWh (zero filled)": 1870.61792,
+        "Nuclear Consumption - TWh (zero filled)": 2471.625732,
+        "Gas Consumption - TWh (zero filled)": 8902.585938,
+        "Coal Consumption - TWh (zero filled)": 5409.834961,
+        "Oil Consumption - TWh (zero filled)": 12001.04199
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total oil consumption for each continent over time as an area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "Oil Consumption - TWh (zero filled)",
+        "Gas Consumption - TWh (zero filled)",
+        "Coal Consumption - TWh (zero filled)",
+        "Nuclear Consumption - TWh (zero filled)",
+        "Hydro Consumption - TWh (zero filled)",
+        "Solar Consumption - TWh (zero filled)",
+        "Wind Consumption - TWh (zero filled)",
+        "Biofuels Consumption - TWh - Total (zero filled)",
+        "Geo Biomass Other - TWh (zero filled)"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Entity",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Oil Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Gas Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Coal Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Nuclear Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Hydro Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Solar Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Wind Consumption - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Biofuels Consumption - TWh - Total (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Geo Biomass Other - TWh (zero filled)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

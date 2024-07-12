@@ -1,0 +1,172 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Value",
+      "Type",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Country": "Australia",
+        "Value": 19.438,
+        "Type": "Beef",
+        "Detail": "Kilos per capita"
+      },
+      {
+        "Country": "United States",
+        "Value": 23.983,
+        "Type": "Pork",
+        "Detail": NaN
+      },
+      {
+        "Country": "Australia",
+        "Value": 43.792,
+        "Type": "Poultry",
+        "Detail": NaN
+      },
+      {
+        "Country": "Australia",
+        "Value": 20.212,
+        "Type": "Pork",
+        "Detail": NaN
+      },
+      {
+        "Country": "India",
+        "Value": 0.458,
+        "Type": "Mutton/lamb",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart of the kilos per capita sorted in descending order by meat type.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

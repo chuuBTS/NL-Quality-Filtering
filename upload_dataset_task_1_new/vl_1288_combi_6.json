@@ -1,0 +1,152 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPG",
+      "player",
+      "ppg",
+      "team",
+      "team_tournament",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPG": 103.0,
+        "player": "Andrew Yaphe",
+        "ppg": 103.0,
+        "team": "Stanford A",
+        "team_tournament": "2010 Andrew Yaphe",
+        "tournament": "ACF Nationals 2010"
+      },
+      {
+        "PPG": 66.0,
+        "player": "Eric Mukherjee",
+        "ppg": 66.0,
+        "team": "Penn A",
+        "team_tournament": "2010 Eric Mukherjee",
+        "tournament": "ACF Nationals 2010"
+      },
+      {
+        "PPG": 82.22222222222223,
+        "player": "Jordan Brownstein",
+        "ppg": 82.22,
+        "team": "Maryland A",
+        "team_tournament": "2016 Jordan Brownstein",
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPG": 67.22222222222223,
+        "player": "Matt Bollinger",
+        "ppg": 67.22,
+        "team": "Virginia A",
+        "team_tournament": "2013 Matt Bollinger",
+        "tournament": "ACF Nationals 2013"
+      },
+      {
+        "PPG": 82.5,
+        "player": "Matt Weiner",
+        "ppg": 82.5,
+        "team": "VCU A",
+        "team_tournament": "2007 Matt Weiner",
+        "tournament": "ACF Nationals 2007"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the average points per game in descending order for each player's team tournament.",
+  "refer_fileds": [
+    {
+      "field": "team_tournament",
+      "type": "nominal"
+    },
+    {
+      "field": "ppg",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "ppg",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

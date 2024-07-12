@@ -1,0 +1,400 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "food_emissions",
+      "Type"
+    ],
+    "table_samples": [
+      {
+        "Entity": NaN,
+        "food_emissions": NaN,
+        "Type": NaN
+      },
+      {
+        "Entity": "Fish (farmed)",
+        "food_emissions": 0.1,
+        "Type": "Transport"
+      },
+      {
+        "Entity": "Maize",
+        "food_emissions": 0.1,
+        "Type": "Transport"
+      },
+      {
+        "Entity": "Fish (farmed)",
+        "food_emissions": 0.1,
+        "Type": "Packaging"
+      },
+      {
+        "Entity": "Lamb & Mutton",
+        "food_emissions": 19.5,
+        "Type": "Farm"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a list of foods sorted by their emissions in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Entity",
+      "type": "nominal"
+    },
+    {
+      "field": "food_emissions",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "food_emissions",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 5.0,
+        "item": "munchkin"
+      },
+      {
+        "time": 3,
+        "quantity": 19.71068609258575,
+        "item": "munchkin"
+      },
+      {
+        "time": 14,
+        "quantity": 43.58875032686557,
+        "item": "munchkin"
+      },
+      {
+        "time": 10,
+        "quantity": 22.86525259636632,
+        "item": "witch"
+      },
+      {
+        "time": 5,
+        "quantity": 16.132639022018836,
+        "item": "witch"
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart with the time on one axis and the quantity on the other.",
+  "refer_fileds": [
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

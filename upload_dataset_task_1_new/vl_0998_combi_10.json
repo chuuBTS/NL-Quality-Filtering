@@ -1,0 +1,163 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Year",
+      "Cost",
+      "Energy Cost",
+      "Capacity",
+      "Energy Source"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 490,
+        "Year": 2010,
+        "Cost": 0.07818927,
+        "Energy Cost": "Bioenergy levelized cost of energy",
+        "Capacity": 1025434.3921,
+        "Energy Source": "Hydropower"
+      },
+      {
+        "Unnamed: 0": 708,
+        "Year": 2014,
+        "Cost": 0.16125813,
+        "Energy Cost": "Solar photovoltaic levelized cost of energy",
+        "Capacity": 340814.044,
+        "Energy Source": "Onshore wind energy"
+      },
+      {
+        "Unnamed: 0": 1000,
+        "Year": 2020,
+        "Cost": 0.08626575,
+        "Energy Cost": "Offshore wind levelized cost of energy",
+        "Capacity": 14437.561,
+        "Energy Source": "Geothermal"
+      },
+      {
+        "Unnamed: 0": 914,
+        "Year": 2018,
+        "Cost": 0.14910279,
+        "Energy Cost": "Concentrated solar power levelized cost of energy",
+        "Capacity": 5810.934,
+        "Energy Source": "Concentrated solar power"
+      },
+      {
+        "Unnamed: 0": 582,
+        "Year": 2011,
+        "Cost": 0.09648669,
+        "Energy Cost": "Onshore wind levelized cost of energy",
+        "Capacity": 216344.815,
+        "Energy Source": "Onshore wind energy"
+      }
+    ]
+  },
+  "nl_utterance": "Show the correlation between different energy sources and their capacities in a scatter plot.",
+  "refer_fileds": [
+    {
+      "field": "Energy Source",
+      "type": "nominal"
+    },
+    {
+      "field": "Capacity",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Capacity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Energy Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Capacity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Energy Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Energy Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Capacity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Energy Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Capacity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Energy Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Capacity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Capacity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Energy Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Capacity",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Energy Source",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

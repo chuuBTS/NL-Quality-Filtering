@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ID",
+      "category",
+      "launched"
+    ],
+    "table_samples": [
+      {
+        "ID": 1000256230,
+        "category": "Software",
+        "launched": "2017-06-02 12:20:21"
+      },
+      {
+        "ID": 1118563825,
+        "category": "3D Printing",
+        "launched": "2015-10-20 04:50:25"
+      },
+      {
+        "ID": 1794010803,
+        "category": "3D Printing",
+        "launched": "2015-07-20 16:45:54"
+      },
+      {
+        "ID": 2056176226,
+        "category": "Software",
+        "launched": "2014-07-10 17:05:42"
+      },
+      {
+        "ID": 1808204790,
+        "category": "Software",
+        "launched": "2014-04-23 20:15:07"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of software launches between 2013 and 2018 by counting their occurrences over time.",
+  "refer_fileds": [
+    {
+      "field": "ID",
+      "type": "quantitative"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "gt": 2013
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "lt": 2018
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "launched"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "launched"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    }
+  ]
+}

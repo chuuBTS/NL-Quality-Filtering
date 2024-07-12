@@ -1,0 +1,88 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196
+      },
+      {
+        "Date": "12/31/2002",
+        "GRA Purchases": 63601058794,
+        "PRGT 1/2/": 6868671012,
+        "Totals": 70469729806,
+        "Year": 2002,
+        "Totals_billions": 70.46972981
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723,
+        "PRGT 1/2/": 3972372030,
+        "Totals": 21487336753,
+        "Year": 2008,
+        "Totals_billions": 21.48733675
+      },
+      {
+        "Date": "12/31/2017",
+        "GRA Purchases": 39585385873,
+        "PRGT 1/2/": 6522280669,
+        "Totals": 46107666542,
+        "Year": 2017,
+        "Totals_billions": 46.10766654
+      },
+      {
+        "Date": "12/31/1986",
+        "GRA Purchases": 33334905644,
+        "PRGT 1/2/": 2013169931,
+        "Totals": 35348075575,
+        "Year": 1986,
+        "Totals_billions": 35.34807558
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of total purchases in billions.",
+  "refer_fileds": [
+    {
+      "field": "Totals_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Date",
+      "Unemployment Rate"
+    ],
+    "table_samples": [
+      {
+        "Country": "GBR",
+        "Date": "2005-01",
+        "Unemployment Rate": 4.8
+      },
+      {
+        "Country": "USA",
+        "Date": "2006-03",
+        "Unemployment Rate": 4.7
+      },
+      {
+        "Country": "USA",
+        "Date": "2006-01",
+        "Unemployment Rate": 4.7
+      },
+      {
+        "Country": "USA",
+        "Date": "2006-05",
+        "Unemployment Rate": 4.6
+      },
+      {
+        "Country": "GBR",
+        "Date": "2011-05",
+        "Unemployment Rate": 7.9
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of unemployment rates over time.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Unemployment Rate",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Unemployment Rate",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Unemployment Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "label",
+      "group",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "label": "2020-05-20",
+        "group": "A",
+        "value": 8
+      },
+      {
+        "label": "2020-06-15",
+        "group": "J",
+        "value": 2
+      },
+      {
+        "label": "2020-06-15",
+        "group": "F",
+        "value": 3
+      },
+      {
+        "label": "2020-06-15",
+        "group": "G",
+        "value": 2
+      },
+      {
+        "label": "2020-06-13",
+        "group": "A",
+        "value": 17
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total value over time for each group using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "label",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

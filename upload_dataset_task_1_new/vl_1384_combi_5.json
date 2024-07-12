@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sales",
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "sales": "Email",
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Wed",
+        "total": 191
+      },
+      {
+        "sales": "Email",
+        "weekday": "Sun",
+        "total": 210
+      },
+      {
+        "sales": "Union Ads",
+        "weekday": "Sun",
+        "total": 310
+      },
+      {
+        "sales": "Direct",
+        "weekday": "Sat",
+        "total": 330
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of total sales by each day of the week.",
+  "refer_fileds": [
+    {
+      "field": "weekday",
+      "type": "temporal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weekday",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "weekday",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

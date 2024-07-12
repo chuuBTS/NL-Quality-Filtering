@@ -1,0 +1,193 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "ConstituencyName",
+      "RegionName",
+      "MedianHPrice",
+      "MedianWeeklyWage",
+      "YearlySalary",
+      "Housepriceincreaseover5years",
+      "%Growth5years",
+      "%affordability",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "ConstituencyName": "Aldershot",
+        "RegionName": "South East",
+        "MedianHPrice": 335000,
+        "MedianWeeklyWage": 576,
+        "YearlySalary": 29968,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.2496118035031694,
+        "Component 2": -0.5133032835863713
+      },
+      {
+        "Unnamed: 0": 221,
+        "ConstituencyName": "Hornchurch and Upminster",
+        "RegionName": "London",
+        "MedianHPrice": 440000,
+        "MedianWeeklyWage": 486,
+        "YearlySalary": 25256,
+        "Housepriceincreaseover5years": 12000,
+        "%Growth5years": 3,
+        "%affordability": 6,
+        "Component 1": 0.800759862393955,
+        "Component 2": 1.6990286116939128
+      },
+      {
+        "Unnamed: 0": 78,
+        "ConstituencyName": "Buckingham",
+        "RegionName": "South East",
+        "MedianHPrice": 411551,
+        "MedianWeeklyWage": 532,
+        "YearlySalary": 27669,
+        "Housepriceincreaseover5years": 2316,
+        "%Growth5years": 1,
+        "%affordability": 7,
+        "Component 1": 1.0283610986955738,
+        "Component 2": -0.7430033874135283
+      },
+      {
+        "Unnamed: 0": 66,
+        "ConstituencyName": "Brigg and Goole",
+        "RegionName": "Yorkshire and The Humber",
+        "MedianHPrice": 175000,
+        "MedianWeeklyWage": 492,
+        "YearlySalary": 25584,
+        "Housepriceincreaseover5years": 4250,
+        "%Growth5years": 3,
+        "%affordability": 15,
+        "Component 1": -1.201710964634229,
+        "Component 2": -0.6887772456426258
+      },
+      {
+        "Unnamed: 0": 436,
+        "ConstituencyName": "Staffordshire Moorlands",
+        "RegionName": "West Midlands",
+        "MedianHPrice": 190000,
+        "MedianWeeklyWage": 529,
+        "YearlySalary": 27503,
+        "Housepriceincreaseover5years": 5000,
+        "%Growth5years": 3,
+        "%affordability": 14,
+        "Component 1": -0.5419258405769498,
+        "Component 2": -0.7951899940273547
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows 'Component 2' values for different 'RegionName'.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "RegionName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

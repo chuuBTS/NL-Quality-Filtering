@@ -1,0 +1,469 @@
+{
+  "table_info": {
+    "table_columns": [
+      "dist_group",
+      "main_mode",
+      "trips",
+      "mode",
+      "scaled_trips",
+      "source",
+      "tripdistancegroupindex",
+      "pct"
+    ],
+    "table_samples": [
+      {
+        "dist_group": "0 - 1000",
+        "main_mode": "bike",
+        "trips": 9933,
+        "mode": "bike",
+        "scaled_trips": 39732,
+        "source": "sim",
+        "tripdistancegroupindex": 0,
+        "pct": 0.15
+      },
+      {
+        "dist_group": "10000+",
+        "main_mode": "car",
+        "trips": 54147,
+        "mode": "car",
+        "scaled_trips": 216588,
+        "source": "srv",
+        "tripdistancegroupindex": 4,
+        "pct": 0.75
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "car",
+        "trips": 45974,
+        "mode": "car",
+        "scaled_trips": 183896,
+        "source": "sim",
+        "tripdistancegroupindex": 3,
+        "pct": 0.59
+      },
+      {
+        "dist_group": "3000 - 5000",
+        "main_mode": "car",
+        "trips": 30013,
+        "mode": "car",
+        "scaled_trips": 120052,
+        "source": "sim",
+        "tripdistancegroupindex": 2,
+        "pct": 0.5
+      },
+      {
+        "dist_group": "0 - 1000",
+        "main_mode": "pt",
+        "trips": 2461,
+        "mode": "pt",
+        "scaled_trips": 9844,
+        "source": "sim",
+        "tripdistancegroupindex": 0,
+        "pct": 0.02
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of the total percentage by source across different distance groups and transportation modes in a bar chart.",
+  "refer_fileds": [
+    {
+      "field": "source",
+      "type": "nominal"
+    },
+    {
+      "field": "pct",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "dist_group",
+      "type": "nominal"
+    },
+    {
+      "field": [
+        "main_mode",
+        "mode"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "pct",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "source",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

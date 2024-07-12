@@ -1,0 +1,87 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2022",
+      "2022"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2022": 68,
+        "2022": "Islam"
+      },
+      {
+        "Country": "Iran (Islamic Republic of)",
+        "CAF_2022": 43,
+        "2022": "Islam"
+      },
+      {
+        "Country": "China",
+        "CAF_2022": 42,
+        "2022": "Buddhism"
+      },
+      {
+        "Country": "Nigeria",
+        "CAF_2022": 48,
+        "2022": "Islam"
+      },
+      {
+        "Country": "Georgia",
+        "CAF_2022": 31,
+        "2022": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the dominant religions for the countries in the dataset.",
+  "refer_fileds": [
+    {
+      "field": "2022",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2022",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2022",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "CAF_2022"
+        },
+        "x": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count"
+    ],
+    "table_samples": [
+      {
+        "iyear": 2004,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2011,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2006,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2011,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2013,
+        "Attack Count": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of attacks over the years.",
+  "refer_fileds": [
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

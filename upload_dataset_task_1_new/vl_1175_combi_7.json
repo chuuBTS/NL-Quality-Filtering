@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 312,
+        "OpponentName": "None",
+        "start": "2019-10-26 16:44:09.387 +00:00",
+        "end": NaN,
+        "PersonId": 312,
+        "Time (seconds)": NaN,
+        "id.1": 312,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Sports",
+        "Height": 48.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 161,
+        "OpponentName": "None",
+        "start": "2019-08-24 18:38:53.858 +00:00",
+        "end": "2019-08-24 18:39:01.559 +00:00",
+        "PersonId": 161,
+        "Time (seconds)": 8.0,
+        "id.1": 161,
+        "Gender": "Unkown",
+        "Age Group": "Teen",
+        "Favorite Activity": "Cooking",
+        "Height": 74.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 84,
+        "OpponentName": "Fast animal",
+        "start": "2018-08-25 18:09:09.094 +00:00",
+        "end": "2018-08-25 18:09:16.522 +00:00",
+        "PersonId": 84,
+        "Time (seconds)": 7.0,
+        "id.1": 84,
+        "Gender": "female",
+        "Age Group": "Teen",
+        "Favorite Activity": "Cooking",
+        "Height": 44.0,
+        "zipcode": 46106,
+        "state": "IN",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 206,
+        "OpponentName": "None",
+        "start": "2019-10-26 14:24:43.295 +00:00",
+        "end": "2019-10-26 14:24:52.182 +00:00",
+        "PersonId": 206,
+        "Time (seconds)": 9.0,
+        "id.1": 206,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Sports",
+        "Height": 52.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the time taken for participants under 100 centimeters tall.",
+  "refer_fileds": [
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Height",
+          "lt": 100
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    }
+  ]
+}

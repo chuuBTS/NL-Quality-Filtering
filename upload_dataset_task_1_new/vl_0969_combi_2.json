@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billions ",
+      "Unnamed: 6",
+      "WorldGDP_billions",
+      "Total_GDP_adjusted_billions",
+      "Unnamed: 9",
+      "Unnamed: 10"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Total_billions ": 109.0238196,
+        "Unnamed: 6": NaN,
+        "WorldGDP_billions": NaN,
+        "Total_GDP_adjusted_billions": NaN,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2000",
+        "GRA Purchases": 42990531049.0,
+        "PRGT 1/2/": 6331595468.0,
+        "Totals": 49322126517.0,
+        "Year": 2000.0,
+        "Total_billions ": 49.32212652,
+        "Unnamed: 6": "47,792.25",
+        "WorldGDP_billions": 34039.874,
+        "Total_GDP_adjusted_billions": 0.00145,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393.0,
+        "PRGT 1/2/": 2769874900.0,
+        "Totals": 37706647293.0,
+        "Year": 1984.0,
+        "Total_billions ": 37.70664729,
+        "Unnamed: 6": "96,292.57",
+        "WorldGDP_billions": 11997.41,
+        "Total_GDP_adjusted_billions": 0.00314,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1997",
+        "GRA Purchases": 46559033783.0,
+        "PRGT 1/2/": 6009867422.0,
+        "Totals": 52568901205.0,
+        "Year": 1997.0,
+        "Total_billions ": 52.56890121,
+        "Unnamed: 6": "64,108.44",
+        "WorldGDP_billions": 31979.647,
+        "Total_GDP_adjusted_billions": 0.00164,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463.0,
+        "PRGT 1/2/": 6292755583.0,
+        "Totals": 75334319046.0,
+        "Year": 2014.0,
+        "Total_billions ": 75.33431905,
+        "Unnamed: 6": "24,492.48",
+        "WorldGDP_billions": 79321.72,
+        "Total_GDP_adjusted_billions": 0.00095,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the Total GDP adjusted in billions over the years.",
+  "refer_fileds": [
+    {
+      "field": "Total_GDP_adjusted_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_GDP_adjusted_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

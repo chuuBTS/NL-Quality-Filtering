@@ -1,0 +1,176 @@
+{
+  "table_info": {
+    "table_columns": [
+      "region",
+      "marginal_region",
+      "marginal_bmu",
+      "bmu_name",
+      "bmu_type",
+      "intensity"
+    ],
+    "table_samples": [
+      {
+        "region": "North Scotland",
+        "marginal_region": "North Scotland",
+        "marginal_bmu": "T_BDCHW-1",
+        "bmu_name": "Bad a Cheo Wind Farm ",
+        "bmu_type": "Wind (Onshore)",
+        "intensity": 0.0
+      },
+      {
+        "region": "Merseyside and North Wales",
+        "marginal_region": "Merseyside and North Wales",
+        "marginal_bmu": "2__DSTAT001",
+        "bmu_name": "Merseyside and North Wales GSP Group - Statkraft Markets Gmbh ",
+        "bmu_type": "GSP: Merseyside and North Wales",
+        "intensity": 0.0
+      },
+      {
+        "region": "South Wales",
+        "marginal_region": "South Wales",
+        "marginal_bmu": "2__KANGE001",
+        "bmu_name": "South Wales GSP Group - Limejump Energy Limited ",
+        "bmu_type": "GSP: South Wales",
+        "intensity": 0.0
+      },
+      {
+        "region": "North West England",
+        "marginal_region": "North West England",
+        "marginal_bmu": "2__GANGE004",
+        "bmu_name": "North Western GSP Group - Limejump Energy Limited ",
+        "bmu_type": "GSP: North West England",
+        "intensity": 0.0
+      },
+      {
+        "region": "South West England",
+        "marginal_region": "South West England",
+        "marginal_bmu": "2__LSTAT001",
+        "bmu_name": "South Western GSP Group - Statkraft Markets Gmbh ",
+        "bmu_type": "GSP: South West England",
+        "intensity": 0.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the intensity values for each marginal region, sorted in the order from North Scotland to Southern Eastern.",
+  "refer_fileds": [
+    {
+      "field": "intensity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "marginal_region",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "intensity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "North Scotland",
+          "South Scotland",
+          "Northern",
+          "North Western",
+          "Yorkshire",
+          "Merseyside and North Wales",
+          "South Wales",
+          "Midlands",
+          "East Midlands",
+          "Eastern",
+          "South Western",
+          "Southern",
+          "London",
+          "Southern Eastern"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

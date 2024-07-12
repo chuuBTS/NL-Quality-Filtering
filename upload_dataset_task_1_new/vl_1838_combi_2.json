@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "periodo_ingresso",
+      "sexo",
+      "contagem",
+      "porcentagem"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 146,
+        "periodo_ingresso": 2020.1,
+        "sexo": "Masculino",
+        "contagem": 86,
+        "porcentagem": 82.69
+      },
+      {
+        "Unnamed: 0": 86,
+        "periodo_ingresso": 2005.1,
+        "sexo": "Masculino",
+        "contagem": 30,
+        "porcentagem": 81.08
+      },
+      {
+        "Unnamed: 0": 137,
+        "periodo_ingresso": 2018.1,
+        "sexo": "Feminino",
+        "contagem": 11,
+        "porcentagem": 11.22
+      },
+      {
+        "Unnamed: 0": 138,
+        "periodo_ingresso": 2018.1,
+        "sexo": "Masculino",
+        "contagem": 87,
+        "porcentagem": 88.78
+      },
+      {
+        "Unnamed: 0": 131,
+        "periodo_ingresso": 2016.2,
+        "sexo": "Feminino",
+        "contagem": 26,
+        "porcentagem": 21.31
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of students by entry period.",
+  "refer_fileds": [
+    {
+      "field": "periodo_ingresso",
+      "type": "quantitative"
+    },
+    {
+      "field": "contagem",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "contagem",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

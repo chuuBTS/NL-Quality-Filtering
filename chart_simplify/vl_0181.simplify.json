@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "pop",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "country",
+                "equal": "Afghanistan"
+            }
+        }
+    ],
+    "width": "container"
+}

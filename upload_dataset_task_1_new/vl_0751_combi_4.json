@@ -1,0 +1,143 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Indicator Name",
+      "Year",
+      "Gross savings (% of GDP)"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Canada",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 1970,
+        "Gross savings (% of GDP)": 21.10273085
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 1973,
+        "Gross savings (% of GDP)": 34.90497959
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 2013,
+        "Gross savings (% of GDP)": 44.6088549
+      },
+      {
+        "Country Name": "Senegal",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 2017,
+        "Gross savings (% of GDP)": 22.54339558
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 1974,
+        "Gross savings (% of GDP)": 67.27726626
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total gross savings as a percentage of GDP, sorted by year in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal",
+      "sort": "descending"
+    },
+    {
+      "field": "Gross savings (% of GDP)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Gross savings (% of GDP)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Year",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Gross savings (% of GDP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Gross savings (% of GDP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Gross savings (% of GDP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gross savings (% of GDP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

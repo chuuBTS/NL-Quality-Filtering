@@ -1,0 +1,320 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Team",
+      "Year",
+      "Goals Scored"
+    ],
+    "table_samples": [
+      {
+        "Team": "Arsenal",
+        "Year": "02/03",
+        "Goals Scored": 85
+      },
+      {
+        "Team": "Arsenal",
+        "Year": "18/19",
+        "Goals Scored": 73
+      },
+      {
+        "Team": "Tottenham",
+        "Year": "11/12",
+        "Goals Scored": 66
+      },
+      {
+        "Team": "Man City",
+        "Year": "20/21",
+        "Goals Scored": 83
+      },
+      {
+        "Team": "Man City",
+        "Year": "14/15",
+        "Goals Scored": 83
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total goals scored by each team over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "nominal"
+    },
+    {
+      "field": "Goals Scored",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Team",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Goals Scored",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Year",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Year",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

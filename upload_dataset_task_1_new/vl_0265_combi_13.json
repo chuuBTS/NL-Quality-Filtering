@@ -1,0 +1,324 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rowid",
+      "date",
+      "currency_code",
+      "name",
+      "local_price",
+      "dollar_ex",
+      "dollar_price"
+    ],
+    "table_samples": [
+      {
+        "rowid": 1,
+        "date": "2000-04-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 2.5,
+        "dollar_ex": 1.0,
+        "dollar_price": 2.5
+      },
+      {
+        "rowid": 8714,
+        "date": "2014-01-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 3.657962724,
+        "dollar_ex": 0.737218475,
+        "dollar_price": 4.96184353491684
+      },
+      {
+        "rowid": 1502,
+        "date": "2005-06-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 2.92,
+        "dollar_ex": 0.814929509,
+        "dollar_price": 3.58313199823029
+      },
+      {
+        "rowid": 15492,
+        "date": "2015-07-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 3.7,
+        "dollar_ex": 0.912700224,
+        "dollar_price": 4.05390499827466
+      },
+      {
+        "rowid": 5918,
+        "date": "2012-07-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 19.0,
+        "dollar_ex": 4.56625,
+        "dollar_price": 4.16096359156857
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of local prices over time for each currency code as a line chart.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "local_price",
+      "type": "quantitative"
+    },
+    {
+      "field": "currency_code",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "local_price",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "local_price",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "currency_code",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "Year",
+      "Deaths"
+    ],
+    "table_samples": [
+      {
+        "Entity": "All natural disasters",
+        "Year": 1900,
+        "Deaths": 1267360
+      },
+      {
+        "Entity": "All natural disasters",
+        "Year": 1937,
+        "Deaths": 12025
+      },
+      {
+        "Entity": "Wildfire",
+        "Year": 1995,
+        "Deaths": 29
+      },
+      {
+        "Entity": "Epidemic",
+        "Year": 1980,
+        "Deaths": 1685
+      },
+      {
+        "Entity": "Extreme weather",
+        "Year": 2012,
+        "Deaths": 3105
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot of the number of deaths by different natural disaster events, excluding 'All natural disasters'.",
+  "refer_fileds": [
+    {
+      "field": "Entity",
+      "type": "nominal"
+    },
+    {
+      "field": "Deaths",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.Entity !== 'All natural disasters'"
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Deaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    }
+  ]
+}

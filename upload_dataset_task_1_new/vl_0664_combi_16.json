@@ -1,0 +1,221 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total (Billion)",
+      "Total ($)",
+      "GDP, current prices (Billions of U.S. dollars)",
+      "IMF Credit/GDP",
+      "Unnamed: 9",
+      "Unnamed: 10",
+      "Unnamed: 11",
+      "Unnamed: 12",
+      "Unnamed: 13",
+      "As of 31/08/22",
+      "$"
+    ],
+    "table_samples": [
+      {
+        "Date": "09/30/2022",
+        "GRA Purchases": 91088136681,
+        "PRGT 1/2/": 15386591496,
+        "Totals": 106000000000.0,
+        "Year": 2022,
+        "Total (Billion)": 106.48,
+        "Total ($)": 138.56,
+        "GDP, current prices (Billions of U.S. dollars)": 103496.115,
+        "IMF Credit/GDP": 0.13,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN,
+        "Unnamed: 11": NaN,
+        "Unnamed: 12": NaN,
+        "Unnamed: 13": NaN,
+        "As of 31/08/22": "1 SDR =",
+        "$": 1.30134
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237,
+        "PRGT 1/2/": 6282121668,
+        "Totals": 34714264905.0,
+        "Year": 2005,
+        "Total (Billion)": 34.71,
+        "Total ($)": 45.18,
+        "GDP, current prices (Billions of U.S. dollars)": 47811.372,
+        "IMF Credit/GDP": 0.09,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN,
+        "Unnamed: 11": NaN,
+        "Unnamed: 12": NaN,
+        "Unnamed: 13": NaN,
+        "As of 31/08/22": NaN,
+        "$": NaN
+      },
+      {
+        "Date": "12/31/1985",
+        "GRA Purchases": 35194787249,
+        "PRGT 1/2/": 2470247948,
+        "Totals": 37665035197.0,
+        "Year": 1985,
+        "Total (Billion)": 37.67,
+        "Total ($)": 49.02,
+        "GDP, current prices (Billions of U.S. dollars)": 12531.04,
+        "IMF Credit/GDP": 0.39,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN,
+        "Unnamed: 11": NaN,
+        "Unnamed: 12": NaN,
+        "Unnamed: 13": NaN,
+        "As of 31/08/22": NaN,
+        "$": NaN
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463,
+        "PRGT 1/2/": 6292755583,
+        "Totals": 75334319046.0,
+        "Year": 2014,
+        "Total (Billion)": 75.33,
+        "Total ($)": 98.04,
+        "GDP, current prices (Billions of U.S. dollars)": 76211.252,
+        "IMF Credit/GDP": 0.13,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN,
+        "Unnamed: 11": NaN,
+        "Unnamed: 12": NaN,
+        "Unnamed: 13": NaN,
+        "As of 31/08/22": NaN,
+        "$": NaN
+      },
+      {
+        "Date": "12/31/2012",
+        "GRA Purchases": 90042348252,
+        "PRGT 1/2/": 5766292503,
+        "Totals": 95808640755.0,
+        "Year": 2012,
+        "Total (Billion)": 95.81,
+        "Total ($)": 124.68,
+        "GDP, current prices (Billions of U.S. dollars)": 74944.46,
+        "IMF Credit/GDP": 0.17,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN,
+        "Unnamed: 11": NaN,
+        "Unnamed: 12": NaN,
+        "Unnamed: 13": NaN,
+        "As of 31/08/22": NaN,
+        "$": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total IMF Credit to GDP over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "IMF Credit/GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "IMF Credit/GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "IMF Credit/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "IMF Credit/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "IMF Credit/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "IMF Credit/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

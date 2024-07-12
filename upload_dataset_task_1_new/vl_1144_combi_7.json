@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Party",
+      "seats"
+    ],
+    "table_samples": [
+      {
+        "Year": 1918,
+        "Party": "Conservative",
+        "seats": 382
+      },
+      {
+        "Year": 1964,
+        "Party": "Labour",
+        "seats": 317
+      },
+      {
+        "Year": 1983,
+        "Party": "Labour",
+        "seats": 209
+      },
+      {
+        "Year": 1970,
+        "Party": "Labour",
+        "seats": 288
+      },
+      {
+        "Year": 1997,
+        "Party": "Conservative",
+        "seats": 165
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart of the number of seats won by each party over the years.",
+  "refer_fileds": [
+    {
+      "field": "seats",
+      "type": "quantitative"
+    },
+    {
+      "field": "Party",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "seats",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

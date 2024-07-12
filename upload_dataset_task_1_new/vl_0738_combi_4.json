@@ -1,0 +1,98 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Regime",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Regime": "Flawed Democracy",
+        "value": 17459076495061.5
+      },
+      {
+        "Regime": "Authoritarian Regime",
+        "value": 9068625060485.1
+      },
+      {
+        "Regime": "Full Democracy",
+        "value": 803035329695.793
+      },
+      {
+        "Regime": "Hybrid Regime",
+        "value": 876894343461.828
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart showing the economic size of each political regime, sorted by size in descending order.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

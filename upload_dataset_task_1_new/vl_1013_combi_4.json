@@ -1,0 +1,272 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Billions",
+      "World GDP (current US$)",
+      "Years",
+      "World GDP Billions",
+      "Totals (Relative to GDP) (Billions)"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Billions": 109.0238196,
+        "World GDP (current US$)": NaN,
+        "Years": NaN,
+        "World GDP Billions": NaN,
+        "Totals (Relative to GDP) (Billions)": NaN
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884,
+        "PRGT 1/2/": 1773964293,
+        "Totals": 26523969177.0,
+        "Billions": 26.52396918,
+        "World GDP (current US$)": 19338000000000.0,
+        "Years": 1988.0,
+        "World GDP Billions": 19337.99747,
+        "Totals (Relative to GDP) (Billions)": 0.137159854
+      },
+      {
+        "Date": "12/31/1991",
+        "GRA Purchases": 23378573926,
+        "PRGT 1/2/": 3285717796,
+        "Totals": 26664291722.0,
+        "Billions": 26.66429172,
+        "World GDP (current US$)": 23759600000000.0,
+        "Years": 1991.0,
+        "World GDP Billions": 23759.57245,
+        "Totals (Relative to GDP) (Billions)": 0.112225469
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237,
+        "PRGT 1/2/": 6282121668,
+        "Totals": 34714264905.0,
+        "Billions": 34.71426491,
+        "World GDP (current US$)": 47779700000000.0,
+        "Years": 2005.0,
+        "World GDP Billions": 47779.71479,
+        "Totals (Relative to GDP) (Billions)": 0.072654818
+      },
+      {
+        "Date": "12/31/2019",
+        "GRA Purchases": 66945509865,
+        "PRGT 1/2/": 6590835450,
+        "Totals": 73536345315.0,
+        "Billions": 73.53634532,
+        "World GDP (current US$)": 87652900000000.0,
+        "Years": 2019.0,
+        "World GDP Billions": 87652.86322,
+        "Totals (Relative to GDP) (Billions)": 0.083894972
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the financial metrics by year.",
+  "refer_fileds": [
+    {
+      "field": "Years",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "Totals (Relative to GDP) (Billions)",
+        "World GDP Billions",
+        "Billions"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "World GDP Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "World GDP Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "World GDP Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Totals (Relative to GDP) (Billions)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "World GDP Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

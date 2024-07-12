@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": "-x"
+        },
+        "x": {
+            "field": "R&D Expenditure (% of GDP)",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/growth-global_research_gdp.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "R&D Expenditure (% of GDP)",
+                "gt": 1.5
+            }
+        }
+    ],
+    "height": 350,
+    "width": 300
+}

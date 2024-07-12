@@ -1,0 +1,234 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Agency Name",
+      "Location Name",
+      "Address",
+      "City",
+      "Zip code",
+      "County",
+      "Congress Dist",
+      "Congressional Full Name",
+      "Rep Dist",
+      "Rep Full Name",
+      "Senate Dist",
+      "Senator Full Name",
+      "Bldg Status",
+      "Year Acquired",
+      "Year Constructed",
+      "Square Footage",
+      "Total Floors",
+      "Floors Above Grade",
+      "Floors Below Grade",
+      "Usage Description",
+      "Usage Description 2",
+      "Usage Description 3"
+    ],
+    "table_samples": [
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Anderson Lake Conservation Area - Fulton County",
+        "Address": "Anderson Lake C.a.",
+        "City": "Astoria",
+        "Zip code": 61501,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 93,
+        "Rep Full Name": "Hammond Norine K.",
+        "Senate Dist": 47,
+        "Senator Full Name": "Jil Tracy",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1975,
+        "Year Constructed": 1975,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Transportation",
+        "Location Name": "Compton",
+        "Address": "Us Rte 30 & Rte 251",
+        "City": "Compton",
+        "Zip code": 61318,
+        "County": "Lee",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 90,
+        "Rep Full Name": "Demmer Tom",
+        "Senate Dist": 45,
+        "Senator Full Name": "Tim Bivins",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1997,
+        "Year Constructed": 1994,
+        "Square Footage": 1400,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Storage",
+        "Usage Description 2": "Assembly",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Transportation",
+        "Location Name": "Homestead Rest Area",
+        "Address": "I 55",
+        "City": "Hamel",
+        "Zip code": 62046,
+        "County": "Madison",
+        "Congress Dist": 15,
+        "Congressional Full Name": "John Shimkus",
+        "Rep Dist": 108,
+        "Rep Full Name": "Meier Charles",
+        "Senate Dist": 54,
+        "Senator Full Name": "Kyle McCarter",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1999,
+        "Year Constructed": 1999,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Assembly",
+        "Usage Description 2": "Assembly",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Mississippi Palisades State Park - Carroll County",
+        "Address": "4577 Route 84 N",
+        "City": "Savanna",
+        "Zip code": 61074,
+        "County": "Carroll",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 71,
+        "Rep Full Name": "McCombie Tony",
+        "Senate Dist": 36,
+        "Senator Full Name": "Neil Anderson",
+        "Bldg Status": "In Use",
+        "Year Acquired": 0,
+        "Year Constructed": 0,
+        "Square Footage": 150,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Storage",
+        "Usage Description 2": "Storage",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "University of Illinois",
+        "Location Name": "University of Illinois - Chicago",
+        "Address": "1140 South Paulina",
+        "City": "Chicago",
+        "Zip code": 60612,
+        "County": "Cook",
+        "Congress Dist": 7,
+        "Congressional Full Name": "Danny K. Davis",
+        "Rep Dist": 9,
+        "Rep Full Name": "Turner Arthur L.",
+        "Senate Dist": 5,
+        "Senator Full Name": "Patricia Van Pelt",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1970,
+        "Year Constructed": 1970,
+        "Square Footage": 44280,
+        "Total Floors": 5,
+        "Floors Above Grade": 4,
+        "Floors Below Grade": 1,
+        "Usage Description": "Industrial",
+        "Usage Description 2": "Industrial",
+        "Usage Description 3": "Not provided"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of total floors for buildings constructed each year.",
+  "refer_fileds": [
+    {
+      "field": "Year Constructed",
+      "type": "temporal"
+    },
+    {
+      "field": "Total Floors",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total Floors",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

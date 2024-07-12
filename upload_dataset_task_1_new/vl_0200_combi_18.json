@@ -1,0 +1,194 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Inkheart",
+        "Worldwide Gross": 58051454,
+        "Production Budget": 60000000,
+        "Release Year": 2009,
+        "Content Rating": "PG",
+        "Running Time": 105,
+        "Genre": "Adventure",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 40,
+        "IMDB Rating": 6.1
+      },
+      {
+        "Title": "Swordfish",
+        "Worldwide Gross": 147080413,
+        "Production Budget": 80000000,
+        "Release Year": 2001,
+        "Content Rating": "R",
+        "Running Time": 99,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 25,
+        "IMDB Rating": 6.3
+      },
+      {
+        "Title": "My Best Friend's Wedding",
+        "Worldwide Gross": 287200000,
+        "Production Budget": 46000000,
+        "Release Year": 1997,
+        "Content Rating": "PG-13",
+        "Running Time": 105,
+        "Genre": "Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 72,
+        "IMDB Rating": 6.2
+      },
+      {
+        "Title": "Rush Hour",
+        "Worldwide Gross": 245300000,
+        "Production Budget": 35000000,
+        "Release Year": 1998,
+        "Content Rating": "PG-13",
+        "Running Time": 98,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 60,
+        "IMDB Rating": 6.8
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows the total production budget for each genre.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Production Budget",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

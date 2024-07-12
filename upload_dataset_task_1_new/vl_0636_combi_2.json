@@ -1,0 +1,973 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Happiness score",
+      "Country_temp",
+      "ISO3",
+      "GDP per capita (PPP)",
+      "Life Ladder",
+      "Social support",
+      "Perceptions of corruption",
+      "Population",
+      "Median Age",
+      "Total Fertility Rate",
+      "Life Expectancy",
+      "Infant Mortality",
+      "Child Mortality",
+      "Net Migration Rate",
+      "Continent",
+      "UN Region"
+    ],
+    "table_samples": [
+      {
+        "Country": "Finland",
+        "Happiness score": 7.821,
+        "Country_temp": "Finland",
+        "ISO3": "FIN",
+        "GDP per capita (PPP)": 55013.38586,
+        "Life Ladder": 7.7944,
+        "Social support": 0.9703,
+        "Perceptions of corruption": 0.1918,
+        "Population": 5535992.0,
+        "Median Age": 42.368,
+        "Total Fertility Rate": 1.389,
+        "Life Expectancy": 82.038,
+        "Infant Mortality": 1.932,
+        "Child Mortality": 2.353,
+        "Net Migration Rate": 2.7,
+        "Continent": "Europe",
+        "UN Region": "Northern Europe"
+      },
+      {
+        "Country": "Gabon",
+        "Happiness score": 4.958,
+        "Country_temp": "Gabon",
+        "ISO3": "GAB",
+        "GDP per capita (PPP)": 15175.68734,
+        "Life Ladder": 5.0754,
+        "Social support": 0.7539,
+        "Perceptions of corruption": 0.7659,
+        "Population": 2341179.0,
+        "Median Age": 21.615,
+        "Total Fertility Rate": 3.491,
+        "Life Expectancy": 65.821,
+        "Infant Mortality": 29.212,
+        "Child Mortality": 39.41,
+        "Net Migration Rate": 0.648,
+        "Continent": "Africa",
+        "UN Region": "Middle Africa"
+      },
+      {
+        "Country": "Egypt",
+        "Happiness score": 4.288,
+        "Country_temp": "Egypt",
+        "ISO3": "EGY",
+        "GDP per capita (PPP)": 12706.40445,
+        "Life Ladder": 4.0257,
+        "Social support": 0.717,
+        "Perceptions of corruption": 0.5805,
+        "Population": 109262178.0,
+        "Median Age": 23.939,
+        "Total Fertility Rate": 2.917,
+        "Life Expectancy": 70.221,
+        "Infant Mortality": 15.932,
+        "Child Mortality": 18.851,
+        "Net Migration Rate": -0.296,
+        "Continent": "Africa",
+        "UN Region": "Northern Africa"
+      },
+      {
+        "Country": "Kuwait*",
+        "Happiness score": 6.106,
+        "Country_temp": "Kuwait",
+        "ISO3": "KWT",
+        "GDP per capita (PPP)": NaN,
+        "Life Ladder": NaN,
+        "Social support": NaN,
+        "Perceptions of corruption": NaN,
+        "Population": 4250114.0,
+        "Median Age": 38.344,
+        "Total Fertility Rate": 2.11,
+        "Life Expectancy": 78.673,
+        "Infant Mortality": 7.608,
+        "Child Mortality": 9.077,
+        "Net Migration Rate": -8.636,
+        "Continent": "Asia",
+        "UN Region": "Western Asia"
+      },
+      {
+        "Country": "Rwanda*",
+        "Happiness score": 3.268,
+        "Country_temp": "Rwanda",
+        "ISO3": "RWA",
+        "GDP per capita (PPP)": 2459.707347,
+        "Life Ladder": NaN,
+        "Social support": NaN,
+        "Perceptions of corruption": NaN,
+        "Population": 13461888.0,
+        "Median Age": 19.003,
+        "Total Fertility Rate": 3.821,
+        "Life Expectancy": 66.072,
+        "Infant Mortality": 28.988,
+        "Child Mortality": 38.674,
+        "Net Migration Rate": -0.454,
+        "Continent": "Africa",
+        "UN Region": "Eastern Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of the population, GDP per capita, and life expectancy by location.",
+  "refer_fileds": [
+    {
+      "field": "GDP per capita (PPP)",
+      "type": "quantitative"
+    },
+    {
+      "field": "Life Expectancy",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Continent",
+        "UN Region"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "Population",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Life Expectancy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

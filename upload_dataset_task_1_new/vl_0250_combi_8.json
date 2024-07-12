@@ -1,0 +1,705 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Player",
+      "Progressive Carries",
+      "Touches",
+      "Expected Assists",
+      "Progressive Passes",
+      "Passes",
+      "Interceptions",
+      "Possession-Winning-Tackles",
+      "Aerials Won",
+      "Pos",
+      "Non-Penalty Expected Goals",
+      "cluster",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Player": "Max Aarons",
+        "Progressive Carries": 5.4375,
+        "Touches": 57.96875,
+        "Expected Assists": 0.04375,
+        "Progressive Passes": 2.9375,
+        "Passes": 33.96875,
+        "Interceptions": 1.75,
+        "Possession-Winning-Tackles": 1.15625,
+        "Aerials Won": 0.46875,
+        "Pos": "Defender",
+        "Non-Penalty Expected Goals": 0.02,
+        "cluster": 6,
+        "Component 1": -0.6794867331318681,
+        "Component 2": 0.4101967803346252
+      },
+      {
+        "Unnamed: 0": 451,
+        "Player": "Luis Javier Su\u00e1rez",
+        "Progressive Carries": 4.30379746835443,
+        "Touches": 34.14556962025316,
+        "Expected Assists": 0.0791139240506329,
+        "Progressive Passes": 1.4240506329113924,
+        "Passes": 14.177215189873415,
+        "Interceptions": 0.4430379746835443,
+        "Possession-Winning-Tackles": 0.5696202531645569,
+        "Aerials Won": 1.962025316455696,
+        "Pos": "Forward",
+        "Non-Penalty Expected Goals": 0.32,
+        "cluster": 0,
+        "Component 1": 3.0120253468804323,
+        "Component 2": -0.597209684991448
+      },
+      {
+        "Unnamed: 0": 617,
+        "Player": "Donyell Malen",
+        "Progressive Carries": 5.775401069518717,
+        "Touches": 42.13903743315508,
+        "Expected Assists": 0.1925133689839572,
+        "Progressive Passes": 1.978609625668449,
+        "Passes": 21.44385026737968,
+        "Interceptions": 0.427807486631016,
+        "Possession-Winning-Tackles": 0.6417112299465241,
+        "Aerials Won": 0.4812834224598931,
+        "Pos": "Forward",
+        "Non-Penalty Expected Goals": 0.23,
+        "cluster": 4,
+        "Component 1": 2.586513979355899,
+        "Component 2": 1.3369214604852115
+      },
+      {
+        "Unnamed: 0": 849,
+        "Player": "Fabi\u00e1n Ruiz Pe\u00f1a",
+        "Progressive Carries": 5.962264150943396,
+        "Touches": 92.1509433962264,
+        "Expected Assists": 0.1056603773584905,
+        "Progressive Passes": 5.547169811320755,
+        "Passes": 74.37735849056604,
+        "Interceptions": 1.6226415094339623,
+        "Possession-Winning-Tackles": 1.5471698113207548,
+        "Aerials Won": 0.5283018867924528,
+        "Pos": "Midfielder",
+        "Non-Penalty Expected Goals": 0.06,
+        "cluster": 2,
+        "Component 1": -2.73544632855662,
+        "Component 2": 2.3771327552634123
+      },
+      {
+        "Unnamed: 0": 1036,
+        "Player": "Andre-Frank Zambo Anguissa",
+        "Progressive Carries": 5.140186915887851,
+        "Touches": 70.0,
+        "Expected Assists": 0.0747663551401869,
+        "Progressive Passes": 4.299065420560748,
+        "Passes": 51.401869158878505,
+        "Interceptions": 2.0560747663551404,
+        "Possession-Winning-Tackles": 1.6355140186915889,
+        "Aerials Won": 1.2149532710280375,
+        "Pos": "Midfielder",
+        "Non-Penalty Expected Goals": 0.05,
+        "cluster": 6,
+        "Component 1": -1.8658810067626332,
+        "Component 2": 0.7601751555371569
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the correlation between the dimensions with colors representing the position of each player.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Component 1",
+        "Component 2"
+      ],
+      "type": "quantitative"
+    },
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Pos",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Pos",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 1",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 1",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Pos",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "League",
+      "Club",
+      "Player Names",
+      "Matches_Played",
+      "Substitution ",
+      "Mins",
+      "Goals",
+      "xG",
+      "xG Per Avg Match",
+      "Shots",
+      "OnTarget",
+      "Shots Per Avg Match",
+      "On Target Per Avg Match",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "Country": "England",
+        "League": "Premier League",
+        "Club": "(INT)",
+        "Player Names": "Alexis Sanchez",
+        "Matches_Played": 36,
+        "Substitution ": 2,
+        "Mins": 3385,
+        "Goals": 24,
+        "xG": 19.24,
+        "xG Per Avg Match": 0.54,
+        "Shots": 129,
+        "OnTarget": 49,
+        "Shots Per Avg Match": 3.62,
+        "On Target Per Avg Match": 1.38,
+        "Year": 2016
+      },
+      {
+        "Country": "England",
+        "League": "Premier League",
+        "Club": "(LIV)",
+        "Player Names": "Roberto Firmino",
+        "Matches_Played": 34,
+        "Substitution ": 1,
+        "Mins": 3228,
+        "Goals": 11,
+        "xG": 10.87,
+        "xG Per Avg Match": 0.32,
+        "Shots": 104,
+        "OnTarget": 43,
+        "Shots Per Avg Match": 3.06,
+        "On Target Per Avg Match": 1.27,
+        "Year": 2016
+      },
+      {
+        "Country": "England",
+        "League": "Premier League",
+        "Club": "(TOT)",
+        "Player Names": "Harry Kane",
+        "Matches_Played": 29,
+        "Substitution ": 1,
+        "Mins": 2636,
+        "Goals": 29,
+        "xG": 18.87,
+        "xG Per Avg Match": 0.68,
+        "Shots": 110,
+        "OnTarget": 58,
+        "Shots Per Avg Match": 3.96,
+        "On Target Per Avg Match": 2.09,
+        "Year": 2016
+      },
+      {
+        "Country": "England",
+        "League": "Premier League",
+        "Club": "(INT)",
+        "Player Names": "Romelu Lukaku",
+        "Matches_Played": 36,
+        "Substitution ": 1,
+        "Mins": 3448,
+        "Goals": 25,
+        "xG": 18.15,
+        "xG Per Avg Match": 0.5,
+        "Shots": 110,
+        "OnTarget": 53,
+        "Shots Per Avg Match": 3.03,
+        "On Target Per Avg Match": 1.46,
+        "Year": 2016
+      },
+      {
+        "Country": "England",
+        "League": "Premier League",
+        "Club": "(ACM)",
+        "Player Names": "Zlatan Ibrahimovic",
+        "Matches_Played": 27,
+        "Substitution ": 1,
+        "Mins": 2578,
+        "Goals": 17,
+        "xG": 15.74,
+        "xG Per Avg Match": 0.58,
+        "Shots": 115,
+        "OnTarget": 45,
+        "Shots Per Avg Match": 4.24,
+        "On Target Per Avg Match": 1.66,
+        "Year": 2016
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the relationship between goals scored and shots per average match.",
+  "refer_fileds": [
+    {
+      "field": "Goals",
+      "type": "quantitative"
+    },
+    {
+      "field": "Shots Per Avg Match",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Goals",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Goals",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Goals",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Shots Per Avg Match",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

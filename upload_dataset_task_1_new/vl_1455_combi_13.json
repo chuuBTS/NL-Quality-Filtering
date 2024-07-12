@@ -1,0 +1,136 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "symbol": "SE",
+        "date": "2020-01-01 00:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-05 15:00",
+        "value": 324.5614035
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-05-14 03:30",
+        "value": 336.3636364
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-11-09 01:00",
+        "value": 342.5925926
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-03-09 18:00",
+        "value": 336.3636364
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of values over time as a line chart for the symbol SE.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "SE"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    }
+  ]
+}

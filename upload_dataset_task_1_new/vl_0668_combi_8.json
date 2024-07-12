@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country ",
+      "Year",
+      "ODA/GNI"
+    ],
+    "table_samples": [
+      {
+        "Country ": "FRA",
+        "Year": 1960,
+        "ODA/GNI": 1.347577
+      },
+      {
+        "Country ": "USA",
+        "Year": 2001,
+        "ODA/GNI": 0.112506
+      },
+      {
+        "Country ": "FRA",
+        "Year": 1993,
+        "ODA/GNI": 0.632265
+      },
+      {
+        "Country ": "DEU",
+        "Year": 1988,
+        "ODA/GNI": 0.392115
+      },
+      {
+        "Country ": "DEU",
+        "Year": 2002,
+        "ODA/GNI": 0.267909
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the sum of ODA/GNI for each country over the years as a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "ODA/GNI",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country ",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ODA/GNI",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ODA/GNI",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country ",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

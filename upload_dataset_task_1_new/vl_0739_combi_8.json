@@ -1,0 +1,112 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Regime",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Regime": "Flawed Democracy",
+        "value": 43279101944426
+      },
+      {
+        "Regime": "Authoritarian Regime",
+        "value": 23754797253643
+      },
+      {
+        "Regime": "Hybrid Regime",
+        "value": 4882799765000
+      },
+      {
+        "Regime": "Full Democracy",
+        "value": 22784239629094
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the composition of values by Regime, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

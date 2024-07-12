@@ -1,0 +1,43 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "date",
+            "type": "temporal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "price",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "symbol",
+                    "equal": "GOOG"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "price",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

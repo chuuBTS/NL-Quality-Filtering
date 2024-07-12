@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Year": 1990,
+        "Country": "Brazil",
+        "Value 1": 70.45802056,
+        "Value 2": 0.0
+      },
+      {
+        "Year": 2001,
+        "Country": "North Korea",
+        "Value 1": 66.85032045,
+        "Value 2": -1.6
+      },
+      {
+        "Year": 2004,
+        "Country": "North Korea",
+        "Value 1": 66.51931419,
+        "Value 2": -2.1
+      },
+      {
+        "Year": 2013,
+        "Country": "Indonesia",
+        "Value 1": 53.47870632,
+        "Value 2": -18.3
+      },
+      {
+        "Year": 1995,
+        "Country": "Brazil",
+        "Value 1": 68.19618958,
+        "Value 2": -3.2
+      }
+    ]
+  },
+  "nl_utterance": "Show a trend of the total Value 2 by Year for each Country.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value 2",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value 2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

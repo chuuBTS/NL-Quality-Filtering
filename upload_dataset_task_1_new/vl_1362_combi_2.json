@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "weaptype1_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 2004,
+        "Attack Count": 1,
+        "weaptype1_txt": "Firearms"
+      },
+      {
+        "iyear": 2013,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2012,
+        "Attack Count": 1,
+        "weaptype1_txt": "Firearms"
+      },
+      {
+        "iyear": 2015,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2014,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of attacks for each weapon type used.",
+  "refer_fileds": [
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "weaptype1_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-12",
+        "classificacao": "mortos",
+        "faixa_etaria": "70 a 79",
+        "feminino": 9,
+        "masculino": 18,
+        "total": 27,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-24",
+        "classificacao": "mortos",
+        "faixa_etaria": "00 a 19",
+        "feminino": 4,
+        "masculino": 7,
+        "total": 11,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-20",
+        "classificacao": "confirmados",
+        "faixa_etaria": "10 a 19",
+        "feminino": 1993,
+        "masculino": 1664,
+        "total": 3657,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-25",
+        "classificacao": "mortos",
+        "faixa_etaria": "60 a 69",
+        "feminino": 20,
+        "masculino": 38,
+        "total": 58,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show the sum of total confirmed cases by age group.",
+  "refer_fileds": [
+    {
+      "field": "faixa_etaria",
+      "type": "nominal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "confirmados"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "confirmados"
+          }
+        }
+      ]
+    }
+  ]
+}

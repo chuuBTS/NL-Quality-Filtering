@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Total",
+      "Medal Type",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "USA",
+        "Total": 104,
+        "Medal Type": "Gold",
+        "Value": 46
+      },
+      {
+        "Unnamed: 0": 15,
+        "Country": "JPN",
+        "Total": 38,
+        "Medal Type": "Gold",
+        "Value": 7
+      },
+      {
+        "Unnamed: 0": 6,
+        "Country": "RUS",
+        "Total": 82,
+        "Medal Type": "Gold",
+        "Value": 24
+      },
+      {
+        "Unnamed: 0": 9,
+        "Country": "GBR",
+        "Total": 65,
+        "Medal Type": "Gold",
+        "Value": 29
+      },
+      {
+        "Unnamed: 0": 13,
+        "Country": "GER",
+        "Total": 44,
+        "Medal Type": "Silver",
+        "Value": 19
+      }
+    ]
+  },
+  "nl_utterance": "Create a visualization of the composition of medals by type with the values sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Medal Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Medal Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Medal Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

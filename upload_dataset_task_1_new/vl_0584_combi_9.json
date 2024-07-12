@@ -1,0 +1,152 @@
+{
+  "table_info": {
+    "table_columns": [
+      "DATE",
+      "DJIA"
+    ],
+    "table_samples": [
+      {
+        "DATE": "1914-12-01",
+        "DJIA": 55.0
+      },
+      {
+        "DATE": "1960-01-01",
+        "DJIA": 665.39
+      },
+      {
+        "DATE": "1948-08-01",
+        "DJIA": 181.44
+      },
+      {
+        "DATE": "1927-05-01",
+        "DJIA": 168.8
+      },
+      {
+        "DATE": "1962-05-01",
+        "DJIA": 643.71
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the Dow Jones Industrial Average using a bar, line, or area graph for dates between January 1, 1914, and October 1, 1927.",
+  "refer_fileds": [
+    {
+      "field": "DATE",
+      "type": "temporal"
+    },
+    {
+      "field": "DJIA",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "DATE",
+          "range": [
+            {
+              "year": 1914,
+              "month": 1,
+              "day": 1
+            },
+            {
+              "year": 1927,
+              "month": 10,
+              "day": 1
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "DJIA",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "DATE",
+            "range": [
+              {
+                "year": 1914,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 1927,
+                "month": 10,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "DJIA",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "DATE",
+            "range": [
+              {
+                "year": 1914,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 1927,
+                "month": 10,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

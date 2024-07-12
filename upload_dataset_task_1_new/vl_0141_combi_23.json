@@ -1,0 +1,199 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Lee Hodson",
+        "Position": "Defender",
+        "Club": "Milton Keynes Dons",
+        "Country": "Northern Ireland",
+        "Age": 24,
+        "Salary": 350000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Oleg Shatov",
+        "Position": "Midfielder",
+        "Club": "Zenit Saint Petersburg",
+        "Country": "Russia",
+        "Age": 25,
+        "Salary": 14000000,
+        "Goals": 2
+      },
+      {
+        "Foot": "Right",
+        "Name": "Krzysztof M\u0105czy\u0144ski",
+        "Position": "Midfielder",
+        "Club": "Wis\u0142a Krak\u00f3w",
+        "Country": "Poland",
+        "Age": 29,
+        "Salary": 1000000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Right",
+        "Name": "\u00c9der",
+        "Position": "Forward",
+        "Club": "Internazionale",
+        "Country": "Italy",
+        "Age": 29,
+        "Salary": 15000000,
+        "Goals": 2
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the number of goals for each player from France.",
+  "refer_fileds": [
+    {
+      "field": "Goals",
+      "type": "quantitative"
+    },
+    {
+      "field": "Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "France"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "France"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "France"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

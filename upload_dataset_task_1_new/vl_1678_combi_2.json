@@ -1,0 +1,220 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "GOOG",
+        "date": "May 1 2006",
+        "price": 371.82
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Nov 1 2000",
+        "price": 24.69
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Aug 1 2009",
+        "price": 81.19
+      },
+      {
+        "symbol": "IBM",
+        "date": "Jul 1 2009",
+        "price": 116.34
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total price for GOOG stock before the year 2007 over time.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "price",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "GOOG"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "date",
+          "range": [
+            null,
+            2007
+          ],
+          "timeUnit": "year"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "price",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              2007
+            ],
+            "timeUnit": "year"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              2007
+            ],
+            "timeUnit": "year"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              2007
+            ],
+            "timeUnit": "year"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              2007
+            ],
+            "timeUnit": "year"
+          }
+        }
+      ]
+    }
+  ]
+}

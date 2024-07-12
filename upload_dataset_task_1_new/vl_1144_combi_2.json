@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Party",
+      "seats"
+    ],
+    "table_samples": [
+      {
+        "Year": 1918,
+        "Party": "Conservative",
+        "seats": 382
+      },
+      {
+        "Year": 1923,
+        "Party": "Labour",
+        "seats": 191
+      },
+      {
+        "Year": 1970,
+        "Party": "Labour",
+        "seats": 288
+      },
+      {
+        "Year": 1992,
+        "Party": "Conservative",
+        "seats": 336
+      },
+      {
+        "Year": 1959,
+        "Party": "Labour",
+        "seats": 258
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of seats accumulated by each party.",
+  "refer_fileds": [
+    {
+      "field": "seats",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Party",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "seats",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Party",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

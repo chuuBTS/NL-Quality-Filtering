@@ -1,0 +1,162 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ID",
+      "category",
+      "launched"
+    ],
+    "table_samples": [
+      {
+        "ID": 1000256230,
+        "category": "Software",
+        "launched": "2017-06-02 12:20:21"
+      },
+      {
+        "ID": 924601109,
+        "category": "Software",
+        "launched": "2013-11-04 13:30:22"
+      },
+      {
+        "ID": 1009639152,
+        "category": "Software",
+        "launched": "2015-08-12 01:45:40"
+      },
+      {
+        "ID": 520259005,
+        "category": "Robots",
+        "launched": "2015-04-08 03:11:30"
+      },
+      {
+        "ID": 981511132,
+        "category": "Software",
+        "launched": "2016-09-07 01:18:56"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of IDs over time with a line chart for products launched between 2013 and 2018.",
+  "refer_fileds": [
+    {
+      "field": "ID",
+      "type": "quantitative"
+    },
+    {
+      "field": "launched",
+      "type": "temporal"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "gt": 2013
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "lt": 2018
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "launched",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    }
+  ]
+}

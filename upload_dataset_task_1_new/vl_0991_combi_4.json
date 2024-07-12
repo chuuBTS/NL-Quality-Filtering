@@ -1,0 +1,175 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Type",
+      "GHG emissions covered [MtCO2e]",
+      "Year of implementation",
+      "Value [billion US$]",
+      "Proportion of global GHG emissions covered",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Type": "ETS",
+        "GHG emissions covered [MtCO2e]": 140.36,
+        "Year of implementation": 2007,
+        "Value [billion US$]": 6.365888747,
+        "Proportion of global GHG emissions covered": 0.27,
+        "Value 1": -0.0505383741816785,
+        "Value 2": 0.7482888868096143
+      },
+      {
+        "Unnamed: 0": 51,
+        "Type": "Carbon tax",
+        "GHG emissions covered [MtCO2e]": 352.6073585,
+        "Year of implementation": 2014,
+        "Value [billion US$]": 0.314092485,
+        "Proportion of global GHG emissions covered": 0.69,
+        "Value 1": 0.2901049204285548,
+        "Value 2": -0.2089392525378882
+      },
+      {
+        "Unnamed: 0": 63,
+        "Type": "Carbon tax",
+        "GHG emissions covered [MtCO2e]": 1.3351,
+        "Year of implementation": 2019,
+        "Value [billion US$]": 0.02089019,
+        "Proportion of global GHG emissions covered": 0.0,
+        "Value 1": -0.4422364883901221,
+        "Value 2": -0.7371255842550947
+      },
+      {
+        "Unnamed: 0": 13,
+        "Type": "ETS",
+        "GHG emissions covered [MtCO2e]": 53.34974168,
+        "Year of implementation": 2019,
+        "Value [billion US$]": 2.131943002,
+        "Proportion of global GHG emissions covered": 0.1,
+        "Value 1": -0.2704538974456019,
+        "Value 2": -0.7142471439159818
+      },
+      {
+        "Unnamed: 0": 102,
+        "Type": "Carbon tax",
+        "GHG emissions covered [MtCO2e]": 4.38135106,
+        "Year of implementation": 2022,
+        "Value [billion US$]": 0.601539394,
+        "Proportion of global GHG emissions covered": 0.01,
+        "Value 1": -0.3945796711332196,
+        "Value 2": -1.0823570666718991
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with the system type on the x-axis and the corresponding value on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "Value 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

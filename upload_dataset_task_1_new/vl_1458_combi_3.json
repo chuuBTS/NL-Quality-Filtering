@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "longitude",
+      "latitude",
+      "country"
+    ],
+    "table_samples": [
+      {
+        "longitude": -76.4813,
+        "latitude": 44.2307,
+        "country": "Canada"
+      },
+      {
+        "longitude": -80.8431,
+        "latitude": 35.2272,
+        "country": "USA"
+      },
+      {
+        "longitude": -67.9353,
+        "latitude": 47.1575,
+        "country": "USA"
+      },
+      {
+        "longitude": -94.6002,
+        "latitude": 48.7124,
+        "country": "USA"
+      },
+      {
+        "longitude": -134.4197,
+        "latitude": 58.3019,
+        "country": "USA"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with countries on the x-axis and latitude on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "country",
+      "type": "nominal"
+    },
+    {
+      "field": "latitude",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "latitude",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "latitude",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "latitude",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "latitude",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

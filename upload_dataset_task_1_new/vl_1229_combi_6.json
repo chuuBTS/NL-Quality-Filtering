@@ -1,0 +1,154 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Airline",
+      "Category",
+      "Year",
+      "Passengers"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Airline": "Ryanair",
+        "Category": "LCC",
+        "Year": 2021,
+        "Passengers": 72.4
+      },
+      {
+        "Unnamed: 0": 236,
+        "Airline": "Norwegian Air Shuttle ASA",
+        "Category": "LCC",
+        "Year": 2009,
+        "Passengers": 10.8
+      },
+      {
+        "Unnamed: 0": 251,
+        "Airline": "TAP Air Portugal",
+        "Category": "FSC",
+        "Year": 2010,
+        "Passengers": 9.1
+      },
+      {
+        "Unnamed: 0": 118,
+        "Airline": "EasyJet",
+        "Category": "LCC",
+        "Year": 2015,
+        "Passengers": 69.9
+      },
+      {
+        "Unnamed: 0": 301,
+        "Airline": "Nordwind Airlines",
+        "Category": "LCC",
+        "Year": 2020,
+        "Passengers": 2.94
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart showing the sum of passengers per year, segmented by category.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Passengers",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Passengers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

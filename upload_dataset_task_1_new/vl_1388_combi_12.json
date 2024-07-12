@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Sales",
+      "Series"
+    ],
+    "table_samples": [
+      {
+        "Time": "1-Jan-2010",
+        "Sales": 90,
+        "Series": "A"
+      },
+      {
+        "Time": "1-Dec-2011",
+        "Sales": 28,
+        "Series": "C"
+      },
+      {
+        "Time": "1-Aug-2010",
+        "Sales": 95,
+        "Series": "B"
+      },
+      {
+        "Time": "1-May-2010",
+        "Sales": 68,
+        "Series": "A"
+      },
+      {
+        "Time": "1-May-2011",
+        "Sales": 99,
+        "Series": "C"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of average sales over time as a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Sales",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Series",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Sales",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Sales",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Series",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

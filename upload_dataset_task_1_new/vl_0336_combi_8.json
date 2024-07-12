@@ -1,0 +1,343 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model name",
+      "Number of iterations",
+      "block"
+    ],
+    "table_samples": [
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 9,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 5",
+        "Number of iterations": 6,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 3",
+        "Number of iterations": 6,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 5",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a small multiple chart representing the sum of the number of iterations for each block by model name.",
+  "refer_fileds": [
+    {
+      "field": "Model name",
+      "type": "nominal"
+    },
+    {
+      "field": "Number of iterations",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "block",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number of iterations",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Model name",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "row": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "block",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "row": {
+          "field": "Model name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

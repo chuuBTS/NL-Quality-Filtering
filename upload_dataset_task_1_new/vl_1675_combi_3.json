@@ -1,0 +1,276 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "price"
+    ],
+    "table_samples": [
+      {
+        "symbol": "MSFT",
+        "date": "Jan 1 2000",
+        "price": 39.81
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Dec 1 2001",
+        "price": 10.82
+      },
+      {
+        "symbol": "AAPL",
+        "date": "Jun 1 2008",
+        "price": 167.44
+      },
+      {
+        "symbol": "AMZN",
+        "date": "Feb 1 2006",
+        "price": 37.44
+      },
+      {
+        "symbol": "MSFT",
+        "date": "Oct 1 2004",
+        "price": 23.02
+      }
+    ]
+  },
+  "nl_utterance": "Show me the price trend of GOOG before the year 2007.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "price",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "GOOG"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "date",
+          "range": [
+            null,
+            {
+              "year": 2007
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "price",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "price",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "GOOG"
+          }
+        },
+        {
+          "filter": {
+            "field": "date",
+            "range": [
+              null,
+              {
+                "year": 2007
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

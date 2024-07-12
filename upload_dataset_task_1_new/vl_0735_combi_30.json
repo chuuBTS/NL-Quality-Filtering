@@ -1,0 +1,153 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Year",
+      "democracy_eiu",
+      "Country",
+      "GDP",
+      "Region",
+      "Regime",
+      "Sources"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AFG",
+        "Year": 2021,
+        "democracy_eiu": 0.32,
+        "Country": "Afghanistan",
+        "GDP": 14786861638.0,
+        "Region": "South Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "ECU",
+        "Year": 2021,
+        "democracy_eiu": 5.71,
+        "Country": "Ecuador",
+        "GDP": 106000000000.0,
+        "Region": "Latin America & Caribbean",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "TTO",
+        "Year": 2021,
+        "democracy_eiu": 7.16,
+        "Country": "Trinidad and Tobago",
+        "GDP": 24460196271.0,
+        "Region": "Latin America & Caribbean",
+        "Regime": "Flawed Democracy",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "PRY",
+        "Year": 2021,
+        "democracy_eiu": 5.86,
+        "Country": "Paraguay",
+        "GDP": 39495431574.0,
+        "Region": "Latin America & Caribbean",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "FIN",
+        "Year": 2021,
+        "democracy_eiu": 9.27,
+        "Country": "Finland",
+        "GDP": 297000000000.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Full Democracy",
+        "Sources": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition chart where the average democracy index is sorted in ascending order, with each regime type represented by different colors.",
+  "refer_fileds": [
+    {
+      "field": "democracy_eiu",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "mean",
+          "order": "ascending",
+          "field": "democracy_eiu"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

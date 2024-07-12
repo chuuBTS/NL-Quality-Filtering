@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "page type",
+      "purchase count",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "page type": "blog",
+        "purchase count": 0,
+        "gender": "M"
+      },
+      {
+        "page type": "product",
+        "purchase count": 0,
+        "gender": "F"
+      },
+      {
+        "page type": "hero-page",
+        "purchase count": 0,
+        "gender": "M"
+      },
+      {
+        "page type": "hero-page",
+        "purchase count": 0,
+        "gender": "F"
+      },
+      {
+        "page type": "order confirmation",
+        "purchase count": 0,
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total purchase count broken down by gender.",
+  "refer_fileds": [
+    {
+      "field": "purchase count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "purchase count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "purchase count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

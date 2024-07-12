@@ -1,0 +1,86 @@
+{
+  "table_info": {
+    "table_columns": [
+      "imports",
+      "year"
+    ],
+    "table_samples": [
+      {
+        "imports": "27.76107111",
+        "year": 1960.0
+      },
+      {
+        "imports": "30.84123199",
+        "year": 2011.0
+      },
+      {
+        "imports": "..",
+        "year": NaN
+      },
+      {
+        "imports": "..",
+        "year": NaN
+      },
+      {
+        "imports": "-17.8577414",
+        "year": 1987.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of imports over the years.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal",
+      "aggregate": "sum"
+    },
+    {
+      "field": "imports",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "year",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "imports",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "imports",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

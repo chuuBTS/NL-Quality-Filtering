@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Income group",
+      "Categories",
+      "Spending%"
+    ],
+    "table_samples": [
+      {
+        "Income group": "Bottom decile",
+        "Categories": "Food & Drink",
+        "Spending%": 21.4
+      },
+      {
+        "Income group": "7th decile",
+        "Categories": "Housing",
+        "Spending%": 17.6
+      },
+      {
+        "Income group": "7th decile",
+        "Categories": "Transport",
+        "Spending%": 12.5
+      },
+      {
+        "Income group": "5th decile",
+        "Categories": "Recreation",
+        "Spending%": 12.1
+      },
+      {
+        "Income group": "8th decile",
+        "Categories": "Transport",
+        "Spending%": 14.4
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the total spending percentage for different income groups and categories.",
+  "refer_fileds": [
+    {
+      "field": "Income group",
+      "type": "nominal"
+    },
+    {
+      "field": "Spending%",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Categories",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Spending%",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

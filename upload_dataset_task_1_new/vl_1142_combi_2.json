@@ -1,0 +1,112 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals_billions",
+      "Unnamed: 6",
+      "GDP",
+      "Unnamed: 8",
+      "Totals_GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109023819611,
+        "Year": 2022,
+        "Totals_billions": 109.0238196,
+        "Unnamed: 6": NaN,
+        "GDP": 3376.003,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 3.229375673
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": 6036146757,
+        "PRGT 1/2/": 3796945581,
+        "Totals": 9833092338,
+        "Year": 2007,
+        "Totals_billions": 9.833092338,
+        "Unnamed: 6": NaN,
+        "GDP": 2547.689,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 0.385961251
+      },
+      {
+        "Date": "12/31/1998",
+        "GRA Purchases": 60451017051,
+        "PRGT 1/2/": 6288825925,
+        "Totals": 66739842976,
+        "Year": 1998,
+        "Totals_billions": 66.73984298,
+        "Unnamed: 6": NaN,
+        "GDP": 1644.331,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 4.058783966
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393,
+        "PRGT 1/2/": 2769874900,
+        "Totals": 37706647293,
+        "Year": 1984,
+        "Totals_billions": 37.70664729,
+        "Unnamed: 6": NaN,
+        "GDP": 504.226,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 7.478124352
+      },
+      {
+        "Date": "12/31/2015",
+        "GRA Purchases": 50757840741,
+        "PRGT 1/2/": 6575911158,
+        "Totals": 57333751899,
+        "Year": 2015,
+        "Totals_billions": 57.3337519,
+        "Unnamed: 6": NaN,
+        "GDP": 2880.357,
+        "Unnamed: 8": NaN,
+        "Totals_GDP": 1.990508534
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total of Totals_GDP over the years.",
+  "refer_fileds": [
+    {
+      "field": "Totals_GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals_GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

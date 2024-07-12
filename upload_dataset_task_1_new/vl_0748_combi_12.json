@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Burkina Faso",
+        "CAF_2021": 39,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Ukraine",
+        "CAF_2021": 49,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Estonia",
+        "CAF_2021": 40,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Panama",
+        "CAF_2021": 36,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with average CAF_2021 on the y-axis sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "CAF_2021",
+      "type": "quantitative",
+      "aggregate": "mean",
+      "sort": "ascending"
+    },
+    {
+      "field": "2021",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

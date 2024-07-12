@@ -1,0 +1,350 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Agency Name",
+      "Location Name",
+      "Address",
+      "City",
+      "Zip code",
+      "County",
+      "Congress Dist",
+      "Congressional Full Name",
+      "Rep Dist",
+      "Rep Full Name",
+      "Senate Dist",
+      "Senator Full Name",
+      "Bldg Status",
+      "Year Acquired",
+      "Year Constructed",
+      "Square Footage",
+      "Total Floors",
+      "Floors Above Grade",
+      "Floors Below Grade",
+      "Usage Description",
+      "Usage Description 2",
+      "Usage Description 3"
+    ],
+    "table_samples": [
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Anderson Lake Conservation Area - Fulton County",
+        "Address": "Anderson Lake C.a.",
+        "City": "Astoria",
+        "Zip code": 61501,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 93,
+        "Rep Full Name": "Hammond Norine K.",
+        "Senate Dist": 47,
+        "Senator Full Name": "Jil Tracy",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1975,
+        "Year Constructed": 1975,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Eldon Hazlet State Park - Clinton County",
+        "Address": "Keyesport Road",
+        "City": "Carlyle",
+        "Zip code": 62231,
+        "County": "Clinton",
+        "Congress Dist": 15,
+        "Congressional Full Name": "John Shimkus",
+        "Rep Dist": 107,
+        "Rep Full Name": "Cavaletto John",
+        "Senate Dist": 54,
+        "Senator Full Name": "Kyle McCarter",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1987,
+        "Year Constructed": 1987,
+        "Square Footage": 20,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "World Shooting & Recreational Complex-Sparta",
+        "Address": "10410 County Road 18",
+        "City": "Sparta",
+        "Zip code": 62286,
+        "County": "Randolph",
+        "Congress Dist": 12,
+        "Congressional Full Name": "Mike Bost",
+        "Rep Dist": 116,
+        "Rep Full Name": "Costello, II Jerry",
+        "Senate Dist": 58,
+        "Senator Full Name": "Paul Schimpf",
+        "Bldg Status": "In Use",
+        "Year Acquired": 2006,
+        "Year Constructed": 2006,
+        "Square Footage": 700,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Illinois River (Canton) \u00a0Correctional Center - Fulton County",
+        "Address": "Route 9 West",
+        "City": "Canton",
+        "Zip code": 61520,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 91,
+        "Rep Full Name": "Unes Michael D.",
+        "Senate Dist": 46,
+        "Senator Full Name": "David Koehler",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1989,
+        "Year Constructed": 1987,
+        "Square Footage": 56196,
+        "Total Floors": 2,
+        "Floors Above Grade": 2,
+        "Floors Below Grade": 0,
+        "Usage Description": "Storage",
+        "Usage Description 2": "Assembly",
+        "Usage Description 3": "Detention &"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Sheridan Correctional Center - LaSalle County",
+        "Address": "4017 East 2603 Road",
+        "City": "Sheridan",
+        "Zip code": 60551,
+        "County": "LaSalle",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 75,
+        "Rep Full Name": "Welter David A.",
+        "Senate Dist": 38,
+        "Senator Full Name": "Sue Rezin",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1976,
+        "Year Constructed": 1976,
+        "Square Footage": 80,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of all floor levels constructed over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year Constructed",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "Total Floors",
+        "Floors Above Grade",
+        "Floors Below Grade"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total Floors",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Above Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Below Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Above Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Below Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Above Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Floors Below Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total Floors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Floors Above Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Floors Below Grade",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year Constructed",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

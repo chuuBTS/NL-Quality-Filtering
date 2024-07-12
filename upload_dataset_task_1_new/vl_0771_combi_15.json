@@ -1,0 +1,87 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2022",
+      "2022"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2022": 68,
+        "2022": "Islam"
+      },
+      {
+        "Country": "Ghana",
+        "CAF_2022": 43,
+        "2022": "Christianity"
+      },
+      {
+        "Country": "Myanmar",
+        "CAF_2022": 52,
+        "2022": "Buddhism"
+      },
+      {
+        "Country": "Paraguay",
+        "CAF_2022": 44,
+        "2022": "Christianity"
+      },
+      {
+        "Country": "Switzerland",
+        "CAF_2022": 37,
+        "2022": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Create a point chart showing the religions.",
+  "refer_fileds": [
+    {
+      "field": "2022",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2022",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "CAF_2022",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "CAF_2022"
+        },
+        "x": {
+          "field": "2022",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

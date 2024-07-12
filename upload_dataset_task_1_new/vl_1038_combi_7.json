@@ -1,0 +1,193 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "ConstituencyName",
+      "RegionName",
+      "MedianHPrice",
+      "MedianWeeklyWage",
+      "YearlySalary",
+      "Housepriceincreaseover5years",
+      "%Growth5years",
+      "%affordability",
+      "Component 1",
+      "Component 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "ConstituencyName": "Aldershot",
+        "RegionName": "South East",
+        "MedianHPrice": 335000,
+        "MedianWeeklyWage": 576,
+        "YearlySalary": 29968,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 2,
+        "%affordability": 9,
+        "Component 1": 1.2496118035031694,
+        "Component 2": -0.5133032835863713
+      },
+      {
+        "Unnamed: 0": 511,
+        "ConstituencyName": "Winchester",
+        "RegionName": "South East",
+        "MedianHPrice": 461500,
+        "MedianWeeklyWage": 577,
+        "YearlySalary": 29988,
+        "Housepriceincreaseover5years": 6300,
+        "%Growth5years": 1,
+        "%affordability": 6,
+        "Component 1": 2.061408221845016,
+        "Component 2": -0.4104361473133069
+      },
+      {
+        "Unnamed: 0": 373,
+        "ConstituencyName": "Rother Valley",
+        "RegionName": "Yorkshire and The Humber",
+        "MedianHPrice": 180000,
+        "MedianWeeklyWage": 502,
+        "YearlySalary": 26109,
+        "Housepriceincreaseover5years": 5600,
+        "%Growth5years": 4,
+        "%affordability": 15,
+        "Component 1": -1.1244554873016317,
+        "Component 2": -0.3101747591298913
+      },
+      {
+        "Unnamed: 0": 331,
+        "ConstituencyName": "Northampton North",
+        "RegionName": "East Midlands",
+        "MedianHPrice": 233250,
+        "MedianWeeklyWage": 559,
+        "YearlySalary": 29063,
+        "Housepriceincreaseover5years": 6651,
+        "%Growth5years": 3,
+        "%affordability": 12,
+        "Component 1": 0.2563707977251052,
+        "Component 2": -0.5771590403407333
+      },
+      {
+        "Unnamed: 0": 31,
+        "ConstituencyName": "Birmingham, Erdington",
+        "RegionName": "West Midlands",
+        "MedianHPrice": 180000,
+        "MedianWeeklyWage": 504,
+        "YearlySalary": 26203,
+        "Housepriceincreaseover5years": 7000,
+        "%Growth5years": 5,
+        "%affordability": 15,
+        "Component 1": -1.168059899800126,
+        "Component 2": 0.1394763484089684
+      }
+    ]
+  },
+  "nl_utterance": "Show me the correlation between Component 2 and the region of constituencies using a scatter plot with circles.",
+  "refer_fileds": [
+    {
+      "field": "Component 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "RegionName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Component 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "RegionName",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

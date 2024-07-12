@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "type": "quantitative",
+            "field": "iyear"
+        },
+        "y": {
+            "aggregate": "sum",
+            "type": "quantitative",
+            "field": "Attack Count"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/thomasxu2009/ChartStory/1888d7060e265cc2e1493f5555412997857945c5/savedFile_globalTerr/Ewen8Data.json",
+        "format": {
+            "parse": {
+                "iyear": "number",
+                "Attack Count": "number"
+            }
+        }
+    },
+    "height": 300,
+    "width": 600
+}

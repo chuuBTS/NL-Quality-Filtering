@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 2.0,
+        "item": "monkey"
+      },
+      {
+        "time": 19,
+        "quantity": 50.012816499808885,
+        "item": "slipper"
+      },
+      {
+        "time": 16,
+        "quantity": 40.53159496449108,
+        "item": "monkey"
+      },
+      {
+        "time": 11,
+        "quantity": 25.676874454922785,
+        "item": "broom"
+      },
+      {
+        "time": 6,
+        "quantity": 19.194870523363548,
+        "item": "broom"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of sum of quantity over time for each item using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "item",
+      "type": "nominal"
+    },
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "quantity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

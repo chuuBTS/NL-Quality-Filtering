@@ -1,0 +1,149 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 178,
+        "OpponentName": "None",
+        "start": "2019-08-24 19:46:12.843 +00:00",
+        "end": "2019-08-24 19:46:14.691 +00:00",
+        "PersonId": 178,
+        "Time (seconds)": 2.0,
+        "id.1": 178,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Art",
+        "Height": 66.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 126,
+        "OpponentName": "None",
+        "start": "2019-08-24 17:49:42.942 +00:00",
+        "end": "2019-08-24 17:49:45.328 +00:00",
+        "PersonId": 126,
+        "Time (seconds)": 2.0,
+        "id.1": 126,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 70.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 140,
+        "OpponentName": "None",
+        "start": "2019-08-24 18:17:24.541 +00:00",
+        "end": "2019-08-24 18:17:26.660 +00:00",
+        "PersonId": 140,
+        "Time (seconds)": 2.0,
+        "id.1": 140,
+        "Gender": "Unkown",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 57.0,
+        "zipcode": 47265,
+        "state": "IN",
+        "Event": "Makevention 2019"
+      },
+      {
+        "id": 69,
+        "OpponentName": "None",
+        "start": "2019-08-24 15:14:16.634 +00:00",
+        "end": "2019-08-24 15:14:19.335 +00:00",
+        "PersonId": 69,
+        "Time (seconds)": 3.0,
+        "id.1": 69,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 70.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Makevention 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show a count of entries, sorted by the age groups from oldest to youngest.",
+  "refer_fileds": [
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "",
+          "Retired",
+          "Adult",
+          "Teen",
+          "Pre-Teen",
+          "Kid"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

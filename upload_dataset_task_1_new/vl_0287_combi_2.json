@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "numbers"
+    ],
+    "table_samples": [
+      {
+        "Date": 2022,
+        "numbers": 0.012113758
+      },
+      {
+        "Date": 1991,
+        "numbers": 0.011110122
+      },
+      {
+        "Date": 2016,
+        "numbers": 0.007335563
+      },
+      {
+        "Date": 1995,
+        "numbers": 0.013862204
+      },
+      {
+        "Date": 1999,
+        "numbers": 0.017967543
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total sum of the numbers across all dates.",
+  "refer_fileds": [
+    {
+      "field": "numbers",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "numbers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "numbers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

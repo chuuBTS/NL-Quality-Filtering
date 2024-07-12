@@ -1,0 +1,416 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "amc concord",
+        "Miles_per_Gallon": 24.3,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 90.0,
+        "Weight_in_lbs": 3003,
+        "Acceleration": 20.1,
+        "Year": "1980-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "pontiac sunbird coupe",
+        "Miles_per_Gallon": 24.5,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 88.0,
+        "Weight_in_lbs": 2740,
+        "Acceleration": 16.0,
+        "Year": "1977-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "volkswagen super beetle",
+        "Miles_per_Gallon": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46.0,
+        "Weight_in_lbs": 1950,
+        "Acceleration": 21.0,
+        "Year": "1973-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "dodge diplomat",
+        "Miles_per_Gallon": 19.4,
+        "Cylinders": 8,
+        "Displacement": 318.0,
+        "Horsepower": 140.0,
+        "Weight_in_lbs": 3735,
+        "Acceleration": 13.2,
+        "Year": "1978-01-01",
+        "Origin": "USA"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart comparing the horsepower and miles per gallon for each origin.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

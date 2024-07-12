@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "Maine",
+        "Population": 1372247,
+        "Type1": "Nonimmigrants",
+        "Value": 34573.0,
+        "ValueC": 2.519444386
+      },
+      {
+        "State": "Wisconsin",
+        "Population": 5895908,
+        "Type1": "Nonimmigrants",
+        "Value": 49929.0,
+        "ValueC": 0.846841572
+      },
+      {
+        "State": "Arizona",
+        "Population": 7276316,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 14466.0,
+        "ValueC": 0.198809398
+      },
+      {
+        "State": "Washington",
+        "Population": 7738692,
+        "Type1": "Naturalizations",
+        "Value": 19511.0,
+        "ValueC": 0.25212271
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart to compare the total composition of immigration types across states, with a sum of immigration percentage as the size on the y-axis and the immigration type as the color.",
+  "refer_fileds": [
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

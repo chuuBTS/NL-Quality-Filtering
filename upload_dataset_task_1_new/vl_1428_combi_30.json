@@ -1,0 +1,250 @@
+{
+  "table_info": {
+    "table_columns": [
+      "library",
+      "variant_class",
+      "func_score",
+      "count",
+      "mean_func_score"
+    ],
+    "table_samples": [
+      {
+        "library": "Lib-1",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -11.6082,
+        "count": 1.0879177562792605e-05,
+        "mean_func_score": -0.382345700798838
+      },
+      {
+        "library": "Lib-3",
+        "variant_class": "stop",
+        "func_score": 0.4610448979591837,
+        "count": 0.0330973254784082,
+        "mean_func_score": -4.01641004001455
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": ">1 nonsynonymous",
+        "func_score": 1.5582489795918375,
+        "count": 0.0354036397542326,
+        "mean_func_score": -1.0701678219079478
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": "1 nonsynonymous",
+        "func_score": 1.9239836734693885,
+        "count": 0.0194258338988228,
+        "mean_func_score": -0.4967448406127095
+      },
+      {
+        "library": "Lib-2",
+        "variant_class": "1 nonsynonymous",
+        "func_score": -4.65924081632653,
+        "count": 0.0036316084013858,
+        "mean_func_score": -0.4967448406127095
+      }
+    ]
+  },
+  "nl_utterance": "Create small multiples showing the counts and functional scores for each variant class in a sorted order of wildtype, synonymous, 1 nonsynonymous, >1 nonsynonymous, deletion, and stop.",
+  "refer_fileds": [
+    {
+      "field": "variant_class",
+      "type": "nominal"
+    },
+    {
+      "field": "func_score",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "wildtype",
+          "synonymous",
+          "1 nonsynonymous",
+          ">1 nonsynonymous",
+          "deletion",
+          "stop"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "column": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "func_score",
+          "type": "quantitative"
+        },
+        "row": {
+          "field": "variant_class",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

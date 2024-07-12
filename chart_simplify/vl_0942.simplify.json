@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "bin": true,
+            "field": "rrp_growth",
+            "type": "quantitative"
+        },
+        "y": {
+            "bin": true,
+            "field": "hp_growth",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/issylavenstein/issylavenstein.github.io/main/hp_income_heat%20map.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "hp_growth",
+                "lt": 0.25
+            }
+        },
+        {
+            "filter": {
+                "field": "rrp_growth",
+                "lt": 0.25
+            }
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

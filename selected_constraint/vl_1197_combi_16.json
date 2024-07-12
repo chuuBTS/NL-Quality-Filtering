@@ -1,0 +1,84 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "Year",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "Energy Consumption",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": [
+                "Energy Source",
+                "Energy Consumption"
+            ],
+            "type": "nominal",
+            "nl_ref_type": "ambiguous",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "task",
+            "c_name": "composition",
+            "c_list": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal"
+                        }
+                    },
+                    "x_y_reversable": true
+                },
+                {
+                    "mark": "area",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal"
+                        }
+                    }
+                },
+                {
+                    "mark": "arc",
+                    "encoding": {
+                        "theta": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "type": "nominal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Energy Consumption",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

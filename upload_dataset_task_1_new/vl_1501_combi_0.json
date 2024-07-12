@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "repo",
+      "username",
+      "closed"
+    ],
+    "table_samples": [
+      {
+        "repo": "numpy",
+        "username": "WarrenWeckesser",
+        "closed": 1
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "melissawm",
+        "closed": 1
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "rossbar",
+        "closed": 2
+      },
+      {
+        "repo": "numpy",
+        "username": "charris",
+        "closed": 25
+      },
+      {
+        "repo": "numpy",
+        "username": "rgommers",
+        "closed": 5
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of issues closed by each user.",
+  "refer_fileds": [
+    {
+      "field": "username",
+      "type": "nominal"
+    },
+    {
+      "field": "closed",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "closed",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "username",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "username",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "username",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "username",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "username",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

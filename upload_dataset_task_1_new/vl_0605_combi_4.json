@@ -1,0 +1,139 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Job Titles",
+      "Department",
+      "Full or Part-Time",
+      "Salary or Hourly",
+      "Typical Hours",
+      "Annual Salary",
+      "Hourly Rate",
+      "Rank",
+      "share",
+      "cumShareIncome",
+      "cumSharePeople",
+      "shortName"
+    ],
+    "table_samples": [
+      {
+        "Name": "ADELMAN, BRUCE E",
+        "Job Titles": "LEGISLATIVE AIDE",
+        "Department": "CITY COUNCIL",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 22248.0,
+        "Hourly Rate": NaN,
+        "Rank": 1,
+        "share": 9e-06,
+        "cumShareIncome": 9e-06,
+        "cumSharePeople": 4.124e-05,
+        "shortName": "0"
+      },
+      {
+        "Name": "HACKMAN, JOHN M",
+        "Job Titles": "PUBLIC RELATIONS COORD",
+        "Department": "DEPT OF CULTURAL AFFAIRS",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 89532.0,
+        "Hourly Rate": NaN,
+        "Rank": 6828,
+        "share": 3.7e-05,
+        "cumShareIncome": 0.19711,
+        "cumSharePeople": 0.28160185,
+        "shortName": "0"
+      },
+      {
+        "Name": "VALADEZ, ADRIAN",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 108822.0,
+        "Hourly Rate": NaN,
+        "Rank": 16101,
+        "share": 4.5e-05,
+        "cumShareIncome": 0.581523,
+        "cumSharePeople": 0.66404091,
+        "shortName": "Police"
+      },
+      {
+        "Name": "FLYNN, KEVIN P",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 97974.0,
+        "Hourly Rate": NaN,
+        "Rank": 9656,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.308934,
+        "cumSharePeople": 0.39823483,
+        "shortName": "Police"
+      },
+      {
+        "Name": "PUENTES, ANTONIO G",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 111966.0,
+        "Hourly Rate": NaN,
+        "Rank": 18167,
+        "share": 4.6e-05,
+        "cumShareIncome": 0.675663,
+        "cumSharePeople": 0.74924733,
+        "shortName": "Police"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of employees for each type of compensation.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Annual Salary",
+        "Hourly Rate"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Annual Salary",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Hourly Rate",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

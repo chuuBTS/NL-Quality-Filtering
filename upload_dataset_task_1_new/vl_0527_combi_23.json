@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "food_emissions",
+      "Type"
+    ],
+    "table_samples": [
+      {
+        "Entity": NaN,
+        "food_emissions": NaN,
+        "Type": NaN
+      },
+      {
+        "Entity": "Tofu",
+        "food_emissions": 0.8,
+        "Type": "Processing"
+      },
+      {
+        "Entity": "Lamb & Mutton",
+        "food_emissions": 0.5,
+        "Type": "Transport"
+      },
+      {
+        "Entity": "Eggs",
+        "food_emissions": 0.1,
+        "Type": "Transport"
+      },
+      {
+        "Entity": "Beef (dairy herd)",
+        "food_emissions": 15.7,
+        "Type": "Farm"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition chart of food emissions by Type.",
+  "refer_fileds": [
+    {
+      "field": "food_emissions",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "food_emissions",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

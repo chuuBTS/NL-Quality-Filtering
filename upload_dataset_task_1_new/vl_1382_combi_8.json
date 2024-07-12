@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 5.0,
+        "item": "munchkin"
+      },
+      {
+        "time": 11,
+        "quantity": 25.676874454922785,
+        "item": "tiger"
+      },
+      {
+        "time": 1,
+        "quantity": 6.031433133020796,
+        "item": "bear"
+      },
+      {
+        "time": 11,
+        "quantity": 17.398765361701578,
+        "item": "dog"
+      },
+      {
+        "time": 15,
+        "quantity": 26.45580618665162,
+        "item": "bear"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of total quantity by item across different times using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "item",
+      "type": "nominal"
+    },
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "quantity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

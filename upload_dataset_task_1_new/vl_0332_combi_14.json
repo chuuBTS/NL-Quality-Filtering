@@ -1,0 +1,157 @@
+{
+  "table_info": {
+    "table_columns": [
+      "category",
+      "Ethnicity",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "category": "All US adults",
+        "Ethnicity": "White",
+        "value": 67
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "White",
+        "value": 58
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Asian or other",
+        "value": 6
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Black",
+        "value": 12
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Hispanic",
+        "value": 17
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with a small multiple layout showing the sum of the values for each category.",
+  "refer_fileds": [
+    {
+      "field": "category",
+      "type": "nominal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

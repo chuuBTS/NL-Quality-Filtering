@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Programming Language",
+      "Date",
+      "Ratings %"
+    ],
+    "table_samples": [
+      {
+        "Programming Language": "R",
+        "Date": 2007,
+        "Ratings %": 0.06
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2016,
+        "Ratings %": 3.85
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2021,
+        "Ratings %": 11.72
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2008,
+        "Ratings %": 0.04
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2009,
+        "Ratings %": 4.73
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of R ratings over time as a sum percentage using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Ratings %",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Programming Language",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Ratings %",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

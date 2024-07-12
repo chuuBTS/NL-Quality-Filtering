@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Year",
+      "Urban Population"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 1960,
+        "Urban Population": 67926
+      },
+      {
+        "Country Name": "Argentina",
+        "Year": 2002,
+        "Urban Population": 33728928
+      },
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 2018,
+        "Urban Population": 8332904
+      },
+      {
+        "Country Name": "United States",
+        "Year": 1975,
+        "Urban Population": 159070594
+      },
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 2004,
+        "Urban Population": 3330985
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total urban population over the years for each country.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Urban Population",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Urban Population",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

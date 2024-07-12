@@ -1,0 +1,162 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Country",
+      "Total",
+      "Medal Type",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Country": "USA",
+        "Total": 104,
+        "Medal Type": "Gold",
+        "Value": 46
+      },
+      {
+        "Unnamed: 0": 27,
+        "Country": "ITA",
+        "Total": 28,
+        "Medal Type": "Gold",
+        "Value": 8
+      },
+      {
+        "Unnamed: 0": 1,
+        "Country": "USA",
+        "Total": 104,
+        "Medal Type": "Silver",
+        "Value": 29
+      },
+      {
+        "Unnamed: 0": 18,
+        "Country": "AUS",
+        "Total": 35,
+        "Medal Type": "Gold",
+        "Value": 7
+      },
+      {
+        "Unnamed: 0": 22,
+        "Country": "FRA",
+        "Total": 34,
+        "Medal Type": "Silver",
+        "Value": 11
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the number of medals for each medal type, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Medal Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Medal Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

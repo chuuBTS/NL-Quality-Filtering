@@ -1,0 +1,146 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "toyota celica gt liftback",
+        "MPG": 21.1,
+        "Cylinders": 4,
+        "Displacement": 134.0,
+        "Horsepower": 95,
+        "Weight": 2515,
+        "Acceleration": 14.8,
+        "Year": 1978,
+        "Origin": "Japan"
+      },
+      {
+        "Model": "chevrolet chevette",
+        "MPG": 29.0,
+        "Cylinders": 4,
+        "Displacement": 85.0,
+        "Horsepower": 52,
+        "Weight": 2035,
+        "Acceleration": 22.2,
+        "Year": 1976,
+        "Origin": "US"
+      },
+      {
+        "Model": "vokswagen rabbit",
+        "MPG": 29.8,
+        "Cylinders": 4,
+        "Displacement": 89.0,
+        "Horsepower": 62,
+        "Weight": 1845,
+        "Acceleration": 15.3,
+        "Year": 1980,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "datsun b-210",
+        "MPG": 32.0,
+        "Cylinders": 4,
+        "Displacement": 85.0,
+        "Horsepower": 70,
+        "Weight": 1990,
+        "Acceleration": 17.0,
+        "Year": 1976,
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the average weight for each year.",
+  "refer_fileds": [
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

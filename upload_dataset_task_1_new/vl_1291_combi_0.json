@@ -1,0 +1,133 @@
+{
+  "table_info": {
+    "table_columns": [
+      "team",
+      "team_tournament",
+      "tournament",
+      "tupg"
+    ],
+    "table_samples": [
+      {
+        "team": "Virginia A",
+        "team_tournament": "2014 Virginia A",
+        "tournament": "ACF Nationals 2014",
+        "tupg": 14.12
+      },
+      {
+        "team": "Stanford A",
+        "team_tournament": "2010 Stanford A",
+        "tournament": "ACF Nationals 2010",
+        "tupg": 12.8
+      },
+      {
+        "team": "Michigan A",
+        "team_tournament": "2016 Michigan A",
+        "tournament": "ACF Nationals 2016",
+        "tupg": 13.22
+      },
+      {
+        "team": "Chicago A",
+        "team_tournament": "2005 Chicago A",
+        "tournament": "ACF Nationals 2005",
+        "tupg": 12.0
+      },
+      {
+        "team": "Maryland A",
+        "team_tournament": "2017 Maryland A",
+        "tournament": "ACF Nationals 2017",
+        "tupg": 11.88
+      }
+    ]
+  },
+  "nl_utterance": "Show me the team tournament names with their corresponding TUPG values in ascending order of PPG.",
+  "refer_fileds": [
+    {
+      "field": "team_tournament",
+      "type": "nominal"
+    },
+    {
+      "field": "tupg",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "ppg"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "tupg",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tupg",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tupg",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tupg",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "tupg",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

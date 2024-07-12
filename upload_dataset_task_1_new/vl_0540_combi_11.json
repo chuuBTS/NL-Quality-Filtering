@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Type",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Date": 1950,
+        "Type": "Aquaculture - marine waters",
+        "Value": 0
+      },
+      {
+        "Date": 1995,
+        "Type": "Capture fisheries - marine waters",
+        "Value": 85
+      },
+      {
+        "Date": 2009,
+        "Type": "Capture fisheries - inland waters",
+        "Value": 10
+      },
+      {
+        "Date": 2009,
+        "Type": "Aquaculture - inland waters",
+        "Value": 34
+      },
+      {
+        "Date": 1968,
+        "Type": "Capture fisheries - inland waters",
+        "Value": 4
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of the values over the years using a bar chart, an area chart or a pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "food_emissions",
+      "Type"
+    ],
+    "table_samples": [
+      {
+        "Entity": NaN,
+        "food_emissions": NaN,
+        "Type": NaN
+      },
+      {
+        "Entity": "Beef (beef herd)",
+        "food_emissions": 1.3,
+        "Type": "Processing"
+      },
+      {
+        "Entity": "Maize",
+        "food_emissions": 0.5,
+        "Type": "Farm"
+      },
+      {
+        "Entity": "Shrimps (farmed)",
+        "food_emissions": 0.2,
+        "Type": "Transport"
+      },
+      {
+        "Entity": "Peas",
+        "food_emissions": 0.0,
+        "Type": "Processing"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the food emissions sorted in descending order by their types.",
+  "refer_fileds": [
+    {
+      "field": "food_emissions",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "food_emissions",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "food_emissions",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

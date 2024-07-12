@@ -1,0 +1,434 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "StateInitials",
+      "Gini",
+      "DeathRate",
+      "Firearms_vs_avg",
+      "medIncome",
+      "Income_vs_med",
+      "ImprisonmentRate",
+      "PrisonRate",
+      "ImprisonmentRate.1",
+      "FirearmDeaths",
+      "GeographicDivision"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "StateInitials": "AL",
+        "Gini": 0.472,
+        "DeathRate": 21.5,
+        "Firearms_vs_avg": 1.64700475,
+        "medIncome": 47221,
+        "Income_vs_med": 0.799827233,
+        "ImprisonmentRate": 736,
+        "PrisonRate": 1.264604811,
+        "ImprisonmentRate.1": 0.736,
+        "FirearmDeaths": 0.215,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "Tennessee",
+        "StateInitials": "TN",
+        "Gini": 0.468,
+        "DeathRate": 17.1,
+        "Firearms_vs_avg": 1.309943312,
+        "medIncome": 51344,
+        "Income_vs_med": 0.869662427,
+        "ImprisonmentRate": 545,
+        "PrisonRate": 0.936426117,
+        "ImprisonmentRate.1": 0.545,
+        "FirearmDeaths": 0.171,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "Hawaii",
+        "StateInitials": "HI",
+        "Gini": 0.433,
+        "DeathRate": 4.5,
+        "Firearms_vs_avg": 0.344721924,
+        "medIncome": 72133,
+        "Income_vs_med": 1.221785599,
+        "ImprisonmentRate": 323,
+        "PrisonRate": 0.554982818,
+        "ImprisonmentRate.1": 0.323,
+        "FirearmDeaths": 0.045,
+        "GeographicDivision": "West"
+      },
+      {
+        "State": "New York",
+        "StateInitials": "NY",
+        "Gini": 0.499,
+        "DeathRate": 4.4,
+        "Firearms_vs_avg": 0.337061437,
+        "medIncome": 61437,
+        "Income_vs_med": 1.040617219,
+        "ImprisonmentRate": 325,
+        "PrisonRate": 0.558419244,
+        "ImprisonmentRate.1": 0.325,
+        "FirearmDeaths": 0.044,
+        "GeographicDivision": "Northeast"
+      },
+      {
+        "State": "Wisconsin",
+        "StateInitials": "WI",
+        "Gini": 0.43,
+        "DeathRate": 11.4,
+        "Firearms_vs_avg": 0.873295542,
+        "medIncome": 59817,
+        "Income_vs_med": 1.01317773,
+        "ImprisonmentRate": 492,
+        "PrisonRate": 0.845360825,
+        "ImprisonmentRate.1": 0.492,
+        "FirearmDeaths": 0.114,
+        "GeographicDivision": "Midwest"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a point chart representing the correlation between firearm deaths and prison rate, categorized by geographic division.",
+  "refer_fileds": [
+    {
+      "field": "FirearmDeaths",
+      "type": "quantitative"
+    },
+    {
+      "field": "GeographicDivision",
+      "type": "nominal"
+    },
+    {
+      "field": "PrisonRate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "PrisonRate",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "PrisonRate",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

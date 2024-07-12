@@ -1,0 +1,175 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "INDICATOR",
+      "SUBJECT",
+      "MEASURE",
+      "FREQUENCY",
+      "TIME",
+      "Value",
+      "Flag Codes"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "AUS",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1970,
+        "Value": 27.859639,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "JPN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1977,
+        "Value": 18.946678,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "SVN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2005,
+        "Value": 36.938074,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "TUR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1973,
+        "Value": 12.450193,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "TUR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1979,
+        "Value": 15.256117,
+        "Flag Codes": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the productivity value by country.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-05",
+        "classificacao": "confirmados",
+        "faixa_etaria": "20 a 29",
+        "feminino": 53,
+        "masculino": 42,
+        "total": 95,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "40 a 49",
+        "feminino": 11,
+        "masculino": 16,
+        "total": 27,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-06-02",
+        "classificacao": "mortos",
+        "faixa_etaria": "20 a 29",
+        "feminino": 6,
+        "masculino": 2,
+        "total": 8,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-22",
+        "classificacao": "mortos",
+        "faixa_etaria": "00 a 19",
+        "feminino": 1,
+        "masculino": 0,
+        "total": 1,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show the total sum of mortos by age group.",
+  "refer_fileds": [
+    {
+      "field": "faixa_etaria",
+      "type": "nominal"
+    },
+    {
+      "field": "total",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "mortos"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "total",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "faixa_etaria",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    }
+  ]
+}

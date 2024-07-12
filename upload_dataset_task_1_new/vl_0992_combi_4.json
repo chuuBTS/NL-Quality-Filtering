@@ -1,0 +1,175 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Type",
+      "GHG emissions covered [MtCO2e]",
+      "Year of implementation",
+      "Value [billion US$]",
+      "Proportion of global GHG emissions covered",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Type": "ETS",
+        "GHG emissions covered [MtCO2e]": 140.36,
+        "Year of implementation": 2007,
+        "Value [billion US$]": 6.365888747,
+        "Proportion of global GHG emissions covered": 0.27,
+        "Value 1": -0.0505383741816785,
+        "Value 2": 0.7482888868096143
+      },
+      {
+        "Unnamed: 0": 75,
+        "Type": "ETS",
+        "GHG emissions covered [MtCO2e]": 67.342,
+        "Year of implementation": 2009,
+        "Value [billion US$]": 1.22232,
+        "Proportion of global GHG emissions covered": 0.13,
+        "Value 1": -0.3389025233555096,
+        "Value 2": 0.4470466979317846
+      },
+      {
+        "Unnamed: 0": 76,
+        "Type": "ETS",
+        "GHG emissions covered [MtCO2e]": 8.16,
+        "Year of implementation": 2011,
+        "Value [billion US$]": 0.127804419,
+        "Proportion of global GHG emissions covered": 0.02,
+        "Value 1": -0.4800912455754786,
+        "Value 2": 0.2053323099904052
+      },
+      {
+        "Unnamed: 0": 46,
+        "Type": "Carbon tax",
+        "GHG emissions covered [MtCO2e]": 6.801985106,
+        "Year of implementation": 2021,
+        "Value [billion US$]": 0.294838465,
+        "Proportion of global GHG emissions covered": 0.01,
+        "Value 1": -0.408141432668885,
+        "Value 2": -0.9694956643226056
+      },
+      {
+        "Unnamed: 0": 87,
+        "Type": "Carbon tax",
+        "GHG emissions covered [MtCO2e]": 6.231775,
+        "Year of implementation": 2014,
+        "Value [billion US$]": 0.121572,
+        "Proportion of global GHG emissions covered": 0.01,
+        "Value 1": -0.4656293794662306,
+        "Value 2": -0.147508613330982
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with the types of policies on the x-axis and the corresponding Value 2 on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "Value 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

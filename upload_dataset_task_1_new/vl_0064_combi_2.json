@@ -1,0 +1,196 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Nolito",
+        "Position": "Forward",
+        "Club": "Celta Vigo",
+        "Country": "Spain",
+        "Age": 29,
+        "Salary": 15000000,
+        "Goals": 2
+      },
+      {
+        "Foot": "Right",
+        "Name": "Sergio Rico",
+        "Position": "Goalkeeper",
+        "Club": "Sevilla",
+        "Country": "Spain",
+        "Age": 22,
+        "Salary": 10000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Elseid Hysaj",
+        "Position": "Defender",
+        "Club": "Napoli",
+        "Country": "Albania",
+        "Age": 22,
+        "Salary": 12000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Left",
+        "Name": "Ladislav Krej\u010d\u00ed",
+        "Position": "Midfielder",
+        "Club": "Republic Sparta Prague",
+        "Country": "Czech Republic",
+        "Age": 23,
+        "Salary": 3750000,
+        "Goals": 4
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of players by their salaries in descending order from different countries.",
+  "refer_fileds": [
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Salary",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

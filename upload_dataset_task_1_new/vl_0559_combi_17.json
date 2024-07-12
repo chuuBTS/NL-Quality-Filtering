@@ -1,0 +1,196 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "Population",
+      "Type1",
+      "Value",
+      "ValueC"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "Population": 5039877,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 2887.0,
+        "ValueC": 0.057283144
+      },
+      {
+        "State": "Minnesota",
+        "Population": 5707390,
+        "Type1": "Lawful Permanent Residents",
+        "Value": 8774.0,
+        "ValueC": 0.153730514
+      },
+      {
+        "State": "New Hampshire",
+        "Population": 1388992,
+        "Type1": "Naturalizations",
+        "Value": 1960.0,
+        "ValueC": 0.141109524
+      },
+      {
+        "State": "Maine",
+        "Population": 1372247,
+        "Type1": "Naturalizations",
+        "Value": 1153.0,
+        "ValueC": 0.084022774
+      },
+      {
+        "State": "Illinois",
+        "Population": 12671469,
+        "Type1": "Asylees",
+        "Value": 1036.0,
+        "ValueC": 0.008175848
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of the summed ValueC as either a bar, area, or pie chart, distributed by State and colored by Type1.",
+  "refer_fileds": [
+    {
+      "field": "State",
+      "type": "nominal"
+    },
+    {
+      "field": "ValueC",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Type1",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ValueC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type1",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ValueC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type1",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

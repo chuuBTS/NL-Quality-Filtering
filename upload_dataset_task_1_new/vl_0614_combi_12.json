@@ -1,0 +1,172 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Country",
+      "GDP ($m)",
+      "Labour Force (000s)",
+      "Output per worker ($)",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AUS",
+        "Country": "Australia",
+        "GDP ($m)": 1595175.273,
+        "Labour Force (000s)": 13738.67,
+        "Output per worker ($)": 116108.42046573648,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "CHL",
+        "Country": "Chile",
+        "GDP ($m)": 553061.394,
+        "Labour Force (000s)": 9108.978,
+        "Output per worker ($)": 60716.075283088845,
+        "Continent": "America"
+      },
+      {
+        "ISO3": "TUR",
+        "Country": "T\u00fcrkiye",
+        "GDP ($m)": 2580935.413,
+        "Labour Force (000s)": 32742.75,
+        "Output per worker ($)": 78824.63791220957,
+        "Continent": "Asia"
+      },
+      {
+        "ISO3": "AUT",
+        "Country": "Austria",
+        "GDP ($m)": 536878.733,
+        "Labour Force (000s)": 4589.6,
+        "Output per worker ($)": 116977.23832142234,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "NLD",
+        "Country": "Netherlands",
+        "GDP ($m)": 1111920.895,
+        "Labour Force (000s)": 9690.125,
+        "Output per worker ($)": 114747.838134183,
+        "Continent": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart comparing the output per worker for countries with a labour force greater than 5000, sorted by output per worker in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Output per worker ($)",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Labour Force (000s)",
+          "gt": 5000
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Output per worker ($)",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    }
+  ]
+}

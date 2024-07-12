@@ -1,0 +1,268 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ID",
+      "category",
+      "launched"
+    ],
+    "table_samples": [
+      {
+        "ID": 1000256230,
+        "category": "Software",
+        "launched": "2017-06-02 12:20:21"
+      },
+      {
+        "ID": 233261745,
+        "category": "Robots",
+        "launched": "2016-02-08 16:34:53"
+      },
+      {
+        "ID": 1760284843,
+        "category": "Software",
+        "launched": "2016-06-06 12:23:09"
+      },
+      {
+        "ID": 1924131875,
+        "category": "Software",
+        "launched": "2014-07-29 22:19:07"
+      },
+      {
+        "ID": 2023692086,
+        "category": "Software",
+        "launched": "2013-08-01 18:21:34"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a breakdown of the software IDs and their categories for projects launched after 2013 but before 2018.",
+  "refer_fileds": [
+    {
+      "field": "ID",
+      "type": "quantitative"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "gt": 2013
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "launched)",
+          "lt": 2018
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ID",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ID",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ID",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "launched)",
+            "gt": 2013
+          }
+        },
+        {
+          "filter": {
+            "field": "launched)",
+            "lt": 2018
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "RST",
+      "Totals",
+      "Year",
+      "Tot_billions",
+      "Tot_div_worldGDP",
+      "World_GDP_(current US$)"
+    ],
+    "table_samples": [
+      {
+        "Date": "10/31/2022",
+        "GRA Purchases": "93,054,287,423",
+        "PRGT 1/2/": "15,329,531,139",
+        "RST": 0,
+        "Totals": 108383818562,
+        "Year": 2022,
+        "Tot_billions": 108.38,
+        "Tot_div_worldGDP": NaN,
+        "World_GDP_(current US$)": NaN
+      },
+      {
+        "Date": "12/31/2010",
+        "GRA Purchases": "55,620,104,510",
+        "PRGT 1/2/": "4,819,344,134",
+        "RST": 0,
+        "Totals": 60439448644,
+        "Year": 2010,
+        "Tot_billions": 60.44,
+        "Tot_div_worldGDP": 0.090755304,
+        "World_GDP_(current US$)": 66600000000000.0
+      },
+      {
+        "Date": "12/31/2003",
+        "GRA Purchases": "65,032,062,712",
+        "PRGT 1/2/": "6,880,893,268",
+        "RST": 0,
+        "Totals": 71912955980,
+        "Year": 2003,
+        "Tot_billions": 71.91,
+        "Tot_div_worldGDP": 0.183699842,
+        "World_GDP_(current US$)": 39100000000000.0
+      },
+      {
+        "Date": "12/31/2015",
+        "GRA Purchases": "50,757,840,741",
+        "PRGT 1/2/": "6,575,911,158",
+        "RST": 0,
+        "Totals": 57333751899,
+        "Year": 2015,
+        "Tot_billions": 57.33,
+        "Tot_div_worldGDP": 0.076262718,
+        "World_GDP_(current US$)": 75200000000000.0
+      },
+      {
+        "Date": "12/31/1987",
+        "GRA Purchases": "28,751,979,125",
+        "PRGT 1/2/": "1,866,342,930",
+        "RST": 0,
+        "Totals": 30618322055,
+        "Year": 1987,
+        "Tot_billions": 30.62,
+        "Tot_div_worldGDP": 0.176910504,
+        "World_GDP_(current US$)": 17300000000000.0
+      }
+    ]
+  },
+  "nl_utterance": "What is the sum of the total divided by world GDP over the years?",
+  "refer_fileds": [
+    {
+      "field": "Tot_div_worldGDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Tot_div_worldGDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

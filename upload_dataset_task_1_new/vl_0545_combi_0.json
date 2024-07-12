@@ -1,0 +1,146 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Date",
+      "Size",
+      "Deaths",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Name": "August Complex",
+        "Date": "Aug-20",
+        "Size": 1032648,
+        "Deaths": 1,
+        "Detail": "Top 20 wildfires in CA"
+      },
+      {
+        "Name": "North Complex",
+        "Date": "Aug-20",
+        "Size": 318935,
+        "Deaths": 15,
+        "Detail": NaN
+      },
+      {
+        "Name": "Laguna",
+        "Date": "Sep-70",
+        "Size": 175425,
+        "Deaths": 5,
+        "Detail": NaN
+      },
+      {
+        "Name": "Zaca",
+        "Date": "Jul-07",
+        "Size": 240207,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "Marble Cone",
+        "Date": "Jun-08",
+        "Size": 177866,
+        "Deaths": 0,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a list of wildfires sorted by size in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Name",
+      "type": "nominal"
+    },
+    {
+      "field": "Size",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Size",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

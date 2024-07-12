@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Player",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Player": "Alan Shearer",
+        "Goals": 260
+      },
+      {
+        "Player": "Jermain Defoe",
+        "Goals": 162
+      },
+      {
+        "Player": "Sergio Ag\u00c3\u00bcero",
+        "Goals": 184
+      },
+      {
+        "Player": "Wayne Rooney",
+        "Goals": 208
+      },
+      {
+        "Player": "Frank Lampard",
+        "Goals": 177
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart of players sorted by goals in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Player",
+      "type": "nominal"
+    },
+    {
+      "field": "Goals",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Goals",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Player",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Player",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Player",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Player",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Player",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

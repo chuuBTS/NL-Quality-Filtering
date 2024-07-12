@@ -1,0 +1,184 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Agency Name",
+      "Location Name",
+      "Address",
+      "City",
+      "Zip code",
+      "County",
+      "Congress Dist",
+      "Congressional Full Name",
+      "Rep Dist",
+      "Rep Full Name",
+      "Senate Dist",
+      "Senator Full Name",
+      "Bldg Status",
+      "Year Acquired",
+      "Year Constructed",
+      "Square Footage",
+      "Total Floors",
+      "Floors Above Grade",
+      "Floors Below Grade",
+      "Usage Description",
+      "Usage Description 2",
+      "Usage Description 3"
+    ],
+    "table_samples": [
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Anderson Lake Conservation Area - Fulton County",
+        "Address": "Anderson Lake C.a.",
+        "City": "Astoria",
+        "Zip code": 61501,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 93,
+        "Rep Full Name": "Hammond Norine K.",
+        "Senate Dist": 47,
+        "Senator Full Name": "Jil Tracy",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1975,
+        "Year Constructed": 1975,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Historic Preservation Agency",
+        "Location Name": "Lincoln Log Cabin Historic Site - Coles County",
+        "Address": "Rr #1 Box 172a",
+        "City": "Lerna",
+        "Zip code": 62440,
+        "County": "Coles",
+        "Congress Dist": 15,
+        "Congressional Full Name": "John Shimkus",
+        "Rep Dist": 110,
+        "Rep Full Name": "Phillips Reginald",
+        "Senate Dist": 55,
+        "Senator Full Name": "Dale A. Righter",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1935,
+        "Year Constructed": 1935,
+        "Square Footage": 1200,
+        "Total Floors": 4,
+        "Floors Above Grade": 3,
+        "Floors Below Grade": 1,
+        "Usage Description": "Residential",
+        "Usage Description 2": "Residential",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Big Muddy Correctional Center - Jefferson County",
+        "Address": "Rt. 37, P. O. Box 1000",
+        "City": "Ina",
+        "Zip code": 62846,
+        "County": "Jefferson",
+        "Congress Dist": 12,
+        "Congressional Full Name": "Mike Bost",
+        "Rep Dist": 115,
+        "Rep Full Name": "Bryant Terri",
+        "Senate Dist": 58,
+        "Senator Full Name": "Paul Schimpf",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1992,
+        "Year Constructed": 1992,
+        "Square Footage": 560,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Detention & Correc",
+        "Usage Description 2": "Storage",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Green River Wildlife Area - Lee County",
+        "Address": "375 Game Road",
+        "City": "Harmon",
+        "Zip code": 61042,
+        "County": "Lee",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 74,
+        "Rep Full Name": "Swanson Daniel",
+        "Senate Dist": 37,
+        "Senator Full Name": "Chuck Weaver",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1989,
+        "Year Constructed": 1989,
+        "Square Footage": 64,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Sam Parr State Park - Jasper County",
+        "Address": "R.r. #5, Box 134(13225 E. St.)",
+        "City": "Newton",
+        "Zip code": 62448,
+        "County": "Jasper",
+        "Congress Dist": 15,
+        "Congressional Full Name": "John Shimkus",
+        "Rep Dist": 109,
+        "Rep Full Name": "Reis David B.",
+        "Senate Dist": 55,
+        "Senator Full Name": "Dale A. Righter",
+        "Bldg Status": "In Use",
+        "Year Acquired": 2005,
+        "Year Constructed": 2005,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      }
+    ]
+  },
+  "nl_utterance": "What is the median square footage?",
+  "refer_fileds": [
+    {
+      "field": "Square Footage",
+      "type": "quantitative",
+      "aggregate": "median"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Square Footage",
+          "aggregate": "median"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        }
+      }
+    }
+  ]
+}

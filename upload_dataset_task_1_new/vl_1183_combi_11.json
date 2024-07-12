@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Rate"
+    ],
+    "table_samples": [
+      {
+        "Date": "2015-01-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2017-08-01",
+        "Rate": 2.7
+      },
+      {
+        "Date": "2015-09-01",
+        "Rate": 0.2
+      },
+      {
+        "Date": "2015-10-01",
+        "Rate": 0.2
+      },
+      {
+        "Date": "2016-01-01",
+        "Rate": 0.6
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the Rate starting from the year 2010.",
+  "refer_fileds": [
+    {
+      "field": "Rate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "timeUnit": "year",
+          "field": "Date",
+          "gte": "2010"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Rate",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "timeUnit": "year",
+            "field": "Date",
+            "gte": "2010"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Rate",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "timeUnit": "year",
+            "field": "Date",
+            "gte": "2010"
+          }
+        }
+      ]
+    }
+  ]
+}

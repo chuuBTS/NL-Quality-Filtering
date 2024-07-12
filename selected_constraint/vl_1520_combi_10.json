@@ -1,0 +1,69 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": [
+                "SNP1",
+                "SNP2"
+            ],
+            "type": "quantitative",
+            "nl_ref_type": "ambiguous",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "SNP2",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "PcentAlt",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "mark",
+            "c_name": "rect chart",
+            "c_list": [
+                {
+                    "mark": "rect",
+                    "encoding": {
+                        "x": {},
+                        "y": {},
+                        "color": {
+                            "type": "quantitative"
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "(x,y)": "color"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "PcentAlt",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

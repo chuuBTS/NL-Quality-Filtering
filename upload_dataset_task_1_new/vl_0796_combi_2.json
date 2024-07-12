@@ -1,0 +1,88 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      " GDP ( Billions of US $)",
+      "Totals",
+      "Totals (Billions)",
+      "Debt/GDP",
+      "Years"
+    ],
+    "table_samples": [
+      {
+        "date": "31/12/2021",
+        " GDP ( Billions of US $)": 96100.091,
+        "Totals": 104029000000.0,
+        "Totals (Billions)": 104.0293757,
+        "Debt/GDP": 0.108251069,
+        "Years": 2021
+      },
+      {
+        "date": "31/12/1998",
+        " GDP ( Billions of US $)": 31539.9579,
+        "Totals": 66739842976.0,
+        "Totals (Billions)": 66.73984298,
+        "Debt/GDP": 0.211604097,
+        "Years": 1998
+      },
+      {
+        "date": "31/12/2003",
+        " GDP ( Billions of US $)": 39146.98839,
+        "Totals": 71912955980.0,
+        "Totals (Billions)": 71.91295598,
+        "Debt/GDP": 0.183699842,
+        "Years": 2003
+      },
+      {
+        "date": "31/12/2015",
+        " GDP ( Billions of US $)": 75179.26627,
+        "Totals": 57333751899.0,
+        "Totals (Billions)": 57.3337519,
+        "Debt/GDP": 0.076262718,
+        "Years": 2015
+      },
+      {
+        "date": "31/12/1991",
+        " GDP ( Billions of US $)": 23759.57245,
+        "Totals": 26664291722.0,
+        "Totals (Billions)": 26.66429172,
+        "Debt/GDP": 0.112225469,
+        "Years": 1991
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the debt to GDP ratio over the years.",
+  "refer_fileds": [
+    {
+      "field": "Debt/GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt/GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Debt/GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

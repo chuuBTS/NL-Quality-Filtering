@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      " Inflation Rate",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        " Inflation Rate": 1.0036,
+        "Year": 1960
+      },
+      {
+        " Inflation Rate": 1.183,
+        "Year": 2000
+      },
+      {
+        " Inflation Rate": 1.3904,
+        "Year": 2004
+      },
+      {
+        " Inflation Rate": 0.368,
+        "Year": 2015
+      },
+      {
+        " Inflation Rate": 2.219,
+        "Year": 1994
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the inflation rates.",
+  "refer_fileds": [
+    {
+      "field": " Inflation Rate",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": " Inflation Rate",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": " Inflation Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

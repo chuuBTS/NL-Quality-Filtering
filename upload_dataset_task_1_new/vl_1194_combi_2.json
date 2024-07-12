@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Access to electricity (% of population)",
+      "Country"
+    ],
+    "table_samples": [
+      {
+        "Year": 2000,
+        "Access to electricity (% of population)": 8.916726112,
+        "Country": "Tanzania"
+      },
+      {
+        "Year": 2010,
+        "Access to electricity (% of population)": 19.20000076,
+        "Country": "Kenya"
+      },
+      {
+        "Year": 2015,
+        "Access to electricity (% of population)": 51.13486099,
+        "Country": "Somalia"
+      },
+      {
+        "Year": 2006,
+        "Access to electricity (% of population)": 9.0,
+        "Country": "Uganda"
+      },
+      {
+        "Year": 2003,
+        "Access to electricity (% of population)": 7.288164616,
+        "Country": "Rwanda"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total access to electricity for each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Access to electricity (% of population)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Access to electricity (% of population)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Access to electricity (% of population)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Access to electricity (% of population)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Access to electricity (% of population)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Access to electricity (% of population)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

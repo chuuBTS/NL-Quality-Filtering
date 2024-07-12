@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Year": 1990,
+        "Country": "Brazil",
+        "Value 1": 70.45802056,
+        "Value 2": 0.0
+      },
+      {
+        "Year": 1991,
+        "Country": "Tanzania",
+        "Value 1": 64.36894333,
+        "Value 2": -0.7
+      },
+      {
+        "Year": 1995,
+        "Country": "Tanzania",
+        "Value 1": 62.68910589,
+        "Value 2": -3.2
+      },
+      {
+        "Year": 2002,
+        "Country": "Brazil",
+        "Value 1": 64.98898319,
+        "Value 2": -7.8
+      },
+      {
+        "Year": 2003,
+        "Country": "North Korea",
+        "Value 1": 66.625,
+        "Value 2": -1.9
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of Value 2 over the years for each country.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value 2",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value 2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "data",
+      "classificacao",
+      "faixa_etaria",
+      "feminino",
+      "masculino",
+      "total",
+      "ultima_atualizacao"
+    ],
+    "table_samples": [
+      {
+        "data": "2020-04-13",
+        "classificacao": "confirmados",
+        "faixa_etaria": "00 a 19",
+        "feminino": 0,
+        "masculino": 3,
+        "total": 3,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-06-28",
+        "classificacao": "mortos",
+        "faixa_etaria": "00 a 19",
+        "feminino": 1,
+        "masculino": 4,
+        "total": 5,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-07-17",
+        "classificacao": "mortos",
+        "faixa_etaria": "30 a 39",
+        "feminino": 16,
+        "masculino": 40,
+        "total": 56,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-05-11",
+        "classificacao": "mortos",
+        "faixa_etaria": "00 a 19",
+        "feminino": 1,
+        "masculino": 0,
+        "total": 1,
+        "ultima_atualizacao": false
+      },
+      {
+        "data": "2020-04-27",
+        "classificacao": "mortos",
+        "faixa_etaria": "50 a 59",
+        "feminino": 2,
+        "masculino": 5,
+        "total": 7,
+        "ultima_atualizacao": false
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of deaths by age group.",
+  "refer_fileds": [
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "classificacao",
+          "equal": "mortos"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "classificacao",
+            "equal": "mortos"
+          }
+        }
+      ]
+    }
+  ]
+}

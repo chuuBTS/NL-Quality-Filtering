@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Horsepower",
+      "Weight_in_lbs"
+    ],
+    "table_samples": [
+      {
+        "Horsepower": 1,
+        "Weight_in_lbs": 19
+      },
+      {
+        "Horsepower": 4,
+        "Weight_in_lbs": 13
+      },
+      {
+        "Horsepower": 3,
+        "Weight_in_lbs": 12
+      },
+      {
+        "Horsepower": 2,
+        "Weight_in_lbs": 58
+      },
+      {
+        "Horsepower": 5,
+        "Weight_in_lbs": 21
+      }
+    ]
+  },
+  "nl_utterance": "Sort the chart by descending horsepower.",
+  "refer_fileds": [
+    {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Horsepower",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

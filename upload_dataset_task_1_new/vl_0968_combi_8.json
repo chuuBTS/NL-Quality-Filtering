@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "Year",
+      "Electricity from solar (TWh)"
+    ],
+    "table_samples": [
+      {
+        "Entity": "Europe (BP)",
+        "Year": "1965-01-01",
+        "Electricity from solar (TWh)": 0.0
+      },
+      {
+        "Entity": "United States",
+        "Year": "2009-01-01",
+        "Electricity from solar (TWh)": 2.075960398
+      },
+      {
+        "Entity": "United States",
+        "Year": "1976-01-01",
+        "Electricity from solar (TWh)": 0.0
+      },
+      {
+        "Entity": "Europe (BP)",
+        "Year": "2013-01-01",
+        "Electricity from solar (TWh)": 86.54611969
+      },
+      {
+        "Entity": "World",
+        "Year": "2010-01-01",
+        "Electricity from solar (TWh)": 33.91127014
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total electricity generated from solar in TWh over the years for Europe (BP).",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Electricity from solar (TWh)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Entity",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Electricity from solar (TWh)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Electricity from solar (TWh)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Electricity from solar (TWh)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

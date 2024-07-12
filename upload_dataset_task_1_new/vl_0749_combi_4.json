@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Indicator Name",
+      "Year",
+      "Gross savings (% of GDP)"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Canada",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 1970,
+        "Gross savings (% of GDP)": 21.10273085
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 2013,
+        "Gross savings (% of GDP)": 44.6088549
+      },
+      {
+        "Country Name": "Canada",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 1980,
+        "Gross savings (% of GDP)": 22.26766568
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 2007,
+        "Gross savings (% of GDP)": 48.92772775
+      },
+      {
+        "Country Name": "Saudi Arabia",
+        "Indicator Name": "Gross savings (% of GDP)",
+        "Year": 2004,
+        "Gross savings (% of GDP)": 42.13973558
+      }
+    ]
+  },
+  "nl_utterance": "Show a line chart of the sum of gross savings as a percentage of GDP over the years for each country.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Gross savings (% of GDP)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Gross savings (% of GDP)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Gross savings (% of GDP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "symbol": "SE",
+        "date": "2020-01-01 00:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-08-28 00:00",
+        "value": 336.3636364
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-16 14:30",
+        "value": 318.9655172
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-14 19:00",
+        "value": 336.3636364
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-24 20:00",
+        "value": 477.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of values over time for SE.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "SE"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    }
+  ]
+}

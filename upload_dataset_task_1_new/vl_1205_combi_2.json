@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Region",
+      "Year",
+      "Category",
+      "Technology",
+      "Amount (2020 USD million)"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 200,
+        "Region": "Africa",
+        "Year": 2013,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 0.928327085
+      },
+      {
+        "Unnamed: 0": 14429,
+        "Region": "Africa",
+        "Year": 2004,
+        "Category": "Renewables",
+        "Technology": "Solar energy",
+        "Amount (2020 USD million)": 0.032329826
+      },
+      {
+        "Unnamed: 0": 7566,
+        "Region": "Africa",
+        "Year": 2016,
+        "Category": "Renewables",
+        "Technology": "Solar energy",
+        "Amount (2020 USD million)": 1.823957843
+      },
+      {
+        "Unnamed: 0": 8121,
+        "Region": "Africa",
+        "Year": 2004,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 0.019702742
+      },
+      {
+        "Unnamed: 0": 7537,
+        "Region": "Africa",
+        "Year": 2014,
+        "Category": "Renewables",
+        "Technology": "Multiple renewables",
+        "Amount (2020 USD million)": 0.108324267
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total investment over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Amount (2020 USD million)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Amount (2020 USD million)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Amount (2020 USD million)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Amount (2020 USD million)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Amount (2020 USD million)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Amount (2020 USD million)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "country": "United Kingdom",
+        "date": 2021,
+        "value": 2593519346209.63
+      },
+      {
+        "country": "Canada",
+        "date": 2003,
+        "value": 676776104489.33
+      },
+      {
+        "country": "Germany",
+        "date": 2017,
+        "value": 2655523466630.59
+      },
+      {
+        "country": "Germany",
+        "date": 2011,
+        "value": 2754119879513.62
+      },
+      {
+        "country": "United States",
+        "date": 1974,
+        "value": 1195366000000.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of the value over time for each country using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "year",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "fertilityRate",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "field": "country",
+            "type": "nominal",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "mark",
+            "c_name": "line chart",
+            "c_list": [
+                {
+                    "mark": "line",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "x": "y"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "country",
+                    "oneOf": [
+                        "Iran",
+                        "United States"
+                    ]
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "fertilityRate",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

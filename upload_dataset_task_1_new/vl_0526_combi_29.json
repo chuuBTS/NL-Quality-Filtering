@@ -1,0 +1,163 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Nation",
+      "Quarter",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Nation": "England",
+        "Quarter": "2020Q1",
+        "Value": -2.6,
+        "Detail": "GDP change on 2019Q4 (%)"
+      },
+      {
+        "Nation": "Wales",
+        "Quarter": "2020Q2",
+        "Value": -16.37080868,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q1",
+        "Value": -3.2,
+        "Detail": NaN
+      },
+      {
+        "Nation": "England",
+        "Quarter": "2020Q3",
+        "Value": -7.561436673,
+        "Detail": NaN
+      },
+      {
+        "Nation": "Northern Ireland",
+        "Quarter": "2020Q4",
+        "Value": -2.180376611,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a series of bar charts representing the sum of values for each nation.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Nation",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Nation",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

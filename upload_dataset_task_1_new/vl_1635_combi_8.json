@@ -1,0 +1,96 @@
+{
+  "table_info": {
+    "table_columns": [
+      "x"
+    ],
+    "table_samples": [
+      {
+        "x": 10.6
+      },
+      {
+        "x": 8.7
+      },
+      {
+        "x": 12.1
+      },
+      {
+        "x": 12.6
+      },
+      {
+        "x": 9.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the distribution of x using a bar chart or boxplot where y-axis represents the count.",
+  "refer_fileds": [
+    {
+      "field": "x",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "x",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

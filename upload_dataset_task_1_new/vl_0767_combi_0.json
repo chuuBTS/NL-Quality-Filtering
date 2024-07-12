@@ -1,0 +1,354 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type1",
+      "Type2",
+      "Type3",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Type1": "Mandatory",
+        "Type2": "Social Security",
+        "Type3": "Average, 1973-2022",
+        "Value": 4.4
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Major Health Care programs",
+        "Type3": "2033",
+        "Value": 6.7
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Other",
+        "Type3": "2033",
+        "Value": 2.6
+      },
+      {
+        "Type1": "Mandatory",
+        "Type2": "Other",
+        "Type3": "Average, 1973-2022",
+        "Value": 3.2
+      },
+      {
+        "Type1": "Discretionary",
+        "Type2": "Nondefense",
+        "Type3": "2033",
+        "Value": 3.2
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the values for each category arranged in ascending order by the total value.",
+  "refer_fileds": [
+    {
+      "field": "Type3",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "ascending"
+    },
+    {
+      "field": "Type2",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "sum",
+          "order": "ascending",
+          "field": "Value"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type2",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Type2",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

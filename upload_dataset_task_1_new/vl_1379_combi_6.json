@@ -1,0 +1,117 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "time": "2015/01/01 01:00:00",
+        "count": 2
+      },
+      {
+        "time": "2015/04/08 03:00:00",
+        "count": 1
+      },
+      {
+        "time": "2015/01/28 03:00:00",
+        "count": 2
+      },
+      {
+        "time": "2015/01/18 19:00:00",
+        "count": 2
+      },
+      {
+        "time": "2015/03/03 19:00:00",
+        "count": 3
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot to show the total count over time.",
+  "refer_fileds": [
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

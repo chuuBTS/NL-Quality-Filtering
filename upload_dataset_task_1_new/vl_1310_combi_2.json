@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "field",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "field": "id",
+        "count": 129880
+      },
+      {
+        "field": "Class",
+        "count": 3
+      },
+      {
+        "field": "Leg room service",
+        "count": 6
+      },
+      {
+        "field": "Checkin service",
+        "count": 6
+      },
+      {
+        "field": "Ease of Online booking",
+        "count": 6
+      }
+    ]
+  },
+  "nl_utterance": "Show me the fields sorted by the count in descending order.",
+  "refer_fileds": [
+    {
+      "field": "field",
+      "type": "nominal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "count",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

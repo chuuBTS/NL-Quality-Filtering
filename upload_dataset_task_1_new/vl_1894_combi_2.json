@@ -1,0 +1,146 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Country",
+      "Value",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1901,
+        "Country": "Brazil",
+        "Value": 0.113601872,
+        "Value2": "National",
+        "Detail": "CO2 emissions per capita, 1901-2019"
+      },
+      {
+        "Time": 1974,
+        "Country": "China",
+        "Value": 1.084341499,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1917,
+        "Country": "United States",
+        "Value": 15.86727593,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1933,
+        "Country": "World",
+        "Value": 1.548613653,
+        "Value2": "Global",
+        "Detail": NaN
+      },
+      {
+        "Time": 1952,
+        "Country": "India",
+        "Value": 0.173702987,
+        "Value2": "National",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total CO2 emissions per capita by country.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Agency Name",
+      "Location Name",
+      "Address",
+      "City",
+      "Zip code",
+      "County",
+      "Congress Dist",
+      "Congressional Full Name",
+      "Rep Dist",
+      "Rep Full Name",
+      "Senate Dist",
+      "Senator Full Name",
+      "Bldg Status",
+      "Year Acquired",
+      "Year Constructed",
+      "Square Footage",
+      "Total Floors",
+      "Floors Above Grade",
+      "Floors Below Grade",
+      "Usage Description",
+      "Usage Description 2",
+      "Usage Description 3"
+    ],
+    "table_samples": [
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Anderson Lake Conservation Area - Fulton County",
+        "Address": "Anderson Lake C.a.",
+        "City": "Astoria",
+        "Zip code": 61501,
+        "County": "Fulton",
+        "Congress Dist": 17,
+        "Congressional Full Name": "Cheri Bustos",
+        "Rep Dist": 93,
+        "Rep Full Name": "Hammond Norine K.",
+        "Senate Dist": 47,
+        "Senator Full Name": "Jil Tracy",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1975,
+        "Year Constructed": 1975,
+        "Square Footage": 144,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Dwight Correctional Center - Livingston County",
+        "Address": "Route 17 West",
+        "City": "Dwight",
+        "Zip code": 60420,
+        "County": "Livingston",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 90,
+        "Rep Full Name": "Demmer Tom",
+        "Senate Dist": 45,
+        "Senator Full Name": "Tim Bivins",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1929,
+        "Year Constructed": 1929,
+        "Square Footage": 150,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Industrial",
+        "Usage Description 2": "Industrial",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Corrections",
+        "Location Name": "Menard Correctional Center - Randolph County",
+        "Address": "Route 3 & Rainbow Drive",
+        "City": "Menard",
+        "Zip code": 62259,
+        "County": "Randolph",
+        "Congress Dist": 12,
+        "Congressional Full Name": "Mike Bost",
+        "Rep Dist": 116,
+        "Rep Full Name": "Costello, II Jerry",
+        "Senate Dist": 58,
+        "Senator Full Name": "Paul Schimpf",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1938,
+        "Year Constructed": 1938,
+        "Square Footage": 29086,
+        "Total Floors": 4,
+        "Floors Above Grade": 3,
+        "Floors Below Grade": 1,
+        "Usage Description": "Assembly",
+        "Usage Description 2": "Assembly",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Transportation",
+        "Location Name": "Missouri Avenue Pump Station",
+        "Address": "200 Missouri Avenue",
+        "City": "East St. Louis",
+        "Zip code": 62201,
+        "County": "St. Clair",
+        "Congress Dist": 12,
+        "Congressional Full Name": "Mike Bost",
+        "Rep Dist": 114,
+        "Rep Full Name": "Greenwood LaToya",
+        "Senate Dist": 57,
+        "Senator Full Name": "James F. Clayborne, Jr.",
+        "Bldg Status": "In Use",
+        "Year Acquired": 0,
+        "Year Constructed": 0,
+        "Square Footage": 0,
+        "Total Floors": 1,
+        "Floors Above Grade": 0,
+        "Floors Below Grade": 0,
+        "Usage Description": "Unusual",
+        "Usage Description 2": "Unusual",
+        "Usage Description 3": "Not provided"
+      },
+      {
+        "Agency Name": "Department of Natural Resources",
+        "Location Name": "Des Plaines Game Farm - Will County",
+        "Address": "30550 South Boathouse Road",
+        "City": "Wilmington",
+        "Zip code": 60481,
+        "County": "Will",
+        "Congress Dist": 16,
+        "Congressional Full Name": "Adam Kinzinger",
+        "Rep Dist": 75,
+        "Rep Full Name": "Welter David A.",
+        "Senate Dist": 38,
+        "Senator Full Name": "Sue Rezin",
+        "Bldg Status": "In Use",
+        "Year Acquired": 1974,
+        "Year Constructed": 1974,
+        "Square Footage": 1680,
+        "Total Floors": 1,
+        "Floors Above Grade": 1,
+        "Floors Below Grade": 0,
+        "Usage Description": "Storage",
+        "Usage Description 2": "Storage",
+        "Usage Description 3": "Not provided"
+      }
+    ]
+  },
+  "nl_utterance": "What's the median square footage for buildings with different statuses?",
+  "refer_fileds": [
+    {
+      "field": "Bldg Status",
+      "type": "nominal"
+    },
+    {
+      "field": "Square Footage",
+      "type": "quantitative",
+      "aggregate": "median"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Square Footage",
+          "aggregate": "median"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        },
+        "color": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        },
+        "y": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Square Footage",
+          "type": "quantitative",
+          "aggregate": "median"
+        },
+        "x": {
+          "field": "Bldg Status",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

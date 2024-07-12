@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Party",
+      "seats"
+    ],
+    "table_samples": [
+      {
+        "Year": 1918,
+        "Party": "Conservative",
+        "seats": 382
+      },
+      {
+        "Year": 1997,
+        "Party": "Labour",
+        "seats": 418
+      },
+      {
+        "Year": 2015,
+        "Party": "Labour",
+        "seats": 232
+      },
+      {
+        "Year": 2001,
+        "Party": "Conservative",
+        "seats": 166
+      },
+      {
+        "Year": 1979,
+        "Party": "Labour",
+        "seats": 269
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of seats won over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "seats",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "seats",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

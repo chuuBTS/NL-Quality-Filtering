@@ -1,0 +1,103 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type",
+      "Number",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Type": "Non-immigrant",
+        "Number": 43176853,
+        "Source": "https://www.dhs.gov/sites/default/files/2023-04/2023_0308_plcy_legal_immigration_adjustment_of_status_report_fy_2022q4_final_d.xlsx "
+      },
+      {
+        "Type": "Refugees",
+        "Number": 25465,
+        "Source": NaN
+      },
+      {
+        "Type": "Lawful Permanent Residents",
+        "Number": 1018004,
+        "Source": NaN
+      },
+      {
+        "Type": "Naturlisations",
+        "Number": 967130,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart showing the number of people for each type, excluding non-immigrants.",
+  "refer_fileds": [
+    {
+      "field": "Number",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.Type != 'Non-immigrant'"
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    }
+  ]
+}

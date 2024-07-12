@@ -1,0 +1,107 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "all off",
+        "tracker": "CN",
+        "precision": 44.7,
+        "AUC": 25.3
+      },
+      {
+        "stage": "transform",
+        "tracker": "KCF",
+        "precision": 65.7,
+        "AUC": 39.4
+      },
+      {
+        "stage": "tone map",
+        "tracker": "ECO_HC",
+        "precision": 66.2,
+        "AUC": 45.8
+      },
+      {
+        "stage": "transform",
+        "tracker": "AutoTrack",
+        "precision": 69.4,
+        "AUC": 44.5
+      },
+      {
+        "stage": "tone map",
+        "tracker": "CN",
+        "precision": 61.9,
+        "AUC": 39.4
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart showing the sum of precision for each stage.",
+  "refer_fileds": [
+    {
+      "field": "precision",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precision",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "precision",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

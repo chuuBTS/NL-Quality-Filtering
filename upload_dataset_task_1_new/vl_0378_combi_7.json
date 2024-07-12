@@ -1,0 +1,220 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "INDICATOR",
+      "SUBJECT",
+      "MEASURE",
+      "FREQUENCY",
+      "TIME",
+      "Value",
+      "Flag Codes"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "CAN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1970,
+        "Value": 28.629921,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "GBR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1988,
+        "Value": 38.570571,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "GBR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1982,
+        "Value": 34.408328,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "GBR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1981,
+        "Value": 33.419078,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "USA",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1988,
+        "Value": 44.424496,
+        "Flag Codes": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the GDP per hour worked for each country, excluding the OECD.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.LOCATION!='OECD'"
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    }
+  ]
+}

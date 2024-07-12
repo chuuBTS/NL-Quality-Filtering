@@ -1,0 +1,274 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Year",
+      "democracy_eiu",
+      "Country",
+      "GDP",
+      "Region",
+      "Regime",
+      "Sources"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AFG",
+        "Year": 2021,
+        "democracy_eiu": 0.32,
+        "Country": "Afghanistan",
+        "GDP": 14786861638.0,
+        "Region": "South Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "SWZ",
+        "Year": 2021,
+        "democracy_eiu": 3.08,
+        "Country": "Eswatini",
+        "GDP": 4743335153.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "ZAF",
+        "Year": 2021,
+        "democracy_eiu": 7.05,
+        "Country": "South Africa",
+        "GDP": 419000000000.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Flawed Democracy",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "KWT",
+        "Year": 2021,
+        "democracy_eiu": 3.91,
+        "Country": "Kuwait",
+        "GDP": NaN,
+        "Region": "Middle East & North Africa",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "SEN",
+        "Year": 2021,
+        "democracy_eiu": 5.53,
+        "Country": "Senegal",
+        "GDP": 27625388352.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the composition of average democracy scores sorted in ascending order by location.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Country",
+        "Region"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "democracy_eiu",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "mean",
+          "order": "ascending",
+          "field": "democracy_eiu"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "year",
+      "fertilityRate"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "year": 1800,
+        "fertilityRate": 7.0
+      },
+      {
+        "country": "Comoros",
+        "region": "Africa",
+        "year": 1874,
+        "fertilityRate": 6.01
+      },
+      {
+        "country": "Palestine",
+        "region": "Asia",
+        "year": 1836,
+        "fertilityRate": 6.97
+      },
+      {
+        "country": "Nigeria",
+        "region": "Africa",
+        "year": 1808,
+        "fertilityRate": 6.55
+      },
+      {
+        "country": "Micronesia, Fed. Sts.",
+        "region": "Asia",
+        "year": 1850,
+        "fertilityRate": 6.02
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart to compare the fertility rate over the years for Iran and the United States, filtering the data by these two locations.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "fertilityRate",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "country",
+        "region"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "Iran",
+            "United States"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "fertilityRate",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iran",
+              "United States"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

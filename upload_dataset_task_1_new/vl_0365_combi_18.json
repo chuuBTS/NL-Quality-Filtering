@@ -1,0 +1,219 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rawType",
+      "coupon",
+      "giltType",
+      "code",
+      "redemptionDate",
+      "issueDate",
+      "divDates",
+      "divNextDate",
+      "issueAmount",
+      "baseRPI",
+      "amountINCinfUplift",
+      "issueYear",
+      "totalCumulative",
+      "id"
+    ],
+    "table_samples": [
+      {
+        "rawType": "2\u00bd% Index-linked Treasury Stock 2024",
+        "coupon": "2\u00bd",
+        "giltType": "Index Linked",
+        "code": "GB0008983024",
+        "redemptionDate": " 17-Jul-2024",
+        "issueDate": " 30-Dec-1986",
+        "divDates": "17 Jan/Jul",
+        "divNextDate": " 06-Jan-2023",
+        "issueAmount": 6821,
+        "baseRPI": 97.667931,
+        "amountINCinfUplift": 22363.0,
+        "issueYear": 1986,
+        "totalCumulative": 6821,
+        "id": 1
+      },
+      {
+        "rawType": "1 5/8% Treasury Gilt 2028",
+        "coupon": "5/8",
+        "giltType": "Treasury Gilt",
+        "code": "GB00BFX0ZL78",
+        "redemptionDate": " 22-Oct-2028",
+        "issueDate": " 16-Mar-2018",
+        "divDates": "22 Apr/Oct",
+        "divNextDate": " 13-Oct-2022",
+        "issueAmount": 37855,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2018,
+        "totalCumulative": 1347291,
+        "id": 60
+      },
+      {
+        "rawType": "4\u00bc% Treasury Gilt 2027",
+        "coupon": "4\u00bc",
+        "giltType": "Treasury Gilt",
+        "code": "GB00B16NNR78",
+        "redemptionDate": " 07-Dec-2027",
+        "issueDate": " 06-Sep-2006",
+        "divDates": "7 Jun/Dec",
+        "divNextDate": " 28-Nov-2022",
+        "issueAmount": 33003,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2006,
+        "totalCumulative": 248024,
+        "id": 11
+      },
+      {
+        "rawType": "0 5/8% Index-linked Treasury Gilt 2042",
+        "coupon": "5/8",
+        "giltType": "Index Linked",
+        "code": "GB00B3MYD345",
+        "redemptionDate": " 22-Nov-2042",
+        "issueDate": " 24-Jul-2009",
+        "divDates": "22 May/Nov",
+        "divNextDate": " 11-Nov-2022",
+        "issueAmount": 12559,
+        "baseRPI": 212.46452,
+        "amountINCinfUplift": 20364.0,
+        "issueYear": 2009,
+        "totalCumulative": 459471,
+        "id": 22
+      },
+      {
+        "rawType": "1\u00bc% Treasury Gilt 2027",
+        "coupon": "1\u00bc",
+        "giltType": "Treasury Gilt",
+        "code": "GB00BDRHNP05",
+        "redemptionDate": " 22-Jul-2027",
+        "issueDate": " 15-Mar-2017",
+        "divDates": "22 Jan/Jul",
+        "divNextDate": " 12-Jan-2023",
+        "issueAmount": 40987,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2017,
+        "totalCumulative": 1160829,
+        "id": 53
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart showing the composition of issue amounts by gilt type, with the segments sorted in descending order of count.",
+  "refer_fileds": [
+    {
+      "field": "issueAmount",
+      "type": "quantitative"
+    },
+    {
+      "field": "giltType",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "totals in billions"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Year": 2022,
+        "totals in billions": 109.0238196
+      },
+      {
+        "Date": "12/31/1991",
+        "GRA Purchases": 23378573926,
+        "PRGT 1/2/": 3285717796,
+        "Totals": 26664291722.0,
+        "Year": 1991,
+        "totals in billions": 26.66429172
+      },
+      {
+        "Date": "12/31/1997",
+        "GRA Purchases": 46559033783,
+        "PRGT 1/2/": 6009867422,
+        "Totals": 52568901205.0,
+        "Year": 1997,
+        "totals in billions": 52.56890121
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031,
+        "PRGT 1/2/": 3942792899,
+        "Totals": 29139537930.0,
+        "Year": 1993,
+        "totals in billions": 29.13953793
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093,
+        "PRGT 1/2/": 2571911617,
+        "Totals": 23303762710.0,
+        "Year": 1990,
+        "totals in billions": 23.30376271
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the totals in billions over the years.",
+  "refer_fileds": [
+    {
+      "field": "totals in billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "totals in billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "totals in billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

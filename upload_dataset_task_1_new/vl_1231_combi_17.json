@@ -1,0 +1,136 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Indicator Name",
+      "Year",
+      "GDP growth (annual %)"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1961,
+        "GDP growth (annual %)": 5.638743553
+      },
+      {
+        "Country Name": "Sweden",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1993,
+        "GDP growth (annual %)": -2.632808452
+      },
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1984,
+        "GDP growth (annual %)": 4.220711027
+      },
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 2011,
+        "GDP growth (annual %)": 0.920393685
+      },
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 2014,
+        "GDP growth (annual %)": 1.105433466
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total GDP growth percentage by country over time using a bar chart, area chart or a pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "GDP growth (annual %)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "GDP growth (annual %)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Totals"
+    ],
+    "table_samples": [
+      {
+        "Year": 2021,
+        "Totals": 0.001082511
+      },
+      {
+        "Year": 2005,
+        "Totals": 0.000726548
+      },
+      {
+        "Year": 2016,
+        "Totals": 0.00072909
+      },
+      {
+        "Year": 2004,
+        "Totals": 0.001408504
+      },
+      {
+        "Year": 1995,
+        "Totals": 0.001339617
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the Totals over the years.",
+  "refer_fileds": [
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

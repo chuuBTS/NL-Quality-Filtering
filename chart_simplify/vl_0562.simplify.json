@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "arc",
+    "encoding": {
+        "theta": {
+            "field": "Number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": {
+                "field": "Number",
+                "order": "descending"
+            }
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/e4e/ch7_Trade/USnonImmigrantByCountry_Top10.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.Type != 'Non-immigrant'"
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

@@ -1,0 +1,337 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "INDICATOR",
+      "SUBJECT",
+      "MEASURE",
+      "FREQUENCY",
+      "TIME",
+      "Value",
+      "Flag Codes"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "CAN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 1970,
+        "Value": 28.629921,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "DEU",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2011,
+        "Value": 62.706421,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "CAN",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2014,
+        "Value": 51.187305,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "GBR",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2017,
+        "Value": 59.266936,
+        "Flag Codes": NaN
+      },
+      {
+        "LOCATION": "FRA",
+        "INDICATOR": "GDPHRWKD",
+        "SUBJECT": "TOT",
+        "MEASURE": "USD",
+        "FREQUENCY": "A",
+        "TIME": 2007,
+        "Value": 62.723395,
+        "Flag Codes": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show the sum of the values over time for each location, excluding the OECD.",
+  "refer_fileds": [
+    {
+      "field": "TIME",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.LOCATION!='OECD'"
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "TIME",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "TIME",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "TIME",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.LOCATION!='OECD'"
+        }
+      ]
+    }
+  ]
+}

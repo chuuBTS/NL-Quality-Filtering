@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Prime Minister",
+      "Tenure length",
+      "Length"
+    ],
+    "table_samples": [
+      {
+        "Prime Minister": "Sir Alec Douglas-Home",
+        "Tenure length": "363\u00a0days",
+        "Length": 363
+      },
+      {
+        "Prime Minister": "The Viscount Goderich",
+        "Tenure length": "144\u00a0days",
+        "Length": 144
+      },
+      {
+        "Prime Minister": "George Canning",
+        "Tenure length": "119\u00a0days",
+        "Length": 119
+      },
+      {
+        "Prime Minister": "The Earl of Bute",
+        "Tenure length": "317\u00a0days",
+        "Length": 317
+      },
+      {
+        "Prime Minister": "The Duke of Devonshire",
+        "Tenure length": "225\u00a0days",
+        "Length": 225
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the tenure length of each Prime Minister, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Prime Minister",
+      "type": "nominal"
+    },
+    {
+      "field": "Length",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Length",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Prime Minister",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Length",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

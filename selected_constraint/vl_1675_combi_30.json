@@ -1,0 +1,106 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "price",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "mark",
+            "c_name": "line chart",
+            "c_list": [
+                {
+                    "mark": "line",
+                    "encoding": {
+                        "x": {},
+                        "y": {
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "x": "y"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "symbol",
+                    "equal": "GOOG"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "date",
+                    "range": [
+                        null,
+                        {
+                            "year": 2007
+                        }
+                    ]
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "price",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

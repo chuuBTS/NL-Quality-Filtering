@@ -1,0 +1,109 @@
+{
+  "table_info": {
+    "table_columns": [
+      "field",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "field": "id",
+        "count": 129880
+      },
+      {
+        "field": "Gate location",
+        "count": 6
+      },
+      {
+        "field": "Customer Type",
+        "count": 2
+      },
+      {
+        "field": "Gender",
+        "count": 2
+      },
+      {
+        "field": "Arrival Delay in Minutes",
+        "count": 472
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the counts for each field.",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative"
+    },
+    {
+      "field": "field",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "field",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

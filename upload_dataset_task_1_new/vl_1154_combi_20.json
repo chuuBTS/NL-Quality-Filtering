@@ -1,0 +1,170 @@
+{
+  "table_info": {
+    "table_columns": [
+      "honap",
+      "honap_angol",
+      "datum",
+      "honap_szam",
+      "homerseklet",
+      "ertek"
+    ],
+    "table_samples": [
+      {
+        "honap": "Aug.",
+        "honap_angol": "Aug.",
+        "datum": "2021-08-01",
+        "honap_szam": 8,
+        "homerseklet": "Havi naps\u00fct\u00e9ses \u00f3r\u00e1k sz\u00e1ma",
+        "ertek": 26.2
+      },
+      {
+        "honap": "Okt.",
+        "honap_angol": "Oct.",
+        "datum": "2021-10-01",
+        "honap_szam": 10,
+        "homerseklet": "\u00c1tl.\u00a0csapad\u00e9kmennyis\u00e9g\u00a0(mm)",
+        "ertek": 3.1
+      },
+      {
+        "honap": "Aug.",
+        "honap_angol": "Aug.",
+        "datum": "2021-08-01",
+        "honap_szam": 8,
+        "homerseklet": "\u00c1tlagos min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 12.2
+      },
+      {
+        "honap": "Okt.",
+        "honap_angol": "Oct.",
+        "datum": "2021-10-01",
+        "honap_szam": 10,
+        "homerseklet": "\u00c1tlagos max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 14.6
+      },
+      {
+        "honap": "M\u00e1r.",
+        "honap_angol": "Mar.",
+        "datum": "2021-03-01",
+        "honap_szam": 3,
+        "homerseklet": "Havi naps\u00fct\u00e9ses \u00f3r\u00e1k sz\u00e1ma",
+        "ertek": 16.5
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the sum of values by the type of temperature data as a line chart over time.",
+  "refer_fileds": [
+    {
+      "field": "ertek",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "homerseklet",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "ertek",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "honap_angol"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "datum"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

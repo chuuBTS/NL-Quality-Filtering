@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      " Inflation Rate",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        " Inflation Rate": 1.0036,
+        "Year": 1960
+      },
+      {
+        " Inflation Rate": 15.8403,
+        "Year": 1977
+      },
+      {
+        " Inflation Rate": 7.0711,
+        "Year": 1972
+      },
+      {
+        " Inflation Rate": 8.2631,
+        "Year": 1978
+      },
+      {
+        " Inflation Rate": 2.5578,
+        "Year": 2017
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total inflation rate by year using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": " Inflation Rate",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": " Inflation Rate",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": " Inflation Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": " Inflation Rate",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

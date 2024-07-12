@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billion",
+      "World GDP (current US$)",
+      "Total_%_WorldGDP "
+    ],
+    "table_samples": [
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": 89474552025.0,
+        "PRGT 1/2/": 14554823681.0,
+        "Totals": 104029375706.0,
+        "Year": 2021.0,
+        "Total_billion": 104.0293757,
+        "World GDP (current US$)": 96100100000000.0,
+        "Total_%_WorldGDP ": 0.108251069
+      },
+      {
+        "Date": "12/31/1988",
+        "GRA Purchases": 24750004884.0,
+        "PRGT 1/2/": 1773964293.0,
+        "Totals": 26523969177.0,
+        "Year": 1988.0,
+        "Total_billion": 26.52396918,
+        "World GDP (current US$)": 19338000000000.0,
+        "Total_%_WorldGDP ": 0.137159854
+      },
+      {
+        "Date": "12/31/2003",
+        "GRA Purchases": 65032062712.0,
+        "PRGT 1/2/": 6880893268.0,
+        "Totals": 71912955980.0,
+        "Year": 2003.0,
+        "Total_billion": 71.91295598,
+        "World GDP (current US$)": 39147000000000.0,
+        "Total_%_WorldGDP ": 0.183699842
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093.0,
+        "PRGT 1/2/": 2571911617.0,
+        "Totals": 23303762710.0,
+        "Year": 1990.0,
+        "Total_billion": 23.30376271,
+        "World GDP (current US$)": 22780000000000.0,
+        "Total_%_WorldGDP ": 0.102299317
+      },
+      {
+        "Date": "12/31/2020",
+        "GRA Purchases": 93408630285.0,
+        "PRGT 1/2/": 12481816684.0,
+        "Totals": 105890446969.0,
+        "Year": 2020.0,
+        "Total_billion": 105.890447,
+        "World GDP (current US$)": 84906800000000.0,
+        "Total_%_WorldGDP ": 0.124713721
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total values in billions for each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Total_billion",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_billion",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total_billion",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

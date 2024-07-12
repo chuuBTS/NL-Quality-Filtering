@@ -1,0 +1,251 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "hp_growth",
+      "rtp_growth",
+      "rrp_growth"
+    ],
+    "table_samples": [
+      {
+        "Date": "2002 Q1",
+        "hp_growth": 0.06142,
+        "rtp_growth": 0.033,
+        "rrp_growth": 0.032
+      },
+      {
+        "Date": "2021 Q3",
+        "hp_growth": -0.06432,
+        "rtp_growth": 0.015,
+        "rrp_growth": 0.017
+      },
+      {
+        "Date": "2022 Q2",
+        "hp_growth": -0.02126,
+        "rtp_growth": 0.017,
+        "rrp_growth": 0.016
+      },
+      {
+        "Date": "2011 Q1",
+        "hp_growth": -0.03641,
+        "rtp_growth": 0.028,
+        "rrp_growth": 0.021
+      },
+      {
+        "Date": "2014 Q4",
+        "hp_growth": 0.04373,
+        "rtp_growth": 0.023,
+        "rrp_growth": 0.019
+      }
+    ]
+  },
+  "nl_utterance": "Show me the residential rent price growth and house price growth for values less than 25%.",
+  "refer_fileds": [
+    {
+      "field": "rrp_growth",
+      "type": "quantitative"
+    },
+    {
+      "field": "hp_growth",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "hp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "rrp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "rrp_growth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "hp_growth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "rrp_growth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "hp_growth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "hp_growth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "rrp_growth",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "hp_growth",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "rrp_growth",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rrp_growth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "hp_growth",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "hp_growth",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "rrp_growth",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

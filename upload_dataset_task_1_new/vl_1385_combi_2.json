@@ -1,0 +1,67 @@
+{
+  "table_info": {
+    "table_columns": [
+      "weekday",
+      "total"
+    ],
+    "table_samples": [
+      {
+        "weekday": "Mon",
+        "total": 120
+      },
+      {
+        "weekday": "Sat",
+        "total": 110
+      },
+      {
+        "weekday": "Sun",
+        "total": 130
+      },
+      {
+        "weekday": "Wed",
+        "total": 150
+      },
+      {
+        "weekday": "Thu",
+        "total": 80
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the totals sorted by the days of the week starting with Monday.",
+  "refer_fileds": [
+    {
+      "field": "total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "total",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

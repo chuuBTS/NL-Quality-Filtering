@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Emissions"
+    ],
+    "table_samples": [
+      {
+        "Year": 1800.0,
+        "Emissions": 0.03
+      },
+      {
+        "Year": 1920.0,
+        "Emissions": 3.51
+      },
+      {
+        "Year": 1900.0,
+        "Emissions": 1.95
+      },
+      {
+        "Year": 2020.0,
+        "Emissions": 34.81
+      },
+      {
+        "Year": 1930.0,
+        "Emissions": 3.92
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total emissions over the years with either a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Emissions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Emissions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Emissions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Emissions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 113,
+        "OpponentName": "None",
+        "start": "2019-08-24 17:28:41.219 +00:00",
+        "end": "2019-08-24 17:28:44.443 +00:00",
+        "PersonId": 113,
+        "Time (seconds)": 3.0,
+        "id.1": 113,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Art",
+        "Height": 44.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 341,
+        "OpponentName": "None",
+        "start": "2019-10-26 17:12:46.416 +00:00",
+        "end": "2019-10-26 17:12:49.107 +00:00",
+        "PersonId": 341,
+        "Time (seconds)": 3.0,
+        "id.1": 341,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Sports",
+        "Height": 58.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 384,
+        "OpponentName": "None",
+        "start": "2019-10-26 18:21:27.806 +00:00",
+        "end": "2019-10-26 18:21:32.025 +00:00",
+        "PersonId": 384,
+        "Time (seconds)": 4.0,
+        "id.1": 384,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Art",
+        "Height": 47.0,
+        "zipcode": 47408,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 249,
+        "OpponentName": "None",
+        "start": "2019-10-26 15:19:09.000 +00:00",
+        "end": "2019-10-26 15:19:11.311 +00:00",
+        "PersonId": 249,
+        "Time (seconds)": 2.0,
+        "id.1": 249,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Other",
+        "Height": 58.0,
+        "zipcode": 47421,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of times in seconds for participants shorter than 100 centimeters.",
+  "refer_fileds": [
+    {
+      "field": "Height",
+      "type": "quantitative"
+    },
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Height",
+          "lt": 100
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    }
+  ]
+}

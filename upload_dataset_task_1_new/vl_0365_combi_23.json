@@ -1,0 +1,279 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rawType",
+      "coupon",
+      "giltType",
+      "code",
+      "redemptionDate",
+      "issueDate",
+      "divDates",
+      "divNextDate",
+      "issueAmount",
+      "baseRPI",
+      "amountINCinfUplift",
+      "issueYear",
+      "totalCumulative",
+      "id"
+    ],
+    "table_samples": [
+      {
+        "rawType": "2\u00bd% Index-linked Treasury Stock 2024",
+        "coupon": "2\u00bd",
+        "giltType": "Index Linked",
+        "code": "GB0008983024",
+        "redemptionDate": " 17-Jul-2024",
+        "issueDate": " 30-Dec-1986",
+        "divDates": "17 Jan/Jul",
+        "divNextDate": " 06-Jan-2023",
+        "issueAmount": 6821,
+        "baseRPI": 97.667931,
+        "amountINCinfUplift": 22363.0,
+        "issueYear": 1986,
+        "totalCumulative": 6821,
+        "id": 1
+      },
+      {
+        "rawType": "1\u00be% Treasury Gilt 2037",
+        "coupon": "1\u00be",
+        "giltType": "Treasury Gilt",
+        "code": "GB00BZB26Y51",
+        "redemptionDate": " 07-Sep-2037",
+        "issueDate": " 09-Nov-2016",
+        "divDates": "7 Mar/Sep",
+        "divNextDate": " 24-Feb-2023",
+        "issueAmount": 31968,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2016,
+        "totalCumulative": 1055255,
+        "id": 49
+      },
+      {
+        "rawType": "0 1/8% Treasury Gilt 2026",
+        "coupon": "1/8",
+        "giltType": "Treasury Gilt",
+        "code": "GB00BL68HJ26",
+        "redemptionDate": " 30-Jan-2026",
+        "issueDate": " 03-Jun-2020",
+        "divDates": "30 Jan/Jul",
+        "divNextDate": " 19-Jan-2023",
+        "issueAmount": 35316,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2020,
+        "totalCumulative": 1661542,
+        "id": 69
+      },
+      {
+        "rawType": "0\u00bd% Treasury Gilt 2061",
+        "coupon": "0\u00bd",
+        "giltType": "Treasury Gilt",
+        "code": "GB00BMBL1D50",
+        "redemptionDate": " 22-Oct-2061",
+        "issueDate": " 20-May-2020",
+        "divDates": "22 Apr/Oct",
+        "divNextDate": " 13-Oct-2022",
+        "issueAmount": 23386,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2020,
+        "totalCumulative": 1781700,
+        "id": 73
+      },
+      {
+        "rawType": "2\u00bc% Treasury Gilt 2023",
+        "coupon": "2\u00bc",
+        "giltType": "Treasury Gilt",
+        "code": "GB00B7Z53659",
+        "redemptionDate": " 07-Sep-2023",
+        "issueDate": " 12-Jun-2013",
+        "divDates": "7 Mar/Sep",
+        "divNextDate": " 24-Feb-2023",
+        "issueAmount": 35922,
+        "baseRPI": NaN,
+        "amountINCinfUplift": NaN,
+        "issueYear": 2013,
+        "totalCumulative": 774228,
+        "id": 37
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart to show the composition of issue amounts by different security types.",
+  "refer_fileds": [
+    {
+      "field": "issueAmount",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "giltType",
+        "rawType"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "rawType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "giltType",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "giltType",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "rawType",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "rawType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "giltType",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "rawType",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "giltType",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "issueAmount",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "rawType",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

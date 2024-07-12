@@ -1,0 +1,112 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Rate"
+    ],
+    "table_samples": [
+      {
+        "Date": "2015-01-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2022-04-01",
+        "Rate": 7.8
+      },
+      {
+        "Date": "2015-06-01",
+        "Rate": 0.3
+      },
+      {
+        "Date": "2022-07-01",
+        "Rate": 8.8
+      },
+      {
+        "Date": "2022-05-01",
+        "Rate": 7.9
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart of rates over time starting from the year 2010.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Rate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "timeUnit": "year",
+          "field": "Date",
+          "gte": "2010"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Rate",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "timeUnit": "year",
+            "field": "Date",
+            "gte": "2010"
+          }
+        }
+      ]
+    }
+  ]
+}

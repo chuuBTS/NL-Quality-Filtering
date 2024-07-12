@@ -1,0 +1,172 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Week",
+      "Measure",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Week": "2016-01-17",
+        "Measure": "Bird Feeder",
+        "Value": 18
+      },
+      {
+        "Week": "2019-11-10",
+        "Measure": "Bird Seed",
+        "Value": 13
+      },
+      {
+        "Week": "2019-09-01",
+        "Measure": "Bird Bath",
+        "Value": 12
+      },
+      {
+        "Week": "2020-10-11",
+        "Measure": "Bird Seed",
+        "Value": 15
+      },
+      {
+        "Week": "2017-09-10",
+        "Measure": "Bird Bath",
+        "Value": 8
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition chart where the sum of values is the quantitative measure broken down by bird-related items over time between December 2010 and December 2020.",
+  "refer_fileds": [
+    {
+      "field": "Week",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Measure",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Week",
+          "range": [
+            {
+              "year": 2010,
+              "month": "dec",
+              "date": 1
+            },
+            {
+              "year": 2020,
+              "month": "dec",
+              "date": 30
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Week",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Measure",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Week",
+            "range": [
+              {
+                "year": 2010,
+                "month": "dec",
+                "date": 1
+              },
+              {
+                "year": 2020,
+                "month": "dec",
+                "date": 30
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "table_info": {
+    "table_columns": [
+      "WEO Country Code",
+      "ISO",
+      "WEO Subject Code",
+      "Country",
+      "gdp2021",
+      "gdp2022",
+      "GrowthLatest",
+      "p21"
+    ],
+    "table_samples": [
+      {
+        "WEO Country Code": 546,
+        "ISO": "MAC",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Macao SAR",
+        "gdp2021": 64739.16,
+        "gdp2022": 49230.4,
+        "GrowthLatest": -0.239557634,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 576,
+        "ISO": "SGP",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Singapore",
+        "gdp2021": 106032.23,
+        "gdp2022": 111690.08,
+        "GrowthLatest": 0.053359719,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 218,
+        "ISO": "BOL",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Bolivia",
+        "gdp2021": 8242.89,
+        "gdp2022": 8441.65,
+        "GrowthLatest": 0.024112902,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 913,
+        "ISO": "BLR",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Belarus",
+        "gdp2021": 19743.0,
+        "gdp2022": 18449.29,
+        "GrowthLatest": -0.065527529,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 646,
+        "ISO": "GAB",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Gabon",
+        "gdp2021": 15149.41,
+        "gdp2022": 15372.18,
+        "GrowthLatest": 0.014704863,
+        "p21": 0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the data sorted in descending order by the latest growth rate, only including entries where the value in p21 is 1.",
+  "refer_fileds": [
+    {
+      "field": "ISO",
+      "type": "nominal"
+    },
+    {
+      "field": "GrowthLatest",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "p21",
+          "equal": 1
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "GrowthLatest",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    }
+  ]
+}

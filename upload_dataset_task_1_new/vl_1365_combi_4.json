@@ -1,0 +1,258 @@
+{
+  "table_info": {
+    "table_columns": [
+      "preferred color",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "preferred color": NaN,
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "preferred color": "tan",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "preferred color": NaN,
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "preferred color": NaN,
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "preferred color": "red",
+        "COUNT": 1,
+        "gender": "M"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total count of individuals by gender for a range of preferred colors like black, blue, gray, green, lavender, orange, purple, red, tan, white, and yellow.",
+  "refer_fileds": [
+    {
+      "field": "COUNT",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "preferred color",
+          "oneOf": [
+            "black",
+            "blue",
+            "gray",
+            "green",
+            "lavender",
+            "orange",
+            "purple",
+            "red",
+            "tan",
+            "white",
+            "yellow"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "COUNT",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "preferred color",
+            "oneOf": [
+              "black",
+              "blue",
+              "gray",
+              "green",
+              "lavender",
+              "orange",
+              "purple",
+              "red",
+              "tan",
+              "white",
+              "yellow"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "preferred color",
+            "oneOf": [
+              "black",
+              "blue",
+              "gray",
+              "green",
+              "lavender",
+              "orange",
+              "purple",
+              "red",
+              "tan",
+              "white",
+              "yellow"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "preferred color",
+            "oneOf": [
+              "black",
+              "blue",
+              "gray",
+              "green",
+              "lavender",
+              "orange",
+              "purple",
+              "red",
+              "tan",
+              "white",
+              "yellow"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "preferred color",
+            "oneOf": [
+              "black",
+              "blue",
+              "gray",
+              "green",
+              "lavender",
+              "orange",
+              "purple",
+              "red",
+              "tan",
+              "white",
+              "yellow"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "preferred color",
+            "oneOf": [
+              "black",
+              "blue",
+              "gray",
+              "green",
+              "lavender",
+              "orange",
+              "purple",
+              "red",
+              "tan",
+              "white",
+              "yellow"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Left",
+        "Name": "Thiago Motta",
+        "Position": "Midfielder",
+        "Club": "Paris Saint-Germain",
+        "Country": "Italy",
+        "Age": 33,
+        "Salary": 3000000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Left",
+        "Name": "David Vaughan",
+        "Position": "Midfielder",
+        "Club": "Nottingham Forest",
+        "Country": "Wales",
+        "Age": 33,
+        "Salary": 1250000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Right",
+        "Name": "Emil Forsberg",
+        "Position": "Midfielder",
+        "Club": "RB Leipzig",
+        "Country": "Sweden",
+        "Age": 24,
+        "Salary": 4000000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Left",
+        "Name": "Rui Patr\u00edcio",
+        "Position": "Goalkeeper",
+        "Club": "Sporting CP",
+        "Country": "Portugal",
+        "Age": 28,
+        "Salary": 14000000,
+        "Goals": 0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average salary by country.",
+  "refer_fileds": [
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Salary",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

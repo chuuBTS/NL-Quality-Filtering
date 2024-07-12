@@ -1,0 +1,491 @@
+{
+  "table_info": {
+    "table_columns": [
+      "honap",
+      "honap_angol",
+      "datum",
+      "honap_szam",
+      "homerseklet",
+      "ertek"
+    ],
+    "table_samples": [
+      {
+        "honap": "Aug.",
+        "honap_angol": "Aug.",
+        "datum": "2021-08-01",
+        "honap_szam": 8,
+        "homerseklet": "Havi naps\u00fct\u00e9ses \u00f3r\u00e1k sz\u00e1ma",
+        "ertek": 26.2
+      },
+      {
+        "honap": "Feb.",
+        "honap_angol": "Feb.",
+        "datum": "2021-02-01",
+        "honap_szam": 2,
+        "homerseklet": "Rekord max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 19.3
+      },
+      {
+        "honap": "J\u00fan.",
+        "honap_angol": "Jun.",
+        "datum": "2021-06-01",
+        "honap_szam": 6,
+        "homerseklet": "\u00c1tlagos min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 11.3
+      },
+      {
+        "honap": "J\u00fan.",
+        "honap_angol": "Jun.",
+        "datum": "2021-06-01",
+        "honap_szam": 6,
+        "homerseklet": "Rekord max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 36.0
+      },
+      {
+        "honap": "M\u00e1r.",
+        "honap_angol": "Mar.",
+        "datum": "2021-03-01",
+        "honap_szam": 3,
+        "homerseklet": "\u00c1tl.\u00a0csapad\u00e9kmennyis\u00e9g\u00a0(mm)",
+        "ertek": 2.2
+      }
+    ]
+  },
+  "nl_utterance": "Show a trend of the values over time with a line chart, indicating weather statistics.",
+  "refer_fileds": [
+    {
+      "field": [
+        "honap_angol",
+        "datum"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "ertek",
+      "type": "quantitative"
+    },
+    {
+      "field": "homerseklet",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "honap_angol",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "datum",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "honap_angol",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "datum",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "honap_angol",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "datum",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

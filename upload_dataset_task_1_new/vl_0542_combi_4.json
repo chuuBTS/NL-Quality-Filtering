@@ -1,0 +1,158 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Value",
+      "Type",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Country": "Australia",
+        "Value": 19.438,
+        "Type": "Beef",
+        "Detail": "Kilos per capita"
+      },
+      {
+        "Country": "OECD",
+        "Value": 31.708,
+        "Type": "Poultry",
+        "Detail": NaN
+      },
+      {
+        "Country": "Korea",
+        "Value": 31.565,
+        "Type": "Pork",
+        "Detail": NaN
+      },
+      {
+        "Country": "Japan",
+        "Value": 0.16,
+        "Type": "Mutton/lamb",
+        "Detail": NaN
+      },
+      {
+        "Country": "Nigeria",
+        "Value": 0.842,
+        "Type": "Poultry",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total consumption sorted from highest to lowest by meat type.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

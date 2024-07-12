@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "category",
+      "Ethnicity",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "category": "All US adults",
+        "Ethnicity": "White",
+        "value": 67
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Black",
+        "value": 11
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Asian or other",
+        "value": 6
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "White",
+        "value": 58
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Hispanic",
+        "value": 17
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of the percentages for different categories.",
+  "refer_fileds": [
+    {
+      "field": "category",
+      "type": "nominal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

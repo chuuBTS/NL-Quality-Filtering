@@ -1,0 +1,274 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 57,
+        "OpponentName": "None",
+        "start": "2019-08-24 14:43:03.690 +00:00",
+        "end": "2019-08-24 14:43:04.651 +00:00",
+        "PersonId": 57,
+        "Time (seconds)": 1.0,
+        "id.1": 57,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 70.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 109,
+        "OpponentName": "None",
+        "start": "2019-08-24 17:15:10.072 +00:00",
+        "end": "2019-08-24 17:15:12.189 +00:00",
+        "PersonId": 109,
+        "Time (seconds)": 2.0,
+        "id.1": 109,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 70.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Makevention 2019"
+      },
+      {
+        "id": 73,
+        "OpponentName": "Fast animal",
+        "start": "2018-08-25 17:24:00.084 +00:00",
+        "end": "2018-08-25 17:24:04.420 +00:00",
+        "PersonId": 73,
+        "Time (seconds)": 4.0,
+        "id.1": 73,
+        "Gender": "female",
+        "Age Group": "Kid",
+        "Favorite Activity": "Other",
+        "Height": 56.0,
+        "zipcode": 47265,
+        "state": "IN",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 184,
+        "OpponentName": "None",
+        "start": "2019-10-26 13:06:22.776 +00:00",
+        "end": "2019-10-26 13:06:26.734 +00:00",
+        "PersonId": 184,
+        "Time (seconds)": 4.0,
+        "id.1": 184,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 70.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of participants with heights less than 100 inches and their times in seconds.",
+  "refer_fileds": [
+    {
+      "field": "Height",
+      "type": "quantitative"
+    },
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Height",
+          "lt": 100
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Height",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    }
+  ]
+}

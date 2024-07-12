@@ -1,0 +1,156 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "ford granada",
+        "MPG": 18.5,
+        "Cylinders": 6,
+        "Displacement": 250.0,
+        "Horsepower": 98,
+        "Weight": 3525,
+        "Acceleration": 19.0,
+        "Year": 1977,
+        "Origin": "US"
+      },
+      {
+        "Model": "oldsmobile cutlass salon brougham",
+        "MPG": 23.9,
+        "Cylinders": 8,
+        "Displacement": 260.0,
+        "Horsepower": 90,
+        "Weight": 3420,
+        "Acceleration": 22.2,
+        "Year": 1979,
+        "Origin": "US"
+      },
+      {
+        "Model": "mercury capri 2000",
+        "MPG": 23.0,
+        "Cylinders": 4,
+        "Displacement": 122.0,
+        "Horsepower": 86,
+        "Weight": 2220,
+        "Acceleration": 14.0,
+        "Year": 1971,
+        "Origin": "US"
+      },
+      {
+        "Model": "ford escort 2h",
+        "MPG": 29.9,
+        "Cylinders": 4,
+        "Displacement": 98.0,
+        "Horsepower": 65,
+        "Weight": 2380,
+        "Acceleration": 20.7,
+        "Year": 1981,
+        "Origin": "US"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average weight of vehicles by year.",
+  "refer_fileds": [
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

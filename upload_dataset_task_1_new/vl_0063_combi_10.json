@@ -1,0 +1,199 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "State2",
+      "Gini",
+      "Death Rate",
+      "Firearms, vs average",
+      "Med income",
+      "Income, vs median",
+      "Imprisonment rates",
+      "Prison rate",
+      "Imprisonment rate",
+      "Firearm deaths",
+      "Division"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "State2": "AL",
+        "Gini": 0.472,
+        "Death Rate": 21.5,
+        "Firearms, vs average": 1.64700475,
+        "Med income": 47221,
+        "Income, vs median": 0.799827233,
+        "Imprisonment rates": 736,
+        "Prison rate": 1.264604811,
+        "Imprisonment rate": 0.736,
+        "Firearm deaths": 0.215,
+        "Division": "South"
+      },
+      {
+        "State": "Oregon",
+        "State2": "OR",
+        "Gini": 0.449,
+        "Death Rate": 11.9,
+        "Firearms, vs average": 0.911597978,
+        "Med income": 59135,
+        "Income, vs median": 1.001626044,
+        "Imprisonment rates": 466,
+        "Prison rate": 0.800687285,
+        "Imprisonment rate": 0.466,
+        "Firearm deaths": 0.119,
+        "Division": "West"
+      },
+      {
+        "State": "Delaware",
+        "State2": "DE",
+        "Gini": 0.44,
+        "Death Rate": 11.0,
+        "Firearms, vs average": 0.842653593,
+        "Med income": 58046,
+        "Income, vs median": 0.983180609,
+        "Imprisonment rates": 544,
+        "Prison rate": 0.934707904,
+        "Imprisonment rate": 0.544,
+        "Firearm deaths": 0.11,
+        "Division": "South"
+      },
+      {
+        "State": "Oklahoma",
+        "State2": "OK",
+        "Gini": 0.454,
+        "Death Rate": 19.6,
+        "Firearms, vs average": 1.501455493,
+        "Med income": 50943,
+        "Income, vs median": 0.862870306,
+        "Imprisonment rates": 891,
+        "Prison rate": 1.530927835,
+        "Imprisonment rate": 0.891,
+        "Firearm deaths": 0.196,
+        "Division": "South"
+      },
+      {
+        "State": "Pennsylvania",
+        "State2": "PA",
+        "Gini": 0.461,
+        "Death Rate": 12.0,
+        "Firearms, vs average": 0.919258465,
+        "Med income": 60979,
+        "Income, vs median": 1.032859635,
+        "Imprisonment rates": 484,
+        "Prison rate": 0.83161512,
+        "Imprisonment rate": 0.484,
+        "Firearm deaths": 0.12,
+        "Division": "Northeast"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot that explores the correlation between firearm deaths and regions in the U.S.",
+  "refer_fileds": [
+    {
+      "field": "Firearm deaths",
+      "type": "quantitative"
+    },
+    {
+      "field": "Division",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Firearm deaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Division",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Firearm deaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Division",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Division",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Firearm deaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Division",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Firearm deaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Firearm deaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Division",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Division",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Firearm deaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Firearm deaths",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Division",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

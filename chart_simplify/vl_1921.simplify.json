@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "date2",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "cases_ma7",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "country",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/vega/master/db_ecdc_wide.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "country",
+                "oneOf": [
+                    "UK",
+                    "France",
+                    "Germany",
+                    "Portugal"
+                ]
+            }
+        }
+    ],
+    "height": 400,
+    "width": 600
+}

@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Category",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Year": 1991,
+        "Category": "Immigration",
+        "value": 329
+      },
+      {
+        "Year": 2007,
+        "Category": "Net migration",
+        "value": 273
+      },
+      {
+        "Year": 1997,
+        "Category": "Immigration",
+        "value": 327
+      },
+      {
+        "Year": 1994,
+        "Category": "Net migration",
+        "value": 77
+      },
+      {
+        "Year": 2022,
+        "Category": "Emigration",
+        "value": 560
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of immigration cases over the years.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

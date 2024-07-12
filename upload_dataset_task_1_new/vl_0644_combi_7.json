@@ -1,0 +1,116 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Number",
+      "pieNumber",
+      "Type",
+      "Value",
+      "Share"
+    ],
+    "table_samples": [
+      {
+        "Item": "Gross domestic product",
+        "Number": 1,
+        "pieNumber": 99,
+        "Type": "GDP",
+        "Value": 25723.9,
+        "Share": "100%"
+      },
+      {
+        "Item": "Change in private inventories",
+        "Number": 14,
+        "pieNumber": 99,
+        "Type": "I",
+        "Value": 70.9,
+        "Share": "0%"
+      },
+      {
+        "Item": "Personal consumption expenditures",
+        "Number": 2,
+        "pieNumber": 99,
+        "Type": "C",
+        "Value": 17542.7,
+        "Share": "68%"
+      },
+      {
+        "Item": "Fixed investment",
+        "Number": 8,
+        "pieNumber": 99,
+        "Type": "I",
+        "Value": 4508.2,
+        "Share": "18%"
+      },
+      {
+        "Item": "Imports",
+        "Number": 19,
+        "pieNumber": 99,
+        "Type": "NX",
+        "Value": 3955.8,
+        "Share": "15%"
+      }
+    ]
+  },
+  "nl_utterance": "Show the values filtered for specific numbers.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Number",
+          "oneOf": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

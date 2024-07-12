@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Energy Source",
+      "Region",
+      "Year",
+      "Energy Consumption"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Energy Source": "Biofuels Consumption - TWh - Total (zero filled)",
+        "Region": "Africa",
+        "Year": 1965,
+        "Energy Consumption": 0.0
+      },
+      {
+        "Unnamed: 0": 1033,
+        "Energy Source": "Geo Biomass Other - TWh (zero filled)",
+        "Region": "Africa",
+        "Year": 1972,
+        "Energy Consumption": 0.165000007
+      },
+      {
+        "Unnamed: 0": 2134,
+        "Energy Source": "Oil Consumption - TWh (zero filled)",
+        "Region": "Asia",
+        "Year": 1990,
+        "Energy Consumption": 10316.57617
+      },
+      {
+        "Unnamed: 0": 1133,
+        "Energy Source": "Geo Biomass Other - TWh (zero filled)",
+        "Region": "Asia",
+        "Year": 2015,
+        "Energy Consumption": 163.3727722
+      },
+      {
+        "Unnamed: 0": 855,
+        "Energy Source": "Gas Consumption - TWh (zero filled)",
+        "Region": "North America",
+        "Year": 1965,
+        "Energy Consumption": 4467.994141
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total energy consumption for each year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Energy Consumption",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Energy Consumption",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Energy Consumption",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Energy Consumption",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Energy Consumption",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Energy Consumption",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

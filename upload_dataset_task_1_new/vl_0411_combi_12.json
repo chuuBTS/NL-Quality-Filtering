@@ -1,0 +1,149 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Percentile",
+      "modelValue"
+    ],
+    "table_samples": [
+      {
+        "Percentile": 1,
+        "modelValue": 1.965912874
+      },
+      {
+        "Percentile": 40,
+        "modelValue": 58.8622429
+      },
+      {
+        "Percentile": 92,
+        "modelValue": 205.8552608
+      },
+      {
+        "Percentile": 70,
+        "modelValue": 100.6008709
+      },
+      {
+        "Percentile": 10,
+        "modelValue": 19.49928558
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot that demonstrates the correlation between Percentile and modelValue for values of modelValue less than 300.",
+  "refer_fileds": [
+    {
+      "field": "Percentile",
+      "type": "quantitative"
+    },
+    {
+      "field": "modelValue",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "correlation",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            },
+            "y": {
+              "type": "quantitative"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "modelValue",
+          "lt": 300
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Percentile",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "modelValue",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "modelValue",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Percentile",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    }
+  ]
+}

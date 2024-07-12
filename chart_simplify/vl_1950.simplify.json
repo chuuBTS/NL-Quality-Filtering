@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "GDP",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/vega/master/DRC%201970%20GDP%20race.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Country",
+                "oneOf": [
+                    "DR Congo",
+                    "Thailand",
+                    "Myanmar"
+                ]
+            }
+        }
+    ],
+    "height": 700,
+    "width": 700
+}

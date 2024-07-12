@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value 1",
+      "Value 2"
+    ],
+    "table_samples": [
+      {
+        "Year": 1990,
+        "Country": "Brazil",
+        "Value 1": 70.45802056,
+        "Value 2": 0.0
+      },
+      {
+        "Year": 2002,
+        "Country": "Brazil",
+        "Value 1": 64.98898319,
+        "Value 2": -7.8
+      },
+      {
+        "Year": 1996,
+        "Country": "Paraguay",
+        "Value 1": 60.44131387,
+        "Value 2": -6.0
+      },
+      {
+        "Year": 2005,
+        "Country": "Indonesia",
+        "Value 1": 55.45996015,
+        "Value 2": -15.3
+      },
+      {
+        "Year": 2006,
+        "Country": "Brazil",
+        "Value 1": 63.09823238,
+        "Value 2": -10.5
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of Value 2 across different Countries over time using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Value 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

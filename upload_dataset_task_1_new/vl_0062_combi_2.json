@@ -1,0 +1,156 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "datsun 200sx",
+        "MPG": 32.9,
+        "Cylinders": 4,
+        "Displacement": 119.0,
+        "Horsepower": 100,
+        "Weight": 2615,
+        "Acceleration": 14.8,
+        "Year": 1981,
+        "Origin": "Japan"
+      },
+      {
+        "Model": "mercury monarch",
+        "MPG": 15.0,
+        "Cylinders": 6,
+        "Displacement": 250.0,
+        "Horsepower": 72,
+        "Weight": 3432,
+        "Acceleration": 21.0,
+        "Year": 1975,
+        "Origin": "US"
+      },
+      {
+        "Model": "dodge diplomat",
+        "MPG": 19.4,
+        "Cylinders": 8,
+        "Displacement": 318.0,
+        "Horsepower": 140,
+        "Weight": 3735,
+        "Acceleration": 13.2,
+        "Year": 1978,
+        "Origin": "US"
+      },
+      {
+        "Model": "mercedes benz 300d",
+        "MPG": 25.4,
+        "Cylinders": 5,
+        "Displacement": 183.0,
+        "Horsepower": 77,
+        "Weight": 3530,
+        "Acceleration": 20.1,
+        "Year": 1979,
+        "Origin": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average weight of cars over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Weight",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Weight",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

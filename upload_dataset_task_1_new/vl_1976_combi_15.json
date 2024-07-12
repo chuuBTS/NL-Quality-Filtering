@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "label",
+      "group",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "label": "2020-05-20",
+        "group": "A",
+        "value": 8
+      },
+      {
+        "label": "2020-06-06",
+        "group": "G",
+        "value": 2
+      },
+      {
+        "label": "2020-06-05",
+        "group": "C",
+        "value": 1
+      },
+      {
+        "label": "2020-05-24",
+        "group": "G",
+        "value": 3
+      },
+      {
+        "label": "2020-06-10",
+        "group": "A",
+        "value": 1
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart representing the trend of values over time for each group.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    },
+    {
+      "field": "group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

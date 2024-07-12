@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "GDP per capita (current US$)",
+      "Net official development assistance and official aid received (current US$)",
+      "Population, total"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Afghanistan",
+        "GDP per capita (current US$)": "516.8665522",
+        "Net official development assistance and official aid received (current US$)": "4206660156",
+        "Population, total": 38972230
+      },
+      {
+        "Country Name": "Nepal",
+        "GDP per capita (current US$)": "1139.190277",
+        "Net official development assistance and official aid received (current US$)": "1758400024",
+        "Population, total": 29348627
+      },
+      {
+        "Country Name": "El Salvador",
+        "GDP per capita (current US$)": "3903.395839",
+        "Net official development assistance and official aid received (current US$)": "626669982.9",
+        "Population, total": 6292731
+      },
+      {
+        "Country Name": "Namibia",
+        "GDP per capita (current US$)": "4251.172766",
+        "Net official development assistance and official aid received (current US$)": "180100006.1",
+        "Population, total": 2489098
+      },
+      {
+        "Country Name": "Marshall Islands",
+        "GDP per capita (current US$)": "5567.972727",
+        "Net official development assistance and official aid received (current US$)": "183059997.6",
+        "Population, total": 43413
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of the GDP per capita and total population for each country.",
+  "refer_fileds": [
+    {
+      "field": "GDP per capita (current US$)",
+      "type": "nominal"
+    },
+    {
+      "field": "Population, total",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Population, total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Population, total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population, total",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population, total",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Population, total",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population, total",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Population, total",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "GDP per capita (current US$)",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Week",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Measure",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/hyungkwonko/tmp-data/main/birds2.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Week",
+                "range": [
+                    {
+                        "year": 2010,
+                        "month": "dec",
+                        "date": 1
+                    },
+                    {
+                        "year": 2020,
+                        "month": "dec",
+                        "date": 30
+                    }
+                ]
+            }
+        }
+    ],
+    "height": 399,
+    "width": 400
+}

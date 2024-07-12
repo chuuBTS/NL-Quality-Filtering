@@ -1,0 +1,211 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "GDP",
+      "Country"
+    ],
+    "table_samples": [
+      {
+        "Year": 1970,
+        "GDP": 761.4241012,
+        "Country": "Kenya"
+      },
+      {
+        "Year": 1989,
+        "GDP": 1255.255954,
+        "Country": "Nigeria"
+      },
+      {
+        "Year": 1985,
+        "GDP": 1195.088447,
+        "Country": "Nigeria"
+      },
+      {
+        "Year": 1988,
+        "GDP": 911.55743,
+        "Country": "Kenya"
+      },
+      {
+        "Year": 1972,
+        "GDP": 793.1365735,
+        "Country": "Kenya"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of GDP over the years using a bar, line, or area chart for DR Congo, Thailand, and Myanmar.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "GDP",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "DR Congo",
+            "Thailand",
+            "Myanmar"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

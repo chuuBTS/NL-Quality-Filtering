@@ -1,0 +1,158 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Country",
+      "GDP ($m)",
+      "Labour Force (000s)",
+      "Output per worker ($)",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AUS",
+        "Country": "Australia",
+        "GDP ($m)": 1595175.273,
+        "Labour Force (000s)": 13738.67,
+        "Output per worker ($)": 116108.42046573648,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "EST",
+        "Country": "Estonia",
+        "GDP ($m)": 57850.071,
+        "Labour Force (000s)": 697.325,
+        "Output per worker ($)": 82959.9842254329,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "FRA",
+        "Country": "France",
+        "GDP ($m)": 3478994.226,
+        "Labour Force (000s)": 30092.88,
+        "Output per worker ($)": 115608.55012880125,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "DNK",
+        "Country": "Denmark",
+        "GDP ($m)": 379911.54,
+        "Labour Force (000s)": 3054.15,
+        "Output per worker ($)": 124391.9060949855,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "LTU",
+        "Country": "Lithuania",
+        "GDP ($m)": 122692.544,
+        "Labour Force (000s)": 1473.375,
+        "Output per worker ($)": 83273.12734368372,
+        "Continent": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the output per worker for countries with a labour force greater than 5000 thousand.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Output per worker ($)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Labour Force (000s)",
+          "gt": 5000
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Team",
+      "Year",
+      "Goals Scored"
+    ],
+    "table_samples": [
+      {
+        "Team": "Arsenal",
+        "Year": "02/03",
+        "Goals Scored": 85
+      },
+      {
+        "Team": "Chelsea",
+        "Year": "10/11",
+        "Goals Scored": 69
+      },
+      {
+        "Team": "Man United",
+        "Year": "05/06",
+        "Goals Scored": 72
+      },
+      {
+        "Team": "Man City",
+        "Year": "02/03",
+        "Goals Scored": 47
+      },
+      {
+        "Team": "Tottenham",
+        "Year": "07/08",
+        "Goals Scored": 66
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of how many goals each team scored using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Goals Scored",
+      "type": "quantitative"
+    },
+    {
+      "field": "Team",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Goals Scored",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Goals Scored",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Team",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Indicator Name",
+      "Year",
+      "GDP growth (annual %)"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1961,
+        "GDP growth (annual %)": 5.638743553
+      },
+      {
+        "Country Name": "Denmark",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1965,
+        "GDP growth (annual %)": 3.743684868
+      },
+      {
+        "Country Name": "Norway",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1998,
+        "GDP growth (annual %)": 2.015205256
+      },
+      {
+        "Country Name": "Sweden",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1963,
+        "GDP growth (annual %)": 4.735939875
+      },
+      {
+        "Country Name": "Norway",
+        "Indicator Name": "GDP per capita growth (annual %)",
+        "Year": 1992,
+        "GDP growth (annual %)": 2.978306474
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total GDP growth over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "GDP growth (annual %)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "GDP growth (annual %)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP growth (annual %)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

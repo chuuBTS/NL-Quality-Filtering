@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count"
+    ],
+    "table_samples": [
+      {
+        "iyear": 2004,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2011,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2014,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2008,
+        "Attack Count": 1
+      },
+      {
+        "iyear": 2008,
+        "Attack Count": 1
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart summarizing the total number of attacks over the years.",
+  "refer_fileds": [
+    {
+      "field": "iyear",
+      "type": "temporal"
+    },
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

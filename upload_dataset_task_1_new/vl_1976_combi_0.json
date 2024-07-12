@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "label",
+      "group",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "label": "2020-05-20",
+        "group": "A",
+        "value": 8
+      },
+      {
+        "label": "2020-06-08",
+        "group": "F",
+        "value": 3
+      },
+      {
+        "label": "2020-06-15",
+        "group": "C",
+        "value": 1
+      },
+      {
+        "label": "2020-06-05",
+        "group": "D",
+        "value": 1
+      },
+      {
+        "label": "2020-06-15",
+        "group": "H",
+        "value": 4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of values for each group over time.",
+  "refer_fileds": [
+    {
+      "field": "label",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "label",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "label",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "label",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

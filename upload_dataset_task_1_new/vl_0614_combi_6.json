@@ -1,0 +1,108 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Country",
+      "GDP ($m)",
+      "Labour Force (000s)",
+      "Output per worker ($)",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AUS",
+        "Country": "Australia",
+        "GDP ($m)": 1595175.273,
+        "Labour Force (000s)": 13738.67,
+        "Output per worker ($)": 116108.42046573648,
+        "Continent": "Oceania"
+      },
+      {
+        "ISO3": "KOR",
+        "Country": "South Korea",
+        "GDP ($m)": 2426254.697,
+        "Labour Force (000s)": 28309.96,
+        "Output per worker ($)": 85703.2188318175,
+        "Continent": "Asia"
+      },
+      {
+        "ISO3": "SVN",
+        "Country": "Slovenia",
+        "GDP ($m)": 92677.671,
+        "Labour Force (000s)": 1019.95,
+        "Output per worker ($)": 90864.91592725134,
+        "Continent": "Europe"
+      },
+      {
+        "ISO3": "USA",
+        "Country": "United States",
+        "GDP ($m)": 23315081.0,
+        "Labour Force (000s)": 161203.9,
+        "Output per worker ($)": 144630.9983815528,
+        "Continent": "America"
+      },
+      {
+        "ISO3": "NLD",
+        "Country": "Netherlands",
+        "GDP ($m)": 1111920.895,
+        "Labour Force (000s)": 9690.125,
+        "Output per worker ($)": 114747.838134183,
+        "Continent": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the output per worker for countries with a labour force greater than 5000 in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Output per worker ($)",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Labour Force (000s)",
+          "gt": 5000
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Output per worker ($)",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Output per worker ($)",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Labour Force (000s)",
+            "gt": 5000
+          }
+        }
+      ]
+    }
+  ]
+}

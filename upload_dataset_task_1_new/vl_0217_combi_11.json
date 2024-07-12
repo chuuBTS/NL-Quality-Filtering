@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "interaction_type",
+      "interaction_createdAt",
+      "cumulative_comments"
+    ],
+    "table_samples": [
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2020-12-17T00:00:00+00:00",
+        "cumulative_comments": 1.0
+      },
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2022-10-29T00:00:00+00:00",
+        "cumulative_comments": 83.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2022-09-18T00:00:00+00:00",
+        "cumulative_comments": 13.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2022-01-27T00:00:00+00:00",
+        "cumulative_comments": 2.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2021-12-11T00:00:00+00:00",
+        "cumulative_comments": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows the composition of cumulative comments over time using a bar, area, or pie chart, and color each type of interaction differently.",
+  "refer_fileds": [
+    {
+      "field": "interaction_createdAt",
+      "type": "temporal"
+    },
+    {
+      "field": "cumulative_comments",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "cumulative_comments",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Category",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Year": 1991,
+        "Category": "Immigration",
+        "value": 329
+      },
+      {
+        "Year": 2006,
+        "Category": "Emigration",
+        "value": 398
+      },
+      {
+        "Year": 1995,
+        "Category": "Emigration",
+        "value": 236
+      },
+      {
+        "Year": 2004,
+        "Category": "Emigration",
+        "value": 344
+      },
+      {
+        "Year": 2017,
+        "Category": "Emigration",
+        "value": 395
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of values over the years for each immigration category as a trend using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

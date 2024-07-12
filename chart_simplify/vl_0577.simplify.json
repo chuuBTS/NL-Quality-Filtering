@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "DATE",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "DJIA",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "name": "myData",
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/e4e/US_FRED_DowJones.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "DATE",
+                "range": [
+                    {
+                        "year": 1914,
+                        "month": 1,
+                        "day": 1
+                    },
+                    {
+                        "year": 1929,
+                        "month": 10,
+                        "day": 1
+                    }
+                ]
+            }
+        }
+    ],
+    "height": 400,
+    "width": 450
+}

@@ -1,0 +1,204 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Totals_bil_SDR",
+      "Year",
+      "Conversion rate",
+      "Unnamed: 7",
+      "Totals_USD",
+      "World GDP",
+      "World aggregate real GDP (billion USD)",
+      "Unnamed: 11",
+      "Total_USD/GDP",
+      "Percentage",
+      "Unnamed: 14",
+      "World nominal GDP",
+      "Unnamed: 16",
+      "Unnamed: 17",
+      "Percentages"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Totals_bil_SDR": 109.02,
+        "Year": 2022,
+        "Conversion rate": 1.28252,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 139.8203304,
+        "World GDP": 86700000000000.0,
+        "World aggregate real GDP (billion USD)": 86652.9,
+        "Unnamed: 11": 0.001258123,
+        "Total_USD/GDP": 0.001613568,
+        "Percentage": 0.161356781,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 98100000000000.0,
+        "Unnamed: 16": 98100,
+        "Unnamed: 17": 0.001425284,
+        "Percentages": 0.142528369
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723,
+        "PRGT 1/2/": 3972372030,
+        "Totals": 21487336753.0,
+        "Totals_bil_SDR": 21.49,
+        "Year": 2008,
+        "Conversion rate": 1.54027,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 33.1004023,
+        "World GDP": 62900000000000.0,
+        "World aggregate real GDP (billion USD)": 62882.0,
+        "Unnamed: 11": 0.000341751,
+        "Total_USD/GDP": 0.000526389,
+        "Percentage": 0.052638915,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 64124000000000.0,
+        "Unnamed: 16": 64124,
+        "Unnamed: 17": 0.000516194,
+        "Percentages": 0.051619366
+      },
+      {
+        "Date": "12/31/1996",
+        "GRA Purchases": 36127472805,
+        "PRGT 1/2/": 5881609752,
+        "Totals": 42009082557.0,
+        "Totals_bil_SDR": 42.01,
+        "Year": 1996,
+        "Conversion rate": 1.43796,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 60.4086996,
+        "World GDP": 41700000000000.0,
+        "World aggregate real GDP (billion USD)": 41738.5,
+        "Unnamed: 11": 0.001006505,
+        "Total_USD/GDP": 0.001447314,
+        "Percentage": 0.144731362,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 31737000000000.0,
+        "Unnamed: 16": 31737,
+        "Unnamed: 17": 0.001903416,
+        "Percentages": 0.190341556
+      },
+      {
+        "Date": "12/31/2016",
+        "GRA Purchases": 49267630851,
+        "PRGT 1/2/": 6482647937,
+        "Totals": 55750278788.0,
+        "Totals_bil_SDR": 55.75,
+        "Year": 2016,
+        "Conversion rate": 1.34433,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 74.9463975,
+        "World GDP": 77300000000000.0,
+        "World aggregate real GDP (billion USD)": 77283.5,
+        "Unnamed: 11": 0.00072137,
+        "Total_USD/GDP": 0.000969759,
+        "Percentage": 0.096975936,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 76466000000000.0,
+        "Unnamed: 16": 76466,
+        "Unnamed: 17": 0.000980127,
+        "Percentages": 0.098012708
+      },
+      {
+        "Date": "12/31/1992",
+        "GRA Purchases": 23967172718,
+        "PRGT 1/2/": 3804463796,
+        "Totals": 27771636514.0,
+        "Totals_bil_SDR": 27.77,
+        "Year": 1992,
+        "Conversion rate": 1.375,
+        "Unnamed: 7": NaN,
+        "Totals_USD": 38.18375,
+        "World GDP": 37200000000000.0,
+        "World aggregate real GDP (billion USD)": 37150.1,
+        "Unnamed: 11": 0.000747508,
+        "Total_USD/GDP": 0.001027824,
+        "Percentage": 0.102782361,
+        "Unnamed: 14": NaN,
+        "World nominal GDP": 25406000000000.0,
+        "Unnamed: 16": 25406,
+        "Unnamed: 17": 0.001502942,
+        "Percentages": 0.150294222
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total amount in USD over time using a bar, line, or area chart, and include the aggregate sum of these values.",
+  "refer_fileds": [
+    {
+      "field": "Totals_USD",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_USD",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Totals_USD",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

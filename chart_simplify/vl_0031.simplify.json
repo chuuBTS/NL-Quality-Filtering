@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "gdpPercap",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "country",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "country",
+                "oneOf": [
+                    "Iceland",
+                    "Norway"
+                ]
+            }
+        },
+        {
+            "filter": {
+                "field": "year",
+                "oneOf": [
+                    "1952",
+                    "2017"
+                ]
+            }
+        }
+    ],
+    "width": "container"
+}

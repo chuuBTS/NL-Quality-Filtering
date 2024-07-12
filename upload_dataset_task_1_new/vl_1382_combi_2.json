@@ -1,0 +1,120 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 5.0,
+        "item": "munchkin"
+      },
+      {
+        "time": 11,
+        "quantity": 20.642492771517183,
+        "item": "bear"
+      },
+      {
+        "time": 7,
+        "quantity": 12.42287530066645,
+        "item": "dog"
+      },
+      {
+        "time": 15,
+        "quantity": 26.45580618665162,
+        "item": "bear"
+      },
+      {
+        "time": 17,
+        "quantity": 23.23037073975401,
+        "item": "dog"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total quantity over time.",
+  "refer_fileds": [
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "quantity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

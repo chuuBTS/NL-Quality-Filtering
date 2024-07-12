@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Party",
+      "seats"
+    ],
+    "table_samples": [
+      {
+        "Year": 1918,
+        "Party": "Conservative",
+        "seats": 382
+      },
+      {
+        "Year": 1931,
+        "Party": "Conservative",
+        "seats": 522
+      },
+      {
+        "Year": 2015,
+        "Party": "Labour",
+        "seats": 232
+      },
+      {
+        "Year": 1951,
+        "Party": "Labour",
+        "seats": 295
+      },
+      {
+        "Year": 1987,
+        "Party": "Labour",
+        "seats": 229
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the number of seats over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "seats",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "seats",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "seats",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

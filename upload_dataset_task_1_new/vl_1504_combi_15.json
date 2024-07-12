@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "kind",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "created",
+        "count": 17.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "closed",
+        "count": 19.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "created",
+        "count": 1.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "kind": "created",
+        "count": 0.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "kind": "created",
+        "count": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Create small multiples of bar charts showing the count for each kind of activity.",
+  "refer_fileds": [
+    {
+      "field": "kind",
+      "type": "nominal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

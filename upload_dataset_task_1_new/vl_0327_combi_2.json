@@ -1,0 +1,94 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Month",
+      "Totals_billions"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": "109,023,819,611.00",
+        "Year": 2022.0,
+        "Month": NaN,
+        "Totals_billions": 109.0238196
+      },
+      {
+        "Date": "12/31/2001",
+        "GRA Purchases": 53477225409.0,
+        "PRGT 1/2/": 6424578684.0,
+        "Totals": "59,901,804,093.00",
+        "Year": 2001.0,
+        "Month": NaN,
+        "Totals_billions": 59.90180409
+      },
+      {
+        "Date": "12/31/2019",
+        "GRA Purchases": 66945509865.0,
+        "PRGT 1/2/": 6590835450.0,
+        "Totals": "73,536,345,315.00",
+        "Year": 2019.0,
+        "Month": NaN,
+        "Totals_billions": 73.53634532
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": 6036146757.0,
+        "PRGT 1/2/": 3796945581.0,
+        "Totals": "9,833,092,338.00",
+        "Year": 2007.0,
+        "Month": NaN,
+        "Totals_billions": 9.833092338
+      },
+      {
+        "Date": "12/31/1999",
+        "GRA Purchases": 51061861875.0,
+        "PRGT 1/2/": 6434274362.0,
+        "Totals": "57,496,136,237.00",
+        "Year": 1999.0,
+        "Month": NaN,
+        "Totals_billions": 57.49613624
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of all totals in billions.",
+  "refer_fileds": [
+    {
+      "field": "Totals_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

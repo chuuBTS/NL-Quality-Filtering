@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "chevrolet monte carlo landau",
+        "Miles_per_Gallon": 15.5,
+        "Cylinders": 8,
+        "Displacement": 350.0,
+        "Horsepower": 170.0,
+        "Weight_in_lbs": 4165,
+        "Acceleration": 11.4,
+        "Year": "1977-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "chevrolet nova",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 6,
+        "Displacement": 250.0,
+        "Horsepower": 105.0,
+        "Weight_in_lbs": 3459,
+        "Acceleration": 16.0,
+        "Year": "1975-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "datsun 810",
+        "Miles_per_Gallon": 22.0,
+        "Cylinders": 6,
+        "Displacement": 146.0,
+        "Horsepower": 97.0,
+        "Weight_in_lbs": 2815,
+        "Acceleration": 14.5,
+        "Year": "1977-01-01",
+        "Origin": "Japan"
+      },
+      {
+        "Name": "datsun 810 maxima",
+        "Miles_per_Gallon": 24.2,
+        "Cylinders": 6,
+        "Displacement": 146.0,
+        "Horsepower": 120.0,
+        "Weight_in_lbs": 2930,
+        "Acceleration": 13.8,
+        "Year": "1982-01-01",
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of Miles per Gallon for vehicles from different Origins.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

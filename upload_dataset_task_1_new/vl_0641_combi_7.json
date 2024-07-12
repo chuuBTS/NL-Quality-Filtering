@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Item",
+      "shortName",
+      "pieNumber",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Item": "Gross domestic income",
+        "shortName": "GDI",
+        "pieNumber": NaN,
+        "Value": 25844.7
+      },
+      {
+        "Line": 5,
+        "Item": "To the rest of the world",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 20.8
+      },
+      {
+        "Line": 23,
+        "Item": "Government",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 726.3
+      },
+      {
+        "Line": 16,
+        "Item": "Taxes on corporate income",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 457.0
+      },
+      {
+        "Line": 19,
+        "Item": "Undistributed corporate profits with inventory valuation and capital consumption adjustments",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 856.7
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for lines 3, 6, 7, 9, and 21.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Line",
+          "oneOf": [
+            3,
+            6,
+            7,
+            9,
+            21
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

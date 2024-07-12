@@ -1,0 +1,270 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Item",
+      "shortName",
+      "pieNumber",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Item": "Gross domestic income",
+        "shortName": "GDI",
+        "pieNumber": NaN,
+        "Value": 25844.7
+      },
+      {
+        "Line": 12,
+        "Item": "Business current transfer payments (net)",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 177.7
+      },
+      {
+        "Line": 20,
+        "Item": "Current surplus of government enterprises1",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": -6.4
+      },
+      {
+        "Line": 13,
+        "Item": "Proprietors' income with inventory valuation and capital consumption adjustments",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 1863.5
+      },
+      {
+        "Line": 5,
+        "Item": "To the rest of the world",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 20.8
+      }
+    ]
+  },
+  "nl_utterance": "Show the values for lines 3, 6, 7, 9, and 21 sorted by pie number in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "pieNumber",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Line",
+          "oneOf": [
+            3,
+            6,
+            7,
+            9,
+            21
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "pieNumber",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending",
+          "bin": true
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pieNumber",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

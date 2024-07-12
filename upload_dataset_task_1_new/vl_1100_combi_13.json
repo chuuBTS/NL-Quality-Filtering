@@ -1,0 +1,268 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Value",
+      "Source",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1850,
+        "Value": 569,
+        "Source": "Coal",
+        "Detail": "TWh Direct Energy"
+      },
+      {
+        "Time": 2011,
+        "Value": 48550,
+        "Source": "Oil",
+        "Detail": NaN
+      },
+      {
+        "Time": 1900,
+        "Value": 181,
+        "Source": "Oil",
+        "Detail": NaN
+      },
+      {
+        "Time": 1850,
+        "Value": 0,
+        "Source": "Oil",
+        "Detail": NaN
+      },
+      {
+        "Time": 1986,
+        "Value": 34803,
+        "Source": "Oil",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing the distribution of energy sources over time with their respective usage values.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Source",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Source",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Time",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Time",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Source",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Player",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Player": "Alan Shearer",
+        "Goals": 260
+      },
+      {
+        "Player": "Mohamed Salah",
+        "Goals": 123
+      },
+      {
+        "Player": "Teddy Sheringham",
+        "Goals": 146
+      },
+      {
+        "Player": "Robbie Keane",
+        "Goals": 126
+      },
+      {
+        "Player": "Robbie Fowler",
+        "Goals": 163
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with players on one axis and the number of goals on the other, sorted in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Player",
+      "type": "nominal"
+    },
+    {
+      "field": "Goals",
+      "type": "quantitative",
+      "sort": "ascending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Goals",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Player",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

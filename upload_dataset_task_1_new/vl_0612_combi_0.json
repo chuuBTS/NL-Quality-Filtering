@@ -1,0 +1,821 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "ISO3",
+      "Region",
+      "Income Group",
+      "Probability of Survival to Age 5",
+      "Expected Years of School",
+      "Harmonized Test Scores",
+      "Learning-Adjusted Years of School",
+      "Fraction of Children Under 5 Not Stunted",
+      "Adult Survival Rate",
+      "Human Capital Index",
+      "GDP per capita (PPP)",
+      "Log GDP per capita",
+      "Population",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "Country": "Afghanistan",
+        "ISO3": "AFG",
+        "Region": "South Asia",
+        "Income Group": "Low income",
+        "Probability of Survival to Age 5": 0.93425,
+        "Expected Years of School": 9.65539,
+        "Harmonized Test Scores": 357.79474,
+        "Learning-Adjusted Years of School": 5.52743,
+        "Fraction of Children Under 5 Not Stunted": 0.61741,
+        "Adult Survival Rate": 0.76612,
+        "Human Capital Index": 0.41128,
+        "GDP per capita (PPP)": 2076.13838,
+        "Log GDP per capita": 7.638264899097053,
+        "Population": 38972230.0,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Chile",
+        "ISO3": "CHL",
+        "Region": "Latin America & Caribbean",
+        "Income Group": "High income",
+        "Probability of Survival to Age 5": 0.99222,
+        "Expected Years of School": 12.95125,
+        "Harmonized Test Scores": 450.85309,
+        "Learning-Adjusted Years of School": 9.34258,
+        "Fraction of Children Under 5 Not Stunted": NaN,
+        "Adult Survival Rate": 0.89416,
+        "Human Capital Index": 0.63795,
+        "GDP per capita (PPP)": 24849.70664,
+        "Log GDP per capita": 10.120601226223704,
+        "Population": 19300315.0,
+        "Continent": "America"
+      },
+      {
+        "Country": "Malawi",
+        "ISO3": "MWI",
+        "Region": "Sub-Saharan Africa",
+        "Income Group": "Low income",
+        "Probability of Survival to Age 5": 0.94571,
+        "Expected Years of School": 9.54975,
+        "Harmonized Test Scores": NaN,
+        "Learning-Adjusted Years of School": NaN,
+        "Fraction of Children Under 5 Not Stunted": 0.58644,
+        "Adult Survival Rate": 0.68111,
+        "Human Capital Index": NaN,
+        "GDP per capita (PPP)": 1571.180296,
+        "Log GDP per capita": 7.359582396788368,
+        "Population": 19377061.0,
+        "Continent": "Africa"
+      },
+      {
+        "Country": "Tanzania",
+        "ISO3": "TZA",
+        "Region": "Sub-Saharan Africa",
+        "Income Group": "Lower middle income",
+        "Probability of Survival to Age 5": 0.94326,
+        "Expected Years of School": 7.09998,
+        "Harmonized Test Scores": 381.86368,
+        "Learning-Adjusted Years of School": 4.33796,
+        "Fraction of Children Under 5 Not Stunted": 0.66176,
+        "Adult Survival Rate": 0.75362,
+        "Human Capital Index": 0.37891,
+        "GDP per capita (PPP)": 2690.924561,
+        "Log GDP per capita": 7.897640116517525,
+        "Population": 61704518.0,
+        "Continent": "Africa"
+      },
+      {
+        "Country": "Kenya",
+        "ISO3": "KEN",
+        "Region": "Sub-Saharan Africa",
+        "Income Group": "Lower middle income",
+        "Probability of Survival to Age 5": 0.95531,
+        "Expected Years of School": 11.89507,
+        "Harmonized Test Scores": NaN,
+        "Learning-Adjusted Years of School": NaN,
+        "Fraction of Children Under 5 Not Stunted": 0.70116,
+        "Adult Survival Rate": 0.73834,
+        "Human Capital Index": NaN,
+        "GDP per capita (PPP)": 4744.739268,
+        "Log GDP per capita": 8.46479176074609,
+        "Population": 51985780.0,
+        "Continent": "Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show the relationship between GDP per capita and Human Capital Index for countries with a population size on different continents, where the Human Capital Index is above 0 and the GDP per capita is greater than 1000.",
+  "refer_fileds": [
+    {
+      "field": "GDP per capita (PPP)",
+      "type": "quantitative"
+    },
+    {
+      "field": "Human Capital Index",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    },
+    {
+      "field": "Population",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Human Capital Index",
+          "gt": 0
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "GDP per capita (PPP)",
+          "gt": 1000
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Human Capital Index",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Human Capital Index",
+            "gt": 0
+          }
+        },
+        {
+          "filter": {
+            "field": "GDP per capita (PPP)",
+            "gt": 1000
+          }
+        }
+      ]
+    }
+  ]
+}

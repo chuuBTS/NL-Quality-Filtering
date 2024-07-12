@@ -1,0 +1,176 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Hulk",
+        "Worldwide Gross": 245360480,
+        "Production Budget": 137000000,
+        "Release Year": 2003,
+        "Content Rating": "PG-13",
+        "Running Time": 138,
+        "Genre": "Action",
+        "Creative Type": "Super Hero",
+        "Rotten Tomatoes Rating": 62,
+        "IMDB Rating": 5.7
+      },
+      {
+        "Title": "The Nativity Story",
+        "Worldwide Gross": 46432264,
+        "Production Budget": 35000000,
+        "Release Year": 2006,
+        "Content Rating": "PG",
+        "Running Time": 102,
+        "Genre": "Drama",
+        "Creative Type": "Dramatization",
+        "Rotten Tomatoes Rating": 37,
+        "IMDB Rating": 6.6
+      },
+      {
+        "Title": "Once Upon a Time in Mexico",
+        "Worldwide Gross": 98156459,
+        "Production Budget": 29000000,
+        "Release Year": 2003,
+        "Content Rating": "R",
+        "Running Time": 102,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 68,
+        "IMDB Rating": 6.2
+      },
+      {
+        "Title": "Donnie Brasco",
+        "Worldwide Gross": 55954997,
+        "Production Budget": 35000000,
+        "Release Year": 1997,
+        "Content Rating": "R",
+        "Running Time": 121,
+        "Genre": "Drama",
+        "Creative Type": "Dramatization",
+        "Rotten Tomatoes Rating": 87,
+        "IMDB Rating": 7.7
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the production budgets for each genre.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Production Budget",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "table_info": {
+    "table_columns": [
+      "repo",
+      "username",
+      "closed"
+    ],
+    "table_samples": [
+      {
+        "repo": "numpy",
+        "username": "WarrenWeckesser",
+        "closed": 1
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "melissawm",
+        "closed": 1
+      },
+      {
+        "repo": "numpy",
+        "username": "charris",
+        "closed": 25
+      },
+      {
+        "repo": "numpy",
+        "username": "rgommers",
+        "closed": 5
+      },
+      {
+        "repo": "numpy-tutorials",
+        "username": "rossbar",
+        "closed": 2
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of closed issues per repository.",
+  "refer_fileds": [
+    {
+      "field": "closed",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "closed",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "closed",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

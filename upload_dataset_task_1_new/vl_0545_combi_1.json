@@ -1,0 +1,127 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Date",
+      "Size",
+      "Deaths",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Name": "August Complex",
+        "Date": "Aug-20",
+        "Size": 1032648,
+        "Deaths": 1,
+        "Detail": "Top 20 wildfires in CA"
+      },
+      {
+        "Name": "Matilija",
+        "Date": "Sep-32",
+        "Size": 220000,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "Rush",
+        "Date": "Aug-21",
+        "Size": 271911,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "Witch",
+        "Date": "Oct-07",
+        "Size": 197990,
+        "Deaths": 2,
+        "Detail": NaN
+      },
+      {
+        "Name": "Laguna",
+        "Date": "Sep-70",
+        "Size": 175425,
+        "Deaths": 5,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the size of each wildfire by name.",
+  "refer_fileds": [
+    {
+      "field": "Name",
+      "type": "nominal"
+    },
+    {
+      "field": "Size",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Size",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Size",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Size",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Size",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Size",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

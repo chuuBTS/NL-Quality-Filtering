@@ -1,0 +1,202 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Alban Hoxha",
+        "Position": "Goalkeeper",
+        "Club": "Partizani Tirana",
+        "Country": "Albania",
+        "Age": 28,
+        "Salary": 575000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Antonio Candreva",
+        "Position": "Midfielder",
+        "Club": "Lazio",
+        "Country": "Italy",
+        "Age": 29,
+        "Salary": 25000000,
+        "Goals": 3
+      },
+      {
+        "Foot": "Right",
+        "Name": "Ozan Tufan",
+        "Position": "Midfielder",
+        "Club": "Fenerbah\u00e7e",
+        "Country": "Turkey",
+        "Age": 21,
+        "Salary": 7500000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Both",
+        "Name": "Rubin Okotie",
+        "Position": "Forward",
+        "Club": "1860 M\u00fcnchen",
+        "Country": "Austria",
+        "Age": 29,
+        "Salary": 1300000,
+        "Goals": 2
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the sum of goals by players from France, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Name",
+      "type": "nominal"
+    },
+    {
+      "field": "Goals",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "France"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Goals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Goals",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Goals",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "France"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rowid",
+      "date",
+      "currency_code",
+      "name",
+      "local_price",
+      "dollar_ex",
+      "dollar_price"
+    ],
+    "table_samples": [
+      {
+        "rowid": 1,
+        "date": "2000-04-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 2.5,
+        "dollar_ex": 1.0,
+        "dollar_price": 2.5
+      },
+      {
+        "rowid": 9701,
+        "date": "2009-07-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 11.5,
+        "dollar_ex": 3.81125,
+        "dollar_price": 3.0173827484421096
+      },
+      {
+        "rowid": 6688,
+        "date": "2001-04-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 2.57,
+        "dollar_ex": 1.136363636,
+        "dollar_price": 2.26160000072371
+      },
+      {
+        "rowid": 14719,
+        "date": "2003-04-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 4.1,
+        "dollar_ex": 2.88,
+        "dollar_price": 1.42361111111111
+      },
+      {
+        "rowid": 14064,
+        "date": "2014-07-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 21.0,
+        "dollar_ex": 8.16875,
+        "dollar_price": 2.5707727620505
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of prices over time in Argentina by summing up the local prices and compare it with their dollar prices, using a bar, line, or area chart for the currency ARS.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "local_price",
+        "dollar_price"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "currency_code",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "local_price",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "dollar_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "dollar_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 352.0,
+        "division": 11,
+        "up": 683,
+        "down": 170,
+        "level": 8151,
+        "up_ch": 0.044466414,
+        "down_ch": -0.05957301,
+        "total": 9004,
+        "up_sh": 0.075855173,
+        "down_sh": 0.018880498,
+        "level_sh": 0.90526432,
+        "change_sh": 0.094735667,
+        "division_s": "Restaurants and Hotels",
+        "division_sh": "Restaurants & Hotels",
+        "date2": "01-05-2017",
+        "date4": "2017-05-01",
+        "year": 2017.0,
+        "month": 5.0,
+        "quarter": 2.0
+      },
+      {
+        "date": 187.0,
+        "division": 3,
+        "up": 1798,
+        "down": 1094,
+        "level": 10233,
+        "up_ch": 0.25014076,
+        "down_ch": -0.20000002,
+        "total": 13125,
+        "up_sh": 0.13699047,
+        "down_sh": 0.08335238,
+        "level_sh": 0.77965713,
+        "change_sh": 0.22034284,
+        "division_s": "Clothing and footwear",
+        "division_sh": "Clothing and footwear",
+        "date2": "01-08-2003",
+        "date4": "2003-08-01",
+        "year": 2003.0,
+        "month": 8.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 379.0,
+        "division": 12,
+        "up": 903,
+        "down": 746,
+        "level": 7588,
+        "up_ch": 0.1952381,
+        "down_ch": -0.24788646,
+        "total": 9237,
+        "up_sh": 0.097759016,
+        "down_sh": 0.080762155,
+        "level_sh": 0.82147884,
+        "change_sh": 0.17852117,
+        "division_s": "Miscellaneous goods and services",
+        "division_sh": "Misc",
+        "date2": "01-08-2019",
+        "date4": "2019-08-01",
+        "year": 2019.0,
+        "month": 8.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 110.0,
+        "division": 2,
+        "up": 489,
+        "down": 289,
+        "level": 3493,
+        "up_ch": 0.038909961,
+        "down_ch": -0.052910067,
+        "total": 4271,
+        "up_sh": 0.11449309,
+        "down_sh": 0.067665651,
+        "level_sh": 0.81784123,
+        "change_sh": 0.18215874,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-03-1997",
+        "date4": "1997-03-01",
+        "year": 1997.0,
+        "month": 3.0,
+        "quarter": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the distribution of counts as a bar chart for the percentage change in shares.",
+  "refer_fileds": [
+    {
+      "field": "change_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    }
+  ]
+}

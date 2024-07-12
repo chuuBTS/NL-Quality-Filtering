@@ -1,0 +1,973 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Happiness score",
+      "Country_temp",
+      "ISO3",
+      "GDP per capita (PPP)",
+      "Life Ladder",
+      "Social support",
+      "Perceptions of corruption",
+      "Population",
+      "Median Age",
+      "Total Fertility Rate",
+      "Life Expectancy",
+      "Infant Mortality",
+      "Child Mortality",
+      "Net Migration Rate",
+      "Continent",
+      "UN Region"
+    ],
+    "table_samples": [
+      {
+        "Country": "Finland",
+        "Happiness score": 7.821,
+        "Country_temp": "Finland",
+        "ISO3": "FIN",
+        "GDP per capita (PPP)": 55013.38586,
+        "Life Ladder": 7.7944,
+        "Social support": 0.9703,
+        "Perceptions of corruption": 0.1918,
+        "Population": 5535992.0,
+        "Median Age": 42.368,
+        "Total Fertility Rate": 1.389,
+        "Life Expectancy": 82.038,
+        "Infant Mortality": 1.932,
+        "Child Mortality": 2.353,
+        "Net Migration Rate": 2.7,
+        "Continent": "Europe",
+        "UN Region": "Northern Europe"
+      },
+      {
+        "Country": "Saudi Arabia",
+        "Happiness score": 6.523,
+        "Country_temp": "Saudi Arabia",
+        "ISO3": "SAU",
+        "GDP per capita (PPP)": 48710.94768,
+        "Life Ladder": 6.4453,
+        "Social support": 0.8594,
+        "Perceptions of corruption": NaN,
+        "Population": 35950396.0,
+        "Median Age": 29.779,
+        "Total Fertility Rate": 2.427,
+        "Life Expectancy": 76.936,
+        "Infant Mortality": 5.744,
+        "Child Mortality": 6.899,
+        "Net Migration Rate": -4.272,
+        "Continent": "Asia",
+        "UN Region": "Western Asia"
+      },
+      {
+        "Country": "Kuwait*",
+        "Happiness score": 6.106,
+        "Country_temp": "Kuwait",
+        "ISO3": "KWT",
+        "GDP per capita (PPP)": NaN,
+        "Life Ladder": NaN,
+        "Social support": NaN,
+        "Perceptions of corruption": NaN,
+        "Population": 4250114.0,
+        "Median Age": 38.344,
+        "Total Fertility Rate": 2.11,
+        "Life Expectancy": 78.673,
+        "Infant Mortality": 7.608,
+        "Child Mortality": 9.077,
+        "Net Migration Rate": -8.636,
+        "Continent": "Asia",
+        "UN Region": "Western Asia"
+      },
+      {
+        "Country": "Albania",
+        "Happiness score": 5.199,
+        "Country_temp": "Albania",
+        "ISO3": "ALB",
+        "GDP per capita (PPP)": 15709.25126,
+        "Life Ladder": 5.2555,
+        "Social support": 0.7019,
+        "Perceptions of corruption": 0.8961,
+        "Population": 2854710.0,
+        "Median Age": 37.273,
+        "Total Fertility Rate": 1.39,
+        "Life Expectancy": 76.463,
+        "Infant Mortality": 8.941,
+        "Child Mortality": 9.985,
+        "Net Migration Rate": -3.71,
+        "Continent": "Europe",
+        "UN Region": "Southern Europe"
+      },
+      {
+        "Country": "Mauritania*",
+        "Happiness score": 4.153,
+        "Country_temp": "Mauritania",
+        "ISO3": "MRT",
+        "GDP per capita (PPP)": 5830.817088,
+        "Life Ladder": NaN,
+        "Social support": NaN,
+        "Perceptions of corruption": NaN,
+        "Population": 4614974.0,
+        "Median Age": 17.565,
+        "Total Fertility Rate": 4.398,
+        "Life Expectancy": 64.364,
+        "Infant Mortality": 45.271,
+        "Child Mortality": 60.952,
+        "Net Migration Rate": -0.324,
+        "Continent": "Africa",
+        "UN Region": "Western Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a comparison of GDP per capita, infant mortality, and population by location.",
+  "refer_fileds": [
+    {
+      "field": "GDP per capita (PPP)",
+      "type": "quantitative"
+    },
+    {
+      "field": "Infant Mortality",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Continent",
+        "UN Region"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "Population",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "UN Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Population",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "Infant Mortality",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "GDP per capita (PPP)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "column": {
+          "field": "UN Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

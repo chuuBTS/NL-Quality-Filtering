@@ -1,0 +1,105 @@
+{
+  "table_info": {
+    "table_columns": [
+      "category",
+      "value",
+      "order"
+    ],
+    "table_samples": [
+      {
+        "category": "Sky",
+        "value": 75,
+        "order": 3
+      },
+      {
+        "category": "Sunny",
+        "value": 15,
+        "order": 2
+      },
+      {
+        "category": "Shady",
+        "value": 10,
+        "order": 1
+      }
+    ]
+  },
+  "nl_utterance": "Create a pie chart showing the composition of different categories according to their values.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    },
+    {
+      "field": "category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

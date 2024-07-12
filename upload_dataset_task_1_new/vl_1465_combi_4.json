@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "sector",
+      "amount"
+    ],
+    "table_samples": [
+      {
+        "sector": "Hypermarkets and Supermarkets",
+        "amount": 72900000
+      },
+      {
+        "sector": "Telecommunications and utilities",
+        "amount": 10000000
+      },
+      {
+        "sector": "Technology, Culture and Entertainment",
+        "amount": 7200000
+      },
+      {
+        "sector": "Public administration services",
+        "amount": 32600000
+      },
+      {
+        "sector": "Traditional trade",
+        "amount": 9400000
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart of the amounts by sector, sorted in descending order of the sector.",
+  "refer_fileds": [
+    {
+      "field": "sector",
+      "type": "nominal",
+      "sort": "descending"
+    },
+    {
+      "field": "amount",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "sector",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "sector",
+          "type": "nominal",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

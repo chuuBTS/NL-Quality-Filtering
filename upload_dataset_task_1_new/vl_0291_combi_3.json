@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "country": "United Kingdom",
+        "date": 2021,
+        "value": 2593519346209.63
+      },
+      {
+        "country": "Italy",
+        "date": 1981,
+        "value": 333795728155.34
+      },
+      {
+        "country": "Canada",
+        "date": 1976,
+        "value": 158085192697.77
+      },
+      {
+        "country": "Italy",
+        "date": 2014,
+        "value": 1732748295221.37
+      },
+      {
+        "country": "Germany",
+        "date": 1974,
+        "value": 336320077091.68
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for each country.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

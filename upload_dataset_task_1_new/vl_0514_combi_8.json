@@ -1,0 +1,706 @@
+{
+  "table_info": {
+    "table_columns": [
+      "State",
+      "StateInitials",
+      "Gini",
+      "DeathRate",
+      "Firearms_vs_avg",
+      "medIncome",
+      "Income_vs_med",
+      "ImprisonmentRate",
+      "PrisonRate",
+      "ImprisonmentRate.1",
+      "FirearmDeaths",
+      "GeographicDivision"
+    ],
+    "table_samples": [
+      {
+        "State": "Alabama",
+        "StateInitials": "AL",
+        "Gini": 0.472,
+        "DeathRate": 21.5,
+        "Firearms_vs_avg": 1.64700475,
+        "medIncome": 47221,
+        "Income_vs_med": 0.799827233,
+        "ImprisonmentRate": 736,
+        "PrisonRate": 1.264604811,
+        "ImprisonmentRate.1": 0.736,
+        "FirearmDeaths": 0.215,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "North Carolina",
+        "StateInitials": "NC",
+        "Gini": 0.464,
+        "DeathRate": 13.7,
+        "Firearms_vs_avg": 1.049486747,
+        "medIncome": 53764,
+        "Income_vs_med": 0.910652281,
+        "ImprisonmentRate": 438,
+        "PrisonRate": 0.75257732,
+        "ImprisonmentRate.1": 0.438,
+        "FirearmDeaths": 0.137,
+        "GeographicDivision": "South"
+      },
+      {
+        "State": "Pennsylvania",
+        "StateInitials": "PA",
+        "Gini": 0.461,
+        "DeathRate": 12.0,
+        "Firearms_vs_avg": 0.919258465,
+        "medIncome": 60979,
+        "Income_vs_med": 1.032859635,
+        "ImprisonmentRate": 484,
+        "PrisonRate": 0.83161512,
+        "ImprisonmentRate.1": 0.484,
+        "FirearmDeaths": 0.12,
+        "GeographicDivision": "Northeast"
+      },
+      {
+        "State": "New York",
+        "StateInitials": "NY",
+        "Gini": 0.499,
+        "DeathRate": 4.4,
+        "Firearms_vs_avg": 0.337061437,
+        "medIncome": 61437,
+        "Income_vs_med": 1.040617219,
+        "ImprisonmentRate": 325,
+        "PrisonRate": 0.558419244,
+        "ImprisonmentRate.1": 0.325,
+        "FirearmDeaths": 0.044,
+        "GeographicDivision": "Northeast"
+      },
+      {
+        "State": "Missouri",
+        "StateInitials": "MO",
+        "Gini": 0.455,
+        "DeathRate": 19.0,
+        "Firearms_vs_avg": 1.455492569,
+        "medIncome": 55016,
+        "Income_vs_med": 0.931858602,
+        "ImprisonmentRate": 688,
+        "PrisonRate": 1.182130584,
+        "ImprisonmentRate.1": 0.688,
+        "FirearmDeaths": 0.19,
+        "GeographicDivision": "Midwest"
+      }
+    ]
+  },
+  "nl_utterance": "Show the correlation of median income to firearm deaths for each location on a scatter plot.",
+  "refer_fileds": [
+    {
+      "field": "medIncome",
+      "type": "quantitative"
+    },
+    {
+      "field": "FirearmDeaths",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "State",
+        "GeographicDivision"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "medIncome",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "medIncome",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "medIncome",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "medIncome",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "FirearmDeaths",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "medIncome",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "State",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "GeographicDivision",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "FirearmDeaths",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "medIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

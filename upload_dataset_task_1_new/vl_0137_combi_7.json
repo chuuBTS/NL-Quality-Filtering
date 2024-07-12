@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "year",
+      "internetUsers"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "year": 1990,
+        "internetUsers": 0.0
+      },
+      {
+        "country": "Tunisia",
+        "region": "Africa",
+        "year": 2003,
+        "internetUsers": 0.0649
+      },
+      {
+        "country": "Belgium",
+        "region": "Europe",
+        "year": 2011,
+        "internetUsers": 0.816
+      },
+      {
+        "country": "Panama",
+        "region": "Americas",
+        "year": 2009,
+        "internetUsers": 0.391
+      },
+      {
+        "country": "Italy",
+        "region": "Europe",
+        "year": 2007,
+        "internetUsers": 0.408
+      }
+    ]
+  },
+  "nl_utterance": "Show the percentage of internet users in South Korea where the data is valid.",
+  "refer_fileds": [
+    {
+      "field": "internetUsers",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "internetUsers",
+          "valid": true
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "equal": "South Korea"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "internetUsers",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "internetUsers",
+            "valid": true
+          }
+        },
+        {
+          "filter": {
+            "field": "country",
+            "equal": "South Korea"
+          }
+        }
+      ]
+    }
+  ]
+}

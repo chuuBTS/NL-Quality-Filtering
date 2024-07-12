@@ -1,0 +1,196 @@
+{
+  "table_info": {
+    "table_columns": [
+      "cloth size",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "cloth size": NaN,
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "cloth size": "32",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": "m",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": NaN,
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "cloth size": "s",
+        "COUNT": 1,
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that shows the composition of counts by gender for specific clothing sizes.",
+  "refer_fileds": [
+    {
+      "field": "COUNT",
+      "type": "quantitative"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "cloth size",
+          "oneOf": [
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "36",
+            "l",
+            "m",
+            "s",
+            "xl",
+            "xs",
+            "xxs"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "cloth size",
+            "oneOf": [
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "36",
+              "l",
+              "m",
+              "s",
+              "xl",
+              "xs",
+              "xxs"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

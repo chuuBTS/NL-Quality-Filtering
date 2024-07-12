@@ -1,0 +1,301 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Number",
+      "pieNumber",
+      "Type",
+      "Value",
+      "Share"
+    ],
+    "table_samples": [
+      {
+        "Item": "Gross domestic product",
+        "Number": 1,
+        "pieNumber": 99,
+        "Type": "GDP",
+        "Value": 25723.9,
+        "Share": "100%"
+      },
+      {
+        "Item": "Personal consumption expenditures",
+        "Number": 2,
+        "pieNumber": 99,
+        "Type": "C",
+        "Value": 17542.7,
+        "Share": "68%"
+      },
+      {
+        "Item": "Goods",
+        "Number": 3,
+        "pieNumber": 99,
+        "Type": "C",
+        "Value": 5988.6,
+        "Share": "23%"
+      },
+      {
+        "Item": "Structures",
+        "Number": 10,
+        "pieNumber": 6,
+        "Type": "I",
+        "Value": 654.8,
+        "Share": "3%"
+      },
+      {
+        "Item": "Intellectual property products",
+        "Number": 12,
+        "pieNumber": 4,
+        "Type": "I",
+        "Value": 1396.6,
+        "Share": "5%"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a pie chart of the values separated by categories for selected data points.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Item",
+        "Type"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "arc chart",
+      "c_list": [
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "color": "theta"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Number",
+          "oneOf": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12,
+            13,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Number",
+            "oneOf": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12,
+              13,
+              24,
+              25,
+              26
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Rate"
+    ],
+    "table_samples": [
+      {
+        "Date": "2015-01-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2015-07-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2016-11-01",
+        "Rate": 1.5
+      },
+      {
+        "Date": "2021-02-01",
+        "Rate": 0.7
+      },
+      {
+        "Date": "2019-12-01",
+        "Rate": 1.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the rates starting from the year 2010.",
+  "refer_fileds": [
+    {
+      "field": "Rate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "timeUnit": "year",
+          "field": "Date",
+          "gte": "2010"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Rate",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "timeUnit": "year",
+            "field": "Date",
+            "gte": "2010"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "Rate"
+    ],
+    "table_samples": [
+      {
+        "Date": "2015-01-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2022-11-01",
+        "Rate": 9.3
+      },
+      {
+        "Date": "2020-08-01",
+        "Rate": 0.5
+      },
+      {
+        "Date": "2021-12-01",
+        "Rate": 4.8
+      },
+      {
+        "Date": "2015-10-01",
+        "Rate": 0.2
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart of the Rate over the years from 2010 onwards.",
+  "refer_fileds": [
+    {
+      "field": "Rate",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "timeUnit": "year",
+          "field": "Date",
+          "gte": "2010"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Rate",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "timeUnit": "year",
+            "field": "Date",
+            "gte": "2010"
+          }
+        }
+      ]
+    }
+  ]
+}

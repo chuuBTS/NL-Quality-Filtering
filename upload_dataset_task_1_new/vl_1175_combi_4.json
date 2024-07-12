@@ -1,0 +1,153 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 75,
+        "OpponentName": "Cartoon character",
+        "start": "2018-08-25 17:25:47.838 +00:00",
+        "end": "2018-08-25 17:25:51.942 +00:00",
+        "PersonId": 75,
+        "Time (seconds)": 4.0,
+        "id.1": 75,
+        "Gender": "other",
+        "Age Group": "Adult",
+        "Favorite Activity": "Other",
+        "Height": 56.0,
+        "zipcode": 47265,
+        "state": "IN",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 353,
+        "OpponentName": "None",
+        "start": "2019-10-26 17:23:34.882 +00:00",
+        "end": "2019-10-26 17:23:37.545 +00:00",
+        "PersonId": 353,
+        "Time (seconds)": 3.0,
+        "id.1": 353,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Gaming",
+        "Height": 59.0,
+        "zipcode": 47403,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 291,
+        "OpponentName": "None",
+        "start": "2019-10-26 16:07:15.611 +00:00",
+        "end": "2019-10-26 16:07:19.601 +00:00",
+        "PersonId": 291,
+        "Time (seconds)": 4.0,
+        "id.1": 291,
+        "Gender": "Unkown",
+        "Age Group": "Kid",
+        "Favorite Activity": "Art",
+        "Height": 51.0,
+        "zipcode": 47403,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 7,
+        "OpponentName": "None",
+        "start": "2019-08-19 17:21:38.710 +00:00",
+        "end": NaN,
+        "PersonId": 7,
+        "Time (seconds)": NaN,
+        "id.1": 7,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Cooking",
+        "Height": 65.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of challenges completed in under 100 seconds for people shorter than 100 inches.",
+  "refer_fileds": [
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Height",
+          "lt": 100
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Height",
+            "lt": 100
+          }
+        }
+      ]
+    }
+  ]
+}

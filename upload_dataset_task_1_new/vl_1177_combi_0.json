@@ -1,0 +1,239 @@
+{
+  "table_info": {
+    "table_columns": [
+      "id",
+      "OpponentName",
+      "start",
+      "end",
+      "PersonId",
+      "Time (seconds)",
+      "id.1",
+      "Gender",
+      "Age Group",
+      "Favorite Activity",
+      "Height",
+      "zipcode",
+      "state",
+      "Event"
+    ],
+    "table_samples": [
+      {
+        "id": 20,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 15:07:29.106 +00:00",
+        "end": "2018-08-25 15:07:32.662 +00:00",
+        "PersonId": 20,
+        "Time (seconds)": 4.0,
+        "id.1": 20,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Gaming",
+        "Height": 71.0,
+        "zipcode": 35242,
+        "state": "AL",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 58,
+        "OpponentName": "Fast person",
+        "start": "2018-08-25 17:07:49.084 +00:00",
+        "end": "2018-08-25 17:07:53.014 +00:00",
+        "PersonId": 58,
+        "Time (seconds)": 4.0,
+        "id.1": 58,
+        "Gender": "male",
+        "Age Group": "Teen",
+        "Favorite Activity": "Art",
+        "Height": 56.0,
+        "zipcode": 47265,
+        "state": "IN",
+        "Event": "Makevention 2018"
+      },
+      {
+        "id": 255,
+        "OpponentName": "None",
+        "start": "2019-10-26 15:26:23.113 +00:00",
+        "end": "2019-10-26 15:26:25.384 +00:00",
+        "PersonId": 255,
+        "Time (seconds)": 2.0,
+        "id.1": 255,
+        "Gender": "Unkown",
+        "Age Group": "Pre-Teen",
+        "Favorite Activity": "Other",
+        "Height": 58.0,
+        "zipcode": 47421,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 72,
+        "OpponentName": "None",
+        "start": "2019-08-24 15:20:33.696 +00:00",
+        "end": "2019-08-24 15:20:34.935 +00:00",
+        "PersonId": 72,
+        "Time (seconds)": 1.0,
+        "id.1": 72,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Sports",
+        "Height": 72.0,
+        "zipcode": 47404,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      },
+      {
+        "id": 37,
+        "OpponentName": "None",
+        "start": "2019-08-21 19:14:54.700 +00:00",
+        "end": "2019-08-21 19:14:56.230 +00:00",
+        "PersonId": 37,
+        "Time (seconds)": 2.0,
+        "id.1": 37,
+        "Gender": "Unkown",
+        "Age Group": "Adult",
+        "Favorite Activity": "Gaming",
+        "Height": 58.0,
+        "zipcode": 47401,
+        "state": "IN",
+        "Event": "Sciencefest 2019"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a count of participants segmented by Age Group and sorted in the order of Retired, Adult, Teen, Pre-Teen, and Kid, along with their average Time in seconds.",
+  "refer_fileds": [
+    {
+      "field": "Age Group",
+      "type": "nominal"
+    },
+    {
+      "field": "Time (seconds)",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "",
+          "Retired",
+          "Adult",
+          "Teen",
+          "Pre-Teen",
+          "Kid"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Age Group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Age Group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Age Group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Time (seconds)",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

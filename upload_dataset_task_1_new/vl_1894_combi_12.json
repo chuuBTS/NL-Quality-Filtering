@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Country",
+      "Value",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1901,
+        "Country": "Brazil",
+        "Value": 0.113601872,
+        "Value2": "National",
+        "Detail": "CO2 emissions per capita, 1901-2019"
+      },
+      {
+        "Time": 2005,
+        "Country": "Brazil",
+        "Value": 1.837919578,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1948,
+        "Country": "Brazil",
+        "Value": 0.156741348,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1926,
+        "Country": "United States",
+        "Value": 15.84462852,
+        "Value2": "National",
+        "Detail": NaN
+      },
+      {
+        "Time": 1979,
+        "Country": "World",
+        "Value": 4.443376551,
+        "Value2": "Global",
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the sum of CO2 emissions over time for each country using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

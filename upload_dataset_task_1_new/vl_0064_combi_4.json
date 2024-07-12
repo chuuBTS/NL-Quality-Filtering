@@ -1,0 +1,182 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Danijel Suba\u0161i\u0107",
+        "Position": "Goalkeeper",
+        "Club": "Monaco",
+        "Country": "Croatia",
+        "Age": 31,
+        "Salary": 5000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Adrian Popa",
+        "Position": "Midfielder",
+        "Club": "Steaua Bucure\u0219ti",
+        "Country": "Romania",
+        "Age": 27,
+        "Salary": 2000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Gerg\u0151 Lovrencsics",
+        "Position": "Midfielder",
+        "Club": "Lech Pozna\u0144",
+        "Country": "Hungary",
+        "Age": 27,
+        "Salary": 800000,
+        "Goals": 1
+      },
+      {
+        "Foot": "Left",
+        "Name": "Hal Robson-Kanu",
+        "Position": "Forward",
+        "Club": "Reading",
+        "Country": "Wales",
+        "Age": 27,
+        "Salary": 2000000,
+        "Goals": 2
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average salary in descending order for each country.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    },
+    {
+      "field": "Salary",
+      "type": "quantitative",
+      "aggregate": "mean",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Salary",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Salary",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

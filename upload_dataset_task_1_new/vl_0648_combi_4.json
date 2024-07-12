@@ -1,0 +1,98 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Item",
+      "Value",
+      "Share",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Item": "Consumption",
+        "Value": 17542.7,
+        "Share": 0.68,
+        "Source": "U.S. Bureau of Economic Analysis, \"Table 1.1.5. Gross Domestic Product\" (accessed Sunday, January 22, 2023). "
+      },
+      {
+        "Item": "Net exports",
+        "Value": -890.8,
+        "Share": -0.03,
+        "Source": NaN
+      },
+      {
+        "Item": "Government",
+        "Value": 4493.0,
+        "Share": 0.17,
+        "Source": NaN
+      },
+      {
+        "Item": "Investment",
+        "Value": 4579.1,
+        "Share": 0.18,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with the Items on one axis and their corresponding Values on the other.",
+  "refer_fileds": [
+    {
+      "field": "Item",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Value"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Share"
+        },
+        "color": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Value"
+        },
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Share"
+        },
+        "x": {
+          "field": "Item",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

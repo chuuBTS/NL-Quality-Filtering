@@ -1,0 +1,133 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ppg",
+      "team",
+      "team_tournament",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "ppg": 484.55,
+        "team": "Virginia A",
+        "team_tournament": "2014 Virginia A",
+        "tournament": "ACF Nationals 2014"
+      },
+      {
+        "ppg": 441.82,
+        "team": "Virginia A",
+        "team_tournament": "2015 Virginia A",
+        "tournament": "ACF Nationals 2015"
+      },
+      {
+        "ppg": 399.38,
+        "team": "Virginia A",
+        "team_tournament": "2013 Virginia A",
+        "tournament": "ACF Nationals 2013"
+      },
+      {
+        "ppg": 408.33,
+        "team": "Maryland A",
+        "team_tournament": "2017 Maryland A",
+        "tournament": "ACF Nationals 2017"
+      },
+      {
+        "ppg": 396.25,
+        "team": "Illinois A",
+        "team_tournament": "2013 Illinois A",
+        "tournament": "ACF Nationals 2013"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a list of team tournaments sorted by points per game.",
+  "refer_fileds": [
+    {
+      "field": "team_tournament",
+      "type": "nominal"
+    },
+    {
+      "field": "ppg",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "ppg"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ppg",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ppg",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ppg",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ppg",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

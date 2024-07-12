@@ -1,0 +1,63 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "number",
+      "org/repo"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "number": 17,
+        "org/repo": "numpy/numpy"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "number": 1,
+        "org/repo": "numpy/numpy.org"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "number": 2,
+        "org/repo": "numpy/numpydoc"
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart that ranks the repositories numpy, numpydoc, and numpy.org by their number of issues.",
+  "refer_fileds": [
+    {
+      "field": "number",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "numpy",
+          "numpydoc",
+          "numpy.org"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

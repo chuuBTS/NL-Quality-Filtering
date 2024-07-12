@@ -1,0 +1,291 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPB",
+      "axis_label",
+      "bhrd",
+      "bpts",
+      "game_id",
+      "negs",
+      "opponent",
+      "pa",
+      "packet",
+      "pf",
+      "result",
+      "round",
+      "status",
+      "team",
+      "tossups",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPB": 23.0,
+        "axis_label": "2014 Virginia A (R3)",
+        "bhrd": 20.0,
+        "bpts": 460.0,
+        "game_id": 20140306.0,
+        "negs": 0.0,
+        "opponent": "Stanford A",
+        "pa": -5.0,
+        "packet": "Illinois + USC",
+        "pf": 660.0,
+        "result": "W",
+        "round": 3.0,
+        "status": NaN,
+        "team": "Virginia A",
+        "tossups": 20.0,
+        "tournament": "ACF Nationals 2014"
+      },
+      {
+        "PPB": 22.94,
+        "axis_label": "2015 Penn A (R2)",
+        "bhrd": 17.0,
+        "bpts": 390.0,
+        "game_id": 20150215.0,
+        "negs": 1.0,
+        "opponent": "Kenyon",
+        "pa": 15.0,
+        "packet": "Minnesota + Washington",
+        "pf": 555.0,
+        "result": "W",
+        "round": 2.0,
+        "status": NaN,
+        "team": "Penn A",
+        "tossups": 17.0,
+        "tournament": "ACF Nationals 2015"
+      },
+      {
+        "PPB": 22.94,
+        "axis_label": "2016 Michigan A (R7)",
+        "bhrd": 17.0,
+        "bpts": 390.0,
+        "game_id": 20160711.0,
+        "negs": 0.0,
+        "opponent": "Minnesota A",
+        "pa": 60.0,
+        "packet": "Dartmouth + Chicago B",
+        "pf": 560.0,
+        "result": "W",
+        "round": 7.0,
+        "status": NaN,
+        "team": "Michigan A",
+        "tossups": 17.0,
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPB": 20.0,
+        "axis_label": "2016 Michigan A (R14)",
+        "bhrd": 18.0,
+        "bpts": 360.0,
+        "game_id": 20161420.0,
+        "negs": 0.0,
+        "opponent": "Louisville",
+        "pa": 40.0,
+        "packet": "Editors 2",
+        "pf": 540.0,
+        "result": "W",
+        "round": 14.0,
+        "status": NaN,
+        "team": "Michigan A",
+        "tossups": 18.0,
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPB": 20.0,
+        "axis_label": "2016 Michigan A (R5)",
+        "bhrd": 18.0,
+        "bpts": 360.0,
+        "game_id": 20160520.0,
+        "negs": 0.0,
+        "opponent": "William and Mary",
+        "pa": 25.0,
+        "packet": "Maryland A + McGill",
+        "pf": 540.0,
+        "result": "W",
+        "round": 5.0,
+        "status": NaN,
+        "team": "Michigan A",
+        "tossups": 18.0,
+        "tournament": "ACF Nationals 2016"
+      }
+    ]
+  },
+  "nl_utterance": "Create a graph showing the points for by each match-up and packet.",
+  "refer_fileds": [
+    {
+      "field": [
+        "axis_label",
+        "packet"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "pf",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pf",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "axis_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "packet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "packet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "axis_label",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "axis_label",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pf",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "axis_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pf",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "packet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "axis_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

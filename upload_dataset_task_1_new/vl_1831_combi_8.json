@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Age Group",
+      "Period",
+      "Number employed (thousands)"
+    ],
+    "table_samples": [
+      {
+        "Age Group": "16-24 ",
+        "Period": "2019-10-01",
+        "Number employed (thousands)": 0.0
+      },
+      {
+        "Age Group": "16-24 ",
+        "Period": "2019-11-01",
+        "Number employed (thousands)": 25.339
+      },
+      {
+        "Age Group": "35-49",
+        "Period": "2020-01-01",
+        "Number employed (thousands)": 4.438
+      },
+      {
+        "Age Group": "65+ ",
+        "Period": "2020-01-09",
+        "Number employed (thousands)": 15.222
+      },
+      {
+        "Age Group": "25-34",
+        "Period": "2020-01-08",
+        "Number employed (thousands)": -2.394
+      }
+    ]
+  },
+  "nl_utterance": "Show a trend of the total number employed by age group over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Period",
+      "type": "temporal"
+    },
+    {
+      "field": "Number employed (thousands)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Age Group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number employed (thousands)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Period",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Number employed (thousands)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Period",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Number employed (thousands)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Age Group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

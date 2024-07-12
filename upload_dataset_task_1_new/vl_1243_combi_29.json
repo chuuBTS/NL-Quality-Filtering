@@ -1,0 +1,107 @@
+{
+  "table_info": {
+    "table_columns": [
+      "stage",
+      "tracker",
+      "precision",
+      "AUC"
+    ],
+    "table_samples": [
+      {
+        "stage": "original",
+        "tracker": "CN",
+        "precision": 72.4,
+        "AUC": 44.2
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "CN",
+        "precision": 72.3,
+        "AUC": 44.4
+      },
+      {
+        "stage": "gamut map",
+        "tracker": "ECO_HC",
+        "precision": 79.2,
+        "AUC": 57.5
+      },
+      {
+        "stage": "denoise",
+        "tracker": "ECO_HC",
+        "precision": 79.4,
+        "AUC": 57.2
+      },
+      {
+        "stage": "transform",
+        "tracker": "CN",
+        "precision": 66.1,
+        "AUC": 42.1
+      }
+    ]
+  },
+  "nl_utterance": "Create a set of small multiples showing the sum of AUC for each stage.",
+  "refer_fileds": [
+    {
+      "field": "AUC",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "stage",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "AUC",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "AUC",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "stage",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

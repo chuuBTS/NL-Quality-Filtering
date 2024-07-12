@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "label",
+      "month",
+      "quarter",
+      "sourceDataset",
+      "updateDate",
+      "value",
+      "year"
+    ],
+    "table_samples": [
+      {
+        "date": "1997 JAN",
+        "label": "1997 JAN",
+        "month": "January",
+        "quarter": NaN,
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 6752,
+        "year": 1997
+      },
+      {
+        "date": "2009 NOV",
+        "label": "2009 NOV",
+        "month": "November",
+        "quarter": NaN,
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 11197,
+        "year": 2009
+      },
+      {
+        "date": "2019 FEB",
+        "label": "2019 FEB",
+        "month": "February",
+        "quarter": NaN,
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 18012,
+        "year": 2019
+      },
+      {
+        "date": "2020 APR",
+        "label": "2020 APR",
+        "month": "April",
+        "quarter": NaN,
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 12517,
+        "year": 2020
+      },
+      {
+        "date": "2018 DEC",
+        "label": "2018 DEC",
+        "month": "December",
+        "quarter": NaN,
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 19501,
+        "year": 2018
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of values per year.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

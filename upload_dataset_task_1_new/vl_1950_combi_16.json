@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "GDP",
+      "Country"
+    ],
+    "table_samples": [
+      {
+        "Year": 1970,
+        "GDP": 761.4241012,
+        "Country": "Kenya"
+      },
+      {
+        "Year": 1970,
+        "GDP": 149.6940714,
+        "Country": "Myanmar"
+      },
+      {
+        "Year": 1990,
+        "GDP": 827.6854427,
+        "Country": "Ghana"
+      },
+      {
+        "Year": 2012,
+        "GDP": 2412.860379,
+        "Country": "Nigeria"
+      },
+      {
+        "Year": 2006,
+        "GDP": 900.1189897,
+        "Country": "Kenya"
+      }
+    ]
+  },
+  "nl_utterance": "Show the trend of GDP by year for DR Congo, Thailand, and Myanmar using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "DR Congo",
+            "Thailand",
+            "Myanmar"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "DR Congo",
+              "Thailand",
+              "Myanmar"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "River",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "River": "Amazon (Brazil, Peru, Colombia, Ecuador)",
+        "Value": 38900,
+        "Detail": "Plastic mass input from rivers (2015)"
+      },
+      {
+        "River": "Tamsui (Taiwan)",
+        "Value": 14700,
+        "Detail": NaN
+      },
+      {
+        "River": "Yangtze (China)",
+        "Value": 333000,
+        "Detail": NaN
+      },
+      {
+        "River": "Mekong (Thailand, Cambodia, Laos, China, Myanmar, Vietnam)",
+        "Value": 22800,
+        "Detail": NaN
+      },
+      {
+        "River": "Solo (Indonesia)",
+        "Value": 32500,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the rivers on one axis and the corresponding plastic mass input values on the other axis, sorted in descending order.",
+  "refer_fileds": [
+    {
+      "field": "River",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "River",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

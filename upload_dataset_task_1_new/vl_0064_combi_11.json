@@ -1,0 +1,175 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Both",
+        "Name": "Ivan Peri\u0161i\u0107",
+        "Position": "Midfielder",
+        "Club": "Internazionale",
+        "Country": "Croatia",
+        "Age": 27,
+        "Salary": 19000000,
+        "Goals": 12
+      },
+      {
+        "Foot": "Right",
+        "Name": "Chris Baird",
+        "Position": "Defender",
+        "Club": "Derby County",
+        "Country": "Northern Ireland",
+        "Age": 34,
+        "Salary": 500000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Adrien Silva",
+        "Position": "Midfielder",
+        "Club": "Sporting CP",
+        "Country": "Portugal",
+        "Age": 27,
+        "Salary": 14000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "D\u00e1niel B\u00f6de",
+        "Position": "Forward",
+        "Club": "Ferencv\u00e1ros",
+        "Country": "Hungary",
+        "Age": 29,
+        "Salary": 800000,
+        "Goals": 4
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the salary for each country.",
+  "refer_fileds": [
+    {
+      "field": "Salary",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Salary",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Salary",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Salary",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

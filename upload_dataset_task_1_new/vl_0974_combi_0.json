@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billions ",
+      "Unnamed: 6",
+      "WorldGDP_billions",
+      "Total_GDP_adjusted_billions",
+      "Unnamed: 9",
+      "Unnamed: 10"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Total_billions ": 109.0238196,
+        "Unnamed: 6": NaN,
+        "WorldGDP_billions": NaN,
+        "Total_GDP_adjusted_billions": NaN,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2016",
+        "GRA Purchases": 49267630851.0,
+        "PRGT 1/2/": 6482647937.0,
+        "Totals": 55750278788.0,
+        "Year": 2016.0,
+        "Total_billions ": 55.75027879,
+        "Unnamed: 6": "20,122.14",
+        "WorldGDP_billions": 76267.375,
+        "Total_GDP_adjusted_billions": 0.000731,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2000",
+        "GRA Purchases": 42990531049.0,
+        "PRGT 1/2/": 6331595468.0,
+        "Totals": 49322126517.0,
+        "Year": 2000.0,
+        "Total_billions ": 49.32212652,
+        "Unnamed: 6": "47,792.25",
+        "WorldGDP_billions": 34039.874,
+        "Total_GDP_adjusted_billions": 0.00145,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093.0,
+        "PRGT 1/2/": 2571911617.0,
+        "Totals": 23303762710.0,
+        "Year": 1990.0,
+        "Total_billions ": 23.30376271,
+        "Unnamed: 6": "75,042.63",
+        "WorldGDP_billions": 23654.018,
+        "Total_GDP_adjusted_billions": 0.000985,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1987",
+        "GRA Purchases": 28751979125.0,
+        "PRGT 1/2/": 1866342930.0,
+        "Totals": 30618322055.0,
+        "Year": 1987.0,
+        "Total_billions ": 30.61832206,
+        "Unnamed: 6": "86,084.96",
+        "WorldGDP_billions": 17008.945,
+        "Total_GDP_adjusted_billions": 0.0018,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total GDP adjusted in billions over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Total_GDP_adjusted_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_GDP_adjusted_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Job Titles",
+      "Department",
+      "Full or Part-Time",
+      "Salary or Hourly",
+      "Typical Hours",
+      "Annual Salary",
+      "Hourly Rate",
+      "Rank",
+      "share",
+      "cumShareIncome",
+      "cumSharePeople",
+      "shortName"
+    ],
+    "table_samples": [
+      {
+        "Name": "ADELMAN, BRUCE E",
+        "Job Titles": "LEGISLATIVE AIDE",
+        "Department": "CITY COUNCIL",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 22248.0,
+        "Hourly Rate": NaN,
+        "Rank": 1,
+        "share": 9e-06,
+        "cumShareIncome": 9e-06,
+        "cumSharePeople": 4.124e-05,
+        "shortName": "0"
+      },
+      {
+        "Name": "LAURICH, MARLENE A",
+        "Job Titles": "LIEUTENANT",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 145854.0,
+        "Hourly Rate": NaN,
+        "Rank": 23404,
+        "share": 6e-05,
+        "cumShareIncome": 0.943888,
+        "cumSharePeople": 0.96523281,
+        "shortName": "Police"
+      },
+      {
+        "Name": "SMITH, JARROD L",
+        "Job Titles": "COMMANDER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 175944.0,
+        "Hourly Rate": NaN,
+        "Rank": 24113,
+        "share": 7.3e-05,
+        "cumShareIncome": 0.989674,
+        "cumSharePeople": 0.99447354,
+        "shortName": "Police"
+      },
+      {
+        "Name": "TORRES, MODESTY A",
+        "Job Titles": "ACCOUNTING TECHNICIAN",
+        "Department": "DAIS",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 49176.0,
+        "Hourly Rate": NaN,
+        "Rank": 435,
+        "share": 2e-05,
+        "cumShareIncome": 0.007787,
+        "cumSharePeople": 0.01794036,
+        "shortName": "0"
+      },
+      {
+        "Name": "KING, ANTONIO V",
+        "Job Titles": "PUBLIC HEALTH ADMINISTRATOR III",
+        "Department": "DEPARTMENT OF PUBLIC HEALTH",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 102732.0,
+        "Hourly Rate": NaN,
+        "Rank": 13503,
+        "share": 4.3e-05,
+        "cumShareIncome": 0.467741,
+        "cumSharePeople": 0.55689364,
+        "shortName": "Health"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a distribution of annual salaries using a bar chart.",
+  "refer_fileds": [
+    {
+      "field": "Annual Salary",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "Annual Salary",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    }
+  ]
+}

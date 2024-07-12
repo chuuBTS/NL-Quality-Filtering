@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Region",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Time": 1960,
+        "Region": "Middle East & N. Africa",
+        "Value": 0.459097,
+        "Detail": "Capture fisheries production (million tonnes per year)"
+      },
+      {
+        "Time": 1976,
+        "Region": "Latin America & Caribbean",
+        "Value": 8.304752,
+        "Detail": NaN
+      },
+      {
+        "Time": 2005,
+        "Region": "East Asia & Pacific",
+        "Value": 39.04011184,
+        "Detail": NaN
+      },
+      {
+        "Time": 1980,
+        "Region": "Sub-Saharan Africa",
+        "Value": 3.087674,
+        "Detail": NaN
+      },
+      {
+        "Time": 1971,
+        "Region": "East Asia & Pacific",
+        "Value": 19.471919,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the composition of values over time using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Time",
+      "type": "temporal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Time",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

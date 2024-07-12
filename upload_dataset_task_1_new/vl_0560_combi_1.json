@@ -1,0 +1,216 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "tradePartner",
+      "tradeTotal",
+      "Balance",
+      "Balance_absolute",
+      "Balance_pctTrade",
+      "Exports",
+      "Exports_absolute",
+      "Imports",
+      "Imports_absolute",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "tradePartner": 1,
+        "tradeTotal": 124564,
+        "Balance": -20774.0,
+        "Balance_absolute": 20774,
+        "Balance_pctTrade": -0.17,
+        "Exports": 51895.0,
+        "Exports_absolute": 51895.0,
+        "Imports": 72669.0,
+        "Imports_absolute": 72669.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+      },
+      {
+        "Country": "Canada",
+        "tradePartner": 2,
+        "tradeTotal": 121089,
+        "Balance": -12323.0,
+        "Balance_absolute": 12323,
+        "Balance_pctTrade": -0.1,
+        "Exports": 54383.0,
+        "Exports_absolute": 54383.0,
+        "Imports": 66706.0,
+        "Imports_absolute": 66706.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/exh4s.xlsx"
+      },
+      {
+        "Country": "New Zealand",
+        "tradePartner": 53,
+        "tradeTotal": 1458,
+        "Balance": -284.0,
+        "Balance_absolute": 284,
+        "Balance_pctTrade": -0.19,
+        "Exports": 587.0,
+        "Exports_absolute": 587.0,
+        "Imports": 871.0,
+        "Imports_absolute": 871.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Iceland",
+        "tradePartner": 99,
+        "tradeTotal": 152,
+        "Balance": -68.0,
+        "Balance_absolute": 68,
+        "Balance_pctTrade": -0.45,
+        "Exports": 42.0,
+        "Exports_absolute": 42.0,
+        "Imports": 110.0,
+        "Imports_absolute": 110.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Taiwan",
+        "tradePartner": 10,
+        "tradeTotal": 19225,
+        "Balance": -7342.0,
+        "Balance_absolute": 7342,
+        "Balance_pctTrade": -0.38,
+        "Exports": 5941.0,
+        "Exports_absolute": 5941.0,
+        "Imports": 13284.0,
+        "Imports_absolute": 13284.0,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total trade volume for countries with fewer than 21 trade partners.",
+  "refer_fileds": [
+    {
+      "field": "tradeTotal",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "tradePartner",
+          "lt": 21
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    }
+  ]
+}

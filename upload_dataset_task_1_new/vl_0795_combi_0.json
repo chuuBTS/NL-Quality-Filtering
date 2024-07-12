@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      " Per Capita (US $)",
+      "Outstanding Debt",
+      "Debt/GDP per capita",
+      "Years"
+    ],
+    "table_samples": [
+      {
+        "date": "31/12/2021",
+        " Per Capita (US $)": 12262.9346,
+        "Outstanding Debt": 104029000000.0,
+        "Debt/GDP per capita": 8483236.607,
+        "Years": 2021.0
+      },
+      {
+        "date": "31/12/1984",
+        " Per Capita (US $)": 2579.8572,
+        "Outstanding Debt": 37706647293.0,
+        "Debt/GDP per capita": 14615788.54,
+        "Years": 1984.0
+      },
+      {
+        "date": "31/12/2008",
+        " Per Capita (US $)": 9489.966,
+        "Outstanding Debt": 21487336753.0,
+        "Debt/GDP per capita": 2264216.411,
+        "Years": 2008.0
+      },
+      {
+        "date": NaN,
+        " Per Capita (US $)": NaN,
+        "Outstanding Debt": NaN,
+        "Debt/GDP per capita": NaN,
+        "Years": NaN
+      },
+      {
+        "date": "31/12/1998",
+        " Per Capita (US $)": 5297.2682,
+        "Outstanding Debt": 66739842976.0,
+        "Debt/GDP per capita": 12598917.11,
+        "Years": 1998.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total Debt/GDP per capita for each year.",
+  "refer_fileds": [
+    {
+      "field": "Years",
+      "type": "temporal"
+    },
+    {
+      "field": "Debt/GDP per capita",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt/GDP per capita",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP per capita",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP per capita",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Years",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt/GDP per capita",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Debt/GDP per capita",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Years",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Bracket",
+      "StampDuty"
+    ],
+    "table_samples": [
+      {
+        "Year": 1997,
+        "Bracket": "100k",
+        "StampDuty": 1.0
+      },
+      {
+        "Year": 2016,
+        "Bracket": "200k",
+        "StampDuty": 2.0
+      },
+      {
+        "Year": 2001,
+        "Bracket": "2m",
+        "StampDuty": 4.0
+      },
+      {
+        "Year": 1997,
+        "Bracket": "1m",
+        "StampDuty": 2.0
+      },
+      {
+        "Year": 2002,
+        "Bracket": "200k",
+        "StampDuty": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of stamp duty rates by price bracket over the years using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "StampDuty",
+      "type": "quantitative"
+    },
+    {
+      "field": "Bracket",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "StampDuty",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Bracket",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "StampDuty",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Bracket",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bracket",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "StampDuty",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Bracket",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "StampDuty",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "StampDuty",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Bracket",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Bracket",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "StampDuty",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "StampDuty",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Bracket",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

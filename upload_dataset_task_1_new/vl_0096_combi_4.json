@@ -1,0 +1,197 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "precipitation",
+      "temp_max",
+      "temp_min",
+      "wind",
+      "weather"
+    ],
+    "table_samples": [
+      {
+        "date": "2012-01-01",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": 5.0,
+        "wind": 4.7,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2014-11-03",
+        "precipitation": 10.9,
+        "temp_max": 13.9,
+        "temp_min": 11.1,
+        "wind": 4.8,
+        "weather": "rain"
+      },
+      {
+        "date": "2014-05-15",
+        "precipitation": 0.0,
+        "temp_max": 26.7,
+        "temp_min": 12.8,
+        "wind": 3.0,
+        "weather": "sun"
+      },
+      {
+        "date": "2013-01-21",
+        "precipitation": 0.0,
+        "temp_max": 2.2,
+        "temp_min": -1.7,
+        "wind": 1.1,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2014-03-22",
+        "precipitation": 0.0,
+        "temp_max": 11.1,
+        "temp_min": 1.1,
+        "wind": 1.8,
+        "weather": "sun"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the highest temperature on each date.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "temp_max",
+        "temp_min"
+      ],
+      "type": "quantitative",
+      "aggregate": "max"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "temp_max",
+          "aggregate": "max"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_max",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_min",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_max",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_min",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_max",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "temp_min",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "temp_max",
+          "type": "quantitative",
+          "aggregate": "max"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "temp_min",
+          "type": "quantitative",
+          "aggregate": "max"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

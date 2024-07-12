@@ -1,0 +1,452 @@
+{
+  "table_info": {
+    "table_columns": [
+      "dist_group",
+      "main_mode",
+      "trips",
+      "mode",
+      "scaled_trips",
+      "source",
+      "tripdistancegroupindex",
+      "pct"
+    ],
+    "table_samples": [
+      {
+        "dist_group": "0 - 1000",
+        "main_mode": "bike",
+        "trips": 9933,
+        "mode": "bike",
+        "scaled_trips": 39732,
+        "source": "sim",
+        "tripdistancegroupindex": 0,
+        "pct": 0.15
+      },
+      {
+        "dist_group": "10000+",
+        "main_mode": "walk",
+        "trips": 29,
+        "mode": "walk",
+        "scaled_trips": 116,
+        "source": "sim",
+        "tripdistancegroupindex": 4,
+        "pct": 0.01
+      },
+      {
+        "dist_group": "1000 - 3000",
+        "main_mode": "walk",
+        "trips": 23605,
+        "mode": "walk",
+        "scaled_trips": 94420,
+        "source": "srv",
+        "tripdistancegroupindex": 1,
+        "pct": 0.16
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "car",
+        "trips": 45974,
+        "mode": "car",
+        "scaled_trips": 183896,
+        "source": "sim",
+        "tripdistancegroupindex": 3,
+        "pct": 0.59
+      },
+      {
+        "dist_group": "5000 - 10000",
+        "main_mode": "walk",
+        "trips": 96,
+        "mode": "walk",
+        "scaled_trips": 384,
+        "source": "sim",
+        "tripdistancegroupindex": 3,
+        "pct": 0.01
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the percentage of trips by distance group in ascending order starting with the highest distance '10000+' down to '0 - 1000'.",
+  "refer_fileds": [
+    {
+      "field": "pct",
+      "type": "quantitative"
+    },
+    {
+      "field": "dist_group",
+      "type": "nominal"
+    },
+    {
+      "field": "main_mode",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "10000+",
+          "5000 - 10000",
+          "3000 - 5000",
+          "1000 - 3000",
+          "0 - 1000"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "pct",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "pct",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "dist_group",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "main_mode",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "pct",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "main_mode",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "dist_group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

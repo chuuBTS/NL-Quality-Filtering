@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "candidate_diff_spend",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "candidate_diff_spend": 5,
+        "count": 112
+      },
+      {
+        "candidate_diff_spend": 75,
+        "count": 35
+      },
+      {
+        "candidate_diff_spend": 65,
+        "count": 42
+      },
+      {
+        "candidate_diff_spend": 35,
+        "count": 43
+      },
+      {
+        "candidate_diff_spend": 85,
+        "count": 44
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart with the difference in spending per candidate on the x-axis and the number of occurrences on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "candidate_diff_spend",
+      "type": "quantitative"
+    },
+    {
+      "field": "count",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "candidate_diff_spend",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

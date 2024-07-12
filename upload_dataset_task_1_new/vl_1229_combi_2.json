@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Airline",
+      "Category",
+      "Year",
+      "Passengers"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Airline": "Ryanair",
+        "Category": "LCC",
+        "Year": 2021,
+        "Passengers": 72.4
+      },
+      {
+        "Unnamed: 0": 137,
+        "Airline": "Pegasus Airlines",
+        "Category": "LCC",
+        "Year": 2012,
+        "Passengers": 13.6
+      },
+      {
+        "Unnamed: 0": 125,
+        "Airline": "EasyJet",
+        "Category": "LCC",
+        "Year": 2008,
+        "Passengers": 44.6
+      },
+      {
+        "Unnamed: 0": 303,
+        "Airline": "Nordwind Airlines",
+        "Category": "LCC",
+        "Year": 2018,
+        "Passengers": 4.92
+      },
+      {
+        "Unnamed: 0": 252,
+        "Airline": "TAP Air Portugal",
+        "Category": "FSC",
+        "Year": 2009,
+        "Passengers": 8.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of passengers per year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Passengers",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Passengers",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Passengers",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

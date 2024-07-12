@@ -1,0 +1,221 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Unnamed: 5",
+      "Day",
+      "Total_billion",
+      "World_GDP",
+      "Debt-GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Year": 2022,
+        "Unnamed: 5": "31/2022",
+        "Day": 31,
+        "Total_billion": 109.02,
+        "World_GDP": 98406500000000.0,
+        "Debt-GDP": 0.11
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031,
+        "PRGT 1/2/": 3942792899,
+        "Totals": 29139537930.0,
+        "Year": 1993,
+        "Unnamed: 5": "31/1993",
+        "Day": 31,
+        "Total_billion": 29.14,
+        "World_GDP": 25822000000000.0,
+        "Debt-GDP": 0.11
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723,
+        "PRGT 1/2/": 3972372030,
+        "Totals": 21487336753.0,
+        "Year": 2008,
+        "Unnamed: 5": "31/2008",
+        "Day": 31,
+        "Total_billion": 21.49,
+        "World_GDP": 64123700000000.0,
+        "Debt-GDP": 0.03
+      },
+      {
+        "Date": "12/31/1997",
+        "GRA Purchases": 46559033783,
+        "PRGT 1/2/": 6009867422,
+        "Totals": 52568901205.0,
+        "Year": 1997,
+        "Unnamed: 5": "31/1997",
+        "Day": 31,
+        "Total_billion": 52.57,
+        "World_GDP": 31620400000000.0,
+        "Debt-GDP": 0.17
+      },
+      {
+        "Date": "12/31/1995",
+        "GRA Purchases": 35929173412,
+        "PRGT 1/2/": 5657438528,
+        "Totals": 41586611940.0,
+        "Year": 1995,
+        "Unnamed: 5": "31/1995",
+        "Day": 31,
+        "Total_billion": 41.59,
+        "World_GDP": 31043600000000.0,
+        "Debt-GDP": 0.13
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the Debt-GDP ratio over time.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Debt-GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt-GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

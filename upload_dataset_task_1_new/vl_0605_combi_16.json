@@ -1,0 +1,194 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Job Titles",
+      "Department",
+      "Full or Part-Time",
+      "Salary or Hourly",
+      "Typical Hours",
+      "Annual Salary",
+      "Hourly Rate",
+      "Rank",
+      "share",
+      "cumShareIncome",
+      "cumSharePeople",
+      "shortName"
+    ],
+    "table_samples": [
+      {
+        "Name": "ADELMAN, BRUCE E",
+        "Job Titles": "LEGISLATIVE AIDE",
+        "Department": "CITY COUNCIL",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 22248.0,
+        "Hourly Rate": NaN,
+        "Rank": 1,
+        "share": 9e-06,
+        "cumShareIncome": 9e-06,
+        "cumSharePeople": 4.124e-05,
+        "shortName": "0"
+      },
+      {
+        "Name": "WALLACE, JOSEPH L",
+        "Job Titles": "POLICE OFFICER",
+        "Department": "DEPARTMENT OF POLICE",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 97974.0,
+        "Hourly Rate": NaN,
+        "Rank": 10907,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.359714,
+        "cumSharePeople": 0.44982884,
+        "shortName": "Police"
+      },
+      {
+        "Name": "O'BRIEN, CASEY",
+        "Job Titles": "FIREFIGHTER-EMT",
+        "Department": "FIRE DEPARTMENT",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 98904.0,
+        "Hourly Rate": NaN,
+        "Rank": 11780,
+        "share": 4.1e-05,
+        "cumShareIncome": 0.395344,
+        "cumSharePeople": 0.4858333,
+        "shortName": "Fire"
+      },
+      {
+        "Name": "HELMOLD, EDWARD D",
+        "Job Titles": "FIREFIGHTER-EMT",
+        "Department": "FIRE DEPARTMENT",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 94152.0,
+        "Hourly Rate": NaN,
+        "Rank": 8059,
+        "share": 3.9e-05,
+        "cumShareIncome": 0.244547,
+        "cumSharePeople": 0.33237101,
+        "shortName": "Fire"
+      },
+      {
+        "Name": "TRASK-BOBBITT, TASHA L",
+        "Job Titles": "STAFF ASST",
+        "Department": "DEPARTMENT OF PUBLIC HEALTH",
+        "Full or Part-Time": "F",
+        "Salary or Hourly": "SALARY",
+        "Typical Hours": NaN,
+        "Annual Salary": 93660.0,
+        "Hourly Rate": NaN,
+        "Rank": 7859,
+        "share": 3.9e-05,
+        "cumShareIncome": 0.23676,
+        "cumSharePeople": 0.32412257,
+        "shortName": "Health"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the distribution of compensation across individuals.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Annual Salary",
+        "Hourly Rate"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "Annual Salary",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "Hourly Rate",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Annual Salary",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Hourly Rate",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

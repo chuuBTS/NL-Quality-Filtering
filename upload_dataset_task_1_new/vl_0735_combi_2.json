@@ -1,0 +1,351 @@
+{
+  "table_info": {
+    "table_columns": [
+      "ISO3",
+      "Year",
+      "democracy_eiu",
+      "Country",
+      "GDP",
+      "Region",
+      "Regime",
+      "Sources"
+    ],
+    "table_samples": [
+      {
+        "ISO3": "AFG",
+        "Year": 2021,
+        "democracy_eiu": 0.32,
+        "Country": "Afghanistan",
+        "GDP": 14786861638.0,
+        "Region": "South Asia",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "PRY",
+        "Year": 2021,
+        "democracy_eiu": 5.86,
+        "Country": "Paraguay",
+        "GDP": 39495431574.0,
+        "Region": "Latin America & Caribbean",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "NIC",
+        "Year": 2021,
+        "democracy_eiu": 2.69,
+        "Country": "Nicaragua",
+        "GDP": 14013022092.0,
+        "Region": "Latin America & Caribbean",
+        "Regime": "Authoritarian Regime",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "MDA",
+        "Year": 2021,
+        "democracy_eiu": 6.1,
+        "Country": "Moldova, Republic of",
+        "GDP": 13679221333.0,
+        "Region": "Europe & Central Asia",
+        "Regime": "Flawed Democracy",
+        "Sources": NaN
+      },
+      {
+        "ISO3": "SLE",
+        "Year": 2021,
+        "democracy_eiu": 4.97,
+        "Country": "Sierra Leone",
+        "GDP": 4042237864.0,
+        "Region": "Sub-Saharan Africa",
+        "Regime": "Hybrid Regime",
+        "Sources": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of regions and their average democracy scores along with the type of regime, in ascending order of democracy scores.",
+  "refer_fileds": [
+    {
+      "field": "Region",
+      "type": "nominal"
+    },
+    {
+      "field": "democracy_eiu",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "op": "mean",
+          "order": "ascending",
+          "field": "democracy_eiu"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "democracy_eiu",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

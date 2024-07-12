@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "coef",
+      "metabolite",
+      "description"
+    ],
+    "table_samples": [
+      {
+        "coef": -1.403220164,
+        "metabolite": "pydx[e]",
+        "description": "Pyridoxal"
+      },
+      {
+        "coef": -1.3864171369,
+        "metabolite": "so3[e]",
+        "description": "Sulfite"
+      },
+      {
+        "coef": -0.2062304347,
+        "metabolite": "acmana[e]",
+        "description": "N-acetyl-D-mannosamine"
+      },
+      {
+        "coef": -0.7426755129,
+        "metabolite": "glutar[e]",
+        "description": "Glutarate"
+      },
+      {
+        "coef": -0.7420113834,
+        "metabolite": "tsul[e]",
+        "description": "thiosulfate(2-)"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart where the metabolites are listed with their corresponding coefficients in descending order.",
+  "refer_fileds": [
+    {
+      "field": "metabolite",
+      "type": "nominal"
+    },
+    {
+      "field": "coef",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "coef",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "coef",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

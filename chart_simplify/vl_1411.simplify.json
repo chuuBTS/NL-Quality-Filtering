@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "y": {
+            "field": "ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "launched",
+            "timeUnit": "year",
+            "type": "temporal"
+        },
+        "color": {
+            "field": "category",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/antoniolch/KickstarterProjectDetails/master/data/whole_kickstarter_projects_filtered_vis3.csv",
+        "format": {
+            "type": "csv",
+            "parse": {
+                "launched": "utc:'%Y-%m-%d %H:%M:%S'"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "launched)",
+                "gt": 2013
+            }
+        },
+        {
+            "filter": {
+                "field": "launched)",
+                "lt": 2018
+            }
+        }
+    ],
+    "height": 400,
+    "width": 400
+}

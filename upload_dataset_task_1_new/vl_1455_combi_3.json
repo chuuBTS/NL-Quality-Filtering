@@ -1,0 +1,76 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "symbol": "SE",
+        "date": "2020-01-01 00:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-04 17:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-11-03 21:00",
+        "value": 318.9655172
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-09-24 10:30",
+        "value": 477.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-08-25 19:30",
+        "value": 355.7692308
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values for SE.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "SE"
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Phenomenon",
+        "Worldwide Gross": 142836382,
+        "Production Budget": 32000000,
+        "Release Year": 1996,
+        "Content Rating": "PG",
+        "Running Time": 124,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 50,
+        "IMDB Rating": 6.3
+      },
+      {
+        "Title": "The Saint",
+        "Worldwide Gross": 169400000,
+        "Production Budget": 90000000,
+        "Release Year": 1997,
+        "Content Rating": "PG-13",
+        "Running Time": 116,
+        "Genre": "Action",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 30,
+        "IMDB Rating": 5.9
+      },
+      {
+        "Title": "Eyes Wide Shut",
+        "Worldwide Gross": 86257553,
+        "Production Budget": 65000000,
+        "Release Year": 1999,
+        "Content Rating": "R",
+        "Running Time": 159,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 78,
+        "IMDB Rating": 7.2
+      },
+      {
+        "Title": "Courage Under Fire",
+        "Worldwide Gross": 100833145,
+        "Production Budget": 46000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 115,
+        "Genre": "Drama",
+        "Creative Type": "Historical Fiction",
+        "Rotten Tomatoes Rating": 85,
+        "IMDB Rating": 6.6
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart summarizing the total worldwide gross for each genre over the years.",
+  "refer_fileds": [
+    {
+      "field": "Worldwide Gross",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    },
+    {
+      "field": "Release Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Worldwide Gross",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Release Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Worldwide Gross",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

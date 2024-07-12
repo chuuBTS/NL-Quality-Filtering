@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "region_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 1970,
+        "Attack Count": 1,
+        "region_txt": "Central America & Caribbean"
+      },
+      {
+        "iyear": 2013,
+        "Attack Count": 1,
+        "region_txt": "South Asia"
+      },
+      {
+        "iyear": 2012,
+        "Attack Count": 1,
+        "region_txt": "South Asia"
+      },
+      {
+        "iyear": 1982,
+        "Attack Count": 1,
+        "region_txt": "Central America & Caribbean"
+      },
+      {
+        "iyear": 1998,
+        "Attack Count": 1,
+        "region_txt": "Middle East & North Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of Attack Count by year for each region.",
+  "refer_fileds": [
+    {
+      "field": "iyear",
+      "type": "temporal"
+    },
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "region_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "region_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

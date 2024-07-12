@@ -1,0 +1,190 @@
+{
+  "table_info": {
+    "table_columns": [
+      "yield",
+      "variety",
+      "year",
+      "site"
+    ],
+    "table_samples": [
+      {
+        "yield": 27.0,
+        "variety": "Manchuria",
+        "year": 1931,
+        "site": "University Farm"
+      },
+      {
+        "yield": 22.6,
+        "variety": "No. 475",
+        "year": 1931,
+        "site": "Morris"
+      },
+      {
+        "yield": 48.56666,
+        "variety": "Peatland",
+        "year": 1931,
+        "site": "Waseca"
+      },
+      {
+        "yield": 49.2333,
+        "variety": "Trebi",
+        "year": 1932,
+        "site": "Waseca"
+      },
+      {
+        "yield": 45.66667,
+        "variety": "No. 457",
+        "year": 1931,
+        "site": "Crookston"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sum of the yields for each site and variety in a bar, area, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "site",
+      "type": "nominal"
+    },
+    {
+      "field": "yield",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "variety",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "yield",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "site",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "variety",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "site",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "site",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variety",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "site",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

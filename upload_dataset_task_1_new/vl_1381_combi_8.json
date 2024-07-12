@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "time",
+      "quantity",
+      "item"
+    ],
+    "table_samples": [
+      {
+        "time": 0,
+        "quantity": 2.0,
+        "item": "monkey"
+      },
+      {
+        "time": 7,
+        "quantity": 25.49867094801228,
+        "item": "slipper"
+      },
+      {
+        "time": 15,
+        "quantity": 31.62634547570625,
+        "item": "broom"
+      },
+      {
+        "time": 10,
+        "quantity": 24.86525259636632,
+        "item": "broom"
+      },
+      {
+        "time": 9,
+        "quantity": 26.31728069337105,
+        "item": "monkey"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of total quantity over time for each item.",
+  "refer_fileds": [
+    {
+      "field": "item",
+      "type": "nominal"
+    },
+    {
+      "field": "time",
+      "type": "temporal"
+    },
+    {
+      "field": "quantity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "quantity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "time",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "quantity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "item",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "year",
+      "month",
+      "date2",
+      "Price",
+      "Dividend",
+      "Earnings",
+      "CPI",
+      "R",
+      "PriceReal",
+      "DividendReal",
+      "RealTotalReturn",
+      "EarningsReal",
+      "CAPE"
+    ],
+    "table_samples": [
+      {
+        "Date": 1871.01,
+        "year": 1871,
+        "month": 1,
+        "date2": "1871-1-01",
+        "Price": 4.44,
+        "Dividend": 0.26,
+        "Earnings": 0.4,
+        "CPI": 12.46406116,
+        "R": 5.32,
+        "PriceReal": 105.4820771,
+        "DividendReal": 6.176878388,
+        "RealTotalReturn": 105.4820771,
+        "EarningsReal": 9.502889827,
+        "CAPE": NaN
+      },
+      {
+        "Date": 1946.11,
+        "year": 1946,
+        "month": 11,
+        "date2": "1946-11-01",
+        "Price": 14.69,
+        "Dividend": 0.703333,
+        "Earnings": 1.00333,
+        "CPI": 21.3,
+        "R": 2.24,
+        "PriceReal": 204.2196214,
+        "DividendReal": 9.777699044,
+        "RealTotalReturn": 11244.81442,
+        "EarningsReal": 13.94824184,
+        "CAPE": 11.11004366
+      },
+      {
+        "Date": 1993.08,
+        "year": 1993,
+        "month": 8,
+        "date2": "1993-8-01",
+        "Price": 454.13,
+        "Dividend": 12.52,
+        "Earnings": 20.05,
+        "CPI": 144.8,
+        "R": 5.68,
+        "PriceReal": 928.6817368,
+        "DividendReal": 25.60301091,
+        "RealTotalReturn": 347164.7672,
+        "EarningsReal": 41.0016269,
+        "CAPE": 20.81222755
+      },
+      {
+        "Date": 1894.07,
+        "year": 1894,
+        "month": 7,
+        "date2": "1894-7-01",
+        "Price": 4.25,
+        "Dividend": 0.2267,
+        "Earnings": 0.2017,
+        "CPI": 6.565052397,
+        "R": 3.58,
+        "PriceReal": 191.6928912,
+        "DividendReal": 10.22512434,
+        "RealTotalReturn": 690.2267441,
+        "EarningsReal": 9.097519096,
+        "CAPE": 16.28967971
+      },
+      {
+        "Date": 1910.01,
+        "year": 1910,
+        "month": 1,
+        "date2": "1910-1-01",
+        "Price": 10.08,
+        "Dividend": 0.4425,
+        "Earnings": 0.7575,
+        "CPI": 9.895165289,
+        "R": 3.91,
+        "PriceReal": 301.642654,
+        "DividendReal": 13.24175341,
+        "RealTotalReturn": 2110.571767,
+        "EarningsReal": 22.66808635,
+        "CAPE": 14.54788504
+      }
+    ]
+  },
+  "nl_utterance": "Show me the CAPE values over time from January 1, 1900, to November 1, 2023.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "CAPE",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Date",
+          "range": [
+            {
+              "year": 1900,
+              "month": 1,
+              "day": 1
+            },
+            {
+              "year": 2023,
+              "month": 11,
+              "day": 1
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "CAPE",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Date",
+            "range": [
+              {
+                "year": 1900,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 2023,
+                "month": 11,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "CAPE",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Date",
+            "range": [
+              {
+                "year": 1900,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 2023,
+                "month": 11,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "CAPE",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Date",
+            "range": [
+              {
+                "year": 1900,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 2023,
+                "month": 11,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAPE",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Date",
+            "range": [
+              {
+                "year": 1900,
+                "month": 1,
+                "day": 1
+              },
+              {
+                "year": 2023,
+                "month": 11,
+                "day": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

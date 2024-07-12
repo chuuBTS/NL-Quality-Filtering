@@ -1,0 +1,236 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "buick century limited",
+        "Miles_per_Gallon": 25.0,
+        "Cylinders": 6,
+        "Displacement": 181.0,
+        "Horsepower": 110.0,
+        "Weight_in_lbs": 2945,
+        "Acceleration": 16.4,
+        "Year": "1982-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "fiat 131",
+        "Miles_per_Gallon": 28.0,
+        "Cylinders": 4,
+        "Displacement": 107.0,
+        "Horsepower": 86.0,
+        "Weight_in_lbs": 2464,
+        "Acceleration": 15.5,
+        "Year": "1976-01-01T00:00:00",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "chevrolet chevelle malibu classic",
+        "Miles_per_Gallon": 17.5,
+        "Cylinders": 8,
+        "Displacement": 305.0,
+        "Horsepower": 140.0,
+        "Weight_in_lbs": 4215,
+        "Acceleration": 13.0,
+        "Year": "1976-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "toyota corona liftback",
+        "Miles_per_Gallon": 29.8,
+        "Cylinders": 4,
+        "Displacement": 134.0,
+        "Horsepower": 90.0,
+        "Weight_in_lbs": 2711,
+        "Acceleration": 15.5,
+        "Year": "1980-01-01T00:00:00",
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the average performance characteristics against the total count of cylinders.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Acceleration",
+        "Horsepower"
+      ],
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Cylinders",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Acceleration",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Cylinders",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Acceleration",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "bin": true
+        },
+        "y": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "bin": true
+        },
+        "y": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Acceleration",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Horsepower",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

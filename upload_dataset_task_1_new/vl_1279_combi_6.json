@@ -1,0 +1,137 @@
+{
+  "table_info": {
+    "table_columns": [
+      "team",
+      "team_tournament",
+      "tournament",
+      "tupg"
+    ],
+    "table_samples": [
+      {
+        "team": "Virginia A",
+        "team_tournament": "2014 Virginia A",
+        "tournament": "ACF Nationals 2014",
+        "tupg": 15.64
+      },
+      {
+        "team": "Penn A",
+        "team_tournament": "2015 Penn A",
+        "tournament": "ACF Nationals 2015",
+        "tupg": 14.64
+      },
+      {
+        "team": "Chicago A",
+        "team_tournament": "2016 Chicago A",
+        "tournament": "ACF Nationals 2016",
+        "tupg": 15.1
+      },
+      {
+        "team": "Chicago A",
+        "team_tournament": "2015 Chicago A",
+        "tournament": "ACF Nationals 2015",
+        "tupg": 14.18
+      },
+      {
+        "team": "Yale A",
+        "team_tournament": "2012 Yale A",
+        "tournament": "ACF Nationals 2012",
+        "tupg": 14.33
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the TUPG for each team tournament, sorted by TUPG.",
+  "refer_fileds": [
+    {
+      "field": "team_tournament",
+      "type": "nominal"
+    },
+    {
+      "field": "tupg",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "ppg"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "team_tournament",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tupg",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

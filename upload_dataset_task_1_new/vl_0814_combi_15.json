@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Programming Language",
+      "Date",
+      "Ratings %"
+    ],
+    "table_samples": [
+      {
+        "Programming Language": "R",
+        "Date": 2007,
+        "Ratings %": 0.06
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2022,
+        "Ratings %": 1.14
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2020,
+        "Ratings %": 0.81
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2020,
+        "Ratings %": 9.7
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2011,
+        "Ratings %": 0.54
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of ratings percentages over time for each programming language using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Ratings %",
+      "type": "quantitative"
+    },
+    {
+      "field": "Programming Language",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

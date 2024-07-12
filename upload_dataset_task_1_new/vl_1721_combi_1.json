@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "buick regal sport coupe (turbo)",
+        "Miles_per_Gallon": 17.7,
+        "Cylinders": 6,
+        "Displacement": 231.0,
+        "Horsepower": 165.0,
+        "Weight_in_lbs": 3445,
+        "Acceleration": 13.4,
+        "Year": "1978-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "amc concord",
+        "Miles_per_Gallon": 24.3,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 90.0,
+        "Weight_in_lbs": 3003,
+        "Acceleration": 20.1,
+        "Year": "1980-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "audi 5000s (diesel)",
+        "Miles_per_Gallon": 36.4,
+        "Cylinders": 5,
+        "Displacement": 121.0,
+        "Horsepower": 67.0,
+        "Weight_in_lbs": 2950,
+        "Acceleration": 19.9,
+        "Year": "1980-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "toyota corolla",
+        "Miles_per_Gallon": 29.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 75.0,
+        "Weight_in_lbs": 2171,
+        "Acceleration": 16.0,
+        "Year": "1975-01-01",
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the fuel efficiency in miles per gallon for each car origin.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

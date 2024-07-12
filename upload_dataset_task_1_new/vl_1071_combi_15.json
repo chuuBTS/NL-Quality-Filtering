@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country Name",
+      "Year",
+      "Urban Population"
+    ],
+    "table_samples": [
+      {
+        "Country Name": "United Arab Emirates",
+        "Year": 1960,
+        "Urban Population": 67926
+      },
+      {
+        "Country Name": "Argentina",
+        "Year": 1980,
+        "Urban Population": 23122598
+      },
+      {
+        "Country Name": "Argentina",
+        "Year": 1985,
+        "Urban Population": 25695324
+      },
+      {
+        "Country Name": "United States",
+        "Year": 1999,
+        "Urban Population": 219721677
+      },
+      {
+        "Country Name": "Argentina",
+        "Year": 1979,
+        "Urban Population": 22668008
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of the urban population over time for each country using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Urban Population",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country Name",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Urban Population",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Urban Population",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country Name",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

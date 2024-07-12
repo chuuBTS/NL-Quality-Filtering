@@ -1,0 +1,66 @@
+{
+    "nl_utterance": "...",
+    "encoded_fields": [
+        {
+            "field": "down_sh",
+            "type": "quantitative",
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "constraints": [
+        {
+            "c_type": "mark",
+            "c_name": "rect chart",
+            "c_list": [
+                {
+                    "mark": "rect",
+                    "encoding": {
+                        "x": {},
+                        "y": {},
+                        "color": {
+                            "type": "quantitative"
+                        },
+                        "column": {
+                            "ignore": true,
+                            "type": "nominal"
+                        },
+                        "row": {
+                            "ignore": true,
+                            "type": "nominal"
+                        }
+                    },
+                    "unique_map": {
+                        "(x,y)": "color"
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "up_sh",
+                    "lt": 0.25
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "down_sh",
+                    "lt": 0.25
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ]
+}

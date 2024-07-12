@@ -1,0 +1,191 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billions ",
+      "Unnamed: 6",
+      "WorldGDP_billions",
+      "Total_GDP_adjusted_billions",
+      "Unnamed: 9",
+      "Unnamed: 10"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Total_billions ": 109.0238196,
+        "Unnamed: 6": NaN,
+        "WorldGDP_billions": NaN,
+        "Total_GDP_adjusted_billions": NaN,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2001",
+        "GRA Purchases": 53477225409.0,
+        "PRGT 1/2/": 6424578684.0,
+        "Totals": 59901804093.0,
+        "Year": 2001.0,
+        "Total_billions ": 59.90180409,
+        "Unnamed: 6": "44,116.92",
+        "WorldGDP_billions": 33788.307,
+        "Total_GDP_adjusted_billions": 0.00177,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2010",
+        "GRA Purchases": 55620104510.0,
+        "PRGT 1/2/": 4819344134.0,
+        "Totals": 60439448644.0,
+        "Year": 2010.0,
+        "Total_billions ": 60.43944864,
+        "Unnamed: 6": "31,199.71",
+        "WorldGDP_billions": 66435.818,
+        "Total_GDP_adjusted_billions": 0.00091,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1993",
+        "GRA Purchases": 25196745031.0,
+        "PRGT 1/2/": 3942792899.0,
+        "Totals": 29139537930.0,
+        "Year": 1993.0,
+        "Total_billions ": 29.13953793,
+        "Unnamed: 6": "75,116.96",
+        "WorldGDP_billions": 26039.542,
+        "Total_GDP_adjusted_billions": 0.00112,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/1994",
+        "GRA Purchases": 25611676952.0,
+        "PRGT 1/2/": 4599768498.0,
+        "Totals": 30211445450.0,
+        "Year": 1994.0,
+        "Total_billions ": 30.21144545,
+        "Unnamed: 6": "73,747.75",
+        "WorldGDP_billions": 27985.29,
+        "Total_GDP_adjusted_billions": 0.00108,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total GDP adjusted in billions over time using a line chart.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Total_GDP_adjusted_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_GDP_adjusted_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "RST",
+      "Totals",
+      "Year",
+      "Tot_billions",
+      "Tot_div_worldGDP",
+      "World_GDP_(current US$)"
+    ],
+    "table_samples": [
+      {
+        "Date": "10/31/2022",
+        "GRA Purchases": "93,054,287,423",
+        "PRGT 1/2/": "15,329,531,139",
+        "RST": 0,
+        "Totals": 108383818562,
+        "Year": 2022,
+        "Tot_billions": 108.38,
+        "Tot_div_worldGDP": NaN,
+        "World_GDP_(current US$)": NaN
+      },
+      {
+        "Date": "12/31/2020",
+        "GRA Purchases": "93,408,630,285",
+        "PRGT 1/2/": "12,481,816,684",
+        "RST": 0,
+        "Totals": 105890446969,
+        "Year": 2020,
+        "Tot_billions": 105.89,
+        "Tot_div_worldGDP": 0.124713721,
+        "World_GDP_(current US$)": 84900000000000.0
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": "9,822,640,239",
+        "PRGT 1/2/": "3,844,020,520",
+        "RST": 0,
+        "Totals": 13666660759,
+        "Year": 2006,
+        "Tot_billions": 13.67,
+        "Tot_div_worldGDP": 0.026393784,
+        "World_GDP_(current US$)": 51800000000000.0
+      },
+      {
+        "Date": "12/31/2021",
+        "GRA Purchases": "89,474,552,025",
+        "PRGT 1/2/": "14,554,823,681",
+        "RST": 0,
+        "Totals": 104029375706,
+        "Year": 2021,
+        "Tot_billions": 104.03,
+        "Tot_div_worldGDP": 0.108251069,
+        "World_GDP_(current US$)": 96100000000000.0
+      },
+      {
+        "Date": "12/31/2018",
+        "GRA Purchases": "55,395,611,392",
+        "PRGT 1/2/": "6,426,181,029",
+        "RST": 0,
+        "Totals": 61821792421,
+        "Year": 2018,
+        "Tot_billions": 61.82,
+        "Tot_div_worldGDP": 0.071542209,
+        "World_GDP_(current US$)": 86400000000000.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total IMF lending relative to world GDP over time with a line chart that sums up the values.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Tot_div_worldGDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Tot_div_worldGDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Tot_div_worldGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

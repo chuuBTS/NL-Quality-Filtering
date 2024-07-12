@@ -1,0 +1,190 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 265.0,
+        "division": 3,
+        "up": 1414,
+        "down": 1034,
+        "level": 7650,
+        "up_ch": 0.38675213,
+        "down_ch": -0.2001034,
+        "total": 10098,
+        "up_sh": 0.14002773,
+        "down_sh": 0.10239651,
+        "level_sh": 0.75757575,
+        "change_sh": 0.24242425,
+        "division_s": "Clothing and footwear",
+        "division_sh": "Clothing and footwear",
+        "date2": "01-02-2010",
+        "date4": "2010-02-01",
+        "year": 2010.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 329.0,
+        "division": 4,
+        "up": 108,
+        "down": 154,
+        "level": 2076,
+        "up_ch": 0.1001001,
+        "down_ch": -0.10720118,
+        "total": 2338,
+        "up_sh": 0.046193328,
+        "down_sh": 0.065868266,
+        "level_sh": 0.88793838,
+        "change_sh": 0.11206159,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-06-2015",
+        "date4": "2015-06-01",
+        "year": 2015.0,
+        "month": 6.0,
+        "quarter": 2.0
+      },
+      {
+        "date": 319.0,
+        "division": 12,
+        "up": 758,
+        "down": 786,
+        "level": 7096,
+        "up_ch": 0.2,
+        "down_ch": -0.2326923,
+        "total": 8640,
+        "up_sh": 0.087731481,
+        "down_sh": 0.090972222,
+        "level_sh": 0.82129627,
+        "change_sh": 0.1787037,
+        "division_s": "Miscellaneous goods and services",
+        "division_sh": "Misc",
+        "date2": "01-08-2014",
+        "date4": "2014-08-01",
+        "year": 2014.0,
+        "month": 8.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 253.0,
+        "division": 6,
+        "up": 184,
+        "down": 98,
+        "level": 1393,
+        "up_ch": 0.021796046,
+        "down_ch": -0.021285683,
+        "total": 1675,
+        "up_sh": 0.10985075,
+        "down_sh": 0.058507461,
+        "level_sh": 0.83164179,
+        "change_sh": 0.16835821,
+        "division_s": "Health",
+        "division_sh": "Health",
+        "date2": "01-02-2009",
+        "date4": "2009-02-01",
+        "year": 2009.0,
+        "month": 2.0,
+        "quarter": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show the proportion of down shares for data samples where the up shares and down shares are both less than 25%.",
+  "refer_fileds": [
+    {
+      "field": "down_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "up_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "down_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

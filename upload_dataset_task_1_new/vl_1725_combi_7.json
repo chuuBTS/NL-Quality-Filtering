@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "chevrolet camaro",
+        "Miles_per_Gallon": 27.0,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 90.0,
+        "Weight_in_lbs": 2950,
+        "Acceleration": 17.3,
+        "Year": "1982-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "vw rabbit custom",
+        "Miles_per_Gallon": 31.9,
+        "Cylinders": 4,
+        "Displacement": 89.0,
+        "Horsepower": 71.0,
+        "Weight_in_lbs": 1925,
+        "Acceleration": 14.0,
+        "Year": "1979-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "peugeot 505s turbo diesel",
+        "Miles_per_Gallon": 28.1,
+        "Cylinders": 4,
+        "Displacement": 141.0,
+        "Horsepower": 80.0,
+        "Weight_in_lbs": 3230,
+        "Acceleration": 20.4,
+        "Year": "1982-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "audi fox",
+        "Miles_per_Gallon": 29.0,
+        "Cylinders": 4,
+        "Displacement": 98.0,
+        "Horsepower": 83.0,
+        "Weight_in_lbs": 2219,
+        "Acceleration": 16.5,
+        "Year": "1974-01-01",
+        "Origin": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot that demonstrates the correlation between fuel economy and the country of origin for these vehicles.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

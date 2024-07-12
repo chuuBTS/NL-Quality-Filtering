@@ -1,0 +1,140 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "kind",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "created",
+        "count": 17.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "kind": "created",
+        "count": 0.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "closed",
+        "count": 19.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "created",
+        "count": 1.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "kind": "closed",
+        "count": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the total number of events for each kind.",
+  "refer_fileds": [
+    {
+      "field": "kind",
+      "type": "nominal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "kind",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

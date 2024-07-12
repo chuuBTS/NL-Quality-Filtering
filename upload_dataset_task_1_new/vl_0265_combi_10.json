@@ -1,0 +1,163 @@
+{
+  "table_info": {
+    "table_columns": [
+      "rowid",
+      "date",
+      "currency_code",
+      "name",
+      "local_price",
+      "dollar_ex",
+      "dollar_price"
+    ],
+    "table_samples": [
+      {
+        "rowid": 1,
+        "date": "2000-04-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 2.5,
+        "dollar_ex": 1.0,
+        "dollar_price": 2.5
+      },
+      {
+        "rowid": 9866,
+        "date": "2012-01-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 20.0,
+        "dollar_ex": 4.3135,
+        "dollar_price": 4.63660600440478
+      },
+      {
+        "rowid": 15156,
+        "date": "2011-07-01",
+        "currency_code": "EUR",
+        "name": "Euro area",
+        "local_price": 3.437660401,
+        "dollar_ex": 0.697520315,
+        "dollar_price": 4.92840183586624
+      },
+      {
+        "rowid": 15310,
+        "date": "2013-07-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 21.0,
+        "dollar_ex": 5.4125,
+        "dollar_price": 3.87990762124711
+      },
+      {
+        "rowid": 3011,
+        "date": "2008-06-01",
+        "currency_code": "ARS",
+        "name": "Argentina",
+        "local_price": 11.0,
+        "dollar_ex": 3.0195,
+        "dollar_price": 3.64298724954463
+      }
+    ]
+  },
+  "nl_utterance": "Show me a line chart of the sum of prices over time, with prices in both local and U.S. dollars, categorized by currency code.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "local_price",
+        "dollar_price"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "currency_code",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "local_price",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "local_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "dollar_price",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "currency_code",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

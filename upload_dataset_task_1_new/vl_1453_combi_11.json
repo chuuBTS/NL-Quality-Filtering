@@ -1,0 +1,231 @@
+{
+  "table_info": {
+    "table_columns": [
+      "region",
+      "marginal_region",
+      "marginal_bmu",
+      "bmu_name",
+      "bmu_type",
+      "intensity"
+    ],
+    "table_samples": [
+      {
+        "region": "North Scotland",
+        "marginal_region": "North Scotland",
+        "marginal_bmu": "T_BDCHW-1",
+        "bmu_name": "Bad a Cheo Wind Farm ",
+        "bmu_type": "Wind (Onshore)",
+        "intensity": 0.0
+      },
+      {
+        "region": "South England",
+        "marginal_region": "South East England",
+        "marginal_bmu": "T_MEDP-1",
+        "bmu_name": "Medway ",
+        "bmu_type": "CCGT",
+        "intensity": 394.9
+      },
+      {
+        "region": "East England",
+        "marginal_region": "South East England",
+        "marginal_bmu": "T_MEDP-1",
+        "bmu_name": "Medway ",
+        "bmu_type": "CCGT",
+        "intensity": 394.9
+      },
+      {
+        "region": "South Wales",
+        "marginal_region": "South Wales",
+        "marginal_bmu": "2__KANGE001",
+        "bmu_name": "South Wales GSP Group - Limejump Energy Limited ",
+        "bmu_type": "GSP: South Wales",
+        "intensity": 0.0
+      },
+      {
+        "region": "London",
+        "marginal_region": "London",
+        "marginal_bmu": "T_EECL-1",
+        "bmu_name": "Enfield Energy ",
+        "bmu_type": "CCGT",
+        "intensity": 391.4
+      }
+    ]
+  },
+  "nl_utterance": "Show me the intensity for each location.",
+  "refer_fileds": [
+    {
+      "field": "intensity",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "region",
+        "marginal_region"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "intensity",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "intensity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "intensity",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "intensity",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "intensity",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

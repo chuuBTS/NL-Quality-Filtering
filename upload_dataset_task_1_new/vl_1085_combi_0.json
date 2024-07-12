@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "totals in billions"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Year": 2022,
+        "totals in billions": 109.0238196
+      },
+      {
+        "Date": "12/31/2016",
+        "GRA Purchases": 49267630851,
+        "PRGT 1/2/": 6482647937,
+        "Totals": 55750278788.0,
+        "Year": 2016,
+        "totals in billions": 55.75027879
+      },
+      {
+        "Date": "12/31/2008",
+        "GRA Purchases": 17514964723,
+        "PRGT 1/2/": 3972372030,
+        "Totals": 21487336753.0,
+        "Year": 2008,
+        "totals in billions": 21.48733675
+      },
+      {
+        "Date": "12/31/2011",
+        "GRA Purchases": 87276915790,
+        "PRGT 1/2/": 5308609594,
+        "Totals": 92585525384.0,
+        "Year": 2011,
+        "totals in billions": 92.58552538
+      },
+      {
+        "Date": "12/31/1986",
+        "GRA Purchases": 33334905644,
+        "PRGT 1/2/": 2013169931,
+        "Totals": 35348075575.0,
+        "Year": 1986,
+        "totals in billions": 35.34807558
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of totals in billions by year.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "totals in billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "totals in billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "totals in billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "totals in billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "totals in billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "totals in billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

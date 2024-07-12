@@ -1,0 +1,88 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "precipitation",
+      "temp_max",
+      "temp_min",
+      "wind",
+      "weather"
+    ],
+    "table_samples": [
+      {
+        "date": "2012-01-01",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": 5.0,
+        "wind": 4.7,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2013-03-11",
+        "precipitation": 1.3,
+        "temp_max": 10.6,
+        "temp_min": 6.1,
+        "wind": 1.1,
+        "weather": "rain"
+      },
+      {
+        "date": "2014-11-07",
+        "precipitation": 0.0,
+        "temp_max": 14.4,
+        "temp_min": 7.2,
+        "wind": 2.3,
+        "weather": "sun"
+      },
+      {
+        "date": "2015-04-30",
+        "precipitation": 0.0,
+        "temp_max": 17.2,
+        "temp_min": 7.8,
+        "wind": 2.1,
+        "weather": "sun"
+      },
+      {
+        "date": "2015-03-04",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": -0.5,
+        "wind": 1.8,
+        "weather": "sun"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the highest maximum temperature.",
+  "refer_fileds": [
+    {
+      "field": "temp_max",
+      "type": "quantitative",
+      "aggregate": "max"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "temp_max",
+          "aggregate": "max"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "temp_max",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "DATE",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "DATE": "2018-12-10",
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "DATE": "2018-11-12",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "DATE": "2018-12-10",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "DATE": "2018-12-02",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "DATE": "2018-11-12",
+        "COUNT": 1,
+        "gender": "M"
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart showing the COUNT over time on the DATE.",
+  "refer_fileds": [
+    {
+      "field": "DATE",
+      "type": "temporal"
+    },
+    {
+      "field": "COUNT",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "DATE",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "DATE",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

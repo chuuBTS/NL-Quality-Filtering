@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "medianIncome",
+      "meanIncome",
+      "gdpPerCapitaPPP",
+      "pop2022"
+    ],
+    "table_samples": [
+      {
+        "country": "Luxembourg",
+        "medianIncome": 26321,
+        "meanIncome": 31376,
+        "gdpPerCapitaPPP": 124590.0,
+        "pop2022": 647599
+      },
+      {
+        "country": "Zimbabwe",
+        "medianIncome": 932,
+        "meanIncome": 1429,
+        "gdpPerCapitaPPP": 2961.0,
+        "pop2022": 16320537
+      },
+      {
+        "country": "Mauritania",
+        "medianIncome": 1760,
+        "meanIncome": 2094,
+        "gdpPerCapitaPPP": 5427.0,
+        "pop2022": 4736139
+      },
+      {
+        "country": "Angola",
+        "medianIncome": 665,
+        "meanIncome": 1066,
+        "gdpPerCapitaPPP": 6965.0,
+        "pop2022": 35588987
+      },
+      {
+        "country": "Sao Tome and Principe",
+        "medianIncome": 901,
+        "meanIncome": 1620,
+        "gdpPerCapitaPPP": 4145.0,
+        "pop2022": 227380
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing the median income on one axis and population of 2022 on the other.",
+  "refer_fileds": [
+    {
+      "field": "medianIncome",
+      "type": "quantitative"
+    },
+    {
+      "field": "pop2022",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medianIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pop2022",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "medianIncome",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "pop2022",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pop2022",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medianIncome",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "pop2022",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "medianIncome",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "medianIncome",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "pop2022",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "pop2022",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "medianIncome",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

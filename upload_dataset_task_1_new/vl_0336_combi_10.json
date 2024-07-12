@@ -1,0 +1,101 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model name",
+      "Number of iterations",
+      "block"
+    ],
+    "table_samples": [
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 9,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 2",
+        "Number of iterations": 9,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 1",
+        "Number of iterations": 14,
+        "block": "name"
+      },
+      {
+        "Model name": "Model 3",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      },
+      {
+        "Model name": "Model 4",
+        "Number of iterations": 6,
+        "block": "postcode+dob"
+      }
+    ]
+  },
+  "nl_utterance": "Create small multiples showing the sum of the number of iterations for each block.",
+  "refer_fileds": [
+    {
+      "field": "Number of iterations",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "block",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Number of iterations",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number of iterations",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "block",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

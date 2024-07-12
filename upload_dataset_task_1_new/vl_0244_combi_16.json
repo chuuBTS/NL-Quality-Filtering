@@ -1,0 +1,185 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Totals(Bn)",
+      "World GDP",
+      "World GDP(Bn)",
+      "Totals/WGDP",
+      "Totals%"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Totals(Bn)": 109.0238196,
+        "World GDP": NaN,
+        "World GDP(Bn)": NaN,
+        "Totals/WGDP": NaN,
+        "Totals%": NaN
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093.0,
+        "PRGT 1/2/": 2571911617.0,
+        "Totals": 23303762710.0,
+        "Year": 1990.0,
+        "Totals(Bn)": 23.30376271,
+        "World GDP": 22800000000000.0,
+        "World GDP(Bn)": 22800.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.102209486
+      },
+      {
+        "Date": "12/31/1997",
+        "GRA Purchases": 46559033783.0,
+        "PRGT 1/2/": 6009867422.0,
+        "Totals": 52568901205.0,
+        "Year": 1997.0,
+        "Totals(Bn)": 52.56890121,
+        "World GDP": 31600000000000.0,
+        "World GDP(Bn)": 31600.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.166357282
+      },
+      {
+        "Date": "12/31/2001",
+        "GRA Purchases": 53477225409.0,
+        "PRGT 1/2/": 6424578684.0,
+        "Totals": 59901804093.0,
+        "Year": 2001.0,
+        "Totals(Bn)": 59.90180409,
+        "World GDP": 33600000000000.0,
+        "World GDP(Bn)": 33600.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.178279179
+      },
+      {
+        "Date": "12/31/1996",
+        "GRA Purchases": 36127472805.0,
+        "PRGT 1/2/": 5881609752.0,
+        "Totals": 42009082557.0,
+        "Year": 1996.0,
+        "Totals(Bn)": 42.00908256,
+        "World GDP": 31700000000000.0,
+        "World GDP(Bn)": 31700.0,
+        "Totals/WGDP": 0.0,
+        "Totals%": 0.132520765
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the total amounts in billions by time.",
+  "refer_fileds": [
+    {
+      "field": [
+        "Date",
+        "Year"
+      ],
+      "type": "temporal"
+    },
+    {
+      "field": "Totals(Bn)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals(Bn)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals(Bn)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals(Bn)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals(Bn)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals(Bn)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

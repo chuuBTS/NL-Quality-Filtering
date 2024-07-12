@@ -1,0 +1,141 @@
+{
+  "table_info": {
+    "table_columns": [
+      "amount",
+      "year"
+    ],
+    "table_samples": [
+      {
+        "amount": 54559239.6,
+        "year": 1998
+      },
+      {
+        "amount": 141173.0,
+        "year": 1991
+      },
+      {
+        "amount": 95352748.01800004,
+        "year": 2009
+      },
+      {
+        "amount": 505172.0,
+        "year": 1992
+      },
+      {
+        "amount": 11030473.69,
+        "year": 2004
+      }
+    ]
+  },
+  "nl_utterance": "Show me the amounts up until the year 2010.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "amount",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "lte": 2010
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "lte": 2010
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "lte": 2010
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "lte": 2010
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "amount",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "lte": 2010
+          }
+        }
+      ]
+    }
+  ]
+}

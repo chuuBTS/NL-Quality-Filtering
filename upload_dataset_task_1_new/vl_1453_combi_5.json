@@ -1,0 +1,152 @@
+{
+  "table_info": {
+    "table_columns": [
+      "region",
+      "marginal_region",
+      "marginal_bmu",
+      "bmu_name",
+      "bmu_type",
+      "intensity"
+    ],
+    "table_samples": [
+      {
+        "region": "North Scotland",
+        "marginal_region": "North Scotland",
+        "marginal_bmu": "T_BDCHW-1",
+        "bmu_name": "Bad a Cheo Wind Farm ",
+        "bmu_type": "Wind (Onshore)",
+        "intensity": 0.0
+      },
+      {
+        "region": "East Midlands",
+        "marginal_region": "East Midlands",
+        "marginal_bmu": "T_STAY-3",
+        "bmu_name": "Staythorpe Unit 3 ",
+        "bmu_type": "CCGT",
+        "intensity": 378.0
+      },
+      {
+        "region": "North East England",
+        "marginal_region": "East Midlands",
+        "marginal_bmu": "T_STAY-3",
+        "bmu_name": "Staythorpe Unit 3 ",
+        "bmu_type": "CCGT",
+        "intensity": 378.0
+      },
+      {
+        "region": "West Midlands",
+        "marginal_region": "South East England",
+        "marginal_bmu": "T_MEDP-1",
+        "bmu_name": "Medway ",
+        "bmu_type": "CCGT",
+        "intensity": 394.9
+      },
+      {
+        "region": "Yorkshire and the Humber",
+        "marginal_region": "East Midlands",
+        "marginal_bmu": "T_STAY-3",
+        "bmu_name": "Staythorpe Unit 3 ",
+        "bmu_type": "CCGT",
+        "intensity": 378.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total intensity for each marginal region.",
+  "refer_fileds": [
+    {
+      "field": "marginal_region",
+      "type": "nominal"
+    },
+    {
+      "field": "intensity",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "intensity",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "intensity",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "marginal_region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

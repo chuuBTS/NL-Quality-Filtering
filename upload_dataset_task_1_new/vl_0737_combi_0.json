@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Regime",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Regime": "Flawed Democracy",
+        "value": 17459076495061.5
+      },
+      {
+        "Regime": "Authoritarian Regime",
+        "value": 9068625060485.1
+      },
+      {
+        "Regime": "Hybrid Regime",
+        "value": 876894343461.828
+      },
+      {
+        "Regime": "Full Democracy",
+        "value": 803035329695.793
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the values sorted in descending order for each regime type.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Regime",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Regime",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

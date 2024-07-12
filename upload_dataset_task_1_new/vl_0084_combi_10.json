@@ -1,0 +1,534 @@
+{
+  "table_info": {
+    "table_columns": [
+      "review_time_s",
+      "available_time_s",
+      "available_time_h",
+      "success",
+      "reviewed_assets",
+      "accepted_assets"
+    ],
+    "table_samples": [
+      {
+        "review_time_s": 10,
+        "available_time_s": 101829,
+        "available_time_h": 28,
+        "success": 0.01,
+        "reviewed_assets": 10182,
+        "accepted_assets": 101
+      },
+      {
+        "review_time_s": 10,
+        "available_time_s": 130407,
+        "available_time_h": 36,
+        "success": 0.01,
+        "reviewed_assets": 13040,
+        "accepted_assets": 130
+      },
+      {
+        "review_time_s": 10,
+        "available_time_s": 125864,
+        "available_time_h": 34,
+        "success": 0.01,
+        "reviewed_assets": 12586,
+        "accepted_assets": 125
+      },
+      {
+        "review_time_s": 10,
+        "available_time_s": 5068,
+        "available_time_h": 1,
+        "success": 0.01,
+        "reviewed_assets": 506,
+        "accepted_assets": 5
+      },
+      {
+        "review_time_s": 10,
+        "available_time_s": 106140,
+        "available_time_h": 29,
+        "success": 0.01,
+        "reviewed_assets": 10614,
+        "accepted_assets": 106
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the sum of accepted assets based on hours available for review, color-coded by the number of assets.",
+  "refer_fileds": [
+    {
+      "field": "available_time_h",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "reviewed_assets",
+        "accepted_assets"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "accepted_assets",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "rect chart",
+      "c_list": [
+        {
+          "mark": "rect",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "(x,y)": "color"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "accepted_assets",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "bin": true
+        },
+        "color": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "reviewed_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accepted_assets",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "color": {
+          "field": "available_time_h",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

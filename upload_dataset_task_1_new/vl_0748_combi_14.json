@@ -1,0 +1,123 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "CAF_2021",
+      "2021"
+    ],
+    "table_samples": [
+      {
+        "Country": "Indonesia",
+        "CAF_2021": 68,
+        "2021": "Islam"
+      },
+      {
+        "Country": "Chile",
+        "CAF_2021": 38,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Peru",
+        "CAF_2021": 39,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Netherlands",
+        "CAF_2021": 46,
+        "2021": "Christianity"
+      },
+      {
+        "Country": "Estonia",
+        "CAF_2021": 40,
+        "2021": "Christianity"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with the dominant religion by country ordered by the comfort index in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "CAF_2021",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+    {
+      "field": "2021",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "CAF_2021",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "2021",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "2021",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "CAF_2021",
+          "type": "quantitative",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

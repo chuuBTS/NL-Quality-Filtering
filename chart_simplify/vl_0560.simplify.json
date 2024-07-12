@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "tradeTotal",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": "-x"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/e4e/ch7_Trade/UStradePartnersGoods.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "tradePartner",
+                "lt": 21
+            }
+        }
+    ],
+    "height": 300,
+    "width": 400
+}

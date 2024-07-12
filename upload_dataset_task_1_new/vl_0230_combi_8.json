@@ -1,0 +1,102 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Player",
+      "G-xG"
+    ],
+    "table_samples": [
+      {
+        "Player": "Yunis Abdelhamid",
+        "G-xG": 0.02
+      },
+      {
+        "Player": "Kevin Volland",
+        "G-xG": 0.04
+      },
+      {
+        "Player": "Antonio Candreva",
+        "G-xG": 0.04
+      },
+      {
+        "Player": "Alexander Djiku",
+        "G-xG": -0.04
+      },
+      {
+        "Player": "Willi Orban",
+        "G-xG": -0.02
+      }
+    ]
+  },
+  "nl_utterance": "Create a chart showing the distribution of players by their G-xG values.",
+  "refer_fileds": [
+    {
+      "field": "G-xG",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "G-xG",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "G-xG",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

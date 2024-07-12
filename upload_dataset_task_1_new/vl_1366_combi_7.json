@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "COUNT",
+      "gender"
+    ],
+    "table_samples": [
+      {
+        "country": "UK",
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "F"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "M"
+      },
+      {
+        "country": "US",
+        "COUNT": 1,
+        "gender": "F"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the number of individuals by gender.",
+  "refer_fileds": [
+    {
+      "field": "COUNT",
+      "type": "quantitative"
+    },
+    {
+      "field": "gender",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "COUNT",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "gender",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

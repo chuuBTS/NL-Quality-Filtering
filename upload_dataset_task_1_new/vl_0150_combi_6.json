@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "year",
+      "source",
+      "net_generation"
+    ],
+    "table_samples": [
+      {
+        "year": "2001-01-01",
+        "source": "Fossil Fuels",
+        "net_generation": 35361
+      },
+      {
+        "year": "2013-01-01",
+        "source": "Renewables",
+        "net_generation": 16476
+      },
+      {
+        "year": "2017-01-01",
+        "source": "Nuclear Energy",
+        "net_generation": 5214
+      },
+      {
+        "year": "2003-01-01",
+        "source": "Fossil Fuels",
+        "net_generation": 36234
+      },
+      {
+        "year": "2009-01-01",
+        "source": "Renewables",
+        "net_generation": 8560
+      }
+    ]
+  },
+  "nl_utterance": "Show me a summed net generation over time in an area chart.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "net_generation",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "area chart",
+      "c_list": [
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "net_generation",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

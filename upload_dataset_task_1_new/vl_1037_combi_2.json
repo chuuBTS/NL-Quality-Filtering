@@ -1,0 +1,82 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109.0238196,
+        "Year": 2022
+      },
+      {
+        "Date": "12/31/2019",
+        "GRA Purchases": 66945509865,
+        "PRGT 1/2/": 6590835450,
+        "Totals": 73.53634532,
+        "Year": 2019
+      },
+      {
+        "Date": "12/31/1992",
+        "GRA Purchases": 23967172718,
+        "PRGT 1/2/": 3804463796,
+        "Totals": 27.77163651,
+        "Year": 1992
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": 9822640239,
+        "PRGT 1/2/": 3844020520,
+        "Totals": 13.66666076,
+        "Year": 2006
+      },
+      {
+        "Date": "12/31/2017",
+        "GRA Purchases": 39585385873,
+        "PRGT 1/2/": 6522280669,
+        "Totals": 46.10766654,
+        "Year": 2017
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of all Totals.",
+  "refer_fileds": [
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

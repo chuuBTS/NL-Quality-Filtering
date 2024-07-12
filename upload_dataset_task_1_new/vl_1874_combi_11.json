@@ -1,0 +1,110 @@
+{
+  "table_info": {
+    "table_columns": [
+      "amount",
+      "year"
+    ],
+    "table_samples": [
+      {
+        "amount": 54559239.6,
+        "year": 1998
+      },
+      {
+        "amount": 25963203.454709,
+        "year": 2008
+      },
+      {
+        "amount": 52704111.192,
+        "year": 2006
+      },
+      {
+        "amount": 243411.0,
+        "year": 1997
+      },
+      {
+        "amount": 92062218.48,
+        "year": 1995
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the amounts up to the year 2010.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "amount",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "lte": 2010
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "amount",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "year",
+            "lte": 2010
+          }
+        }
+      ]
+    }
+  ]
+}

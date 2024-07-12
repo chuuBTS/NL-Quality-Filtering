@@ -1,0 +1,107 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "kind",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "kind": "created",
+        "count": 17.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "created",
+        "count": 1.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy.org",
+        "kind": "closed",
+        "count": 0.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "kind": "closed",
+        "count": 1.0
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "kind": "closed",
+        "count": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a series of small multiples that show the total count of each kind within the dataset.",
+  "refer_fileds": [
+    {
+      "field": "kind",
+      "type": "nominal"
+    },
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "kind",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,647 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "periodo_ingresso",
+      "sexo",
+      "contagem",
+      "porcentagem"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 146,
+        "periodo_ingresso": 2020.1,
+        "sexo": "Masculino",
+        "contagem": 86,
+        "porcentagem": 82.69
+      },
+      {
+        "Unnamed: 0": 109,
+        "periodo_ingresso": 2011.1,
+        "sexo": "Feminino",
+        "contagem": 21,
+        "porcentagem": 20.59
+      },
+      {
+        "Unnamed: 0": 133,
+        "periodo_ingresso": 2017.1,
+        "sexo": "Feminino",
+        "contagem": 13,
+        "porcentagem": 13.54
+      },
+      {
+        "Unnamed: 0": 126,
+        "periodo_ingresso": 2015.1,
+        "sexo": "Masculino",
+        "contagem": 103,
+        "porcentagem": 88.03
+      },
+      {
+        "Unnamed: 0": 67,
+        "periodo_ingresso": 2000.2,
+        "sexo": "Feminino",
+        "contagem": 7,
+        "porcentagem": 19.44
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of student counts and their percentages across different entry periods by gender.",
+  "refer_fileds": [
+    {
+      "field": "periodo_ingresso",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "contagem",
+        "porcentagem"
+      ],
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "sexo",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "contagem",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "sexo",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "size": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "size": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "sexo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "porcentagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

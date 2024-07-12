@@ -1,0 +1,201 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "peugeot 504",
+        "Miles_per_Gallon": 27.2,
+        "Cylinders": 4,
+        "Displacement": 141.0,
+        "Horsepower": 71.0,
+        "Weight_in_lbs": 3190,
+        "Acceleration": 24.8,
+        "Year": "1979-01-01T00:00:00",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "buick skyhawk",
+        "Miles_per_Gallon": 21.0,
+        "Cylinders": 6,
+        "Displacement": 231.0,
+        "Horsepower": 110.0,
+        "Weight_in_lbs": 3039,
+        "Acceleration": 15.0,
+        "Year": "1975-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "plymouth satellite (sw)",
+        "Miles_per_Gallon": NaN,
+        "Cylinders": 8,
+        "Displacement": 383.0,
+        "Horsepower": 175.0,
+        "Weight_in_lbs": 4166,
+        "Acceleration": 10.5,
+        "Year": "1970-01-01T00:00:00",
+        "Origin": "USA"
+      },
+      {
+        "Name": "chevrolet caprice classic",
+        "Miles_per_Gallon": 13.0,
+        "Cylinders": 8,
+        "Displacement": 400.0,
+        "Horsepower": 150.0,
+        "Weight_in_lbs": 4464,
+        "Acceleration": 12.0,
+        "Year": "1973-01-01T00:00:00",
+        "Origin": "USA"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the average acceleration for each sum of cylinders.",
+  "refer_fileds": [
+    {
+      "field": "Acceleration",
+      "type": "quantitative",
+      "aggregate": "mean"
+    },
+    {
+      "field": "Cylinders",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Acceleration",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Cylinders",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Acceleration",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "bin": true
+        },
+        "y": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Cylinders",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "bin": true
+        },
+        "y": {
+          "field": "Acceleration",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

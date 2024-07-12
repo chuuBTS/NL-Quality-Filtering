@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "High Giving Index \u2192",
+      "High Median Age \u2192",
+      "color",
+      "Meaning"
+    ],
+    "table_samples": [
+      {
+        "High Giving Index \u2192": "A",
+        "High Median Age \u2192": "A",
+        "color": 7,
+        "Meaning": "High WGI, Low Median Age"
+      },
+      {
+        "High Giving Index \u2192": "C",
+        "High Median Age \u2192": "C",
+        "color": 3,
+        "Meaning": "Low WGI, High Median Age"
+      },
+      {
+        "High Giving Index \u2192": "A",
+        "High Median Age \u2192": "C",
+        "color": 9,
+        "Meaning": "High WGI, High Median Age"
+      },
+      {
+        "High Giving Index \u2192": "B",
+        "High Median Age \u2192": "B",
+        "color": 5,
+        "Meaning": "Average WGI, Average Median Age"
+      },
+      {
+        "High Giving Index \u2192": "B",
+        "High Median Age \u2192": "C",
+        "color": 6,
+        "Meaning": "Average WGI, High Median Age"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with 'High Median Age' on one axis and 'color' values on the other axis.",
+  "refer_fileds": [
+    {
+      "field": "High Median Age \u2192",
+      "type": "nominal"
+    },
+    {
+      "field": "color",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "color",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "color",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "color",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "color",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "color",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "color",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "color",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "High Median Age \u2192",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

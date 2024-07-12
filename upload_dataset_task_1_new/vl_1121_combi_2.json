@@ -1,0 +1,112 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Unnamed: 5",
+      "Day",
+      "Total_billion",
+      "World_GDP",
+      "Debt-GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Year": 2022,
+        "Unnamed: 5": "31/2022",
+        "Day": 31,
+        "Total_billion": 109.02,
+        "World_GDP": 98406500000000.0,
+        "Debt-GDP": 0.11
+      },
+      {
+        "Date": "12/31/2014",
+        "GRA Purchases": 69041563463,
+        "PRGT 1/2/": 6292755583,
+        "Totals": 75334319046.0,
+        "Year": 2014,
+        "Unnamed: 5": "31/2014",
+        "Day": 31,
+        "Total_billion": 75.33,
+        "World_GDP": 79708800000000.0,
+        "Debt-GDP": 0.09
+      },
+      {
+        "Date": "12/31/2004",
+        "GRA Purchases": 55373766674,
+        "PRGT 1/2/": 6766029353,
+        "Totals": 62139796027.0,
+        "Year": 2004,
+        "Unnamed: 5": "31/2004",
+        "Day": 31,
+        "Total_billion": 62.14,
+        "World_GDP": 44117600000000.0,
+        "Debt-GDP": 0.14
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237,
+        "PRGT 1/2/": 6282121668,
+        "Totals": 34714264905.0,
+        "Year": 2005,
+        "Unnamed: 5": "31/2005",
+        "Day": 31,
+        "Total_billion": 34.71,
+        "World_GDP": 47779700000000.0,
+        "Debt-GDP": 0.07
+      },
+      {
+        "Date": "12/31/2010",
+        "GRA Purchases": 55620104510,
+        "PRGT 1/2/": 4819344134,
+        "Totals": 60439448644.0,
+        "Year": 2010,
+        "Unnamed: 5": "31/2010",
+        "Day": 31,
+        "Total_billion": 60.44,
+        "World_GDP": 66596100000000.0,
+        "Debt-GDP": 0.09
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total of Debt to GDP ratios over the years.",
+  "refer_fileds": [
+    {
+      "field": "Debt-GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt-GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

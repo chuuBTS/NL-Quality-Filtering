@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Institution",
+      "Total"
+    ],
+    "table_samples": [
+      {
+        "Institution": "University College London[b]",
+        "Total": 41095
+      },
+      {
+        "Institution": "Glasgow Caledonian University",
+        "Total": 17540
+      },
+      {
+        "Institution": "University of Kent",
+        "Total": 18705
+      },
+      {
+        "Institution": "University of Leeds",
+        "Total": 36325
+      },
+      {
+        "Institution": "Kingston University",
+        "Total": 18070
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of the institutions by total enrollment in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Total",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Total",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

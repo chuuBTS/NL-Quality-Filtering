@@ -1,0 +1,164 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "102 Dalmatians",
+        "Worldwide Gross": 66941559,
+        "Production Budget": 85000000,
+        "Release Year": 2000,
+        "Content Rating": "G",
+        "Running Time": 100,
+        "Genre": "Comedy",
+        "Creative Type": "Kids Fiction",
+        "Rotten Tomatoes Rating": 30,
+        "IMDB Rating": 4.4
+      },
+      {
+        "Title": "The Relic",
+        "Worldwide Gross": 33956608,
+        "Production Budget": 60000000,
+        "Release Year": 1997,
+        "Content Rating": "R",
+        "Running Time": 110,
+        "Genre": "Horror",
+        "Creative Type": "Science Fiction",
+        "Rotten Tomatoes Rating": 32,
+        "IMDB Rating": 5.4
+      },
+      {
+        "Title": "For Your Consideration",
+        "Worldwide Gross": 5549923,
+        "Production Budget": 12000000,
+        "Release Year": 2006,
+        "Content Rating": "PG-13",
+        "Running Time": 86,
+        "Genre": "Comedy",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 50,
+        "IMDB Rating": 6.2
+      },
+      {
+        "Title": "The Terminal",
+        "Worldwide Gross": 218673959,
+        "Production Budget": 75000000,
+        "Release Year": 2004,
+        "Content Rating": "PG-13",
+        "Running Time": 128,
+        "Genre": "Drama",
+        "Creative Type": "Dramatization",
+        "Rotten Tomatoes Rating": 60,
+        "IMDB Rating": 7.1
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of the production budgets summed up for each genre as either a bar, area or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Genre",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Production Budget",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

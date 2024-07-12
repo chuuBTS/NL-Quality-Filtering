@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "gdpPercap",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "year",
+                "equal": "2017"
+            }
+        }
+    ],
+    "width": "container"
+}

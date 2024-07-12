@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Year",
+      "Gini"
+    ],
+    "table_samples": [
+      {
+        "Country": "Argentina",
+        "Year": 1980,
+        "Gini": 0.64
+      },
+      {
+        "Country": "USA",
+        "Year": 2015,
+        "Gini": 0.58
+      },
+      {
+        "Country": "United Kingdom",
+        "Year": 1999,
+        "Gini": 0.49
+      },
+      {
+        "Country": "Brazil",
+        "Year": 2006,
+        "Gini": 0.69
+      },
+      {
+        "Country": "Argentina",
+        "Year": 2015,
+        "Gini": 0.56
+      }
+    ]
+  },
+  "nl_utterance": "Show the trend of the total Gini coefficient by year for each country.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Gini",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Gini",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

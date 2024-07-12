@@ -1,0 +1,66 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Corporate Tax Rate"
+    ],
+    "table_samples": [
+      {
+        "Country": "Argentina",
+        "Corporate Tax Rate": 25.0
+      },
+      {
+        "Country": "Netherlands",
+        "Corporate Tax Rate": 25.8
+      },
+      {
+        "Country": "Indonesia",
+        "Corporate Tax Rate": 22.0
+      },
+      {
+        "Country": "India",
+        "Corporate Tax Rate": 34.94
+      },
+      {
+        "Country": "China",
+        "Corporate Tax Rate": 25.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the corporate tax rates by country.",
+  "refer_fileds": [
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Corporate Tax Rate"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Corporate Tax Rate"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

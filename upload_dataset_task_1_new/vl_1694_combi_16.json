@@ -1,0 +1,161 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "precipitation",
+      "temp_max",
+      "temp_min",
+      "wind",
+      "weather"
+    ],
+    "table_samples": [
+      {
+        "date": "2012-01-01",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": 5.0,
+        "wind": 4.7,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2012-03-04",
+        "precipitation": 0.0,
+        "temp_max": 10.6,
+        "temp_min": 6.7,
+        "wind": 5.6,
+        "weather": "rain"
+      },
+      {
+        "date": "2012-04-13",
+        "precipitation": 0.0,
+        "temp_max": 15.0,
+        "temp_min": 3.9,
+        "wind": 4.0,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2015-09-12",
+        "precipitation": 0.0,
+        "temp_max": 26.7,
+        "temp_min": 14.4,
+        "wind": 2.1,
+        "weather": "sun"
+      },
+      {
+        "date": "2012-07-30",
+        "precipitation": 0.0,
+        "temp_max": 19.4,
+        "temp_min": 13.3,
+        "wind": 3.0,
+        "weather": "sun"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of mean precipitation over time.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": [
+        "precipitation",
+        "weather"
+      ],
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precipitation",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "precipitation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "weather",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "precipitation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "weather",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

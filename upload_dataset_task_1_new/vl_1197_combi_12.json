@@ -1,0 +1,142 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "Energy Source",
+      "Region",
+      "Year",
+      "Energy Consumption"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 0,
+        "Energy Source": "Biofuels Consumption - TWh - Total (zero filled)",
+        "Region": "Africa",
+        "Year": 1965,
+        "Energy Consumption": 0.0
+      },
+      {
+        "Unnamed: 0": 2741,
+        "Energy Source": "Wind Consumption - TWh (zero filled)",
+        "Region": "Africa",
+        "Year": 1970,
+        "Energy Consumption": 0.0
+      },
+      {
+        "Unnamed: 0": 514,
+        "Energy Source": "Coal Consumption - TWh (zero filled)",
+        "Region": "North America",
+        "Year": 1966,
+        "Energy Consumption": 3566.435059
+      },
+      {
+        "Unnamed: 0": 266,
+        "Energy Source": "Biofuels Consumption - TWh - Total (zero filled)",
+        "Region": "Oceania",
+        "Year": 2003,
+        "Energy Consumption": 0.0
+      },
+      {
+        "Unnamed: 0": 538,
+        "Energy Source": "Coal Consumption - TWh (zero filled)",
+        "Region": "North America",
+        "Year": 1990,
+        "Energy Consumption": 5696.626465
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total energy consumption by energy source over the years using a bar chart, area chart, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Energy Consumption",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Energy Source",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Energy Consumption",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Energy Consumption",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Energy Source",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

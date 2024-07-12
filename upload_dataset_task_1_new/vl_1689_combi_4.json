@@ -1,0 +1,166 @@
+{
+  "table_info": {
+    "table_columns": [
+      "yield",
+      "variety",
+      "year",
+      "site"
+    ],
+    "table_samples": [
+      {
+        "yield": 27.0,
+        "variety": "Manchuria",
+        "year": 1931,
+        "site": "University Farm"
+      },
+      {
+        "yield": 31.6,
+        "variety": "Wisconsin No. 38",
+        "year": 1931,
+        "site": "Duluth"
+      },
+      {
+        "yield": 28.7,
+        "variety": "No. 457",
+        "year": 1931,
+        "site": "Morris"
+      },
+      {
+        "yield": 24.93334,
+        "variety": "No. 462",
+        "year": 1931,
+        "site": "Grand Rapids"
+      },
+      {
+        "yield": 29.76667,
+        "variety": "Trebi",
+        "year": 1931,
+        "site": "Grand Rapids"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the total yield for each variety at different sites.",
+  "refer_fileds": [
+    {
+      "field": "site",
+      "type": "nominal"
+    },
+    {
+      "field": "yield",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "variety",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "yield",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "site",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "variety",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "variety",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "yield",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "site",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

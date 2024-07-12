@@ -1,0 +1,347 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "tradePartner",
+      "tradeTotal",
+      "Balance",
+      "Balance_absolute",
+      "Balance_pctTrade",
+      "Exports",
+      "Exports_absolute",
+      "Imports",
+      "Imports_absolute",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "tradePartner": 1,
+        "tradeTotal": 124564,
+        "Balance": -20774.0,
+        "Balance_absolute": 20774,
+        "Balance_pctTrade": -0.17,
+        "Exports": 51895.0,
+        "Exports_absolute": 51895.0,
+        "Imports": 72669.0,
+        "Imports_absolute": 72669.0,
+        "Source": "https://www.census.gov/foreign-trade/Press-Release/current_press_release/index.html"
+      },
+      {
+        "Country": "Slovenia",
+        "tradePartner": 77,
+        "tradeTotal": 507,
+        "Balance": -436.0,
+        "Balance_absolute": 436,
+        "Balance_pctTrade": -0.86,
+        "Exports": 35.0,
+        "Exports_absolute": 35.0,
+        "Imports": 472.0,
+        "Imports_absolute": 472.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Lithuania",
+        "tradePartner": 69,
+        "tradeTotal": 725,
+        "Balance": 117.0,
+        "Balance_absolute": 117,
+        "Balance_pctTrade": 0.16,
+        "Exports": 421.0,
+        "Exports_absolute": 421.0,
+        "Imports": 304.0,
+        "Imports_absolute": 304.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Cocos (Keeling) Islands",
+        "tradePartner": 207,
+        "tradeTotal": 1,
+        "Balance": -1.0,
+        "Balance_absolute": 1,
+        "Balance_pctTrade": -0.61,
+        "Exports": 0.0,
+        "Exports_absolute": 0.0,
+        "Imports": 1.0,
+        "Imports_absolute": 1.0,
+        "Source": NaN
+      },
+      {
+        "Country": "Greenland",
+        "tradePartner": 186,
+        "tradeTotal": 6,
+        "Balance": -5.0,
+        "Balance_absolute": 5,
+        "Balance_pctTrade": -0.79,
+        "Exports": 1.0,
+        "Exports_absolute": 1.0,
+        "Imports": 5.0,
+        "Imports_absolute": 5.0,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trade total for each location, only including partners with less than 21, and sort the values in descending order.",
+  "refer_fileds": [
+    {
+      "field": "tradeTotal",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": [
+        "Country",
+        "tradePartner"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "tradePartner",
+          "lt": 21
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "tradeTotal",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "tradePartner",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "tradePartner",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "tradePartner",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "tradePartner",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "tradeTotal",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "tradePartner",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "tradePartner",
+            "lt": 21
+          }
+        }
+      ]
+    }
+  ]
+}

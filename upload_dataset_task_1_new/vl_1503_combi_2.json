@@ -1,0 +1,63 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "number",
+      "org/repo"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "number": 19,
+        "org/repo": "numpy/numpy"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "number": 2,
+        "org/repo": "numpy/numpydoc"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "number": 1,
+        "org/repo": "numpy/numpy-tutorials"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with the number of issues sorted by the repositories numpy, numpydoc, and numpy-tutorials.",
+  "refer_fileds": [
+    {
+      "field": "number",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "numpy",
+          "numpydoc",
+          "numpy-tutorials"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

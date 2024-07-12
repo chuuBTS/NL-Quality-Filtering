@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Programming Language",
+      "Date",
+      "Ratings %"
+    ],
+    "table_samples": [
+      {
+        "Programming Language": "R",
+        "Date": 2007,
+        "Ratings %": 0.06
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2008,
+        "Ratings %": 0.04
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2017,
+        "Ratings %": 3.46
+      },
+      {
+        "Programming Language": "Python",
+        "Date": 2008,
+        "Ratings %": 5.54
+      },
+      {
+        "Programming Language": "R",
+        "Date": 2013,
+        "Ratings %": 0.44
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total ratings percentage for each programming language over the years.",
+  "refer_fileds": [
+    {
+      "field": "Date",
+      "type": "temporal"
+    },
+    {
+      "field": "Ratings %",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Programming Language",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Ratings %",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Programming Language",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Programming Language",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Date",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Ratings %",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

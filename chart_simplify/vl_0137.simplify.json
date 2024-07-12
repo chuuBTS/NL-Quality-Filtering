@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "area",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "internetUsers",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://www.trafforddatalab.io/interactive_graphics_companion/data/gapminder_dintus.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "internetUsers",
+                "valid": true
+            }
+        },
+        {
+            "filter": {
+                "field": "country",
+                "equal": "South Korea"
+            }
+        }
+    ],
+    "width": "container"
+}

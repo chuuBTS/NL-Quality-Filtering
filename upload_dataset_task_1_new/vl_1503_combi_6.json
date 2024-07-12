@@ -1,0 +1,127 @@
+{
+  "table_info": {
+    "table_columns": [
+      "org",
+      "repo",
+      "number",
+      "org/repo"
+    ],
+    "table_samples": [
+      {
+        "org": "numpy",
+        "repo": "numpy",
+        "number": 19,
+        "org/repo": "numpy/numpy"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpydoc",
+        "number": 2,
+        "org/repo": "numpy/numpydoc"
+      },
+      {
+        "org": "numpy",
+        "repo": "numpy-tutorials",
+        "number": 1,
+        "org/repo": "numpy/numpy-tutorials"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the number of issues for each repository, sorted by the repository name.",
+  "refer_fileds": [
+    {
+      "field": "repo",
+      "type": "nominal"
+    },
+    {
+      "field": "number",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "numpy",
+          "numpydoc",
+          "numpy-tutorials"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "repo",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "number",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

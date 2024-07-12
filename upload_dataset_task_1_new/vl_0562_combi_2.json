@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Number",
+      "Source"
+    ],
+    "table_samples": [
+      {
+        "Country": "Mexico",
+        "Number": 13209221,
+        "Source": "https://www.dhs.gov/sites/default/files/2023-04/2023_0308_plcy_legal_immigration_adjustment_of_status_report_fy_2022q4_final_d.xlsx "
+      },
+      {
+        "Country": "Brazil",
+        "Number": 1031478,
+        "Source": NaN
+      },
+      {
+        "Country": "Colombia",
+        "Number": 1098689,
+        "Source": NaN
+      },
+      {
+        "Country": "Other",
+        "Number": 12154540,
+        "Source": NaN
+      },
+      {
+        "Country": "France",
+        "Number": 1390206,
+        "Source": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the number of immigrants sorted in descending order for countries that are not classified as Non-immigrant.",
+  "refer_fileds": [
+    {
+      "field": "Number",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.Type != 'Non-immigrant'"
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Number",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Number",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Type != 'Non-immigrant'"
+        }
+      ]
+    }
+  ]
+}

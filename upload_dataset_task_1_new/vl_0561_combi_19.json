@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type1",
+      "Type2",
+      "Type3",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Type1": "Technical",
+        "Type2": "Sanitary and Phytosanitary (SPS)",
+        "Type3": "Initiated",
+        "Value": 18569
+      },
+      {
+        "Type1": "Trade Defence",
+        "Type2": "Countervailing",
+        "Type3": "In Force",
+        "Value": 235
+      },
+      {
+        "Type1": "Trade Defence",
+        "Type2": "Safeguards",
+        "Type3": "In Force",
+        "Value": 71
+      },
+      {
+        "Type1": "Technical",
+        "Type2": "Technical Barriers to Trade (TBT)",
+        "Type3": "Initiated",
+        "Value": 29047
+      },
+      {
+        "Type1": "Technical",
+        "Type2": "Sanitary and Phytosanitary (SPS)",
+        "Type3": "In Force",
+        "Value": 3396
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart comparing the values by their status categories.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Type3",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Type3",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Model",
+      "MPG",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Model": "volkswagen 1131 deluxe sedan",
+        "MPG": 26.0,
+        "Cylinders": 4,
+        "Displacement": 97.0,
+        "Horsepower": 46,
+        "Weight": 1835,
+        "Acceleration": 20.5,
+        "Year": 1970,
+        "Origin": "Europe"
+      },
+      {
+        "Model": "buick skylark",
+        "MPG": 26.6,
+        "Cylinders": 4,
+        "Displacement": 151.0,
+        "Horsepower": 84,
+        "Weight": 2635,
+        "Acceleration": 16.4,
+        "Year": 1981,
+        "Origin": "US"
+      },
+      {
+        "Model": "ford f250",
+        "MPG": 10.0,
+        "Cylinders": 8,
+        "Displacement": 360.0,
+        "Horsepower": 215,
+        "Weight": 4615,
+        "Acceleration": 14.0,
+        "Year": 1970,
+        "Origin": "US"
+      },
+      {
+        "Model": "chevroelt chevelle malibu",
+        "MPG": 16.0,
+        "Cylinders": 6,
+        "Displacement": 250.0,
+        "Horsepower": 105,
+        "Weight": 3897,
+        "Acceleration": 18.5,
+        "Year": 1975,
+        "Origin": "US"
+      },
+      {
+        "Model": "vokswagen rabbit",
+        "MPG": 29.8,
+        "Cylinders": 4,
+        "Displacement": 89.0,
+        "Horsepower": 62,
+        "Weight": 1845,
+        "Acceleration": 15.3,
+        "Year": 1980,
+        "Origin": "Europe"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of the car weights over the years as a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Weight",
+      "type": "quantitative"
+    },
+    {
+      "field": "Year",
+      "type": "temporal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Weight",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Weight",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

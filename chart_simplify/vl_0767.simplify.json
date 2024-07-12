@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Type3",
+            "sort": {
+                "op": "sum",
+                "order": "ascending",
+                "field": "Value"
+            },
+            "type": "nominal"
+        },
+        "x": {
+            "aggregate": "sum",
+            "field": "Value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Type2",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/maddyht20/maddyht20.github.io/main/Budget%20Outlook%20CSV%202.csv"
+    },
+    "height": 300,
+    "width": 500
+}

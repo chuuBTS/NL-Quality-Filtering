@@ -1,0 +1,400 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Income group",
+      "Categories",
+      "Spending%"
+    ],
+    "table_samples": [
+      {
+        "Income group": "Bottom decile",
+        "Categories": "Food & Drink",
+        "Spending%": 21.4
+      },
+      {
+        "Income group": "5th decile",
+        "Categories": "Housing",
+        "Spending%": 19.4
+      },
+      {
+        "Income group": "8th decile",
+        "Categories": "Transport",
+        "Spending%": 14.4
+      },
+      {
+        "Income group": "3rd decile",
+        "Categories": "Recreation",
+        "Spending%": 10.8
+      },
+      {
+        "Income group": "9th decile",
+        "Categories": "Food & Drink",
+        "Spending%": 16.6
+      }
+    ]
+  },
+  "nl_utterance": "Show me a sorted list of spending percentages by income group and categories, with income groups in ascending order.",
+  "refer_fileds": [
+    {
+      "field": "Income group",
+      "type": "nominal",
+      "sort": "ascending"
+    },
+    {
+      "field": "Spending%",
+      "type": "quantitative"
+    },
+    {
+      "field": "Categories",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Income group",
+          "order": "ascending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "column": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "column": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Spending%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "size": {
+          "field": "Spending%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "y": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Spending%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "color": {
+          "field": "Spending%",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        },
+        "column": {
+          "field": "Categories",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Spending%",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Categories",
+          "type": "nominal"
+        },
+        "column": {
+          "field": "Income group",
+          "type": "nominal",
+          "sort": "ascending"
+        }
+      }
+    }
+  ]
+}

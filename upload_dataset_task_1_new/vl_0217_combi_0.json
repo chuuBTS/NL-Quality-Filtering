@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "interaction_type",
+      "interaction_createdAt",
+      "cumulative_comments"
+    ],
+    "table_samples": [
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2020-12-17T00:00:00+00:00",
+        "cumulative_comments": 1.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2022-11-13T00:00:00+00:00",
+        "cumulative_comments": 21.0
+      },
+      {
+        "interaction_type": "discussions",
+        "interaction_createdAt": "2022-11-14T00:00:00+00:00",
+        "cumulative_comments": 92.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2023-05-23T00:00:00+00:00",
+        "cumulative_comments": 95.0
+      },
+      {
+        "interaction_type": "pullRequests",
+        "interaction_createdAt": "2022-06-20T00:00:00+00:00",
+        "cumulative_comments": 4.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total number of cumulative comments for each interaction type over time.",
+  "refer_fileds": [
+    {
+      "field": "interaction_type",
+      "type": "nominal"
+    },
+    {
+      "field": "interaction_createdAt",
+      "type": "temporal"
+    },
+    {
+      "field": "cumulative_comments",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "cumulative_comments",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "interaction_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "interaction_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "interaction_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "interaction_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "interaction_createdAt",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "interaction_type",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "cumulative_comments",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

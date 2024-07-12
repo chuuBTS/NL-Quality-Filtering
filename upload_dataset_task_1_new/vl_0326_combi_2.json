@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "WorldGDP",
+      "Totals%ofGDP",
+      "Totals/1000000000"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109023819611.0,
+        "Year": 2022.0,
+        "WorldGDP": 103867.109,
+        "Totals%ofGDP": 0.104964719,
+        "Totals/1000000000": 109.0238196
+      },
+      {
+        "Date": "12/31/1999",
+        "GRA Purchases": 51061861875.0,
+        "PRGT 1/2/": 6434274362.0,
+        "Totals": 57496136237.0,
+        "Year": 1999.0,
+        "WorldGDP": 32949.687,
+        "Totals%ofGDP": 0.17449676,
+        "Totals/1000000000": 57.49613624
+      },
+      {
+        "Date": "12/31/1990",
+        "GRA Purchases": 20731851093.0,
+        "PRGT 1/2/": 2571911617.0,
+        "Totals": 23303762710.0,
+        "Year": 1990.0,
+        "WorldGDP": 23654.018,
+        "Totals%ofGDP": 0.098519257,
+        "Totals/1000000000": 23.30376271
+      },
+      {
+        "Date": "12/31/1994",
+        "GRA Purchases": 25611676952.0,
+        "PRGT 1/2/": 4599768498.0,
+        "Totals": 30211445450.0,
+        "Year": 1994.0,
+        "WorldGDP": 27985.29,
+        "Totals%ofGDP": 0.107954734,
+        "Totals/1000000000": 30.21144545
+      },
+      {
+        "Date": "12/31/2005",
+        "GRA Purchases": 28432143237.0,
+        "PRGT 1/2/": 6282121668.0,
+        "Totals": 34714264905.0,
+        "Year": 2005.0,
+        "WorldGDP": 47792.249,
+        "Totals%ofGDP": 0.072635763,
+        "Totals/1000000000": 34.71426491
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the percentage of Totals relative to World GDP over the years.",
+  "refer_fileds": [
+    {
+      "field": "Totals%ofGDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals%ofGDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Totals%ofGDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

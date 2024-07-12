@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "LOCATION",
+      "TIME",
+      "Value",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "LOCATION": "GBR",
+        "TIME": 1970,
+        "Value": 47.57803918,
+        "Year": 1970
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 1989,
+        "Value": 29.36357908,
+        "Year": 1989
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 2008,
+        "Value": 21.85786911,
+        "Year": 2008
+      },
+      {
+        "LOCATION": "USA",
+        "TIME": 1988,
+        "Value": 30.06917423,
+        "Year": 1988
+      },
+      {
+        "LOCATION": "GBR",
+        "TIME": 2004,
+        "Value": 23.35874097,
+        "Year": 2004
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the values for each location.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "LOCATION",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "LOCATION",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

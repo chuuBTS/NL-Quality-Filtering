@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Country",
+      "Value1",
+      "Value2",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Year": 2016,
+        "Country": "Canada",
+        "Value1": 1.528,
+        "Value2": 1.4678832,
+        "Detail": "V1: GDP ($ trillion)"
+      },
+      {
+        "Year": 2018,
+        "Country": "Canada",
+        "Value1": 1.72182,
+        "Value2": 1.5657721,
+        "Detail": "Source: IMF World Economic Outlook"
+      },
+      {
+        "Year": 2016,
+        "Country": "United States",
+        "Value1": 18.7451,
+        "Value2": 19.98642,
+        "Detail": NaN
+      },
+      {
+        "Year": 2020,
+        "Country": "UK",
+        "Value1": 2.71097,
+        "Value2": 2.9788896,
+        "Detail": NaN
+      },
+      {
+        "Year": 2016,
+        "Country": "Japan",
+        "Value1": 5.00368,
+        "Value2": 11.391804,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of Value2 over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Value2",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value2",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "Year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

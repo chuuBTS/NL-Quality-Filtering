@@ -1,0 +1,147 @@
+{
+  "table_info": {
+    "table_columns": [
+      "symbol",
+      "date",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "symbol": "SE",
+        "date": "2020-01-01 00:00",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-02-03 11:30",
+        "value": 0.0
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-01-13 12:00",
+        "value": 355.7692308
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-07-20 12:30",
+        "value": 318.9655172
+      },
+      {
+        "symbol": "SE",
+        "date": "2020-04-06 03:30",
+        "value": 336.3636364
+      }
+    ]
+  },
+  "nl_utterance": "Show me the values over time for the symbol SE.",
+  "refer_fileds": [
+    {
+      "field": "date",
+      "type": "temporal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "symbol",
+          "equal": "SE"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "date",
+          "type": "temporal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "symbol",
+            "equal": "SE"
+          }
+        }
+      ]
+    }
+  ]
+}

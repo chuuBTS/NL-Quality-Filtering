@@ -1,0 +1,274 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Line",
+      "Item",
+      "shortName",
+      "pieNumber",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Line": 1,
+        "Item": "Gross domestic income",
+        "shortName": "GDI",
+        "pieNumber": NaN,
+        "Value": 25844.7
+      },
+      {
+        "Line": 17,
+        "Item": "Profits after tax with inventory valuation and capital consumption adjustments",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 2096.2
+      },
+      {
+        "Line": 10,
+        "Item": "Private enterprises",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 6176.7
+      },
+      {
+        "Line": 11,
+        "Item": "Net interest and miscellaneous payments, domestic industries",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 787.4
+      },
+      {
+        "Line": 22,
+        "Item": "Private",
+        "shortName": NaN,
+        "pieNumber": NaN,
+        "Value": 3631.8
+      }
+    ]
+  },
+  "nl_utterance": "Create a visualization that shows the Value for each shortName on specific lines 3, 6, 7, 9, and 21.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative"
+    },
+    {
+      "field": "shortName",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Line",
+          "oneOf": [
+            3,
+            6,
+            7,
+            9,
+            21
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "shortName",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "shortName",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Line",
+            "oneOf": [
+              3,
+              6,
+              7,
+              9,
+              21
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

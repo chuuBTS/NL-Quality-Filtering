@@ -1,0 +1,162 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6",
+      "Country Name",
+      "World",
+      "Unnamed: 9",
+      "Year",
+      "Percentage "
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Unnamed: 4": 2022.0,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": NaN,
+        "Country Name": "Country Code",
+        "World": "WLD",
+        "Unnamed: 9": NaN,
+        "Year": 2021.0,
+        "Percentage ": 0.11
+      },
+      {
+        "Date": NaN,
+        "GRA Purchases": NaN,
+        "PRGT 1/2/": NaN,
+        "Totals": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": NaN,
+        "Country Name": NaN,
+        "World": NaN,
+        "Unnamed: 9": NaN,
+        "Year": NaN,
+        "Percentage ": NaN
+      },
+      {
+        "Date": NaN,
+        "GRA Purchases": NaN,
+        "PRGT 1/2/": NaN,
+        "Totals": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": NaN,
+        "Country Name": NaN,
+        "World": NaN,
+        "Unnamed: 9": NaN,
+        "Year": NaN,
+        "Percentage ": NaN
+      },
+      {
+        "Date": NaN,
+        "GRA Purchases": NaN,
+        "PRGT 1/2/": NaN,
+        "Totals": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": NaN,
+        "Country Name": NaN,
+        "World": NaN,
+        "Unnamed: 9": NaN,
+        "Year": NaN,
+        "Percentage ": NaN
+      },
+      {
+        "Date": NaN,
+        "GRA Purchases": NaN,
+        "PRGT 1/2/": NaN,
+        "Totals": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": NaN,
+        "Country Name": NaN,
+        "World": NaN,
+        "Unnamed: 9": NaN,
+        "Year": NaN,
+        "Percentage ": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show the trend of the total percentage over time.",
+  "refer_fileds": [
+    {
+      "field": "Percentage ",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Percentage ",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Percentage ",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Percentage ",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Category",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "Year": 1991,
+        "Category": "Immigration",
+        "value": 329
+      },
+      {
+        "Year": 2008,
+        "Category": "Immigration",
+        "value": 590
+      },
+      {
+        "Year": 1993,
+        "Category": "Net migration",
+        "value": -1
+      },
+      {
+        "Year": 1992,
+        "Category": "Immigration",
+        "value": 268
+      },
+      {
+        "Year": 2000,
+        "Category": "Net migration",
+        "value": 158
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the immigration values over the years.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative"
+    },
+    {
+      "field": "Category",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

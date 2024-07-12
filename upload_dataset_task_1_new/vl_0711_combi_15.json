@@ -1,0 +1,145 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Year",
+      "Gini"
+    ],
+    "table_samples": [
+      {
+        "Country": "Argentina",
+        "Year": 1980,
+        "Gini": 0.64
+      },
+      {
+        "Country": "Brazil",
+        "Year": 1985,
+        "Gini": 0.7
+      },
+      {
+        "Country": "Argentina",
+        "Year": 1982,
+        "Gini": 0.64
+      },
+      {
+        "Country": "Argentina",
+        "Year": 2009,
+        "Gini": 0.59
+      },
+      {
+        "Country": "USA",
+        "Year": 1986,
+        "Gini": 0.49
+      }
+    ]
+  },
+  "nl_utterance": "Show me the trend of Gini coefficients by country over time using a line chart.",
+  "refer_fileds": [
+    {
+      "field": "Gini",
+      "type": "quantitative"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gini",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Gini",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Gini",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Gini",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

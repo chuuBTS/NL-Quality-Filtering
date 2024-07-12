@@ -1,0 +1,248 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "weaptype1_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 2004,
+        "Attack Count": 1,
+        "weaptype1_txt": "Firearms"
+      },
+      {
+        "iyear": 2013,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2014,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2015,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      },
+      {
+        "iyear": 2008,
+        "Attack Count": 1,
+        "weaptype1_txt": "Explosives/Bombs/Dynamite"
+      }
+    ]
+  },
+  "nl_utterance": "Show the total number of attacks for each weapon type over the years.",
+  "refer_fileds": [
+    {
+      "field": "iyear",
+      "type": "temporal"
+    },
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "weaptype1_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "size": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "iyear",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "size": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "iyear",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "rect",
+      "encoding": {
+        "x": {
+          "field": "weaptype1_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "iyear",
+          "type": "temporal"
+        },
+        "color": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 222.0,
+        "division": 5,
+        "up": 737,
+        "down": 1643,
+        "level": 9177,
+        "up_ch": 0.11119574,
+        "down_ch": -0.2,
+        "total": 11557,
+        "up_sh": 0.063770875,
+        "down_sh": 0.14216492,
+        "level_sh": 0.79406422,
+        "change_sh": 0.20593579,
+        "division_s": "Furnishings, household equipment and maintenance",
+        "division_sh": "Household",
+        "date2": "01-07-2006",
+        "date4": "2006-07-01",
+        "year": 2006.0,
+        "month": 7.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 320.0,
+        "division": 7,
+        "up": 135,
+        "down": 123,
+        "level": 3126,
+        "up_ch": 0.076492064,
+        "down_ch": -0.122556,
+        "total": 3384,
+        "up_sh": 0.039893616,
+        "down_sh": 0.036347516,
+        "level_sh": 0.92375886,
+        "change_sh": 0.076241136,
+        "division_s": "Transport",
+        "division_sh": "Transport",
+        "date2": "01-09-2014",
+        "date4": "2014-09-01",
+        "year": 2014.0,
+        "month": 9.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 105.0,
+        "division": 11,
+        "up": 574,
+        "down": 129,
+        "level": 10036,
+        "up_ch": 0.055090465,
+        "down_ch": -0.066666685,
+        "total": 10739,
+        "up_sh": 0.053450041,
+        "down_sh": 0.012012292,
+        "level_sh": 0.93453765,
+        "change_sh": 0.065462336,
+        "division_s": "Restaurants and Hotels",
+        "division_sh": "Restaurants & Hotels",
+        "date2": "01-10-1996",
+        "date4": "1996-10-01",
+        "year": 1996.0,
+        "month": 10.0,
+        "quarter": 4.0
+      },
+      {
+        "date": 252.0,
+        "division": 9,
+        "up": 1319,
+        "down": 1135,
+        "level": 5692,
+        "up_ch": 0.079409122,
+        "down_ch": -0.06079058,
+        "total": 8146,
+        "up_sh": 0.16191997,
+        "down_sh": 0.13933219,
+        "level_sh": 0.69874787,
+        "change_sh": 0.30125216,
+        "division_s": "Recreation and culture",
+        "division_sh": "Recreation & culture",
+        "date2": "01-01-2009",
+        "date4": "2009-01-01",
+        "year": 2009.0,
+        "month": 1.0,
+        "quarter": 1.0
+      }
+    ]
+  },
+  "nl_utterance": "Show the number of records that report changes in the share of up, down, and level.",
+  "refer_fileds": [
+    {
+      "field": [
+        "change_sh",
+        "up_ch",
+        "down_ch"
+      ],
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "change_sh",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "up_ch",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "down_ch",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

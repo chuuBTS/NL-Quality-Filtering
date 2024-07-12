@@ -1,0 +1,163 @@
+{
+  "table_info": {
+    "table_columns": [
+      "honap",
+      "honap_angol",
+      "datum",
+      "honap_szam",
+      "homerseklet",
+      "ertek"
+    ],
+    "table_samples": [
+      {
+        "honap": "Aug.",
+        "honap_angol": "Aug.",
+        "datum": "2021-08-01",
+        "honap_szam": 8,
+        "homerseklet": "Havi naps\u00fct\u00e9ses \u00f3r\u00e1k sz\u00e1ma",
+        "ertek": 26.2
+      },
+      {
+        "honap": "Okt.",
+        "honap_angol": "Oct.",
+        "datum": "2021-10-01",
+        "honap_szam": 10,
+        "homerseklet": "\u00c1tl.\u00a0csapad\u00e9kmennyis\u00e9g\u00a0(mm)",
+        "ertek": 3.1
+      },
+      {
+        "honap": "Dec.",
+        "honap_angol": "Dec.",
+        "datum": "2021-12-01",
+        "honap_szam": 12,
+        "homerseklet": "Rekord max. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 18.7
+      },
+      {
+        "honap": "\u00c1pr.",
+        "honap_angol": "Apr.",
+        "datum": "2021-04-01",
+        "honap_szam": 4,
+        "homerseklet": "Rekord min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": -8.4
+      },
+      {
+        "honap": "\u00c1pr.",
+        "honap_angol": "Apr.",
+        "datum": "2021-04-01",
+        "honap_szam": 4,
+        "homerseklet": "\u00c1tlagos min. h\u0151m\u00e9rs\u00e9klet (\u00b0C)",
+        "ertek": 4.0
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the values for different temperature indicators.",
+  "refer_fileds": [
+    {
+      "field": "ertek",
+      "type": "quantitative"
+    },
+    {
+      "field": "homerseklet",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "ertek",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "homerseklet",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

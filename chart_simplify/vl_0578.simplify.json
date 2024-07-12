@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "CAPE",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/e4e/US_Shiller_CAPE.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Date",
+                "range": [
+                    {
+                        "year": 1900,
+                        "month": 1,
+                        "day": 1
+                    },
+                    {
+                        "year": 2023,
+                        "month": 11,
+                        "day": 1
+                    }
+                ]
+            }
+        }
+    ],
+    "height": 300,
+    "width": 500
+}

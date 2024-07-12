@@ -1,0 +1,101 @@
+{
+  "table_info": {
+    "table_columns": [
+      "category",
+      "Ethnicity",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "category": "All US adults",
+        "Ethnicity": "White",
+        "value": 67
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Black",
+        "value": 11
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Hispanic",
+        "value": 23
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Asian or other",
+        "value": 6
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Hispanic",
+        "value": 17
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiple chart showing the sum of values for each category of US adults and crypto owners.",
+  "refer_fileds": [
+    {
+      "field": "category",
+      "type": "nominal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

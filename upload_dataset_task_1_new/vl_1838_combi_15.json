@@ -1,0 +1,148 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Unnamed: 0",
+      "periodo_ingresso",
+      "sexo",
+      "contagem",
+      "porcentagem"
+    ],
+    "table_samples": [
+      {
+        "Unnamed: 0": 146,
+        "periodo_ingresso": 2020.1,
+        "sexo": "Masculino",
+        "contagem": 86,
+        "porcentagem": 82.69
+      },
+      {
+        "Unnamed: 0": 104,
+        "periodo_ingresso": 2009.2,
+        "sexo": "Masculino",
+        "contagem": 60,
+        "porcentagem": 88.24
+      },
+      {
+        "Unnamed: 0": 143,
+        "periodo_ingresso": 2019.2,
+        "sexo": "Feminino",
+        "contagem": 21,
+        "porcentagem": 18.58
+      },
+      {
+        "Unnamed: 0": 135,
+        "periodo_ingresso": 2017.2,
+        "sexo": "Feminino",
+        "contagem": 18,
+        "porcentagem": 17.14
+      },
+      {
+        "Unnamed: 0": 97,
+        "periodo_ingresso": 2008.1,
+        "sexo": "Feminino",
+        "contagem": 5,
+        "porcentagem": 12.2
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing the number of students by entry period, using either a bar, area, or pie chart.",
+  "refer_fileds": [
+    {
+      "field": "periodo_ingresso",
+      "type": "quantitative"
+    },
+    {
+      "field": "contagem",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "contagem",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "contagem",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "periodo_ingresso",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "category",
+      "Ethnicity",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "category": "All US adults",
+        "Ethnicity": "White",
+        "value": 67
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Hispanic",
+        "value": 23
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "White",
+        "value": 58
+      },
+      {
+        "category": "All US adults",
+        "Ethnicity": "Hispanic",
+        "value": 17
+      },
+      {
+        "category": "Crypto owners",
+        "Ethnicity": "Asian or other",
+        "value": 6
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total values for each category.",
+  "refer_fileds": [
+    {
+      "field": "category",
+      "type": "nominal"
+    },
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "category",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

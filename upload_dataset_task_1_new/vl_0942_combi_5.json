@@ -1,0 +1,100 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "hp_growth",
+      "rtp_growth",
+      "rrp_growth"
+    ],
+    "table_samples": [
+      {
+        "Date": "2002 Q1",
+        "hp_growth": 0.06142,
+        "rtp_growth": 0.033,
+        "rrp_growth": 0.032
+      },
+      {
+        "Date": "2018 Q1",
+        "hp_growth": 0.02263,
+        "rtp_growth": 0.016,
+        "rrp_growth": 0.012
+      },
+      {
+        "Date": "2016 Q3",
+        "hp_growth": -0.00777,
+        "rtp_growth": 0.026,
+        "rrp_growth": 0.016
+      },
+      {
+        "Date": "2006 Q4",
+        "hp_growth": 0.12373,
+        "rtp_growth": 0.008,
+        "rrp_growth": 0.016
+      },
+      {
+        "Date": "2014 Q3",
+        "hp_growth": 0.06721,
+        "rtp_growth": 0.024,
+        "rrp_growth": 0.02
+      }
+    ]
+  },
+  "nl_utterance": "Show me the data points where the home price growth and renovation retail price growth are both less than 25%.",
+  "refer_fileds": [
+    {
+      "field": "hp_growth",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "hp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "rrp_growth",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "hp_growth",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "hp_growth",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "rrp_growth",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109.0238196,
+        "Year": 2022
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": 9822640239,
+        "PRGT 1/2/": 3844020520,
+        "Totals": 13.66666076,
+        "Year": 2006
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": 6036146757,
+        "PRGT 1/2/": 3796945581,
+        "Totals": 9.833092338,
+        "Year": 2007
+      },
+      {
+        "Date": "12/31/1998",
+        "GRA Purchases": 60451017051,
+        "PRGT 1/2/": 6288825925,
+        "Totals": 66.73984298,
+        "Year": 1998
+      },
+      {
+        "Date": "12/31/2011",
+        "GRA Purchases": 87276915790,
+        "PRGT 1/2/": 5308609594,
+        "Totals": 92.58552538,
+        "Year": 2011
+      }
+    ]
+  },
+  "nl_utterance": "Show the trend of the sum of Totals over the years in a bar or line chart.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Totals",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Totals",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Totals",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

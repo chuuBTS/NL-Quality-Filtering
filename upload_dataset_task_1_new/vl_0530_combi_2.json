@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Time",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Time": 1984,
+        "Value": 2.5
+      },
+      {
+        "Time": 2014,
+        "Value": 6.66
+      },
+      {
+        "Time": 2019,
+        "Value": 9.85
+      },
+      {
+        "Time": 2009,
+        "Value": 7.47
+      },
+      {
+        "Time": 1994,
+        "Value": 4.06
+      }
+    ]
+  },
+  "nl_utterance": "Show the total value summed up across all times.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

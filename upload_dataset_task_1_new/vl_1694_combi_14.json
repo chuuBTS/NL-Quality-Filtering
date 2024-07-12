@@ -1,0 +1,126 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "precipitation",
+      "temp_max",
+      "temp_min",
+      "wind",
+      "weather"
+    ],
+    "table_samples": [
+      {
+        "date": "2012-01-01",
+        "precipitation": 0.0,
+        "temp_max": 12.8,
+        "temp_min": 5.0,
+        "wind": 4.7,
+        "weather": "drizzle"
+      },
+      {
+        "date": "2014-04-06",
+        "precipitation": 0.0,
+        "temp_max": 13.9,
+        "temp_min": 8.3,
+        "wind": 2.6,
+        "weather": "sun"
+      },
+      {
+        "date": "2013-10-20",
+        "precipitation": 0.0,
+        "temp_max": 10.6,
+        "temp_min": 7.8,
+        "wind": 2.4,
+        "weather": "sun"
+      },
+      {
+        "date": "2013-05-17",
+        "precipitation": 0.5,
+        "temp_max": 17.2,
+        "temp_min": 11.7,
+        "wind": 3.7,
+        "weather": "rain"
+      },
+      {
+        "date": "2014-11-24",
+        "precipitation": 1.3,
+        "temp_max": 11.7,
+        "temp_min": 4.4,
+        "wind": 3.8,
+        "weather": "rain"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the average precipitation trend over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "precipitation",
+      "type": "quantitative",
+      "aggregate": "mean"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "precipitation",
+          "aggregate": "mean"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "precipitation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "date"
+        },
+        "y": {
+          "field": "precipitation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

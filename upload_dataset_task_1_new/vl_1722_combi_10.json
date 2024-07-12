@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Miles_per_Gallon",
+      "Cylinders",
+      "Displacement",
+      "Horsepower",
+      "Weight_in_lbs",
+      "Acceleration",
+      "Year",
+      "Origin"
+    ],
+    "table_samples": [
+      {
+        "Name": "chevrolet chevelle malibu",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 8,
+        "Displacement": 307.0,
+        "Horsepower": 130.0,
+        "Weight_in_lbs": 3504,
+        "Acceleration": 12.0,
+        "Year": "1970-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "volvo 145e (sw)",
+        "Miles_per_Gallon": 18.0,
+        "Cylinders": 4,
+        "Displacement": 121.0,
+        "Horsepower": 112.0,
+        "Weight_in_lbs": 2933,
+        "Acceleration": 14.5,
+        "Year": "1972-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "ford pinto",
+        "Miles_per_Gallon": 26.0,
+        "Cylinders": 4,
+        "Displacement": 122.0,
+        "Horsepower": 80.0,
+        "Weight_in_lbs": 2451,
+        "Acceleration": 16.5,
+        "Year": "1974-01-01",
+        "Origin": "USA"
+      },
+      {
+        "Name": "audi 100ls",
+        "Miles_per_Gallon": 20.0,
+        "Cylinders": 4,
+        "Displacement": 114.0,
+        "Horsepower": 91.0,
+        "Weight_in_lbs": 2582,
+        "Acceleration": 14.0,
+        "Year": "1973-01-01",
+        "Origin": "Europe"
+      },
+      {
+        "Name": "honda Accelerationord",
+        "Miles_per_Gallon": 32.4,
+        "Cylinders": 4,
+        "Displacement": 107.0,
+        "Horsepower": 72.0,
+        "Weight_in_lbs": 2290,
+        "Acceleration": 17.0,
+        "Year": "1980-01-01",
+        "Origin": "Japan"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a scatter plot indicating the correlation between miles per gallon and their origin.",
+  "refer_fileds": [
+    {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Miles_per_Gallon",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Origin",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

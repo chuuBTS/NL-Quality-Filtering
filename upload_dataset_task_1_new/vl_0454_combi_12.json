@@ -1,0 +1,204 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 40.0,
+        "division": 3,
+        "up": 943,
+        "down": 568,
+        "level": 5806,
+        "up_ch": 0.10005002,
+        "down_ch": -0.16531366,
+        "total": 7317,
+        "up_sh": 0.12887795,
+        "down_sh": 0.077627443,
+        "level_sh": 0.79349458,
+        "change_sh": 0.20650539,
+        "division_s": "Clothing and footwear",
+        "division_sh": "Clothing and footwear",
+        "date2": "01-05-1991",
+        "date4": "1991-05-01",
+        "year": 1991.0,
+        "month": 5.0,
+        "quarter": 2.0
+      },
+      {
+        "date": 202.0,
+        "division": 3,
+        "up": 844,
+        "down": 873,
+        "level": 11568,
+        "up_ch": 0.24999996,
+        "down_ch": -0.2,
+        "total": 13285,
+        "up_sh": 0.063530296,
+        "down_sh": 0.065713212,
+        "level_sh": 0.87075651,
+        "change_sh": 0.12924351,
+        "division_s": "Clothing and footwear",
+        "division_sh": "Clothing and footwear",
+        "date2": "01-11-2004",
+        "date4": "2004-11-01",
+        "year": 2004.0,
+        "month": 11.0,
+        "quarter": 4.0
+      },
+      {
+        "date": 2.0,
+        "division": 11,
+        "up": 285,
+        "down": 60,
+        "level": 4052,
+        "up_ch": 0.056338061,
+        "down_ch": -0.03933309,
+        "total": 4397,
+        "up_sh": 0.064816922,
+        "down_sh": 0.013645668,
+        "level_sh": 0.9215374,
+        "change_sh": 0.078462586,
+        "division_s": "Restaurants and Hotels",
+        "division_sh": "Restaurants & Hotels",
+        "date2": "01-03-1988",
+        "date4": "1988-03-01",
+        "year": 1988.0,
+        "month": 3.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 332.0,
+        "division": 12,
+        "up": 836,
+        "down": 631,
+        "level": 7347,
+        "up_ch": 0.25031325,
+        "down_ch": -0.22136252,
+        "total": 8814,
+        "up_sh": 0.094849102,
+        "down_sh": 0.071590655,
+        "level_sh": 0.83356023,
+        "change_sh": 0.16643976,
+        "division_s": "Miscellaneous goods and services",
+        "division_sh": "Misc",
+        "date2": "01-09-2015",
+        "date4": "2015-09-01",
+        "year": 2015.0,
+        "month": 9.0,
+        "quarter": 3.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me a distribution of the counts as a bar chart or a boxplot for change share values.",
+  "refer_fileds": [
+    {
+      "field": "change_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "distribution",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {
+              "aggregate": "count",
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "boxplot",
+          "encoding": {
+            "x": {
+              "type": "quantitative"
+            }
+          },
+          "x_y_reversable": true
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "aggregate": "count"
+        },
+        "x": {
+          "field": "change_sh",
+          "type": "quantitative",
+          "bin": true
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "change_sh",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "table_info": {
+    "table_columns": [
+      "WEO Country Code",
+      "ISO",
+      "WEO Subject Code",
+      "Country",
+      "gdp2021",
+      "gdp2022",
+      "GrowthLatest",
+      "p21"
+    ],
+    "table_samples": [
+      {
+        "WEO Country Code": 546,
+        "ISO": "MAC",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Macao SAR",
+        "gdp2021": 64739.16,
+        "gdp2022": 49230.4,
+        "GrowthLatest": -0.239557634,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 943,
+        "ISO": "MNE",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Montenegro",
+        "gdp2021": 20650.59,
+        "gdp2022": 22123.2,
+        "GrowthLatest": 0.071310795,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 196,
+        "ISO": "NZL",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "New Zealand",
+        "gdp2021": 42409.43,
+        "gdp2022": 43214.99,
+        "GrowthLatest": 0.018994832,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 923,
+        "ISO": "TJK",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Tajikistan",
+        "gdp2021": 3940.68,
+        "gdp2022": 4081.61,
+        "GrowthLatest": 0.035762863,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 612,
+        "ISO": "DZA",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Algeria",
+        "gdp2021": 10969.25,
+        "gdp2022": 11323.13,
+        "GrowthLatest": 0.032261094,
+        "p21": 0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the latest growth rates in descending order for countries with a positive index in 2021.",
+  "refer_fileds": [
+    {
+      "field": "GrowthLatest",
+      "type": "quantitative",
+      "sort": "descending"
+    },
+    {
+      "field": "ISO",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "p21",
+          "equal": 1
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "GrowthLatest",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "GrowthLatest",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    }
+  ]
+}

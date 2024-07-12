@@ -1,0 +1,118 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Total_billions ",
+      "Unnamed: 6",
+      "WorldGDP_billions",
+      "Total_GDP_adjusted_billions",
+      "Unnamed: 9",
+      "Unnamed: 10"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059.0,
+        "PRGT 1/2/": 15254184552.0,
+        "Totals": 109000000000.0,
+        "Year": 2022.0,
+        "Total_billions ": 109.0238196,
+        "Unnamed: 6": NaN,
+        "WorldGDP_billions": NaN,
+        "Total_GDP_adjusted_billions": NaN,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2019",
+        "GRA Purchases": 66945509865.0,
+        "PRGT 1/2/": 6590835450.0,
+        "Totals": 73536345315.0,
+        "Year": 2019.0,
+        "Total_billions ": 73.53634532,
+        "Unnamed: 6": "14,771.98",
+        "WorldGDP_billions": 87536.338,
+        "Total_GDP_adjusted_billions": 0.00084,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": "Adjusted by dividing by world GDP in current prices (USD)"
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": 6036146757.0,
+        "PRGT 1/2/": 3796945581.0,
+        "Totals": 9833092338.0,
+        "Year": 2007.0,
+        "Total_billions ": 9.833092338,
+        "Unnamed: 6": "31,824.48",
+        "WorldGDP_billions": 58443.072,
+        "Total_GDP_adjusted_billions": 0.000168,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": "12/31/2013",
+        "GRA Purchases": 83899249061.0,
+        "PRGT 1/2/": 6174392682.0,
+        "Totals": 90073641743.0,
+        "Year": 2013.0,
+        "Total_billions ": 90.07364174,
+        "Unnamed: 6": "25,328.26",
+        "WorldGDP_billions": 77290.82,
+        "Total_GDP_adjusted_billions": 0.00117,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      },
+      {
+        "Date": NaN,
+        "GRA Purchases": NaN,
+        "PRGT 1/2/": NaN,
+        "Totals": NaN,
+        "Year": NaN,
+        "Total_billions ": NaN,
+        "Unnamed: 6": NaN,
+        "WorldGDP_billions": NaN,
+        "Total_GDP_adjusted_billions": NaN,
+        "Unnamed: 9": NaN,
+        "Unnamed: 10": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the sum of the total GDP adjusted in billions.",
+  "refer_fileds": [
+    {
+      "field": "Total_GDP_adjusted_billions",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Total_GDP_adjusted_billions",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Total_GDP_adjusted_billions",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

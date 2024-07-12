@@ -1,0 +1,134 @@
+{
+  "table_info": {
+    "table_columns": [
+      "iyear",
+      "Attack Count",
+      "country_txt"
+    ],
+    "table_samples": [
+      {
+        "iyear": 1970,
+        "Attack Count": 1,
+        "country_txt": "Jordan"
+      },
+      {
+        "iyear": 2014,
+        "Attack Count": 1,
+        "country_txt": "Yemen"
+      },
+      {
+        "iyear": 1991,
+        "Attack Count": 1,
+        "country_txt": "Turkey"
+      },
+      {
+        "iyear": 1991,
+        "Attack Count": 1,
+        "country_txt": "Egypt"
+      },
+      {
+        "iyear": 2006,
+        "Attack Count": 1,
+        "country_txt": "West Bank and Gaza Strip"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a summary of the total number of attacks by country.",
+  "refer_fileds": [
+    {
+      "field": "Attack Count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "country_txt",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Attack Count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "country_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "y": {
+          "field": "country_txt",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country_txt",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Attack Count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "x": {
+          "field": "country_txt",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

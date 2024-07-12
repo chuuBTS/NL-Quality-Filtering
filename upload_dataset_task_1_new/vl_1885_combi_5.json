@@ -1,0 +1,192 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "country_code",
+      "continent",
+      "population",
+      "indicator",
+      "weekly_count",
+      "year_week",
+      "rate_14_day",
+      "cumulative_count",
+      "source"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "country_code": "AFG",
+        "continent": "Asia",
+        "population": 38928341,
+        "indicator": "cases",
+        "weekly_count": 0,
+        "year_week": "2020-01",
+        "rate_14_day": NaN,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "El Salvador",
+        "country_code": "SLV",
+        "continent": "America",
+        "population": 6486201,
+        "indicator": "cases",
+        "weekly_count": 741,
+        "year_week": "2021-15",
+        "rate_14_day": 31.852236,
+        "cumulative_count": 67557,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Saudi Arabia",
+        "country_code": "SAU",
+        "continent": "Asia",
+        "population": 34813867,
+        "indicator": "deaths",
+        "weekly_count": 0,
+        "year_week": "2020-11",
+        "rate_14_day": 0.0,
+        "cumulative_count": 0,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Barbados",
+        "country_code": "BRB",
+        "continent": "America",
+        "population": 287371,
+        "indicator": "cases",
+        "weekly_count": 8,
+        "year_week": "2020-46",
+        "rate_14_day": 4.5237689,
+        "cumulative_count": 250,
+        "source": "Epidemic intelligence, national weekly data"
+      },
+      {
+        "country": "Mexico",
+        "country_code": "MEX",
+        "continent": "America",
+        "population": 128932753,
+        "indicator": "deaths",
+        "weekly_count": 5616,
+        "year_week": "2021-08",
+        "rate_14_day": 89.155006,
+        "cumulative_count": 186152,
+        "source": "Epidemic intelligence, national weekly data"
+      }
+    ]
+  },
+  "nl_utterance": "Show me the data for deaths in the United Kingdom, France, Germany, and India, broken down by week and country.",
+  "refer_fileds": [
+    {
+      "field": "year_week",
+      "type": "nominal"
+    },
+    {
+      "field": "country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "United Kingdom",
+            "France",
+            "Germany",
+            "India"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "indicator",
+          "oneOf": [
+            "deaths"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year_week",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "deaths"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "country",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "year_week",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "indicator",
+            "oneOf": [
+              "deaths"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

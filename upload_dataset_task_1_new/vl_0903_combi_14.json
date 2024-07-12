@@ -1,0 +1,138 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "label",
+      "month",
+      "quarter",
+      "sourceDataset",
+      "updateDate",
+      "value",
+      "year"
+    ],
+    "table_samples": [
+      {
+        "date": "1997 Q1",
+        "label": "1997 Q1",
+        "month": NaN,
+        "quarter": "Q1",
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 15017,
+        "year": 1997
+      },
+      {
+        "date": "2016 Q4",
+        "label": "2016 Q4",
+        "month": NaN,
+        "quarter": "Q4",
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": -8436,
+        "year": 2016
+      },
+      {
+        "date": "1998 Q3",
+        "label": "1998 Q3",
+        "month": NaN,
+        "quarter": "Q3",
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 8177,
+        "year": 1998
+      },
+      {
+        "date": "1999 Q1",
+        "label": "1999 Q1",
+        "month": NaN,
+        "quarter": "Q1",
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": 5057,
+        "year": 1999
+      },
+      {
+        "date": "2015 Q2",
+        "label": "2015 Q2",
+        "month": NaN,
+        "quarter": "Q2",
+        "sourceDataset": "MRET",
+        "updateDate": "2022-10-11T23:00:00.000Z",
+        "value": -5267,
+        "year": 2015
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total sum trend of values over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "updateDate"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "updateDate"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

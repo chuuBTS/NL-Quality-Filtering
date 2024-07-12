@@ -1,0 +1,106 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Percent Gain or Loss"
+    ],
+    "table_samples": [
+      {
+        "Year": 1981,
+        "Percent Gain or Loss": -0.3515999999999999
+      },
+      {
+        "Year": 1992,
+        "Percent Gain or Loss": 0.0599
+      },
+      {
+        "Year": 1993,
+        "Percent Gain or Loss": -0.5105
+      },
+      {
+        "Year": 2021,
+        "Percent Gain or Loss": 0.3382
+      },
+      {
+        "Year": 1985,
+        "Percent Gain or Loss": -0.2446
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of the total Percent Gain or Loss over the years.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Percent Gain or Loss",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Percent Gain or Loss",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Percent Gain or Loss",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Percent Gain or Loss",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

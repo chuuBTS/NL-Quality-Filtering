@@ -1,0 +1,190 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 144.0,
+        "division": 2,
+        "up": 550,
+        "down": 107,
+        "level": 3182,
+        "up_ch": 0.064583346,
+        "down_ch": -0.058583423,
+        "total": 3839,
+        "up_sh": 0.14326647,
+        "down_sh": 0.027871842,
+        "level_sh": 0.82886165,
+        "change_sh": 0.17113832,
+        "division_s": "Alcoholic beverages, tobacco and narcotics",
+        "division_sh": "Alcohol & tobacco",
+        "date2": "01-01-2000",
+        "date4": "2000-01-01",
+        "year": 2000.0,
+        "month": 1.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 339.0,
+        "division": 12,
+        "up": 675,
+        "down": 695,
+        "level": 7449,
+        "up_ch": 0.21348599,
+        "down_ch": -0.23076923,
+        "total": 8819,
+        "up_sh": 0.076539293,
+        "down_sh": 0.078807123,
+        "level_sh": 0.84465361,
+        "change_sh": 0.15534642,
+        "division_s": "Miscellaneous goods and services",
+        "division_sh": "Misc",
+        "date2": "01-04-2016",
+        "date4": "2016-04-01",
+        "year": 2016.0,
+        "month": 4.0,
+        "quarter": 2.0
+      },
+      {
+        "date": 168.0,
+        "division": 1,
+        "up": 3839,
+        "down": 1524,
+        "level": 18213,
+        "up_ch": 0.1,
+        "down_ch": -0.1505622,
+        "total": 23576,
+        "up_sh": 0.16283509,
+        "down_sh": 0.064642012,
+        "level_sh": 0.77252293,
+        "change_sh": 0.2274771,
+        "division_s": "Food and non-alcoholic beverages",
+        "division_sh": "Food & drink",
+        "date2": "01-01-2002",
+        "date4": "2002-01-01",
+        "year": 2002.0,
+        "month": 1.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 77.0,
+        "division": 8,
+        "up": 17,
+        "down": 28,
+        "level": 357,
+        "up_ch": 0.072283916,
+        "down_ch": -0.13109045,
+        "total": 402,
+        "up_sh": 0.042288557,
+        "down_sh": 0.069651738,
+        "level_sh": 0.88805968,
+        "change_sh": 0.11194029,
+        "division_s": "Communication",
+        "division_sh": "Communication",
+        "date2": "01-06-1994",
+        "date4": "1994-06-01",
+        "year": 1994.0,
+        "month": 6.0,
+        "quarter": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the percentage share of downtrend that is less than 25% and also where the uptrend share is below 25%.",
+  "refer_fileds": [
+    {
+      "field": "down_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "up_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "down_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

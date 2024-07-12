@@ -1,0 +1,381 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Title",
+      "Worldwide Gross",
+      "Production Budget",
+      "Release Year",
+      "Content Rating",
+      "Running Time",
+      "Genre",
+      "Creative Type",
+      "Rotten Tomatoes Rating",
+      "IMDB Rating"
+    ],
+    "table_samples": [
+      {
+        "Title": "From Dusk Till Dawn",
+        "Worldwide Gross": 25728961,
+        "Production Budget": 20000000,
+        "Release Year": 1996,
+        "Content Rating": "R",
+        "Running Time": 107,
+        "Genre": "Horror",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 63,
+        "IMDB Rating": 7.1
+      },
+      {
+        "Title": "Superman Returns",
+        "Worldwide Gross": 391120000,
+        "Production Budget": 232000000,
+        "Release Year": 2006,
+        "Content Rating": "PG-13",
+        "Running Time": 157,
+        "Genre": "Adventure",
+        "Creative Type": "Super Hero",
+        "Rotten Tomatoes Rating": 76,
+        "IMDB Rating": 6.6
+      },
+      {
+        "Title": "Three Kings",
+        "Worldwide Gross": 107752036,
+        "Production Budget": 48000000,
+        "Release Year": 1999,
+        "Content Rating": "R",
+        "Running Time": 115,
+        "Genre": "Action",
+        "Creative Type": "Historical Fiction",
+        "Rotten Tomatoes Rating": 94,
+        "IMDB Rating": 7.3
+      },
+      {
+        "Title": "Atonement",
+        "Worldwide Gross": 129425746,
+        "Production Budget": 30000000,
+        "Release Year": 2007,
+        "Content Rating": "R",
+        "Running Time": 130,
+        "Genre": "Drama",
+        "Creative Type": "Contemporary Fiction",
+        "Rotten Tomatoes Rating": 83,
+        "IMDB Rating": 7.9
+      },
+      {
+        "Title": "Twilight",
+        "Worldwide Gross": 396439854,
+        "Production Budget": 37000000,
+        "Release Year": 2008,
+        "Content Rating": "PG-13",
+        "Running Time": 120,
+        "Genre": "Drama",
+        "Creative Type": "Fantasy",
+        "Rotten Tomatoes Rating": 50,
+        "IMDB Rating": 6.1
+      }
+    ]
+  },
+  "nl_utterance": "Create a composition chart showing how the production budget is distributed across the different movie classifications.",
+  "refer_fileds": [
+    {
+      "field": "Production Budget",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "Genre",
+        "Creative Type",
+        "Content Rating"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Creative Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Creative Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Content Rating",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Content Rating",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Creative Type",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Content Rating",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Genre",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Creative Type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Production Budget",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Content Rating",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

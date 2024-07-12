@@ -1,0 +1,136 @@
+{
+  "table_info": {
+    "table_columns": [
+      "n_neighbors",
+      "score_type",
+      "accuracy"
+    ],
+    "table_samples": [
+      {
+        "n_neighbors": 1,
+        "score_type": "mean_train_score",
+        "accuracy": 1.0
+      },
+      {
+        "n_neighbors": 6,
+        "score_type": "mean_train_score",
+        "accuracy": 0.8416600441501103
+      },
+      {
+        "n_neighbors": 6,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.7856617647058823
+      },
+      {
+        "n_neighbors": 41,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.7264705882352942
+      },
+      {
+        "n_neighbors": 31,
+        "score_type": "mean_cv_score",
+        "accuracy": 0.7389705882352942
+      }
+    ]
+  },
+  "nl_utterance": "Show me a graph plotting the accuracy against the number of neighbors.",
+  "refer_fileds": [
+    {
+      "field": "n_neighbors",
+      "type": "quantitative"
+    },
+    {
+      "field": "accuracy",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "n_neighbors",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "n_neighbors",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "n_neighbors",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "n_neighbors",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "n_neighbors",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "accuracy",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "accuracy",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "n_neighbors",
+          "type": "quantitative"
+        }
+      }
+    }
+  ]
+}

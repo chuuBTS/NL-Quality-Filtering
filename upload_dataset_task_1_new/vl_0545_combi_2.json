@@ -1,0 +1,82 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Date",
+      "Size",
+      "Deaths",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Name": "August Complex",
+        "Date": "Aug-20",
+        "Size": 1032648,
+        "Deaths": 1,
+        "Detail": "Top 20 wildfires in CA"
+      },
+      {
+        "Name": "Basin Complex",
+        "Date": "Jun-08",
+        "Size": 162818,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "LNU Lightning Complex",
+        "Date": "Aug-20",
+        "Size": 363895,
+        "Deaths": 6,
+        "Detail": NaN
+      },
+      {
+        "Name": "Rush",
+        "Date": "Aug-21",
+        "Size": 271911,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "Laguna",
+        "Date": "Sep-70",
+        "Size": 175425,
+        "Deaths": 5,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me the wildfires sorted by size in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Size",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Size",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

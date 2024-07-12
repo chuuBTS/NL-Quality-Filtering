@@ -1,0 +1,70 @@
+{
+  "table_info": {
+    "table_columns": [
+      "River",
+      "Value",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "River": "Amazon (Brazil, Peru, Colombia, Ecuador)",
+        "Value": 38900,
+        "Detail": "Plastic mass input from rivers (2015)"
+      },
+      {
+        "River": "Mekong (Thailand, Cambodia, Laos, China, Myanmar, Vietnam)",
+        "Value": 22800,
+        "Detail": NaN
+      },
+      {
+        "River": "Magdalena (Colombia)",
+        "Value": 16700,
+        "Detail": NaN
+      },
+      {
+        "River": "Zhujiang (China)",
+        "Value": 13600,
+        "Detail": NaN
+      },
+      {
+        "River": "Cross (Nigeria, Cameroon)",
+        "Value": 40300,
+        "Detail": "Tonnes"
+      }
+    ]
+  },
+  "nl_utterance": "Show the rivers sorted by the plastic mass input in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

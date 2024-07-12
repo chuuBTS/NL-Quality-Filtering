@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Percentile",
+      "modelValue"
+    ],
+    "table_samples": [
+      {
+        "Percentile": 1,
+        "modelValue": 1.965912874
+      },
+      {
+        "Percentile": 80,
+        "modelValue": 128.8186569
+      },
+      {
+        "Percentile": 98,
+        "modelValue": 503.9209553
+      },
+      {
+        "Percentile": 96,
+        "modelValue": 311.8207892
+      },
+      {
+        "Percentile": 92,
+        "modelValue": 205.8552608
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot showing percentiles on the x-axis and model values on the y-axis, but only include model values less than 300.",
+  "refer_fileds": [
+    {
+      "field": "Percentile",
+      "type": "quantitative"
+    },
+    {
+      "field": "modelValue",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "point chart",
+      "c_list": [
+        {
+          "mark": "point",
+          "encoding": {
+            "x": {},
+            "y": {},
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "size": {
+              "ignore": true,
+              "type": "quantitative"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "modelValue",
+          "lt": 300
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Percentile",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "modelValue",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "modelValue",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Percentile",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "modelValue",
+            "lt": 300
+          }
+        }
+      ]
+    }
+  ]
+}

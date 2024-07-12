@@ -1,0 +1,151 @@
+{
+  "table_info": {
+    "table_columns": [
+      "metabolite",
+      "sample_id",
+      "flux",
+      "description"
+    ],
+    "table_samples": [
+      {
+        "metabolite": "glyc3p_m",
+        "sample_id": "Cancer7",
+        "flux": 0.0297717982,
+        "description": "Glycerol 3-phosphate"
+      },
+      {
+        "metabolite": "galmannan_m",
+        "sample_id": "Cancer6",
+        "flux": 1e-06,
+        "description": "Carob galactomannan, Gal:Man ratio 22/78. 220 gal, 780 man assumed"
+      },
+      {
+        "metabolite": "ala_D_m",
+        "sample_id": "Cancer4",
+        "flux": 0.0044673719,
+        "description": "D-alanine"
+      },
+      {
+        "metabolite": "asn_L_m",
+        "sample_id": "Cancer3",
+        "flux": 0.02179166,
+        "description": "L-asparagine"
+      },
+      {
+        "metabolite": "dgsn_m",
+        "sample_id": "Cancer6",
+        "flux": 0.0615430697,
+        "description": "Deoxyguanosine"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the flux for each metabolite.",
+  "refer_fileds": [
+    {
+      "field": "metabolite",
+      "type": "nominal"
+    },
+    {
+      "field": "flux",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "flux",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "metabolite",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "table_info": {
+    "table_columns": [
+      "PPB",
+      "axis_label",
+      "bhrd",
+      "bpts",
+      "game_id",
+      "negs",
+      "opponent",
+      "pa",
+      "packet",
+      "pf",
+      "result",
+      "round",
+      "status",
+      "team",
+      "tossups",
+      "tournament"
+    ],
+    "table_samples": [
+      {
+        "PPB": 23.0,
+        "axis_label": "2014 Virginia A (R3)",
+        "bhrd": 20.0,
+        "bpts": 460.0,
+        "game_id": 20140306.0,
+        "negs": 0.0,
+        "opponent": "Stanford A",
+        "pa": -5.0,
+        "packet": "Illinois + USC",
+        "pf": 660.0,
+        "result": "W",
+        "round": 3.0,
+        "status": NaN,
+        "team": "Virginia A",
+        "tossups": 20.0,
+        "tournament": "ACF Nationals 2014"
+      },
+      {
+        "PPB": 21.67,
+        "axis_label": "2016 Chicago A (R7)",
+        "bhrd": 18.0,
+        "bpts": 390.0,
+        "game_id": 20160720.0,
+        "negs": 1.0,
+        "opponent": "Yale B",
+        "pa": 25.0,
+        "packet": "Dartmouth + Chicago B",
+        "pf": 565.0,
+        "result": "W",
+        "round": 7.0,
+        "status": NaN,
+        "team": "Chicago A",
+        "tossups": 18.0,
+        "tournament": "ACF Nationals 2016"
+      },
+      {
+        "PPB": 22.11,
+        "axis_label": "2015 Virginia A (R1)",
+        "bhrd": 19.0,
+        "bpts": 420.0,
+        "game_id": 20150112.0,
+        "negs": 0.0,
+        "opponent": "Notre Dame B",
+        "pa": 0.0,
+        "packet": "MIT A + Alberta",
+        "pf": 610.0,
+        "result": "W",
+        "round": 1.0,
+        "status": NaN,
+        "team": "Virginia A",
+        "tossups": 19.0,
+        "tournament": "ACF Nationals 2015"
+      },
+      {
+        "PPB": 21.76,
+        "axis_label": "2013 Yale A (R7)",
+        "bhrd": 17.0,
+        "bpts": 370.0,
+        "game_id": 20130704.0,
+        "negs": 0.0,
+        "opponent": "Carleton",
+        "pa": 50.0,
+        "packet": "Chicago A + Maryland + Penn B",
+        "pf": 540.0,
+        "result": "W",
+        "round": 7.0,
+        "status": NaN,
+        "team": "Yale A",
+        "tossups": 17.0,
+        "tournament": "ACF Nationals 2013"
+      },
+      {
+        "PPB": 20.0,
+        "axis_label": "2016 Michigan A (R14)",
+        "bhrd": 18.0,
+        "bpts": 360.0,
+        "game_id": 20161420.0,
+        "negs": 0.0,
+        "opponent": "Louisville",
+        "pa": 40.0,
+        "packet": "Editors 2",
+        "pf": 540.0,
+        "result": "W",
+        "round": 14.0,
+        "status": NaN,
+        "team": "Michigan A",
+        "tossups": 18.0,
+        "tournament": "ACF Nationals 2016"
+      }
+    ]
+  },
+  "nl_utterance": "Create a bar chart showing the performance points for each trivia attribute sorted by performance points.",
+  "refer_fileds": [
+    {
+      "field": [
+        "axis_label",
+        "packet"
+      ],
+      "type": "nominal"
+    },
+    {
+      "field": "pf",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        [
+          "pf"
+        ]
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "axis_label",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "packet",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "pf",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    }
+  ]
+}

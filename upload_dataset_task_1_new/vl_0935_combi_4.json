@@ -1,0 +1,181 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Country",
+      "Life Expectancy",
+      "Income",
+      "Infant Mortality",
+      "Fertility",
+      "Gini Coefficient",
+      "Reduced Dimension 1",
+      "Reduced Dimension 2",
+      "Continent"
+    ],
+    "table_samples": [
+      {
+        "Country": "Afghanistan",
+        "Life Expectancy": 64.3,
+        "Income": 1990,
+        "Infant Mortality": 54.2,
+        "Fertility": 3.77,
+        "Gini Coefficient": 39.5,
+        "Reduced Dimension 1": 2.058474218,
+        "Reduced Dimension 2": -0.617822572,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Panama",
+        "Life Expectancy": 80.6,
+        "Income": 30700,
+        "Infant Mortality": 14.0,
+        "Fertility": 2.37,
+        "Gini Coefficient": 51.7,
+        "Reduced Dimension 1": -0.614593114,
+        "Reduced Dimension 2": 1.562995869,
+        "Continent": "North America"
+      },
+      {
+        "Country": "Myanmar",
+        "Life Expectancy": 70.1,
+        "Income": 4000,
+        "Infant Mortality": 41.4,
+        "Fertility": 2.09,
+        "Gini Coefficient": 32.8,
+        "Reduced Dimension 1": 0.414662921,
+        "Reduced Dimension 2": -0.797953285,
+        "Continent": "Asia"
+      },
+      {
+        "Country": "Central African Republic",
+        "Life Expectancy": 53.4,
+        "Income": 944,
+        "Infant Mortality": 104.0,
+        "Fertility": 4.43,
+        "Gini Coefficient": 60.5,
+        "Reduced Dimension 1": 4.86971951,
+        "Reduced Dimension 2": 1.123380368,
+        "Continent": "Africa"
+      },
+      {
+        "Country": "Sao Tome and Principe",
+        "Life Expectancy": 71.5,
+        "Income": 4010,
+        "Infant Mortality": 27.6,
+        "Fertility": 4.1,
+        "Gini Coefficient": 33.0,
+        "Reduced Dimension 1": 0.87501636,
+        "Reduced Dimension 2": -1.175635713,
+        "Continent": "Africa"
+      }
+    ]
+  },
+  "nl_utterance": "Create a scatter plot with continents on the color channel and reduced dimension 2 on the y-axis.",
+  "refer_fileds": [
+    {
+      "field": "Reduced Dimension 2",
+      "type": "quantitative"
+    },
+    {
+      "field": "Continent",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Reduced Dimension 2",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Continent",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

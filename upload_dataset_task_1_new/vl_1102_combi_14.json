@@ -1,0 +1,119 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Type",
+      "Time",
+      "Value",
+      "Value2",
+      "Detail",
+      "Unnamed: 5"
+    ],
+    "table_samples": [
+      {
+        "Type": "Human",
+        "Time": "1561-1570",
+        "Value": 4373,
+        "Value2": 19167.0,
+        "Detail": "Value = energy consumption in megajoules",
+        "Unnamed: 5": "Value2 = Total for the time period"
+      },
+      {
+        "Type": "Coal",
+        "Time": "1750-1759",
+        "Value": 21403,
+        "Value2": NaN,
+        "Detail": NaN,
+        "Unnamed: 5": NaN
+      },
+      {
+        "Type": "Draught Animal",
+        "Time": "1750-1759",
+        "Value": 5113,
+        "Value2": NaN,
+        "Detail": NaN,
+        "Unnamed: 5": NaN
+      },
+      {
+        "Type": "Human",
+        "Time": "1600-1609",
+        "Value": 4161,
+        "Value2": 96463.0,
+        "Detail": NaN,
+        "Unnamed: 5": NaN
+      },
+      {
+        "Type": "Water",
+        "Time": "1850-1859",
+        "Value": 89,
+        "Value2": NaN,
+        "Detail": NaN,
+        "Unnamed: 5": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Create a small multiples chart showing the sum of energy consumption for each type.",
+  "refer_fileds": [
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Type",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "small_multiple",
+      "c_list": [
+        {
+          "encoding": {
+            "facet": {}
+          }
+        },
+        {
+          "encoding": {
+            "column": {}
+          }
+        },
+        {
+          "encoding": {
+            "row": {}
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "column": {
+          "field": "Type",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

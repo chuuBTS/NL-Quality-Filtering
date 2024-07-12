@@ -1,0 +1,316 @@
+{
+  "table_info": {
+    "table_columns": [
+      "country",
+      "region",
+      "country_code",
+      "year",
+      "lifeExp",
+      "gdpPercap",
+      "pop"
+    ],
+    "table_samples": [
+      {
+        "country": "Afghanistan",
+        "region": "Asia",
+        "country_code": "AFG",
+        "year": 1952,
+        "lifeExp": 33.0,
+        "gdpPercap": 1070,
+        "pop": 7930000
+      },
+      {
+        "country": "Syria",
+        "region": "Asia",
+        "country_code": "SYR",
+        "year": 1987,
+        "lifeExp": 70.4,
+        "gdpPercap": 4230,
+        "pop": 11400000
+      },
+      {
+        "country": "St. Vincent and the Grenadines",
+        "region": "Americas",
+        "country_code": "VCT",
+        "year": 1997,
+        "lifeExp": 70.5,
+        "gdpPercap": 6950,
+        "pop": 108000
+      },
+      {
+        "country": "North Korea",
+        "region": "Asia",
+        "country_code": "PRK",
+        "year": 1952,
+        "lifeExp": 27.6,
+        "gdpPercap": 784,
+        "pop": 10000000
+      },
+      {
+        "country": "Switzerland",
+        "region": "Europe",
+        "country_code": "CHE",
+        "year": 1967,
+        "lifeExp": 72.6,
+        "gdpPercap": 33100,
+        "pop": 5990000
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the GDP per capita over the years for locations Iceland and Norway between 1952 and 2017.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "gdpPercap",
+      "type": "quantitative"
+    },
+    {
+      "field": [
+        "country",
+        "region"
+      ],
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "country",
+          "oneOf": [
+            "Iceland",
+            "Norway"
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "year",
+          "range": [
+            {
+              "year": 1952
+            },
+            {
+              "year": 2017
+            }
+          ]
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iceland",
+              "Norway"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "year",
+            "range": [
+              {
+                "year": 1952
+              },
+              {
+                "year": 2017
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iceland",
+              "Norway"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "year",
+            "range": [
+              {
+                "year": 1952
+              },
+              {
+                "year": 2017
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iceland",
+              "Norway"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "year",
+            "range": [
+              {
+                "year": 1952
+              },
+              {
+                "year": 2017
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "gdpPercap",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "region",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "country",
+            "oneOf": [
+              "Iceland",
+              "Norway"
+            ]
+          }
+        },
+        {
+          "filter": {
+            "field": "year",
+            "range": [
+              {
+                "year": 1952
+              },
+              {
+                "year": 2017
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

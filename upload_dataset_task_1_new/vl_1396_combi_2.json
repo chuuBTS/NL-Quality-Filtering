@@ -1,0 +1,64 @@
+{
+  "table_info": {
+    "table_columns": [
+      "candidate_diff_spend",
+      "count"
+    ],
+    "table_samples": [
+      {
+        "candidate_diff_spend": 5,
+        "count": 112
+      },
+      {
+        "candidate_diff_spend": 35,
+        "count": 43
+      },
+      {
+        "candidate_diff_spend": 55,
+        "count": 48
+      },
+      {
+        "candidate_diff_spend": 15,
+        "count": 43
+      },
+      {
+        "candidate_diff_spend": 85,
+        "count": 44
+      }
+    ]
+  },
+  "nl_utterance": "Show me the total count of the dataset.",
+  "refer_fileds": [
+    {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "count",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

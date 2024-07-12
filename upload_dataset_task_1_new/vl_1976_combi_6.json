@@ -1,0 +1,114 @@
+{
+  "table_info": {
+    "table_columns": [
+      "label",
+      "group",
+      "value"
+    ],
+    "table_samples": [
+      {
+        "label": "2020-05-20",
+        "group": "A",
+        "value": 8
+      },
+      {
+        "label": "2020-06-08",
+        "group": "I",
+        "value": 1
+      },
+      {
+        "label": "2020-05-31",
+        "group": "B",
+        "value": 2
+      },
+      {
+        "label": "2020-06-14",
+        "group": "F",
+        "value": 1
+      },
+      {
+        "label": "2020-06-16",
+        "group": "A",
+        "value": 3
+      }
+    ]
+  },
+  "nl_utterance": "Create a line chart showing the sum of values for each group.",
+  "refer_fileds": [
+    {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "group",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "line chart",
+      "c_list": [
+        {
+          "mark": "line",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "value",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "label"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "group",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

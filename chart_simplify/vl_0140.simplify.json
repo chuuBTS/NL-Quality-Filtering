@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "bar",
+    "encoding": {
+        "y": {
+            "field": "Salary",
+            "type": "quantitative",
+            "aggregate": "median"
+        },
+        "x": {
+            "field": "Club",
+            "type": "nominal"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/nl4dv/nl4dv/master/examples/assets/data/euro.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "Country",
+                "oneOf": [
+                    "Spain",
+                    "Portugal",
+                    "Germany"
+                ]
+            }
+        }
+    ]
+}

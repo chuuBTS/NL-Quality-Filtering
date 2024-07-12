@@ -1,0 +1,128 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Region",
+      "Value"
+    ],
+    "table_samples": [
+      {
+        "Region": "European Union",
+        "Value": 6.4
+      },
+      {
+        "Region": "Sub-Saharan Africa",
+        "Value": 0.8
+      },
+      {
+        "Region": "South Asia",
+        "Value": 1.5
+      },
+      {
+        "Region": "East Asia and Pacific",
+        "Value": 5.7
+      },
+      {
+        "Region": "North America",
+        "Value": 15.3
+      }
+    ]
+  },
+  "nl_utterance": "Show me a chart with regions sorted by their values in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Region",
+      "type": "nominal"
+    },
+    {
+      "field": "Value",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Value",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "y": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "sort": "descending"
+        },
+        "x": {
+          "field": "Region",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

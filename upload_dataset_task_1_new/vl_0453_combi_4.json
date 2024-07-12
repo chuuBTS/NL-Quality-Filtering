@@ -1,0 +1,201 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 202.0,
+        "division": 4,
+        "up": 126,
+        "down": 204,
+        "level": 3304,
+        "up_ch": 0.12307692,
+        "down_ch": -0.11118525,
+        "total": 3634,
+        "up_sh": 0.034672536,
+        "down_sh": 0.056136489,
+        "level_sh": 0.90919095,
+        "change_sh": 0.090809025,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-11-2004",
+        "date4": "2004-11-01",
+        "year": 2004.0,
+        "month": 11.0,
+        "quarter": 4.0
+      },
+      {
+        "date": 116.0,
+        "division": 5,
+        "up": 1424,
+        "down": 1094,
+        "level": 10583,
+        "up_ch": 0.12658228,
+        "down_ch": -0.13044044,
+        "total": 13101,
+        "up_sh": 0.10869399,
+        "down_sh": 0.083505079,
+        "level_sh": 0.80780095,
+        "change_sh": 0.19219908,
+        "division_s": "Furnishings, household equipment and maintenance",
+        "division_sh": "Household",
+        "date2": "01-09-1997",
+        "date4": "1997-09-01",
+        "year": 1997.0,
+        "month": 9.0,
+        "quarter": 3.0
+      },
+      {
+        "date": 275.0,
+        "division": 11,
+        "up": 859,
+        "down": 157,
+        "level": 11459,
+        "up_ch": 0.044247787,
+        "down_ch": -0.10183908,
+        "total": 12475,
+        "up_sh": 0.068857715,
+        "down_sh": 0.012585171,
+        "level_sh": 0.91855711,
+        "change_sh": 0.081442885,
+        "division_s": "Restaurants and Hotels",
+        "division_sh": "Restaurants & Hotels",
+        "date2": "01-12-2010",
+        "date4": "2010-12-01",
+        "year": 2010.0,
+        "month": 12.0,
+        "quarter": 4.0
+      },
+      {
+        "date": 387.0,
+        "division": 7,
+        "up": 95,
+        "down": 70,
+        "level": 2205,
+        "up_ch": 0.097586438,
+        "down_ch": -0.16277573,
+        "total": 2370,
+        "up_sh": 0.040084388,
+        "down_sh": 0.029535865,
+        "level_sh": 0.93037975,
+        "change_sh": 0.069620252,
+        "division_s": "Transport",
+        "division_sh": "Transport",
+        "date2": "01-04-2020",
+        "date4": "2020-04-01",
+        "year": 2020.0,
+        "month": 4.0,
+        "quarter": 2.0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the count of samples where the proportion of ups is less than 0.25 and the proportion of downs is also less than 0.25.",
+  "refer_fileds": [
+    {
+      "field": "down_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "up_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "down_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "aggregate": "count"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

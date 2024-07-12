@@ -1,0 +1,150 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Date",
+      "GRA Purchases",
+      "PRGT 1/2/",
+      "Totals",
+      "Year",
+      "Unnamed: 5",
+      "Day",
+      "Total_billion",
+      "World_GDP",
+      "Debt-GDP"
+    ],
+    "table_samples": [
+      {
+        "Date": "08/31/2022",
+        "GRA Purchases": 93769635059,
+        "PRGT 1/2/": 15254184552,
+        "Totals": 109024000000.0,
+        "Year": 2022,
+        "Unnamed: 5": "31/2022",
+        "Day": 31,
+        "Total_billion": 109.02,
+        "World_GDP": 98406500000000.0,
+        "Debt-GDP": 0.11
+      },
+      {
+        "Date": "12/31/2012",
+        "GRA Purchases": 90042348252,
+        "PRGT 1/2/": 5766292503,
+        "Totals": 95808640755.0,
+        "Year": 2012,
+        "Unnamed: 5": "31/2012",
+        "Day": 31,
+        "Total_billion": 95.81,
+        "World_GDP": 75488100000000.0,
+        "Debt-GDP": 0.13
+      },
+      {
+        "Date": "12/31/2007",
+        "GRA Purchases": 6036146757,
+        "PRGT 1/2/": 3796945581,
+        "Totals": 9833092338.0,
+        "Year": 2007,
+        "Unnamed: 5": "31/2007",
+        "Day": 31,
+        "Total_billion": 9.83,
+        "World_GDP": 58355000000000.0,
+        "Debt-GDP": 0.02
+      },
+      {
+        "Date": "12/31/2006",
+        "GRA Purchases": 9822640239,
+        "PRGT 1/2/": 3844020520,
+        "Totals": 13666660759.0,
+        "Year": 2006,
+        "Unnamed: 5": "31/2006",
+        "Day": 31,
+        "Total_billion": 13.67,
+        "World_GDP": 51779800000000.0,
+        "Debt-GDP": 0.03
+      },
+      {
+        "Date": "12/31/1984",
+        "GRA Purchases": 34936772393,
+        "PRGT 1/2/": 2769874900,
+        "Totals": 37706647293.0,
+        "Year": 1984,
+        "Unnamed: 5": "31/1984",
+        "Day": 31,
+        "Total_billion": 37.71,
+        "World_GDP": 12269800000000.0,
+        "Debt-GDP": 0.31
+      }
+    ]
+  },
+  "nl_utterance": "Show me a trend of the sum of Debt-GDP over time using a bar, line, or area chart.",
+  "refer_fileds": [
+    {
+      "field": "Debt-GDP",
+      "type": "quantitative",
+      "aggregate": "sum"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "trend",
+      "c_list": [
+        {
+          "mark": [
+            "bar",
+            "line",
+            "area"
+          ],
+          "encoding": {
+            "x": {
+              "type": "temporal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Debt-GDP",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "type": "temporal",
+          "field": "Date"
+        },
+        "y": {
+          "field": "Debt-GDP",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    }
+  ]
+}

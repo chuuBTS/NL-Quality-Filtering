@@ -1,0 +1,190 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Entity",
+      "Year",
+      "Deaths"
+    ],
+    "table_samples": [
+      {
+        "Entity": "All natural disasters",
+        "Year": 1900,
+        "Deaths": 1267360
+      },
+      {
+        "Entity": "Drought",
+        "Year": 2015,
+        "Deaths": 35
+      },
+      {
+        "Entity": "All natural disasters",
+        "Year": 1999,
+        "Deaths": 76886
+      },
+      {
+        "Entity": "Extreme weather",
+        "Year": 1952,
+        "Deaths": 6277
+      },
+      {
+        "Entity": "Landslide",
+        "Year": 1971,
+        "Deaths": 1020
+      }
+    ]
+  },
+  "nl_utterance": "Show me the number of deaths for each type of disaster, excluding 'All natural disasters'.",
+  "refer_fileds": [
+    {
+      "field": "Entity",
+      "type": "nominal"
+    },
+    {
+      "field": "Deaths",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        "datum.Entity !== 'All natural disasters'"
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Deaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "field": "Deaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "Deaths",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "field": "Deaths",
+          "type": "quantitative"
+        },
+        "x": {
+          "field": "Entity",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.Entity !== 'All natural disasters'"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Foot",
+      "Name",
+      "Position",
+      "Club",
+      "Country",
+      "Age",
+      "Salary",
+      "Goals"
+    ],
+    "table_samples": [
+      {
+        "Foot": "Left",
+        "Name": "Etrit Berisha",
+        "Position": "Goalkeeper",
+        "Club": "Lazio",
+        "Country": "Albania",
+        "Age": 27,
+        "Salary": 4000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "Dimitri Payet",
+        "Position": "Midfielder",
+        "Club": "West Ham United",
+        "Country": "France",
+        "Age": 29,
+        "Salary": 23000000,
+        "Goals": 2
+      },
+      {
+        "Foot": "Right",
+        "Name": "Bruno Alves",
+        "Position": "Defender",
+        "Club": "Fenerbah\u00e7e",
+        "Country": "Portugal",
+        "Age": 34,
+        "Salary": 2200000,
+        "Goals": 10
+      },
+      {
+        "Foot": "Right",
+        "Name": "Tin Jedvaj",
+        "Position": "Defender",
+        "Club": "Bayer Leverkusen",
+        "Country": "Croatia",
+        "Age": 20,
+        "Salary": 8000000,
+        "Goals": 0
+      },
+      {
+        "Foot": "Right",
+        "Name": "J\u00e9r\u00f4me Boateng",
+        "Position": "Defender",
+        "Club": "Bayern Munich",
+        "Country": "Germany",
+        "Age": 27,
+        "Salary": 40000000,
+        "Goals": 0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the players' clubs for those from Spain, Portugal, or Germany.",
+  "refer_fileds": [
+    {
+      "field": "Club",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "Country",
+          "oneOf": [
+            "Spain",
+            "Portugal",
+            "Germany"
+          ]
+        }
+      ],
+      "nl_ref_type": "by_value",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Age",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Age",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Salary",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Salary",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Goals",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "Goals",
+          "aggregate": "mean"
+        },
+        "color": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Age"
+        },
+        "x": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Salary"
+        },
+        "x": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "Goals"
+        },
+        "x": {
+          "field": "Club",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "Country",
+            "oneOf": [
+              "Spain",
+              "Portugal",
+              "Germany"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

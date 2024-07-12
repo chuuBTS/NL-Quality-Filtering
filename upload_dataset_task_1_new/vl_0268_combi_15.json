@@ -1,0 +1,132 @@
+{
+  "table_info": {
+    "table_columns": [
+      "year",
+      "source",
+      "net_generation"
+    ],
+    "table_samples": [
+      {
+        "year": "2001-01-01",
+        "source": "Fossil Fuels",
+        "net_generation": 35361
+      },
+      {
+        "year": "2003-01-01",
+        "source": "Renewables",
+        "net_generation": 1885
+      },
+      {
+        "year": "2004-01-01",
+        "source": "Nuclear Energy",
+        "net_generation": 4929
+      },
+      {
+        "year": "2008-01-01",
+        "source": "Nuclear Energy",
+        "net_generation": 5282
+      },
+      {
+        "year": "2016-01-01",
+        "source": "Renewables",
+        "net_generation": 21241
+      }
+    ]
+  },
+  "nl_utterance": "Create an area chart showing the composition of net generation over the years.",
+  "refer_fileds": [
+    {
+      "field": "year",
+      "type": "temporal"
+    },
+    {
+      "field": "net_generation",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [],
+  "generated_chart_list": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      }
+    },
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "net_generation",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "net_generation",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "year",
+          "type": "temporal"
+        }
+      }
+    }
+  ]
+}

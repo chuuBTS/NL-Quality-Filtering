@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "bin": true,
+            "field": "up_sh",
+            "type": "quantitative"
+        },
+        "y": {
+            "bin": true,
+            "field": "down_sh",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/RDeconomist/prices/master/analysis/priceChangesByDivision.csv"
+    },
+    "transform": [
+        {
+            "filter": {
+                "field": "up_sh",
+                "lt": 0.25
+            }
+        },
+        {
+            "filter": {
+                "field": "down_sh",
+                "lt": 0.25
+            }
+        }
+    ],
+    "height": 300,
+    "width": 300
+}

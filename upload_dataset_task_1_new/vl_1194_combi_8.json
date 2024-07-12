@@ -1,0 +1,130 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Year",
+      "Access to electricity (% of population)",
+      "Country"
+    ],
+    "table_samples": [
+      {
+        "Year": 2000,
+        "Access to electricity (% of population)": 8.916726112,
+        "Country": "Tanzania"
+      },
+      {
+        "Year": 2007,
+        "Access to electricity (% of population)": 14.81782246,
+        "Country": "Uganda"
+      },
+      {
+        "Year": 2018,
+        "Access to electricity (% of population)": 10.88490868,
+        "Country": "Burundi"
+      },
+      {
+        "Year": 2004,
+        "Access to electricity (% of population)": 8.640584946,
+        "Country": "Rwanda"
+      },
+      {
+        "Year": 2017,
+        "Access to electricity (% of population)": 9.300000191,
+        "Country": "Burundi"
+      }
+    ]
+  },
+  "nl_utterance": "Show me a composition of the total access to electricity over the years by country using either bar chart, area chart, or pie chart representations.",
+  "refer_fileds": [
+    {
+      "field": "Year",
+      "type": "temporal"
+    },
+    {
+      "field": "Access to electricity (% of population)",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    {
+      "field": "Country",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "task",
+      "c_name": "composition",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          },
+          "x_y_reversable": true
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        },
+        {
+          "mark": "arc",
+          "encoding": {
+            "theta": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal"
+            }
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "aggregate",
+      "c_list": [
+        {
+          "field": "Access to electricity (% of population)",
+          "aggregate": "sum"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Access to electricity (% of population)",
+          "type": "quantitative",
+          "aggregate": "sum"
+        },
+        "color": {
+          "field": "Country",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

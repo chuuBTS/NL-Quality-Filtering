@@ -1,0 +1,146 @@
+{
+  "table_info": {
+    "table_columns": [
+      "Name",
+      "Date",
+      "Size",
+      "Deaths",
+      "Detail"
+    ],
+    "table_samples": [
+      {
+        "Name": "August Complex",
+        "Date": "Aug-20",
+        "Size": 1032648,
+        "Deaths": 1,
+        "Detail": "Top 20 wildfires in CA"
+      },
+      {
+        "Name": "Thomas",
+        "Date": "Dec-17",
+        "Size": 281893,
+        "Deaths": 2,
+        "Detail": NaN
+      },
+      {
+        "Name": "Klamath Theater Complex",
+        "Date": "Jul-77",
+        "Size": 192038,
+        "Deaths": 2,
+        "Detail": NaN
+      },
+      {
+        "Name": "SGF Complex",
+        "Date": "Aug-20",
+        "Size": 170384,
+        "Deaths": 0,
+        "Detail": NaN
+      },
+      {
+        "Name": "Carr",
+        "Date": "Jul-18",
+        "Size": 229651,
+        "Deaths": 8,
+        "Detail": NaN
+      }
+    ]
+  },
+  "nl_utterance": "Show me a bar chart with the wildfires ordered by size in descending order.",
+  "refer_fileds": [
+    {
+      "field": "Name",
+      "type": "nominal"
+    },
+    {
+      "field": "Size",
+      "type": "quantitative",
+      "sort": "descending"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "mark",
+      "c_name": "bar chart",
+      "c_list": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "x": {},
+            "y": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "x": "y"
+          }
+        },
+        {
+          "mark": "bar",
+          "encoding": {
+            "y": {},
+            "x": {
+              "type": "quantitative"
+            },
+            "color": {
+              "type": "nominal",
+              "ignore": true
+            },
+            "column": {
+              "ignore": true,
+              "type": "nominal"
+            },
+            "row": {
+              "ignore": true,
+              "type": "nominal"
+            }
+          },
+          "unique_map": {
+            "y": "x"
+          }
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "sort",
+      "c_list": [
+        {
+          "field": "Size",
+          "order": "descending"
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "Size",
+          "type": "quantitative",
+          "sort": "descending"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "table_info": {
+    "table_columns": [
+      "date",
+      "division",
+      "up",
+      "down",
+      "level",
+      "up_ch",
+      "down_ch",
+      "total",
+      "up_sh",
+      "down_sh",
+      "level_sh",
+      "change_sh",
+      "division_s",
+      "division_sh",
+      "date2",
+      "date4",
+      "year",
+      "month",
+      "quarter"
+    ],
+    "table_samples": [
+      {
+        "date": 1.0,
+        "division": 4,
+        "up": 0,
+        "down": 0,
+        "level": 0,
+        "up_ch": NaN,
+        "down_ch": NaN,
+        "total": 0,
+        "up_sh": NaN,
+        "down_sh": NaN,
+        "level_sh": NaN,
+        "change_sh": NaN,
+        "division_s": "Housing, Water, Electricity, Gas and other fuels",
+        "division_sh": "Housing & utilities",
+        "date2": "01-02-1988",
+        "date4": "1988-02-01",
+        "year": 1988.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 220.0,
+        "division": 9,
+        "up": 813,
+        "down": 677,
+        "level": 7988,
+        "up_ch": 0.16673896,
+        "down_ch": -0.16025643,
+        "total": 9478,
+        "up_sh": 0.085777588,
+        "down_sh": 0.071428575,
+        "level_sh": 0.84279382,
+        "change_sh": 0.15720616,
+        "division_s": "Recreation and culture",
+        "division_sh": "Recreation & culture",
+        "date2": "01-05-2006",
+        "date4": "2006-05-01",
+        "year": 2006.0,
+        "month": 5.0,
+        "quarter": 2.0
+      },
+      {
+        "date": 38.0,
+        "division": 6,
+        "up": 56,
+        "down": 6,
+        "level": 625,
+        "up_ch": 0.083333336,
+        "down_ch": -0.026006464,
+        "total": 687,
+        "up_sh": 0.08151383,
+        "down_sh": 0.0087336246,
+        "level_sh": 0.90975255,
+        "change_sh": 0.090247452,
+        "division_s": "Health",
+        "division_sh": "Health",
+        "date2": "01-03-1991",
+        "date4": "1991-03-01",
+        "year": 1991.0,
+        "month": 3.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 49.0,
+        "division": 12,
+        "up": 358,
+        "down": 156,
+        "level": 2466,
+        "up_ch": 0.078403622,
+        "down_ch": -0.084033616,
+        "total": 2980,
+        "up_sh": 0.12013423,
+        "down_sh": 0.052348994,
+        "level_sh": 0.82751679,
+        "change_sh": 0.17248322,
+        "division_s": "Miscellaneous goods and services",
+        "division_sh": "Misc",
+        "date2": "01-02-1992",
+        "date4": "1992-02-01",
+        "year": 1992.0,
+        "month": 2.0,
+        "quarter": 1.0
+      },
+      {
+        "date": 392.0,
+        "division": 3,
+        "up": 2490,
+        "down": 1871,
+        "level": 12894,
+        "up_ch": 0.25959837,
+        "down_ch": -0.20000003,
+        "total": 17255,
+        "up_sh": 0.144306,
+        "down_sh": 0.10843234,
+        "level_sh": 0.74726164,
+        "change_sh": 0.25273836,
+        "division_s": "Clothing and footwear",
+        "division_sh": "Clothing and footwear",
+        "date2": "01-09-2020",
+        "date4": "2020-09-01",
+        "year": 2020.0,
+        "month": 9.0,
+        "quarter": 3.0
+      }
+    ]
+  },
+  "nl_utterance": "Show the shares of upvotes and downvotes that are both less than 25%.",
+  "refer_fileds": [
+    {
+      "field": "up_sh",
+      "type": "quantitative"
+    },
+    {
+      "field": "down_sh",
+      "type": "quantitative"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "up_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    },
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "down_sh",
+          "lt": 0.25
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "aggregate": "sum"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative",
+          "bin": true
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative",
+          "aggregate": "mean"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "up_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "down_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "down_sh",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "up_sh",
+          "type": "quantitative"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "up_sh",
+            "lt": 0.25
+          }
+        },
+        {
+          "filter": {
+            "field": "down_sh",
+            "lt": 0.25
+          }
+        }
+      ]
+    }
+  ]
+}

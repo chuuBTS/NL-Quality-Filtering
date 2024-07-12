@@ -1,0 +1,299 @@
+{
+  "table_info": {
+    "table_columns": [
+      "WEO Country Code",
+      "ISO",
+      "WEO Subject Code",
+      "Country",
+      "gdp2021",
+      "gdp2022",
+      "GrowthLatest",
+      "p21"
+    ],
+    "table_samples": [
+      {
+        "WEO Country Code": 546,
+        "ISO": "MAC",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Macao SAR",
+        "gdp2021": 64739.16,
+        "gdp2022": 49230.4,
+        "GrowthLatest": -0.239557634,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 469,
+        "ISO": "EGY",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Egypt",
+        "gdp2021": 12976.29,
+        "gdp2022": 13562.12,
+        "GrowthLatest": 0.045146186,
+        "p21": 1
+      },
+      {
+        "WEO Country Code": 672,
+        "ISO": "LBY",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Libya",
+        "gdp2021": 19960.96,
+        "gdp2022": 16099.86,
+        "GrowthLatest": -0.19343258,
+        "p21": 0
+      },
+      {
+        "WEO Country Code": 566,
+        "ISO": "PHL",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Philippines",
+        "gdp2021": 8365.03,
+        "gdp2022": 8790.37,
+        "GrowthLatest": 0.050847397,
+        "p21": 1
+      },
+      {
+        "WEO Country Code": 813,
+        "ISO": "SLB",
+        "WEO Subject Code": "NGDPRPPPPC",
+        "Country": "Solomon Islands",
+        "gdp2021": 2123.89,
+        "gdp2022": 1985.56,
+        "GrowthLatest": -0.065130492,
+        "p21": 0
+      }
+    ]
+  },
+  "nl_utterance": "Show me the countries with a p21 value of 1 based on their ISO codes.",
+  "refer_fileds": [
+    {
+      "field": "ISO",
+      "type": "nominal"
+    }
+  ],
+  "refer_others": [
+    {
+      "c_type": "transform",
+      "c_name": "filter",
+      "c_list": [
+        {
+          "field": "p21",
+          "equal": 1
+        }
+      ],
+      "nl_ref_type": "explicit",
+      "nl_ref_phrase": "..."
+    }
+  ],
+  "generated_chart_list": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "WEO Country Code"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "gdp2021"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "gdp2022"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "GrowthLatest"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {
+          "type": "quantitative",
+          "field": "p21"
+        },
+        "color": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "WEO Country Code"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "gdp2021"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "gdp2022"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "GrowthLatest"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    },
+    {
+      "mark": "boxplot",
+      "encoding": {
+        "y": {
+          "type": "quantitative",
+          "field": "p21"
+        },
+        "x": {
+          "field": "ISO",
+          "type": "nominal"
+        }
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "p21",
+            "equal": 1
+          }
+        }
+      ]
+    }
+  ]
+}
