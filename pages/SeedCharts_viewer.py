@@ -60,7 +60,7 @@ def update_index():
 
 # 页面标题和帮助信息
 st.title('Vega-Lite Charts Viewer')
-st.write("Use the dropdown menu or buttons to browse charts or enter a filename directly.")
+st.caption("Use the dropdown menu or buttons to browse charts or enter a filename directly.")
 
 # 侧边栏处理文件选择
 with st.sidebar:
