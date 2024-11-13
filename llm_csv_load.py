@@ -82,30 +82,29 @@ def dataset_statistic(df, column_with_type):
     json_output = {}
 
     for field in df.columns:
+        # 检查 column_with_type 中是否包含当前字段
+        if field not in column_with_type:
+            print(f"字段 {field} 不存在于 column_with_type 中，跳过该字段")
+            continue
+
         json_output[field] = {}
         json_output[field]['name'] = field
 
+        # 后续的代码保持不变
         if column_with_type[field]['type'] == 'temporal':
             json_output[field]['type'] = 'temporal'
-            # unique values, only first 10 values
             json_output[field]['unique_value'] = df[field].unique().tolist()[:10]
         elif column_with_type[field]['type'] == 'nominal':
             json_output[field]['type'] = 'nominal'
-            # unique values, only first 10 values
             json_output[field]['unique_value'] = df[field].unique().tolist()[:10]
         elif column_with_type[field]['type'] == 'quantitative':
             json_output[field]['type'] = 'quantitative'
             json_output[field]['range'] = [df[field].min(), df[field].max()]
-            # json_output[field]['min'] = df[field].min()
-            # json_output[field]['max'] = df[field].max()
-            # # json_output[field]['mean'] = df[field].mean().item()
-            # # json_output[field]['std'] = df[field].std().item()
-            # json_output[field]['mean'] = round(df[field].mean(), 2)
-            # json_output[field]['std'] = round(df[field].std(), 2)
 
         json_output[field]['num_unique_value'] = df[field].nunique()
 
     return json_output
+
 
 # 确定 DataFrame 中每一列的数据类型（时间、名义或定量）。
 def get_column_with_type(df):

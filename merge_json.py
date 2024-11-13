@@ -1,9 +1,10 @@
 import glob
 import json
 import os
+import re
 
 
-def merge_json(json_files):
+def merge_json(json_files, charts_files_path):
     merged_result = {}
 
     for json_file in json_files:
@@ -14,6 +15,29 @@ def merge_json(json_files):
             # Read the contents of the JSON file
             with open(json_file, "r", encoding="utf-8") as f:
                 data = json.load(f)
+                
+            # Generate the corresponding charts JSON file path
+            charts_file = os.path.join(charts_files_path, file_name)
+            
+            # Read the corresponding dataset JSON for chart info
+            try:
+                with open(charts_file, "r", encoding="utf-8") as charts_file:
+                    charts_file_data = json.load(charts_file)
+                    generated_chart_list = charts_file_data.get("generated_chart_list", [])
+                    
+                    # Add the $schema and data URL to each chart in the list
+                    for chart in generated_chart_list:
+                        chart["$schema"] = "https://vega.github.io/schema/vega-lite/v5.json"
+                        # Construct the CSV URL based on the file name
+                        csv_file_name = re.match(r"([^_]+_[^_]+)", file_name).group(0)  # Capture part before the second underscore
+                        chart["data"] = {
+                            "url": f"https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/{csv_file_name}.csv",
+                            "format": {"type": "csv"}
+                        }
+            except Exception as e:
+                print(f"Error reading dataset file {charts_file}: {e}")
+                generated_chart_list = []  # Set it to an empty list if there's an error
+                
 
             # Extract the required structure, using the get() method to avoid errors when fields are missing
             transformed_data = {
@@ -78,6 +102,7 @@ def merge_json(json_files):
                     for mc in data.get("gpt_result", {}).get("constraints", [])
                     if mc.get("c_type", "") == "mark" or mc.get("c_type", "") == "task"
                 ],
+                "generated_chart_list": generated_chart_list
             }
 
             # Add the transformed data to the merged dictionary
@@ -93,9 +118,10 @@ def merge_json(json_files):
 
 # List of file paths
 json_files = glob.glob("./generated_nl_gpt_json/*.json")
+charts_files_path = os.path.join(".", "upload_dataset_task_1_new")
 # json_files = ["./generated_nl_gpt_json/vl_0031_combi_0.json","./generated_nl_gpt_json/vl_0031_combi_1.json","./generated_nl_gpt_json/vl_0031_combi_2.json"]
 # json_files = ["./generated_nl_gpt_json/vl_1721_combi_4.json"]
-merged_result = merge_json(json_files)
+merged_result = merge_json(json_files, charts_files_path)
 
 # Output to a new file
 with open("./data/merged_result.json", "w", encoding="utf-8") as f:

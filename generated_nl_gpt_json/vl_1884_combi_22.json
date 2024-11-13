@@ -1,18 +1,18 @@
 {
   "gpt_result": {
-    "nl_utterance": "Show me a line chart of the sum of weekly cases over time for the United Kingdom, France, Germany, and India.",
+    "nl_utterance": "Create a line chart showing the sum of weekly counts of cases over year-week, filtering for locations in the United Kingdom, France, Germany, and India.",
     "encoded_fields": [
       {
         "field": "year_week",
         "type": "nominal",
         "nl_ref_type": "explicit",
-        "nl_ref_phrase": "over time"
+        "nl_ref_phrase": "year-week"
       },
       {
         "field": "weekly_count",
         "type": "quantitative",
         "nl_ref_type": "explicit",
-        "nl_ref_phrase": "sum of weekly cases"
+        "nl_ref_phrase": "weekly counts"
       },
       {
         "field": [
@@ -21,35 +21,86 @@
         ],
         "type": "nominal",
         "nl_ref_type": "ambiguous",
-        "nl_ref_phrase": "for the United Kingdom, France, Germany, and India"
+        "nl_ref_phrase": "locations"
       }
     ],
     "constraints": [
       {
         "c_type": "mark",
         "c_name": "line chart",
+        "c_list": [
+          {
+            "mark": "line",
+            "encoding": {
+              "x": {},
+              "y": {
+                "type": "quantitative"
+              },
+              "color": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "column": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "row": {
+                "ignore": true,
+                "type": "nominal"
+              }
+            },
+            "unique_map": {
+              "x": "y"
+            }
+          }
+        ],
         "nl_ref_type": "explicit",
         "nl_ref_phrase": "line chart"
       },
       {
         "c_type": "transform",
         "c_name": "filter",
+        "c_list": [
+          {
+            "field": "country",
+            "oneOf": [
+              "United Kingdom",
+              "France",
+              "Germany",
+              "India"
+            ]
+          }
+        ],
         "nl_ref_type": "by_value",
-        "nl_ref_phrase": "for the United Kingdom, France, Germany, and India"
+        "nl_ref_phrase": "filtering for locations in the United Kingdom, France, Germany, and India"
       },
       {
         "c_type": "transform",
         "c_name": "filter",
+        "c_list": [
+          {
+            "field": "indicator",
+            "oneOf": [
+              "cases"
+            ]
+          }
+        ],
         "nl_ref_type": "by_value",
-        "nl_ref_phrase": "cases"
+        "nl_ref_phrase": "of cases"
       },
       {
         "c_type": "transform",
         "c_name": "aggregate",
+        "c_list": [
+          {
+            "field": "weekly_count",
+            "aggregate": "sum"
+          }
+        ],
         "nl_ref_type": "explicit",
-        "nl_ref_phrase": "sum of weekly cases"
+        "nl_ref_phrase": "sum of weekly counts"
       }
     ]
   },
-  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"country\": \"Afghanistan\",\n      \"country_code\": \"AFG\",\n      \"continent\": \"Asia\",\n      \"population\": 38928341,\n      \"indicator\": \"cases\",\n      \"weekly_count\": 0,\n      \"year_week\": \"2020-01\",\n      \"rate_14_day\": NaN,\n      \"cumulative_count\": 0,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Barbados\",\n      \"country_code\": \"BRB\",\n      \"continent\": \"America\",\n      \"population\": 287371,\n      \"indicator\": \"deaths\",\n      \"weekly_count\": 0,\n      \"year_week\": \"2020-24\",\n      \"rate_14_day\": 0.0,\n      \"cumulative_count\": 7,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Latvia\",\n      \"country_code\": \"LVA\",\n      \"continent\": \"Europe\",\n      \"population\": 1907675,\n      \"indicator\": \"cases\",\n      \"weekly_count\": 2452,\n      \"year_week\": \"2020-46\",\n      \"rate_14_day\": 231.22388,\n      \"cumulative_count\": 10547,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    }\n  ],\n  \"column names\": [\n    \"country\",\n    \"country_code\",\n    \"continent\",\n    \"population\",\n    \"indicator\",\n    \"weekly_count\",\n    \"year_week\",\n    \"rate_14_day\",\n    \"cumulative_count\",\n    \"source\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart, it can be a question or a command. One NL 'utterance' is in one or two sentences. \n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": \"year_week\",\n      \"type\": \"nominal\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": \"weekly_count\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": [\n        \"country\",\n        \"continent\"\n      ],\n      \"type\": \"nominal\",\n      \"nl_ref_type\": \"ambiguous\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"mark\",\n      \"c_name\": \"line chart\",\n      \"c_list\": [\n        {\n          \"mark\": \"line\",\n          \"encoding\": {\n            \"x\": {},\n            \"y\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"x\": \"y\"\n          }\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"filter\",\n      \"c_list\": [\n        {\n          \"field\": \"country\",\n          \"oneOf\": [\n            \"United Kingdom\",\n            \"France\",\n            \"Germany\",\n            \"India\"\n          ]\n        }\n      ],\n      \"nl_ref_type\": \"by_value\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"filter\",\n      \"c_list\": [\n        {\n          \"field\": \"indicator\",\n          \"oneOf\": [\n            \"cases\"\n          ]\n        }\n      ],\n      \"nl_ref_type\": \"by_value\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"aggregate\",\n      \"c_list\": [\n        {\n          \"field\": \"weekly_count\",\n          \"aggregate\": \"sum\"\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
+  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"country\": \"Afghanistan\",\n      \"country_code\": \"AFG\",\n      \"continent\": \"Asia\",\n      \"population\": 38928341,\n      \"indicator\": \"cases\",\n      \"weekly_count\": 0,\n      \"year_week\": \"2020-01\",\n      \"rate_14_day\": NaN,\n      \"cumulative_count\": 0,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Australia\",\n      \"country_code\": \"AUS\",\n      \"continent\": \"Oceania\",\n      \"population\": 25499881,\n      \"indicator\": \"deaths\",\n      \"weekly_count\": 14,\n      \"year_week\": \"2020-29\",\n      \"rate_14_day\": 0.70588565,\n      \"cumulative_count\": 122,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Serbia\",\n      \"country_code\": \"SRB\",\n      \"continent\": \"Europe\",\n      \"population\": 6926705,\n      \"indicator\": \"deaths\",\n      \"weekly_count\": 34,\n      \"year_week\": \"2020-17\",\n      \"rate_14_day\": 10.972028,\n      \"cumulative_count\": 156,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Poland\",\n      \"country_code\": \"POL\",\n      \"continent\": \"Europe\",\n      \"population\": 37958138,\n      \"indicator\": \"cases\",\n      \"weekly_count\": 1228,\n      \"year_week\": \"2020-13\",\n      \"rate_14_day\": 4.5760937,\n      \"cumulative_count\": 1862,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    },\n    {\n      \"country\": \"Liberia\",\n      \"country_code\": \"LBR\",\n      \"continent\": \"Africa\",\n      \"population\": 5057677,\n      \"indicator\": \"cases\",\n      \"weekly_count\": 3,\n      \"year_week\": \"2020-12\",\n      \"rate_14_day\": NaN,\n      \"cumulative_count\": 3,\n      \"source\": \"Epidemic intelligence, national weekly data\"\n    }\n  ],\n  \"column names\": [\n    \"country\",\n    \"country_code\",\n    \"continent\",\n    \"population\",\n    \"indicator\",\n    \"weekly_count\",\n    \"year_week\",\n    \"rate_14_day\",\n    \"cumulative_count\",\n    \"source\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart. It should be a commands structure. One NL 'utterance' is in one or two sentences. Here are two examples from Commands for reference:\n    Create a line chart showing order date and sum of sales, divided by category.\n    Sort creative types by number of movies.\n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": \"year_week\",\n      \"type\": \"nominal\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": \"weekly_count\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": [\n        \"country\",\n        \"continent\"\n      ],\n      \"type\": \"nominal\",\n      \"nl_ref_type\": \"ambiguous\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"mark\",\n      \"c_name\": \"line chart\",\n      \"c_list\": [\n        {\n          \"mark\": \"line\",\n          \"encoding\": {\n            \"x\": {},\n            \"y\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"x\": \"y\"\n          }\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"filter\",\n      \"c_list\": [\n        {\n          \"field\": \"country\",\n          \"oneOf\": [\n            \"United Kingdom\",\n            \"France\",\n            \"Germany\",\n            \"India\"\n          ]\n        }\n      ],\n      \"nl_ref_type\": \"by_value\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"filter\",\n      \"c_list\": [\n        {\n          \"field\": \"indicator\",\n          \"oneOf\": [\n            \"cases\"\n          ]\n        }\n      ],\n      \"nl_ref_type\": \"by_value\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"c_type\": \"transform\",\n      \"c_name\": \"aggregate\",\n      \"c_list\": [\n        {\n          \"field\": \"weekly_count\",\n          \"aggregate\": \"sum\"\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
 }

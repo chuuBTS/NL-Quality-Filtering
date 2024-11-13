@@ -1,6 +1,6 @@
 {
   "gpt_result": {
-    "nl_utterance": "Create a bar chart showing Total GDP adjusted in billions over time.",
+    "nl_utterance": "Create a bar chart with the Total GDP adjusted in billions on one axis, and date or year on the other.",
     "encoded_fields": [
       {
         "field": [
@@ -9,7 +9,7 @@
         ],
         "type": "quantitative",
         "nl_ref_type": "ambiguous",
-        "nl_ref_phrase": "over time"
+        "nl_ref_phrase": "date or year"
       },
       {
         "field": "Total_GDP_adjusted_billions",
@@ -22,10 +22,60 @@
       {
         "c_type": "mark",
         "c_name": "bar chart",
+        "c_list": [
+          {
+            "mark": "bar",
+            "encoding": {
+              "x": {},
+              "y": {
+                "type": "quantitative"
+              },
+              "color": {
+                "type": "nominal",
+                "ignore": true
+              },
+              "column": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "row": {
+                "ignore": true,
+                "type": "nominal"
+              }
+            },
+            "unique_map": {
+              "x": "y"
+            }
+          },
+          {
+            "mark": "bar",
+            "encoding": {
+              "y": {},
+              "x": {
+                "type": "quantitative"
+              },
+              "color": {
+                "type": "nominal",
+                "ignore": true
+              },
+              "column": {
+                "ignore": true,
+                "type": "nominal"
+              },
+              "row": {
+                "ignore": true,
+                "type": "nominal"
+              }
+            },
+            "unique_map": {
+              "y": "x"
+            }
+          }
+        ],
         "nl_ref_type": "explicit",
         "nl_ref_phrase": "bar chart"
       }
     ]
   },
-  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"Date\": \"08/31/2022\",\n      \"GRA Purchases\": 93769635059.0,\n      \"PRGT 1/2/\": 15254184552.0,\n      \"Totals\": 109000000000.0,\n      \"Year\": 2022.0,\n      \"Total_billions \": 109.0238196,\n      \"Unnamed: 6\": NaN,\n      \"WorldGDP_billions\": NaN,\n      \"Total_GDP_adjusted_billions\": NaN,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \"12/31/1994\",\n      \"GRA Purchases\": 25611676952.0,\n      \"PRGT 1/2/\": 4599768498.0,\n      \"Totals\": 30211445450.0,\n      \"Year\": 1994.0,\n      \"Total_billions \": 30.21144545,\n      \"Unnamed: 6\": \"73,747.75\",\n      \"WorldGDP_billions\": 27985.29,\n      \"Total_GDP_adjusted_billions\": 0.00108,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \"12/31/2009\",\n      \"GRA Purchases\": 37221142436.0,\n      \"PRGT 1/2/\": 5079705286.0,\n      \"Totals\": 42300847722.0,\n      \"Year\": 2009.0,\n      \"Total_billions \": 42.30084772,\n      \"Unnamed: 6\": \"32,068.87\",\n      \"WorldGDP_billions\": 60731.151,\n      \"Total_GDP_adjusted_billions\": 0.000697,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    }\n  ],\n  \"column names\": [\n    \"Date\",\n    \"GRA Purchases\",\n    \"PRGT 1/2/\",\n    \"Totals\",\n    \"Year\",\n    \"Total_billions \",\n    \"Unnamed: 6\",\n    \"WorldGDP_billions\",\n    \"Total_GDP_adjusted_billions\",\n    \"Unnamed: 9\",\n    \"Unnamed: 10\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart, it can be a question or a command. One NL 'utterance' is in one or two sentences. \n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": [\n        \"Date\",\n        \"Year\"\n      ],\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"ambiguous\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": \"Total_GDP_adjusted_billions\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"mark\",\n      \"c_name\": \"bar chart\",\n      \"c_list\": [\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"x\": {},\n            \"y\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"x\": \"y\"\n          }\n        },\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"y\": {},\n            \"x\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"y\": \"x\"\n          }\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
+  "input": "Dataset Information: {\n  \"data samples\": [\n    {\n      \"Date\": \"08/31/2022\",\n      \"GRA Purchases\": 93769635059.0,\n      \"PRGT 1/2/\": 15254184552.0,\n      \"Totals\": 109000000000.0,\n      \"Year\": 2022.0,\n      \"Total_billions \": 109.0238196,\n      \"Unnamed: 6\": NaN,\n      \"WorldGDP_billions\": NaN,\n      \"Total_GDP_adjusted_billions\": NaN,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \"12/31/1993\",\n      \"GRA Purchases\": 25196745031.0,\n      \"PRGT 1/2/\": 3942792899.0,\n      \"Totals\": 29139537930.0,\n      \"Year\": 1993.0,\n      \"Total_billions \": 29.13953793,\n      \"Unnamed: 6\": \"75,116.96\",\n      \"WorldGDP_billions\": 26039.542,\n      \"Total_GDP_adjusted_billions\": 0.00112,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \"12/31/2006\",\n      \"GRA Purchases\": 9822640239.0,\n      \"PRGT 1/2/\": 3844020520.0,\n      \"Totals\": 13666660759.0,\n      \"Year\": 2006.0,\n      \"Total_billions \": 13.66666076,\n      \"Unnamed: 6\": \"32,949.69\",\n      \"WorldGDP_billions\": 51762.962,\n      \"Total_GDP_adjusted_billions\": 0.000264,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \"12/31/2017\",\n      \"GRA Purchases\": 39585385873.0,\n      \"PRGT 1/2/\": 6522280669.0,\n      \"Totals\": 46107666542.0,\n      \"Year\": 2017.0,\n      \"Total_billions \": 46.10766654,\n      \"Unnamed: 6\": \"19,125.34\",\n      \"WorldGDP_billions\": 80945.405,\n      \"Total_GDP_adjusted_billions\": 0.00057,\n      \"Unnamed: 9\": \"`\",\n      \"Unnamed: 10\": NaN\n    },\n    {\n      \"Date\": \" 1/ Includes loans under the Structural Adjustment Facility and Trust Fund.\",\n      \"GRA Purchases\": NaN,\n      \"PRGT 1/2/\": NaN,\n      \"Totals\": NaN,\n      \"Year\": NaN,\n      \"Total_billions \": NaN,\n      \"Unnamed: 6\": NaN,\n      \"WorldGDP_billions\": NaN,\n      \"Total_GDP_adjusted_billions\": NaN,\n      \"Unnamed: 9\": NaN,\n      \"Unnamed: 10\": NaN\n    }\n  ],\n  \"column names\": [\n    \"Date\",\n    \"GRA Purchases\",\n    \"PRGT 1/2/\",\n    \"Totals\",\n    \"Year\",\n    \"Total_billions \",\n    \"Unnamed: 6\",\n    \"WorldGDP_billions\",\n    \"Total_GDP_adjusted_billions\",\n    \"Unnamed: 9\",\n    \"Unnamed: 10\"\n  ]\n}\n\nYour Job:\nI am developing a NL to Data Visualization Dataset. \nPlease help me generate natural language utterance for given dataset and constraints.\nDefinition about the Taks:\n- 'utterance' is what a user would say to make a chart. It should be a queries structure. One NL 'utterance' is in one or two sentences. Here are two examples from Queries for reference:\n    Scatter Production Budget vs Worldwide Gross, sliced by Content Rating.\n    mpg vs displacement as a scatter chart.\n- 'given dataset' is in form of column names, column type, range/unique values of the column.\n- 'constraints' are information about the chart that should be included in the utterance. \n    So we can find a reference phrase in the NL utterance that corresponds to the given constraints. \n- 'reference phrase' can be explicit, ambiguous, and by_value. 'ambiguous' means the phrase can map to more than one columns in the dataset, always a hypernym of column names(depending on the dataset values).\n    For example:\n    {\"column\": \"gdpPercap\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"GDP per capita\"},\n    {\"column\": [\"country\",\"continent\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n    {\"column\": [\"country\",\"country_short_name\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"countries\"}\n    {\"c_type\": \"mark\", \"c_name\": \"point chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"scatter plot\"}\n    {\"c_type\": \"mark\", \"c_name\": \"arc chart\", \"nl_ref_type\": \"explicit\", \"nl_ref_phrase\": \"pie chart\"}\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"explicit\",\"nl_ref_phrase\": \"for countries Iceland and Norway\"},\n    {\"c_type\": \"transform\",\"c_name\": \"filter\",\"c_list\": [{\"field\": \"country\",\"oneOf\": [\"Iceland\",\"Norway\"]}],\"nl_ref_type\": \"by_value\",\"nl_ref_phrase\": \"for Iceland and Norway\"},\n- the 'nl_ref_phrase' for 'ambiguous' columns should be equally near all ambiguous columns, not too near to one of the column since it would not be ambiguous.\n    good example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"location\"}\n    bad example: {\"column\": [\"country\",\"region\"], \"nl_ref_type\": \"ambiguous\", \"nl_ref_phrase\": \"region\"}\n- You only include given constraints and no other information. \n    For example, if a column name is not in the given constraint, it will not be included in the NL utterance.\n    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.\n- all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. \n\nThe output format is identical to the input format, but fill in the str blanks(\"...\").\n### Input:\n{\n  \"nl_utterance\": \"...\",\n  \"encoded_fields\": [\n    {\n      \"field\": [\n        \"Date\",\n        \"Year\"\n      ],\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"ambiguous\",\n      \"nl_ref_phrase\": \"...\"\n    },\n    {\n      \"field\": \"Total_GDP_adjusted_billions\",\n      \"type\": \"quantitative\",\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ],\n  \"constraints\": [\n    {\n      \"c_type\": \"mark\",\n      \"c_name\": \"bar chart\",\n      \"c_list\": [\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"x\": {},\n            \"y\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"x\": \"y\"\n          }\n        },\n        {\n          \"mark\": \"bar\",\n          \"encoding\": {\n            \"y\": {},\n            \"x\": {\n              \"type\": \"quantitative\"\n            },\n            \"color\": {\n              \"type\": \"nominal\",\n              \"ignore\": true\n            },\n            \"column\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            },\n            \"row\": {\n              \"ignore\": true,\n              \"type\": \"nominal\"\n            }\n          },\n          \"unique_map\": {\n            \"y\": \"x\"\n          }\n        }\n      ],\n      \"nl_ref_type\": \"explicit\",\n      \"nl_ref_phrase\": \"...\"\n    }\n  ]\n}\n\n### Output:"
 }
