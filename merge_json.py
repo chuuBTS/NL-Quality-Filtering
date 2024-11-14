@@ -26,15 +26,6 @@ def merge_json(json_files, charts_files_path):
                     generated_chart_list = charts_file_data.get("generated_chart_list", [])
                     
                     # Add the $schema and data URL to each chart in the list
-                    # for chart in generated_chart_list:
-                    #     chart["$schema"] = "https://vega.github.io/schema/vega-lite/v5.json"
-                    #     # Construct the CSV URL based on the file name
-                    #     csv_file_name = re.match(r"([^_]+_[^_]+)", file_name).group(0)  # Capture part before the second underscore
-                    #     chart["data"] = {
-                    #         "url": f"https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/{csv_file_name}.csv",
-                    #         "format": {"type": "csv"}
-                    #     }
-                    # Create a new dictionary to place $schema and data at the front
                     for chart in generated_chart_list:
                         csv_file_name = re.match(r"([^_]+_[^_]+)", file_name).group(0)  # Capture part before the second underscore
                         chart_with_schema_and_data = {

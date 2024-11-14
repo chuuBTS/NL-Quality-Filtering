@@ -4,6 +4,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+st.set_page_config(layout="wide")
+
 # Load annotation data
 with open("data/annotation_result.json", "r", encoding="utf-8") as file:
     annotation_data = json.load(file)
@@ -36,8 +38,25 @@ annotation_df.fillna("Not Labeled", inplace=True)
 st.subheader("NL Utterance Type Distribution")
 try:
     utterance_type_counts = annotation_df["nl_type"].value_counts()
-    fig_type = px.pie(values=utterance_type_counts.values, names=utterance_type_counts.index, title="NL Utterance Types")
-    st.plotly_chart(fig_type)
+    
+    # Create two columns for pie and bar charts
+    col1, col2, col3 =st.columns([3, 1, 3])
+
+    with col1:
+        fig_type_bar = px.bar(
+            x=utterance_type_counts.values, 
+            y=utterance_type_counts.index,
+            orientation="h",
+            title="NL Utterance Types (Bar)",
+            text=utterance_type_counts.values
+        )
+        fig_type_bar.update_traces(textposition="outside")
+        st.plotly_chart(fig_type_bar)
+    
+    with col3:
+        fig_type = px.pie(values=utterance_type_counts.values, names=utterance_type_counts.index, title="NL Utterance Types (Pie)")
+        st.plotly_chart(fig_type)       
+        
 except Exception as e:
     st.error("Error loading chart: No data")
 
@@ -45,17 +64,25 @@ except Exception as e:
 st.subheader("NL Utterance Quality Distribution")
 try:
     utterance_quality_counts = annotation_df["nl_quality"].value_counts()
-    #fig_quality = px.pie(values=utterance_quality_counts.values, names=utterance_quality_counts.index, title="NL Utterance Quality")
-    utterance_quality_percentages = (utterance_quality_counts / utterance_quality_counts.sum() * 100).round(2)
-    fig_quality = px.bar(
+    
+    # Create two columns for pie and bar charts
+    col1, col2, col3 =st.columns([3, 1, 3])
+
+    with col1:
+        fig_quality = px.bar(
         x=utterance_quality_counts.values,
         y=utterance_quality_counts.index,
         orientation="h",
-        title="NL Utterance Quality",
-        text=utterance_quality_percentages.apply(lambda x: f"{x}%")  # Display percentage on bars
-    )
-    fig_quality.update_traces(textposition="outside")
-    st.plotly_chart(fig_quality)
+        title="NL Utterance Quality (Bar)",
+        text=utterance_quality_counts.values
+        )
+        fig_quality.update_traces(textposition="outside")
+        st.plotly_chart(fig_quality)
+    
+    with col3:
+        fig_quality = px.pie(values=utterance_quality_counts.values, names=utterance_quality_counts.index, title="NL Utterance Quality (Pie)")
+        st.plotly_chart(fig_quality)
+    
 except Exception as e:
     st.error("Error loading chart: No data")
 
@@ -63,16 +90,24 @@ except Exception as e:
 st.subheader("Error Type Distribution")
 try:
     error_type_counts = annotation_df["nl_error_type"].explode().value_counts()
-    fig_error = px.pie(values=error_type_counts.values, names=error_type_counts.index, title="Error Types")
-    # error_type_percentages = (error_type_counts / error_type_counts.sum() * 100).round(2)
-    # fig_error = px.bar(
-    #     x=error_type_counts.index, 
-    #     y=error_type_counts.values, 
-    #     title="Error Types",
-    #     text=error_type_percentages.apply(lambda x: f"{x}%")  # Display percentage on bars
-    # )
-    # fig_error.update_traces(textposition="outside")
-    st.plotly_chart(fig_error)
+    
+    # Create two columns for pie and bar charts
+    col1, col2, col3 =st.columns([3, 1, 3])
+    
+    with col1:
+        fig_error = px.bar(
+            x=error_type_counts.index, 
+            y=error_type_counts.values, 
+            title="Error Types (Bar)",
+            text=error_type_counts.values
+        )
+        fig_error.update_traces(textposition="outside")
+        st.plotly_chart(fig_error)
+        
+    with col3:
+        fig_error = px.pie(values=error_type_counts.values, names=error_type_counts.index, title="Error Types (Pie)")
+        st.plotly_chart(fig_error)
+        
 except Exception as e:
     st.error("Error loading chart: No data")
 
@@ -90,12 +125,25 @@ try:
     # Convert the Counter to a Series for easy plotting
     chart_annotation_counts_series = pd.Series(chart_annotation_counts)
 
-    # Plot the chart annotation distribution using a bar chart
-    fig_chart_annotation = px.bar(
-        x=chart_annotation_counts_series.index,
-        y=chart_annotation_counts_series.values,
-        title="Chart Annotation Distribution"
-    )
-    st.plotly_chart(fig_chart_annotation)
+     # Create two columns for pie and bar charts
+    col1, col2, col3 =st.columns([3, 1, 3])
+    
+    with col1:
+        fig_chart_annotation = px.bar(
+            x=chart_annotation_counts_series.index,
+            y=chart_annotation_counts_series.values,
+            title="Chart Annotation Distribution (Bar)",
+            text=chart_annotation_counts_series.values
+        )
+        st.plotly_chart(fig_chart_annotation)
+    
+    with col3:
+        fig_chart_annotation = px.pie(
+            values=chart_annotation_counts_series.values,
+            names=chart_annotation_counts_series.index,
+            title="Chart Annotation Distribution (Pie)"
+        )
+        st.plotly_chart(fig_chart_annotation)
+
 except Exception as e:
     st.error("Error loading chart: No data")

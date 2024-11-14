@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 # Set the page configuration
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 
 # Load JSON data
 with open("data/merged_result.json", "r", encoding="utf-8") as file:

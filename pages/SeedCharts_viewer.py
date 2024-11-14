@@ -3,6 +3,9 @@ import json
 import glob
 import os
 
+# Set the page configuration
+st.set_page_config(layout="centered")
+
 # 定义函数来转换 JSON 中的值，并在顶层的 title 字段中添加 anchor 和 align 属性
 def convert_json_values(json_data, in_root=True):
     if isinstance(json_data, dict):
