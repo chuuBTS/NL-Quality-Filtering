@@ -26,14 +26,33 @@ def merge_json(json_files, charts_files_path):
                     generated_chart_list = charts_file_data.get("generated_chart_list", [])
                     
                     # Add the $schema and data URL to each chart in the list
+                    # for chart in generated_chart_list:
+                    #     chart["$schema"] = "https://vega.github.io/schema/vega-lite/v5.json"
+                    #     # Construct the CSV URL based on the file name
+                    #     csv_file_name = re.match(r"([^_]+_[^_]+)", file_name).group(0)  # Capture part before the second underscore
+                    #     chart["data"] = {
+                    #         "url": f"https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/{csv_file_name}.csv",
+                    #         "format": {"type": "csv"}
+                    #     }
+                    # Create a new dictionary to place $schema and data at the front
                     for chart in generated_chart_list:
-                        chart["$schema"] = "https://vega.github.io/schema/vega-lite/v5.json"
-                        # Construct the CSV URL based on the file name
                         csv_file_name = re.match(r"([^_]+_[^_]+)", file_name).group(0)  # Capture part before the second underscore
-                        chart["data"] = {
-                            "url": f"https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/{csv_file_name}.csv",
-                            "format": {"type": "csv"}
+                        chart_with_schema_and_data = {
+                            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                            "data": {
+                                "url": f"https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/{csv_file_name}.csv",
+                                "format": {"type": "csv"}
+                            }
                         }
+                        
+                        # Merge the original chart data into the new dictionary (this keeps the original keys intact)
+                        chart_with_schema_and_data.update(chart)
+                        
+                        # Now `chart_with_schema_and_data` contains `$schema` and `data` at the front
+                        # Directly modify the chart in the list
+                        chart.clear()  # Clear current chart contents
+                        chart.update(chart_with_schema_and_data)  # Update it with the new dictionary
+                    
             except Exception as e:
                 print(f"Error reading dataset file {charts_file}: {e}")
                 generated_chart_list = []  # Set it to an empty list if there's an error

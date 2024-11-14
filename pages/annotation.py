@@ -3,6 +3,9 @@ import random
 import pandas as pd
 import streamlit as st
 
+# Set the page configuration
+#st.set_page_config(layout="wide")
+
 # Load JSON data
 with open("data/merged_result.json", "r", encoding="utf-8") as file:
     data = json.load(file)
@@ -190,35 +193,45 @@ generated_chart_list = data[page].get("generated_chart_list", [])
 st.warning(f"""Total Generated Charts: {len(generated_chart_list)}""", icon="📊")
 #st.markdown(f"<p style='font-weight:bold;'>Total Generated Charts: {len(generated_chart_list)}</p>", unsafe_allow_html=True)
 if generated_chart_list:
-    # Iterate through the generated charts and display each chart with a label (good/poor)
+    # Iterate through the generated charts and display each chart with a label
     for chart_index, chart in enumerate(generated_chart_list):
-        charts_col, label_col = st.columns([2, 1])
-        with charts_col:
-            # Render Vega-Lite chart
-            st.vega_lite_chart(chart)
-        with label_col:
-            chart_annotation_options = ["good", "empty", "duplicate", "bad aesthetics", "too complex", "irrelevant data", "mismatched chart type", "Please select an option~"]
-            chart_annotation_index = (
-                chart_annotation_options.index(current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None))
-                if current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None) in chart_annotation_options else len(chart_annotation_options) - 1
-            )
-            # Display radio button to label the chart (good/poor)
-            chart_annotation = st.radio(
-                f"Chart {chart_index + 1} Anotation", 
-                options = chart_annotation_options, 
-                index = chart_annotation_index, 
-                key=f"chart_annotation_{chart_index}"  # Unique key for each chart's radio button
-            )
-            
-            # Exclude the placeholder in the saved annotation
-            chart_annotation = None if chart_annotation == "Please select an option~" else chart_annotation
-            
-            if chart_annotation != current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None):
-                # Save the chart quality and error types to the annotation data 
-                annotation_data[page].setdefault("chart_annotation", {})
-                annotation_data[page]["chart_annotation"][str(chart_index)] = chart_annotation
-                # Save the updated annotation status to annotation_result.json
-                with open("data/annotation_result.json", "w", encoding="utf-8") as file:
-                    json.dump(annotation_data, file, indent=4)
+        # Tabs for chart and JSON code
+        charts_tab, json_tab = st.tabs(["📈 Chart & Annotation", "🗃 Vega-Lite JSON"])
+        with charts_tab:
+            # Display the chart and a radio button to label the chart
+            charts_json_col, label_col = st.columns([2.3, 1])
+            with charts_json_col:
+                # Render Vega-Lite chart
+                st.vega_lite_chart(chart)
                 
-                st.rerun()
+            with label_col:
+                chart_annotation_options = ["good", "empty", "duplicate", "bad aesthetics", "too complex", "irrelevant data", "mismatched chart type", "Please select an option~"]
+                chart_annotation_index = (
+                    chart_annotation_options.index(current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None))
+                    if current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None) in chart_annotation_options else len(chart_annotation_options) - 1
+                )
+                # Display radio button to label the chart (good/poor)
+                chart_annotation = st.radio(
+                    f"Chart {chart_index + 1} Anotation", 
+                    options = chart_annotation_options, 
+                    index = chart_annotation_index, 
+                    key=f"chart_annotation_{chart_index}"  # Unique key for each chart's radio button
+                )
+                
+                # Exclude the placeholder in the saved annotation
+                chart_annotation = None if chart_annotation == "Please select an option~" else chart_annotation
+                
+                if chart_annotation != current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None):
+                    # Save the chart quality and error types to the annotation data 
+                    annotation_data[page].setdefault("chart_annotation", {})
+                    annotation_data[page]["chart_annotation"][str(chart_index)] = chart_annotation
+                    # Save the updated annotation status to annotation_result.json
+                    with open("data/annotation_result.json", "w", encoding="utf-8") as file:
+                        json.dump(annotation_data, file, indent=4)
+                    
+                    st.rerun()    
+                
+        with json_tab:
+            # Display JSON code for the chart
+            st.json(chart)
+        
