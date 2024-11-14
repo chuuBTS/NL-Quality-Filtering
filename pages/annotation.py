@@ -197,7 +197,7 @@ if generated_chart_list:
             # Render Vega-Lite chart
             st.vega_lite_chart(chart)
         with label_col:
-            chart_annotation_options = ["good", "empty", "bad aesthetics", "duplicate", "irrelevant", "too complex", "Please select an option~"]
+            chart_annotation_options = ["good", "empty", "duplicate", "bad aesthetics", "too complex", "irrelevant data", "mismatched chart type", "Please select an option~"]
             chart_annotation_index = (
                 chart_annotation_options.index(current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None))
                 if current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None) in chart_annotation_options else len(chart_annotation_options) - 1
