@@ -105,76 +105,50 @@ with tab3:
 st.header('Human Annotation')
 # 3. LLM Generated NL Utterance
 st.markdown('<h4 style="color:green;">LLM Generated NL Utterance</h3>', unsafe_allow_html=True)
-st.info(f"""{data[page]["nl_utterance"]}""", icon="🔊")
 
 # Get the annotation status for the current page
-current_page_annotation = annotation_data.get(page, {"nl_type": None, "nl_quality": None, "nl_error_type": [], "chart_annotation": {}})
+default_annotation = {
+    "nl_type": None,
+    "charts": {}
+}
+current_page_annotation = annotation_data.get(page, {})
+current_page_annotation.update({k: v for k, v in default_annotation.items() if k not in current_page_annotation})
 
-label_col1, label_col2 = st.columns([1, 1])
-with label_col1:
-    # NL Utterance Type Radio Button with Placeholder at the End
-    nl_type_options = ["command", "question", "query", "other", "Please select an option~"]
-    nl_type_index = (
-        nl_type_options.index(current_page_annotation["nl_type"])
-        if current_page_annotation["nl_type"] in nl_type_options else len(nl_type_options) - 1
-    )
-    nl_type = st.radio(
-        "NL Utterance Type",
-        options=nl_type_options,
-        index=nl_type_index,
-        label_visibility="visible"
-    )
-    # Exclude the placeholder in the saved annotation
-    nl_type = None if nl_type == "Please select an option~" else nl_type
+# Display the generated NL utterance
+st.info(f"""{data[page]["nl_utterance"]}""", icon="🔊")
 
-with label_col2:
-    # NL Utterance Quality Radio Button with Placeholder at the End
-    nl_quality_options = ["good", "poor", "Please select an option~"]
-    nl_quality_index = (
-        nl_quality_options.index(current_page_annotation["nl_quality"])
-        if current_page_annotation["nl_quality"] in nl_quality_options else len(nl_quality_options) - 1
-    )
-    nl_quality = st.radio(
-        "NL Utterance Quality",
-        options=nl_quality_options,
-        index=nl_quality_index,
-        label_visibility="visible"
-    )
-    # Exclude the placeholder in the saved annotation
-    nl_quality = None if nl_quality == "Please select an option~" else nl_quality
+# horizontal CSS for radio button layout
+st.markdown("""
+    <style>
+    div[data-testid="stRadio"] > div { 
+        display: flex;  /* 设置为弹性盒子布局 */
+        flex-direction: row;  /* 横向排列选项 */
+        gap: 15px;  /* 设置选项之间的间距 */
+    }
+    </style>
+""", unsafe_allow_html=True)
 
-# Initialize error type choices
-nl_error_type_options = [
-    "NL lacks Encoded Fields", 
-    "NL lacks Transform Constraints", 
-    "NL lacks Mark Constraints", 
-    "NL lacks Task Constraints", 
-    "NL has redundant information", 
-    "Conflict intent", 
-    "Others"
-]
+# NL Utterance Type Radio Button 
+nl_type_options = ["command", "question", "query", "other"]
+nl_type_index = (
+    nl_type_options.index(current_page_annotation["nl_type"])
+    if current_page_annotation["nl_type"] in nl_type_options else len(nl_type_options) - 1
+)
+nl_type = st.radio(
+    "NL Utterance Type",
+    options=nl_type_options,
+    index=nl_type_index,
+    label_visibility="visible"
+)
 
-# If quality is marked as "poor", show the error type selection
-if nl_quality == "poor":
-    nl_error_types = st.multiselect(
-        "Error type", 
-        options=nl_error_type_options, 
-        default=current_page_annotation.get("nl_error_type", [])  # Load previously saved error types
-    )
-        
-else:
-    # Clear error types if quality is set to "good"
-    nl_error_types = []
+# Exclude the placeholder in the saved annotation
+nl_type = None if nl_type == "Please select an option~" else nl_type
 
 # Update annotation status if any selection changes
-if (nl_type != current_page_annotation["nl_type"] or 
-    nl_quality != current_page_annotation["nl_quality"] or 
-    nl_error_types != current_page_annotation.get("nl_error_type", [])):
+if nl_type != current_page_annotation["nl_type"]:
     
     annotation_data[page] = {
         "nl_type": nl_type,
-        "nl_quality": nl_quality,
-        "nl_error_type": nl_error_types
     }
     
     # Save the updated annotation status to annotation_result.json
@@ -202,34 +176,60 @@ if generated_chart_list:
             charts_json_col, label_col = st.columns([2.3, 1])
             with charts_json_col:
                 # Render Vega-Lite chart
+                # st.vega_lite_chart(chart, use_container_width=True)
                 st.vega_lite_chart(chart)
                 
             with label_col:
-                chart_annotation_options = ["good", "empty", "duplicate", "bad aesthetics", "too complex", "irrelevant data", "mismatched chart type", "Please select an option~"]
-                chart_annotation_index = (
-                    chart_annotation_options.index(current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None))
-                    if current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None) in chart_annotation_options else len(chart_annotation_options) - 1
+                chart_quality_options = ["good", "poor", "Please select an option~"]
+                chart_quality_index = (
+                    chart_quality_options.index(current_page_annotation.get("charts", {}).get(str(chart_index), {}).get("chart_quality", None))
+                    if current_page_annotation.get("charts", {}).get(str(chart_index), {}).get("chart_quality", None) in chart_quality_options else len(chart_quality_options) - 1
                 )
                 # Display radio button to label the chart (good/poor)
-                chart_annotation = st.radio(
+                chart_quality = st.radio(
                     f"Chart {chart_index + 1} Anotation", 
-                    options = chart_annotation_options, 
-                    index = chart_annotation_index, 
-                    key=f"chart_annotation_{chart_index}"  # Unique key for each chart's radio button
+                    options = chart_quality_options, 
+                    index = chart_quality_index, 
+                    key=f"chart_quality_{chart_index}"  # Unique key for each chart's radio button
                 )
                 
                 # Exclude the placeholder in the saved annotation
-                chart_annotation = None if chart_annotation == "Please select an option~" else chart_annotation
+                chart_quality = None if chart_quality == "Please select an option~" else chart_quality
                 
-                if chart_annotation != current_page_annotation.get("chart_annotation", {}).get(str(chart_index), None):
-                    # Save the chart quality and error types to the annotation data 
-                    annotation_data[page].setdefault("chart_annotation", {})
-                    annotation_data[page]["chart_annotation"][str(chart_index)] = chart_annotation
+                chart_error_type_options = [
+                    "empty", 
+                    "duplicate", 
+                    "bad aesthetics", 
+                    "irrelevant data", 
+                    "mismatched chart type", 
+                    "Others"
+                ]
+                
+                # If chart quality is marked as "poor", show the error type selection
+                if chart_quality == "poor":
+                    chart_error_types = st.multiselect(
+                        f"Chart {chart_index + 1} Error Type", 
+                        options=chart_error_type_options, 
+                        default=current_page_annotation.get("charts", {}).get(str(chart_index), {}).get("error_type", [])  # Load previously saved error types
+                    )
+                else:
+                    # Clear error types if chart quality is set to "good" or "empty"
+                    chart_error_types = []
+                
+                # Update annotation status if any selection changes
+                if (chart_quality != current_page_annotation.get("charts", {}).get(str(chart_index), {}).get("chart_quality", None) or 
+                    chart_error_types != current_page_annotation.get("charts", {}).get(str(chart_index), {}).get("error_type", [])):
+                    
+                    annotation_data[page].setdefault("charts", {})
+                    annotation_data[page]["charts"][str(chart_index)] = {
+                        "chart_quality": chart_quality,
+                        "error_type": chart_error_types
+                    }
                     # Save the updated annotation status to annotation_result.json
                     with open("data/annotation_result.json", "w", encoding="utf-8") as file:
                         json.dump(annotation_data, file, indent=4)
                     
-                    st.rerun()    
+                    st.rerun() 
                 
         with json_tab:
             # Display JSON code for the chart

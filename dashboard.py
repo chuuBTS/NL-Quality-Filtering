@@ -6,13 +6,17 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
+# Load merged data
+with open("data/merged_result.json", "r", encoding="utf-8") as file:
+    merged_data = json.load(file)
+
 # Load annotation data
 with open("data/annotation_result.json", "r", encoding="utf-8") as file:
     annotation_data = json.load(file)
 
 # 1. Annotation Progress
 # Total records and completed annotations
-total_records = 8442
+total_records = len(merged_data)
 completed_annotations = len(annotation_data)
 progress = (completed_annotations / total_records) * 100
 
