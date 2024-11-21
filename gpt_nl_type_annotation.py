@@ -71,7 +71,7 @@ def annotate_file(input_file, output_file):
     print(f"Annotation results have been saved to {output_file}")
 
 # File paths
-input_file = "data/mr_test.json"
+input_file = "data/merrged_result.json"
 output_file = "data/gpt_annotation_result.json"
 
 # Run the annotation process
