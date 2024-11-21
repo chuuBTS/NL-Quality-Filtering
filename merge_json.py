@@ -3,8 +3,11 @@ import json
 import os
 import re
 
+global nochart_num 
+nochart_num = 0
 
 def merge_json(json_files, charts_files_path):
+    global nochart_num
     merged_result = {}
 
     for json_file in json_files:
@@ -46,7 +49,9 @@ def merge_json(json_files, charts_files_path):
                     
             except Exception as e:
                 print(f"Error reading dataset file {charts_file}: {e}")
-                generated_chart_list = []  # Set it to an empty list if there's an error
+                nochart_num += 1
+                continue  # Skip the current file and continue with the next
+                # generated_chart_list = []  # Set it to an empty list if there's an error
                 
 
             # Extract the required structure, using the get() method to avoid errors when fields are missing
@@ -136,3 +141,5 @@ merged_result = merge_json(json_files, charts_files_path)
 # Output to a new file
 with open("./data/merged_result.json", "w", encoding="utf-8") as f:
     json.dump(merged_result, f, ensure_ascii=False, indent=4)
+    
+print(f"No chart number: {nochart_num}")
