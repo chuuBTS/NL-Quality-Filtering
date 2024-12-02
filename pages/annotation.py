@@ -7,7 +7,7 @@ import streamlit as st
 st.set_page_config(layout="centered")
 
 # Load JSON data
-with open("data/merged_result.json", "r", encoding="utf-8") as file:
+with open("data/filtered_chart_types_result.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 with open("data/annotation_result.json", "r", encoding="utf-8") as file:
@@ -201,6 +201,8 @@ if generated_chart_list:
                     "duplicate", 
                     "bad aesthetics", 
                     "irrelevant data", 
+                    "no sorting",
+                    "meaningless",
                     "mismatched chart type", 
                     "Others"
                 ]
