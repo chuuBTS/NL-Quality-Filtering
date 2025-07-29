@@ -1,0 +1,144 @@
+{
+    "nl_utterance": "Create a line chart to show the trend of prices over time.",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "Price"
+        ],
+        "table_samples": [
+            {
+                "Date": "2019-02-01T00:00:00",
+                "Price": 47.09
+            },
+            {
+                "Date": "2020-08-01T00:00:00",
+                "Price": 20.22
+            },
+            {
+                "Date": "2020-06-01T00:00:00",
+                "Price": 13.18
+            },
+            {
+                "Date": "2019-05-01T00:00:00",
+                "Price": 31.43
+            },
+            {
+                "Date": "2021-06-01T00:00:00",
+                "Price": 72.01
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Date",
+            "type": "temporal"
+        },
+        {
+            "field": "Price",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0191.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0191.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "year(datum.Date)",
+                    "as": "Year"
+                }
+            ]
+        }
+    ]
+}

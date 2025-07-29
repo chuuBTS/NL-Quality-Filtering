@@ -1,0 +1,223 @@
+{
+    "nl_utterance": "Show the sum of ValueC grouped by Type1.",
+    "table_info": {
+        "table_columns": [
+            "State",
+            "Population",
+            "Type1",
+            "Value",
+            "ValueC"
+        ],
+        "table_samples": [
+            {
+                "State": "Alabama",
+                "Population": 5039877,
+                "Type1": "Lawful Permanent Residents",
+                "Value": 2887.0,
+                "ValueC": 0.057283144
+            },
+            {
+                "State": "West Virginia",
+                "Population": 1782959,
+                "Type1": "Naturalizations",
+                "Value": 486.0,
+                "ValueC": 0.027258058
+            },
+            {
+                "State": "Maryland",
+                "Population": 6165129,
+                "Type1": "Refugees",
+                "Value": 282.0,
+                "ValueC": 0.004574114
+            },
+            {
+                "State": "North Dakota",
+                "Population": 774948,
+                "Type1": "Naturalizations",
+                "Value": 1324.0,
+                "ValueC": 0.170850173
+            },
+            {
+                "State": "Massachusetts",
+                "Population": 6984723,
+                "Type1": "Naturalizations",
+                "Value": 24085.0,
+                "ValueC": 0.344823982
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "ValueC",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        {
+            "field": "Type1",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "ValueC",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0719.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Type1",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0719.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Type1",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0719.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "Type1",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0719.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Type1",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Type1",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Type1",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Type1",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+                "x": {
+                    "field": "Type1",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "text": {
+                    "field": "ValueC",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

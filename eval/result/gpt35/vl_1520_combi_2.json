@@ -1,0 +1,210 @@
+{
+    "nl_utterance": "Show a sum of the percentage of Alt alleles for each SNP2 value.",
+    "table_info": {
+        "table_columns": [
+            "SNP1",
+            "SNP2",
+            "Alt",
+            "Ref",
+            "Total",
+            "PcentAlt",
+            "PcentRef"
+        ],
+        "table_samples": [
+            {
+                "SNP1": 55,
+                "SNP2": 55,
+                "Alt": 249,
+                "Ref": 156,
+                "Total": 442,
+                "PcentAlt": 56.0,
+                "PcentRef": 35.0
+            },
+            {
+                "SNP1": 741,
+                "SNP2": 56,
+                "Alt": 204,
+                "Ref": 109,
+                "Total": 519,
+                "PcentAlt": 39.0,
+                "PcentRef": 21.0
+            },
+            {
+                "SNP1": 90,
+                "SNP2": 656,
+                "Alt": 263,
+                "Ref": 163,
+                "Total": 570,
+                "PcentAlt": 46.0,
+                "PcentRef": 29.0
+            },
+            {
+                "SNP1": 656,
+                "SNP2": 656,
+                "Alt": 334,
+                "Ref": 234,
+                "Total": 570,
+                "PcentAlt": 59.0,
+                "PcentRef": 41.0
+            },
+            {
+                "SNP1": 741,
+                "SNP2": 624,
+                "Alt": 282,
+                "Ref": 131,
+                "Total": 519,
+                "PcentAlt": 54.0,
+                "PcentRef": 25.0
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "SNP2",
+            "type": "quantitative"
+        },
+        {
+            "field": "PcentAlt",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "PcentAlt",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1520.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "SNP2",
+                    "type": "quantitative",
+                    "bin": true
+                },
+                "y": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1520.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "SNP2",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1520.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "SNP2",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "SNP2",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "SNP2",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "SNP2",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "SNP2",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "PcentAlt",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

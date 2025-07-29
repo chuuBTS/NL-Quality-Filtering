@@ -1,2 +1,26 @@
-# NL-Quality-Filtering
-A page for manually annotating NL utterances quality
+# 数据可视化标注系统
+
+## 项目概述
+这是一个用于数据可视化图表标注的系统，主要用于处理和管理可视化图表的数据、标注和验证。
+
+## 数据处理流程
+
+### 1. 初始数据集
+- 文件：`merged_result_old.json`
+- 数据量：8456组 `(NL, [chart])` 对
+- 格式：每组数据包含自然语言描述(NL)和对应的图表数据
+
+### 2. 数据清洗
+- 文件：`merged_result.json`
+- 处理：移除无对应图表的NL描述
+- 结果：
+  - 删除1023个无图表对应的NL
+  - 保留7434组有效数据对
+
+### 3. 图表类型过滤
+- 文件：`filtered_chart_types_result.json`
+- 处理：
+  - 过滤不符合`mark_constraints`的图表
+  - 移除图表列表为空的数据对
+- 结果：保留3742组有效的`(NL, [chart])`对
+

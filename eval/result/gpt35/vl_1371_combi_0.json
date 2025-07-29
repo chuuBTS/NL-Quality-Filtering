@@ -1,0 +1,187 @@
+{
+    "nl_utterance": "Show the Attack Count by targtype1_txt.",
+    "table_info": {
+        "table_columns": [
+            "targtype1_txt",
+            "Attack Count"
+        ],
+        "table_samples": [
+            {
+                "targtype1_txt": "Airports & Aircraft",
+                "Attack Count": 5
+            },
+            {
+                "targtype1_txt": "Utilities",
+                "Attack Count": 39
+            },
+            {
+                "targtype1_txt": "NGO",
+                "Attack Count": 15
+            },
+            {
+                "targtype1_txt": "Transportation",
+                "Attack Count": 27
+            },
+            {
+                "targtype1_txt": "Educational Institution",
+                "Attack Count": 84
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "targtype1_txt",
+            "type": "nominal"
+        },
+        {
+            "field": "Attack Count",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1371.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Attack Count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1371.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Attack Count",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1371.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Attack Count",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1371.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Attack Count",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Attack Count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Attack Count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Attack Count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+                "x": {
+                    "field": "targtype1_txt",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Attack Count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "text": {
+                    "field": "Attack Count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

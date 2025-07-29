@@ -1,0 +1,187 @@
+{
+    "nl_utterance": "Show the number of repositories and their corresponding values.",
+    "table_info": {
+        "table_columns": [
+            "org",
+            "repo",
+            "number",
+            "org/repo"
+        ],
+        "table_samples": [
+            {
+                "org": "numpy",
+                "repo": "numpy",
+                "number": 19,
+                "org/repo": "numpy/numpy"
+            },
+            {
+                "org": "numpy",
+                "repo": "numpy-tutorials",
+                "number": 1,
+                "org/repo": "numpy/numpy-tutorials"
+            },
+            {
+                "org": "numpy",
+                "repo": "numpydoc",
+                "number": 2,
+                "org/repo": "numpy/numpydoc"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "repo",
+            "type": "nominal"
+        },
+        {
+            "field": "number",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1503.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "number",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "repo",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1503.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1503.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1503.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "number",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "repo",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative",
+                    "aggregate": "count"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative",
+                    "aggregate": "count"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative",
+                    "aggregate": "count"
+                }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+                "x": {
+                    "field": "repo",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "number",
+                    "type": "quantitative",
+                    "aggregate": "count"
+                },
+                "text": {
+                    "field": "number",
+                    "type": "quantitative",
+                    "aggregate": "count"
+                }
+            }
+        }
+    ]
+}

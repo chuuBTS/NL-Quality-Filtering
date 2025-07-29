@@ -1,0 +1,226 @@
+{
+    "nl_utterance": "What is the total gross savings as a percentage of GDP for each country?",
+    "table_info": {
+        "table_columns": [
+            "Country Name",
+            "Indicator Name",
+            "Year",
+            "Gross savings (% of GDP)"
+        ],
+        "table_samples": [
+            {
+                "Country Name": "Canada",
+                "Indicator Name": "Gross savings (% of GDP)",
+                "Year": 1970,
+                "Gross savings (% of GDP)": 21.10273085
+            },
+            {
+                "Country Name": "Canada",
+                "Indicator Name": "Gross savings (% of GDP)",
+                "Year": 1992,
+                "Gross savings (% of GDP)": 14.10436831
+            },
+            {
+                "Country Name": "Saudi Arabia",
+                "Indicator Name": "Gross savings (% of GDP)",
+                "Year": 1993,
+                "Gross savings (% of GDP)": 15.50817895
+            },
+            {
+                "Country Name": "Canada",
+                "Indicator Name": "Gross savings (% of GDP)",
+                "Year": 1986,
+                "Gross savings (% of GDP)": 19.04586143
+            },
+            {
+                "Country Name": "Senegal",
+                "Indicator Name": "Gross savings (% of GDP)",
+                "Year": 2014,
+                "Gross savings (% of GDP)": 18.95045331
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Gross savings (% of GDP)",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        {
+            "field": "Country Name",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Gross savings (% of GDP)",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0749.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0749.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0749.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0749.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Country Name",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Gross savings (% of GDP)",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "Gross savings (% of GDP)",
+                            "as": "total_gross_savings"
+                        }
+                    ],
+                    "groupby": [
+                        "Country Name"
+                    ]
+                }
+            ]
+        }
+    ]
+}

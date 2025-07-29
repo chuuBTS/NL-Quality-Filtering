@@ -1,0 +1,207 @@
+{
+    "nl_utterance": "Show a trend over time of quantity for each item.",
+    "table_info": {
+        "table_columns": [
+            "time",
+            "quantity",
+            "item"
+        ],
+        "table_samples": [
+            {
+                "time": 0,
+                "quantity": 2.0,
+                "item": "monkey"
+            },
+            {
+                "time": 5,
+                "quantity": 16.194870523363548,
+                "item": "monkey"
+            },
+            {
+                "time": 19,
+                "quantity": 46.21034266761982,
+                "item": "monkey"
+            },
+            {
+                "time": 4,
+                "quantity": 12.71068609258575,
+                "item": "monkey"
+            },
+            {
+                "time": 16,
+                "quantity": 48.58875032686557,
+                "item": "slipper"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "item",
+            "type": "nominal"
+        },
+        {
+            "field": "time",
+            "type": "temporal"
+        },
+        {
+            "field": "quantity",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1381.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1381.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1381.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1381.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "quantity",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "item",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

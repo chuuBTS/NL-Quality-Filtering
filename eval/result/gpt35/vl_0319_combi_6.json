@@ -1,0 +1,178 @@
+{
+    "nl_utterance": "Show the trend of values over time.",
+    "table_info": {
+        "table_columns": [
+            "date",
+            "label",
+            "month",
+            "quarter",
+            "sourceDataset",
+            "updateDate",
+            "value",
+            "year"
+        ],
+        "table_samples": [
+            {
+                "date": "1971 FEB",
+                "label": "1971 JAN-MAR",
+                "month": "February",
+                "quarter": NaN,
+                "sourceDataset": "LMS",
+                "updateDate": "2015-10-13T23:00:00.000Z",
+                "value": 5.0,
+                "year": 1971
+            },
+            {
+                "date": "1980 OCT",
+                "label": "1980 SEP-NOV",
+                "month": "October",
+                "quarter": NaN,
+                "sourceDataset": "LMS",
+                "updateDate": "2015-10-13T23:00:00.000Z",
+                "value": 7.7,
+                "year": 1980
+            },
+            {
+                "date": "1974 MAY",
+                "label": "1974 APR-JUN",
+                "month": "May",
+                "quarter": NaN,
+                "sourceDataset": "LMS",
+                "updateDate": "2015-10-13T23:00:00.000Z",
+                "value": 4.8,
+                "year": 1974
+            },
+            {
+                "date": "1999 JUL",
+                "label": "1999 JUN-AUG",
+                "month": "July",
+                "quarter": NaN,
+                "sourceDataset": "LMS",
+                "updateDate": "2015-10-13T23:00:00.000Z",
+                "value": 5.2,
+                "year": 1999
+            },
+            {
+                "date": "2007 JUL",
+                "label": "2007 JUN-AUG",
+                "month": "July",
+                "quarter": NaN,
+                "sourceDataset": "LMS",
+                "updateDate": "2015-10-13T23:00:00.000Z",
+                "value": 5.1,
+                "year": 2007
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "date",
+            "type": "temporal"
+        },
+        {
+            "field": "value",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0319.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0319.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "month",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

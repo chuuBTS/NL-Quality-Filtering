@@ -1,0 +1,280 @@
+{
+    "nl_utterance": "What is the trend of the sum of prices for GOOG from the year 2006 onwards?",
+    "table_info": {
+        "table_columns": [
+            "symbol",
+            "date",
+            "price"
+        ],
+        "table_samples": [
+            {
+                "symbol": "MSFT",
+                "date": "Jan 1 2000",
+                "price": 39.81
+            },
+            {
+                "symbol": "GOOG",
+                "date": "Jul 1 2006",
+                "price": 386.6
+            },
+            {
+                "symbol": "IBM",
+                "date": "Feb 1 2000",
+                "price": 92.11
+            },
+            {
+                "symbol": "IBM",
+                "date": "Apr 1 2001",
+                "price": 103.7
+            },
+            {
+                "symbol": "AAPL",
+                "date": "Jun 1 2004",
+                "price": 16.27
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "price",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "symbol",
+                    "equal": "GOOG"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "date",
+                    "range": [
+                        2006,
+                        null
+                    ],
+                    "timeUnit": "year"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "price",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1677.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "type": "temporal",
+                    "field": "date"
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "GOOG"
+                    }
+                },
+                {
+                    "filter": {
+                        "field": "date",
+                        "range": [
+                            2006,
+                            null
+                        ],
+                        "timeUnit": "year"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1677.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "type": "temporal",
+                    "field": "date"
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "GOOG"
+                    }
+                },
+                {
+                    "filter": {
+                        "field": "date",
+                        "range": [
+                            2006,
+                            null
+                        ],
+                        "timeUnit": "year"
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "timeUnit": "year",
+                    "filter": {
+                        "field": "date",
+                        "gte": "2006-01-01"
+                    }
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "symbol",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "timeUnit": "year",
+                    "filter": {
+                        "field": "date",
+                        "gte": "2006-01-01"
+                    }
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "symbol",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "timeUnit": "year",
+                    "filter": {
+                        "field": "date",
+                        "gte": "2006-01-01"
+                    }
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "symbol",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "timeUnit": "year",
+                    "filter": {
+                        "field": "date",
+                        "gte": "2006-01-01"
+                    }
+                },
+                "y": {
+                    "field": "price",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "symbol",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

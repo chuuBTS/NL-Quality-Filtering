@@ -4,14 +4,19 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# DATA = "data/filtered_chart_types_result.json"
+# ANNOTATION_RESULT_PATH = "data/annotation_result.json"
+DATA = "data/filtered_result.json"
+ANNOTATION_RESULT_PATH = "data/filtered_annotation_result.json"
+
 st.set_page_config(layout="wide")
 
 # Load merged data
-with open("data/filtered_chart_types_result.json", "r", encoding="utf-8") as file:
+with open(DATA, "r", encoding="utf-8") as file:
     data = json.load(file)
 
 # Load annotation data
-with open("data/annotation_result.json", "r", encoding="utf-8") as file:
+with open(ANNOTATION_RESULT_PATH, "r", encoding="utf-8") as file:
     annotation_data = json.load(file)
 
 # 1. Annotation Progress
@@ -33,12 +38,12 @@ try:
     total_nl = len(data)
     
     # Count NL annotated records
-    nl_annotated = sum(1 for record in annotation_data.values() if "nl_type" in record)
-    nl_progress = (nl_annotated / total_nl) * 100 if total_nl > 0 else 0
+    nl_type_annotated = sum(1 for record in annotation_data.values() if "nl_type" in record)
+    nl_progress = (nl_type_annotated / total_nl) * 100 if total_nl > 0 else 0
 
     # Progress bar for NL annotation
     st.progress(nl_progress / 100)
-    st.markdown(f"**{nl_annotated} / {total_nl}** NL records annotated ({nl_progress:.2f}%)")
+    st.markdown(f"**{nl_type_annotated} / {total_nl}** NL records annotated ({nl_progress:.2f}%)")
 
 except Exception as e:
     st.error("Error loading NL Annotation Progress: No data or invalid format")
@@ -66,6 +71,87 @@ try:
 except Exception as e:
     st.error("Error loading Chart Annotation Progress: No data or invalid format")
 
+# Part 3: NL-Charts Pairs Annotation Progress
+st.markdown('<h4 style="color:green;">NL-Charts Pairs Annotation Progress</h3>', unsafe_allow_html=True)
+try:
+    # Total pairs from data
+    total_pairs = len(data)
+    
+    # Count fully annotated pairs (both NL and all charts are annotated)
+    fully_annotated_pairs = 0
+    fully_annotated_data = []  # List to store fully annotated pairs
+    
+    for filename, record in annotation_data.items():
+        # Check if NL is annotated
+        nl_annotated = "nl_type" in record and record["nl_type"] is not None
+        
+        # Check if all charts for this page are annotated
+        charts_annotated = False
+        if "charts" in record:
+            total_charts = len(data[filename]["generated_chart_list"])
+            annotated_charts = sum(
+                1 for chart_data in record["charts"].values()
+                if "chart_quality" in chart_data and chart_data["chart_quality"] is not None
+            )
+            charts_annotated = annotated_charts == total_charts
+        
+        # If both NL and all charts are annotated, count this pair and collect data
+        if nl_annotated and charts_annotated:
+            fully_annotated_pairs += 1
+            
+            # Count good quality charts and collect their indices
+            good_charts_count = 0
+            good_charts_indices = []
+            for chart_idx, chart_data in record["charts"].items():
+                if chart_data.get("chart_quality") == "good":
+                    good_charts_count += 1
+                    good_charts_indices.append(chart_idx)
+            
+            # Collect data for this fully annotated pair
+            pair_data = {
+                'filename': filename,
+                'nl_utterance': data[filename]['nl_utterance'],
+                'nl_type': record['nl_type'],
+                'total_charts': total_charts,
+                'good_charts_count': good_charts_count,
+                'good_charts_indices': ', '.join(good_charts_indices),
+            }
+            
+            # Add chart-specific data
+            for chart_idx, chart_data in record['charts'].items():
+                pair_data[f'chart_{chart_idx}_quality'] = chart_data.get('chart_quality')
+                pair_data[f'chart_{chart_idx}_error_types'] = ', '.join(chart_data.get('error_type', []))
+            
+            fully_annotated_data.append(pair_data)
+    
+    pairs_progress = (fully_annotated_pairs / total_pairs) * 100 if total_pairs > 0 else 0
+
+    # Progress bar for pairs annotation
+    st.progress(pairs_progress / 100)
+    st.markdown(f"**{fully_annotated_pairs} / {total_pairs}** NL-Charts pairs fully annotated ({pairs_progress:.2f}%)")
+
+    # Create download button for annotated data
+    if fully_annotated_data:
+        df = pd.DataFrame(fully_annotated_data)
+        # Reorder columns to put important info at the front
+        columns = ['filename', 'nl_utterance', 'nl_type', 'total_charts', 
+                  'good_charts_count', 'good_charts_indices'] + [
+            col for col in df.columns 
+            if col not in ['filename', 'nl_utterance', 'nl_type', 'total_charts', 
+                          'good_charts_count', 'good_charts_indices']
+        ]
+        df = df[columns]
+        csv = df.to_csv(index=False)
+        
+        st.download_button(
+            label="📥 Export Annotated Data",
+            data=csv,
+            file_name="annotated_nl_charts_pairs.csv",
+            mime="text/csv",
+        )
+
+except Exception as e:
+    st.error(f"Error loading NL-Charts Pairs Annotation Progress: {str(e)}")
 
 # 2. Aggregating Annotation Results
 # Convert annotation data to DataFrame for easier analysis

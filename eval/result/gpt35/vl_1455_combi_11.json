@@ -1,0 +1,200 @@
+{
+    "nl_utterance": "What is the trend of value over time for symbol SE?",
+    "table_info": {
+        "table_columns": [
+            "symbol",
+            "date",
+            "value"
+        ],
+        "table_samples": [
+            {
+                "symbol": "SE",
+                "date": "2020-01-01 00:00",
+                "value": 0.0
+            },
+            {
+                "symbol": "SE",
+                "date": "2020-11-26 22:00",
+                "value": 336.3636364
+            },
+            {
+                "symbol": "SE",
+                "date": "2020-05-12 01:30",
+                "value": 477.0
+            },
+            {
+                "symbol": "SE",
+                "date": "2020-07-13 17:00",
+                "value": 318.9655172
+            },
+            {
+                "symbol": "SE",
+                "date": "2020-05-16 11:30",
+                "value": 330.3571429
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "value",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "symbol",
+                    "equal": "SE"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1455.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "type": "temporal",
+                    "field": "date"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "SE"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1455.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "type": "temporal",
+                    "field": "date"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "SE"
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "SE"
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "SE"
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "symbol",
+                        "equal": "SE"
+                    }
+                }
+            ]
+        }
+    ]
+}

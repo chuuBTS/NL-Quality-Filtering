@@ -1,0 +1,264 @@
+{
+    "nl_utterance": "How did the rate change over the years after 2010?",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "Rate"
+        ],
+        "table_samples": [
+            {
+                "Date": "2015-01-01",
+                "Rate": 0.5
+            },
+            {
+                "Date": "2015-07-01",
+                "Rate": 0.5
+            },
+            {
+                "Date": "2020-12-01",
+                "Rate": 0.8
+            },
+            {
+                "Date": "2020-07-01",
+                "Rate": 1.1
+            },
+            {
+                "Date": "2021-06-01",
+                "Rate": 2.4
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Date",
+            "type": "temporal"
+        },
+        {
+            "field": "Rate",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "timeUnit": "year",
+                    "field": "Date",
+                    "gte": "2010"
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1183.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "timeUnit": "year",
+                        "field": "Date",
+                        "gte": "2010"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1183.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "timeUnit": "year",
+                        "field": "Date",
+                        "gte": "2010"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1183.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "timeUnit": "year",
+                        "field": "Date",
+                        "gte": "2010"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1183.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Date",
+                    "type": "temporal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "timeUnit": "year",
+                        "field": "Date",
+                        "gte": "2010"
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "year"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Date",
+                        "gt": "2010-12-31"
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "year"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Date",
+                        "gt": "2010-12-31"
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "year"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Date",
+                        "gt": "2010-12-31"
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "timeUnit": "year"
+                },
+                "y": {
+                    "field": "Rate",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Date",
+                        "gt": "2010-12-31"
+                    }
+                }
+            ]
+        }
+    ]
+}

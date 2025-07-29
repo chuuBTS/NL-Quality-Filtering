@@ -1,0 +1,211 @@
+{
+    "nl_utterance": "The sum of purchase counts by gender.",
+    "table_info": {
+        "table_columns": [
+            "purchase count",
+            "referrer channel",
+            "gender"
+        ],
+        "table_samples": [
+            {
+                "purchase count": 0,
+                "referrer channel": "typed_bookmarked",
+                "gender": "M"
+            },
+            {
+                "purchase count": 0,
+                "referrer channel": "internal",
+                "gender": "F"
+            },
+            {
+                "purchase count": 0,
+                "referrer channel": "typed_bookmarked",
+                "gender": "F"
+            },
+            {
+                "purchase count": 0,
+                "referrer channel": "internal",
+                "gender": "M"
+            },
+            {
+                "purchase count": 0,
+                "referrer channel": "external",
+                "gender": "F"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "purchase count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        {
+            "field": "gender",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "purchase count",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1375.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "gender",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1375.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1375.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "gender",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1375.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+                "x": {
+                    "field": "gender",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "text": {
+                    "field": "purchase count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

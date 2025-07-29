@@ -77,9 +77,8 @@ def merge_json(json_files, charts_files_path):
                             else " "
                         ),
                         "details": (
-                            # Ensure c_list is a list and has elements before accessing
-                            # Check if the first element of c_list is a dictionary (key-value pair)
-                            tc.get("c_list", [{}])[0].get("oneOf", "")
+                            # Handle different types of constraints
+                            ", ".join(tc.get("c_list", [{}])[0].get("oneOf", []))
                             if tc.get("c_list")
                             and isinstance(tc.get("c_list", [{}])[0], dict)
                             and "oneOf" in tc.get("c_list", [{}])[0]
@@ -88,12 +87,28 @@ def merge_json(json_files, charts_files_path):
                                 if tc.get("c_list")
                                 and isinstance(tc.get("c_list", [{}])[0], dict)
                                 and "aggregate" in tc.get("c_list", [{}])[0]
-                                # If c_list contains a string, return it directly
                                 else (
-                                    tc.get("c_list", [])[0]
+                                    str(tc.get("c_list", [{}])[0].get("equal", ""))
                                     if tc.get("c_list")
-                                    and isinstance(tc.get("c_list", [])[0], str)
-                                    else " "
+                                    and isinstance(tc.get("c_list", [{}])[0], dict)
+                                    and "equal" in tc.get("c_list", [{}])[0]
+                                    else (
+                                        f"{tc.get('c_list', [{}])[0].get('range', [])[0]}-{tc.get('c_list', [{}])[0].get('range', [])[1]}"
+                                        if tc.get("c_list")
+                                        and isinstance(tc.get("c_list", [{}])[0], dict)
+                                        and "range" in tc.get("c_list", [{}])[0]
+                                        and tc.get("c_list", [{}])[0].get("range")  # 确保range存在且不为空
+                                        else (
+                                            ", ".join(map(str, tc.get("c_list", [])[0]))
+                                            if tc.get("c_list")
+                                            and isinstance(tc.get("c_list", [])[0], (list, tuple))
+                                            else (
+                                                str(tc.get("c_list", [])[0])
+                                                if tc.get("c_list")
+                                                else " "
+                                            )
+                                        )
+                                    )
                                 )
                             )
                         ),

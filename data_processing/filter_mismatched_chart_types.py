@@ -43,10 +43,11 @@ def filter_mismatched_chart_types(input_file, output_file):
     # Step 5: Remove the entries with no valid charts
     for key in keys_to_remove:
         del data[key]
-    
+        
+    print(len(data))
     # Step 6: Save the filtered result to a new file
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 # Example usage
-filter_mismatched_chart_types('data/merged_result.json', 'data/filtered_chart_types_result.json')
+filter_mismatched_chart_types('data/merged_result.json', 'data/filtered_chart_types_result1.json')

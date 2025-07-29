@@ -1,0 +1,322 @@
+{
+    "nl_utterance": "Show me the total number of confirmed cases summed up for each age group.",
+    "table_info": {
+        "table_columns": [
+            "data",
+            "classificacao",
+            "faixa_etaria",
+            "feminino",
+            "masculino",
+            "total",
+            "ultima_atualizacao"
+        ],
+        "table_samples": [
+            {
+                "data": "2020-04-13",
+                "classificacao": "confirmados",
+                "faixa_etaria": "00 a 19",
+                "feminino": 0,
+                "masculino": 3,
+                "total": 3,
+                "ultima_atualizacao": false
+            },
+            {
+                "data": "2020-06-09",
+                "classificacao": "mortos",
+                "faixa_etaria": "20 a 29",
+                "feminino": 6,
+                "masculino": 3,
+                "total": 9,
+                "ultima_atualizacao": false
+            },
+            {
+                "data": "2020-05-19",
+                "classificacao": "mortos",
+                "faixa_etaria": "40 a 49",
+                "feminino": 11,
+                "masculino": 22,
+                "total": 33,
+                "ultima_atualizacao": false
+            },
+            {
+                "data": "2020-04-24",
+                "classificacao": "mortos",
+                "faixa_etaria": "00 a 19",
+                "feminino": 1,
+                "masculino": 0,
+                "total": 1,
+                "ultima_atualizacao": false
+            },
+            {
+                "data": "2020-07-24",
+                "classificacao": "mortos",
+                "faixa_etaria": "30 a 39",
+                "feminino": 21,
+                "masculino": 42,
+                "total": 63,
+                "ultima_atualizacao": false
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "faixa_etaria",
+            "type": "nominal"
+        },
+        {
+            "field": "total",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "classificacao",
+                    "equal": "confirmados"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "total",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1827.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "faixa_etaria",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "classificacao",
+                        "equal": "confirmados"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1827.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "faixa_etaria",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "classificacao",
+                        "equal": "confirmados"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1827.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "faixa_etaria",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "classificacao",
+                        "equal": "confirmados"
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1827.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "faixa_etaria",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "classificacao",
+                        "equal": "confirmados"
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "faixa_etaria",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Age Group"
+                    }
+                },
+                "y": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "axis": {
+                        "title": "Total Confirmed Cases"
+                    }
+                },
+                "color": {
+                    "field": "classificacao",
+                    "type": "nominal",
+                    "legend": {
+                        "title": "Classification"
+                    }
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "faixa_etaria",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "faixa_etaria",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Age Group"
+                    }
+                },
+                "y": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "axis": {
+                        "title": "Total Confirmed Cases"
+                    }
+                },
+                "color": {
+                    "field": "classificacao",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "faixa_etaria",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "Age Group"
+                    }
+                },
+                "y": {
+                    "field": "total",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "axis": {
+                        "title": "Total Confirmed Cases"
+                    }
+                },
+                "color": {
+                    "field": "classificacao",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "total",
+                            "as": "total_cases"
+                        }
+                    ],
+                    "groupby": [
+                        "faixa_etaria",
+                        "classificacao"
+                    ]
+                }
+            ]
+        }
+    ]
+}

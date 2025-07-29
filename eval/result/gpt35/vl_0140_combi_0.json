@@ -1,0 +1,378 @@
+{
+    "nl_utterance": "Show me a chart with the median salary of clubs in Spain, Portugal, and Germany.",
+    "table_info": {
+        "table_columns": [
+            "Foot",
+            "Name",
+            "Position",
+            "Club",
+            "Country",
+            "Age",
+            "Salary",
+            "Goals"
+        ],
+        "table_samples": [
+            {
+                "Foot": "Left",
+                "Name": "Etrit Berisha",
+                "Position": "Goalkeeper",
+                "Club": "Lazio",
+                "Country": "Albania",
+                "Age": 27,
+                "Salary": 4000000,
+                "Goals": 0
+            },
+            {
+                "Foot": "Unknown",
+                "Name": "Stuart Dallas",
+                "Position": "Midfielder",
+                "Club": "Leeds United",
+                "Country": "Northern Ireland",
+                "Age": 25,
+                "Salary": 1500000,
+                "Goals": 1
+            },
+            {
+                "Foot": "Left",
+                "Name": "Daniel Sturridge",
+                "Position": "Forward",
+                "Club": "Liverpool",
+                "Country": "England",
+                "Age": 26,
+                "Salary": 25000000,
+                "Goals": 5
+            },
+            {
+                "Foot": "Right",
+                "Name": "Tomáš Koubek",
+                "Position": "Goalkeeper",
+                "Club": "Republic Slovan Liberec",
+                "Country": "Czech Republic",
+                "Age": 23,
+                "Salary": 900000,
+                "Goals": 0
+            },
+            {
+                "Foot": "Right",
+                "Name": "Ricardo Carvalho",
+                "Position": "Defender",
+                "Club": "Monaco",
+                "Country": "Portugal",
+                "Age": 38,
+                "Salary": 500000,
+                "Goals": 5
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Salary",
+            "type": "quantitative",
+            "aggregate": "median"
+        },
+        {
+            "field": "Club",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "Country",
+                    "oneOf": [
+                        "Spain",
+                        "Portugal",
+                        "Germany"
+                    ]
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Salary",
+                    "aggregate": "median"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0140.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "color": {
+                    "field": "Club",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0140.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0140.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "y": {
+                    "field": "Club",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0140.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal",
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal",
+                    "sort": "y"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "rect",
+            "encoding": {
+                "x": {
+                    "field": "Club",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Salary",
+                    "type": "quantitative",
+                    "aggregate": "median"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ],
+                        "range": [
+                            "#1f77b4",
+                            "#ff7f0e",
+                            "#2ca02c"
+                        ]
+                    }
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "Spain",
+                            "Portugal",
+                            "Germany"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

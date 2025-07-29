@@ -1,0 +1,186 @@
+{
+    "nl_utterance": "What is the total count over time? Can you show me the sum of counts across different times?",
+    "table_info": {
+        "table_columns": [
+            "time",
+            "count"
+        ],
+        "table_samples": [
+            {
+                "time": "2015/01/01 01:00:00",
+                "count": 2
+            },
+            {
+                "time": "2015/01/18 18:00:00",
+                "count": 2
+            },
+            {
+                "time": "2015/05/11 21:00:00",
+                "count": 4
+            },
+            {
+                "time": "2015/02/14 02:00:00",
+                "count": 1
+            },
+            {
+                "time": "2015/03/11 07:00:00",
+                "count": 2
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        {
+            "field": "time",
+            "type": "temporal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "count",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "time",
+                    "type": "temporal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

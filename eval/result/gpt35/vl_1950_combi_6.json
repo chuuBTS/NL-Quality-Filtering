@@ -1,0 +1,322 @@
+{
+    "nl_utterance": "Create a chart showing the sum of GDP for the countries DR Congo, Thailand, and Myanmar.",
+    "table_info": {
+        "table_columns": [
+            "Year",
+            "GDP",
+            "Country"
+        ],
+        "table_samples": [
+            {
+                "Year": 1970,
+                "GDP": 761.4241012,
+                "Country": "Kenya"
+            },
+            {
+                "Year": 2004,
+                "GDP": 4190.044546,
+                "Country": "Thailand"
+            },
+            {
+                "Year": 1973,
+                "GDP": 1016.911154,
+                "Country": "Thailand"
+            },
+            {
+                "Year": 1978,
+                "GDP": 964.6886228,
+                "Country": "Ghana"
+            },
+            {
+                "Year": 2012,
+                "GDP": 1558.409265,
+                "Country": "Ghana"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "GDP",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        {
+            "field": "Country",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "filter",
+            "c_list": [
+                {
+                    "field": "Country",
+                    "oneOf": [
+                        "DR Congo",
+                        "Thailand",
+                        "Myanmar"
+                    ]
+                }
+            ],
+            "nl_ref_type": "by_value",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "GDP",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1950.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1950.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1950.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1950.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "DR Congo",
+                            "Thailand",
+                            "Myanmar"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

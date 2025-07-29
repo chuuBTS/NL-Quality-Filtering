@@ -1,0 +1,188 @@
+{
+    "nl_utterance": "What are the Value scores for each Country?",
+    "table_info": {
+        "table_columns": [
+            "Country",
+            "Value",
+            "Order"
+        ],
+        "table_samples": [
+            {
+                "Country": "Australia",
+                "Value": 0.25,
+                "Order": 1
+            },
+            {
+                "Country": "Switzerland",
+                "Value": 0.77,
+                "Order": 16
+            },
+            {
+                "Country": "New Zealand",
+                "Value": 0.35,
+                "Order": 12
+            },
+            {
+                "Country": "Sweden",
+                "Value": 0.3,
+                "Order": 15
+            },
+            {
+                "Country": "Italy",
+                "Value": 0.86,
+                "Order": 9
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Country",
+            "type": "nominal"
+        },
+        {
+            "field": "Value",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1917.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "Value",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1917.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1917.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1917.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Value",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Country",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "text",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                },
+                "text": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "rule",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Value",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}

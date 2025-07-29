@@ -1,0 +1,188 @@
+{
+    "nl_utterance": "What is the trend of total percentage over the years in a bar chart?",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "GRA Purchases",
+            "PRGT 1/2/",
+            "Totals",
+            "Year",
+            "Totals(Bn)",
+            "World GDP",
+            "World GDP(Bn)",
+            "Totals/WGDP",
+            "Totals%"
+        ],
+        "table_samples": [
+            {
+                "Date": "08/31/2022",
+                "GRA Purchases": 93769635059.0,
+                "PRGT 1/2/": 15254184552.0,
+                "Totals": 109000000000.0,
+                "Year": 2022.0,
+                "Totals(Bn)": 109.0238196,
+                "World GDP": NaN,
+                "World GDP(Bn)": NaN,
+                "Totals/WGDP": NaN,
+                "Totals%": NaN
+            },
+            {
+                "Date": " 2/ Formerly PRGF-ESF.",
+                "GRA Purchases": NaN,
+                "PRGT 1/2/": NaN,
+                "Totals": NaN,
+                "Year": NaN,
+                "Totals(Bn)": NaN,
+                "World GDP": NaN,
+                "World GDP(Bn)": NaN,
+                "Totals/WGDP": NaN,
+                "Totals%": NaN
+            },
+            {
+                "Date": "12/31/1992",
+                "GRA Purchases": 23967172718.0,
+                "PRGT 1/2/": 3804463796.0,
+                "Totals": 27771636514.0,
+                "Year": 1992.0,
+                "Totals(Bn)": 27.77163651,
+                "World GDP": 25400000000000.0,
+                "World GDP(Bn)": 25400.0,
+                "Totals/WGDP": 0.0,
+                "Totals%": 0.109337152
+            },
+            {
+                "Date": NaN,
+                "GRA Purchases": NaN,
+                "PRGT 1/2/": NaN,
+                "Totals": NaN,
+                "Year": NaN,
+                "Totals(Bn)": NaN,
+                "World GDP": NaN,
+                "World GDP(Bn)": NaN,
+                "Totals/WGDP": NaN,
+                "Totals%": NaN
+            },
+            {
+                "Date": "12/31/1994",
+                "GRA Purchases": 25611676952.0,
+                "PRGT 1/2/": 4599768498.0,
+                "Totals": 30211445450.0,
+                "Year": 1994.0,
+                "Totals(Bn)": 30.21144545,
+                "World GDP": 27900000000000.0,
+                "World GDP(Bn)": 27900.0,
+                "Totals/WGDP": 0.0,
+                "Totals%": 0.108284751
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Year",
+            "type": "temporal"
+        },
+        {
+            "field": "Totals%",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0243.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0243.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Totals%",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}

@@ -2,15 +2,22 @@ import json
 import random
 import pandas as pd
 import streamlit as st
+import time
+
+# File paths
+# DATA = "data/filtered_chart_types_result.json"
+# ANNOTATION_RESULT_PATH = "data/annotation_result.json"
+DATA = "data/filtered_result.json"
+ANNOTATION_RESULT_PATH = "data/filtered_annotation_result.json"
 
 # Set the page configuration
 st.set_page_config(layout="centered")
 
 # Load JSON data
-with open("data/filtered_chart_types_result.json", "r", encoding="utf-8") as file:
+with open(DATA, "r", encoding="utf-8") as file:
     data = json.load(file)
 
-with open("data/annotation_result.json", "r", encoding="utf-8") as file:
+with open(ANNOTATION_RESULT_PATH, "r", encoding="utf-8") as file:
     annotation_data = json.load(file)
 
 # 1. Navigation & Previouse/Next Buttons
@@ -20,8 +27,59 @@ data_keys = list(data.keys())
 random.seed(42)
 random.shuffle(data_keys) 
 
-# Initialize session state for index if it doesn't exist
+# Initialize session state for index and toast if they don't exist
 if "page_index" not in st.session_state:
+    st.session_state.page_index = 0
+    
+if "show_toast" not in st.session_state:
+    st.session_state.show_toast = False
+
+# 在 Navigation 部分的代码之前添加筛选功能
+st.sidebar.title("Filter Options")
+filter_option = st.sidebar.radio(
+    "Display Data",
+    ["All", "Annotated", "Not Annotated"],
+    index=0  # default to "All"
+)
+
+# 判断一个记录是否完整标注
+def is_fully_annotated(filename, record, data):
+    # 检查 NL 是否标注
+    nl_annotated = "nl_type" in record and record["nl_type"] is not None
+    
+    # 检查所有图表是否标注
+    charts_annotated = False
+    if "charts" in record:
+        total_charts = len(data[filename]["generated_chart_list"])
+        annotated_charts = sum(
+            1 for chart_data in record["charts"].values()
+            if "chart_quality" in chart_data and chart_data["chart_quality"] is not None
+        )
+        charts_annotated = annotated_charts == total_charts
+    
+    return nl_annotated and charts_annotated
+
+# 根据筛选选项过滤数据键
+if filter_option == "Annotated":
+    data_keys = [
+        k for k in data.keys() 
+        if k in annotation_data and is_fully_annotated(k, annotation_data[k], data)
+    ]
+elif filter_option == "Not Annotated":
+    data_keys = [
+        k for k in data.keys() 
+        if k not in annotation_data or not is_fully_annotated(k, annotation_data[k], data)
+    ]
+else:  # "All"
+    data_keys = list(data.keys())
+
+
+# 随机打乱数据键的顺序（保持原有的随机种子）
+random.seed(42)
+random.shuffle(data_keys)
+
+# 如果当前页面索引超出了筛选后的范围，重置为0
+if st.session_state.page_index >= len(data_keys):
     st.session_state.page_index = 0
 
 # Update page index based on button clicks
@@ -49,13 +107,13 @@ st.session_state.page_index = data_keys.index(page)
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.selectbox("Select Page", data_keys, index=st.session_state.page_index)
-# If the selected page in the sidebar is different from the current `page_index`, update it
-new_page_index = data_keys.index(page)
-if new_page_index != st.session_state.page_index:
-    st.session_state.page_index = new_page_index  # Update the page index
-    st.rerun()  # Rerun the app to update the page
+page = st.sidebar.selectbox(
+    "Select Page", 
+    data_keys, 
+    index=min(st.session_state.page_index, len(data_keys)-1)
+)
 
+# 显示当前页面位置
 st.sidebar.markdown(
     f"Current Page: <span style='color:red; font-weight:bold'>{st.session_state.page_index + 1} / {len(data_keys)}</span>",
     unsafe_allow_html=True
@@ -117,6 +175,32 @@ current_page_annotation.update({k: v for k, v in default_annotation.items() if k
 # Display the generated NL utterance
 st.info(f"""{data[page]["nl_utterance"]}""", icon="🔊")
 
+# Add text input for modifying NL utterance
+modified_nl = st.text_area(
+    "Modify NL Utterance",
+    value=data[page]["nl_utterance"],
+    height=68,
+    key="nl_modifier"
+)
+
+# Add a submit button
+if st.button("Submit Changes"):
+    # Update the NL utterance in both data dictionaries
+    data[page]["nl_utterance"] = modified_nl
+    
+    # Save the updated data back to the original JSON file
+    with open(DATA, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=4, ensure_ascii=False)
+    
+    # Set flag to show toast after rerun
+    st.session_state.show_toast = True
+    st.rerun()
+
+# Show toast notification if flag is set
+if st.session_state.show_toast:
+    st.toast('NL Utterance has been updated! 🎉', icon='✅')
+    st.session_state.show_toast = False  # Reset the flag
+
 # horizontal CSS for radio button layout
 st.markdown("""
     <style>
@@ -152,7 +236,7 @@ if nl_type != current_page_annotation["nl_type"]:
     }
     
     # Save the updated annotation status to annotation_result.json
-    with open("data/annotation_result.json", "w", encoding="utf-8") as file:
+    with open(ANNOTATION_RESULT_PATH, "w", encoding="utf-8") as file:
         json.dump(annotation_data, file, indent=4)
     
     st.rerun()
@@ -228,7 +312,7 @@ if generated_chart_list:
                         "error_type": chart_error_types
                     }
                     # Save the updated annotation status to annotation_result.json
-                    with open("data/annotation_result.json", "w", encoding="utf-8") as file:
+                    with open(ANNOTATION_RESULT_PATH, "w", encoding="utf-8") as file:
                         json.dump(annotation_data, file, indent=4)
                     
                     st.rerun() 
@@ -236,4 +320,3 @@ if generated_chart_list:
         with json_tab:
             # Display JSON code for the chart
             st.json(chart)
-        

@@ -1,0 +1,171 @@
+{
+    "nl_utterance": "How does the y value vary for each category in our data?",
+    "table_info": {
+        "table_columns": [
+            "cat",
+            "val",
+            "x",
+            "y"
+        ],
+        "table_samples": [
+            {
+                "cat": "a",
+                "val": 1,
+                "x": 10,
+                "y": 1
+            },
+            {
+                "cat": "b",
+                "val": 2,
+                "x": 20,
+                "y": 2
+            },
+            {
+                "cat": "c",
+                "val": 3,
+                "x": 30,
+                "y": 3
+            },
+            {
+                "cat": "d",
+                "val": 4,
+                "x": 36,
+                "y": 4
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "cat",
+            "type": "nominal"
+        },
+        {
+            "field": "y",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1655.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1655.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1655.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "y",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "cat",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "boxplot",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "cat",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.cat",
+                    "as": "category"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,234 @@
+{
+    "nl_utterance": "Display the mean of CAF scores sorted in ascending order, categorized by religion in 2021.",
+    "table_info": {
+        "table_columns": [
+            "Country",
+            "CAF_2021",
+            "2021"
+        ],
+        "table_samples": [
+            {
+                "Country": "Indonesia",
+                "CAF_2021": 68,
+                "2021": "Islam"
+            },
+            {
+                "Country": "Lebanon",
+                "CAF_2021": 24,
+                "2021": "Islam"
+            },
+            {
+                "Country": "Iran (Islamic Republic of)",
+                "CAF_2021": 43,
+                "2021": "Islam"
+            },
+            {
+                "Country": "Malawi",
+                "CAF_2021": 39,
+                "2021": "Christianity"
+            },
+            {
+                "Country": "Canada",
+                "CAF_2021": 51,
+                "2021": "Christianity"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "CAF_2021",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "sort": "ascending"
+        },
+        {
+            "field": "2021",
+            "type": "nominal"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "CAF_2021",
+                    "aggregate": "mean"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "sort",
+            "c_list": [
+                {
+                    "field": "CAF_2021",
+                    "order": "ascending"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0748.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean",
+                    "sort": "ascending"
+                },
+                "color": {
+                    "field": "2021",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0748.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "2021",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean",
+                    "sort": "ascending"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0748.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean",
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "2021",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0748.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "2021",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean",
+                    "sort": "ascending"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "2021",
+                    "type": "nominal",
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "2021",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "2021",
+                    "type": "nominal",
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "2021",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                },
+                "color": {
+                    "field": "2021",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "2021",
+                    "type": "nominal",
+                    "sort": "ascending"
+                },
+                "y": {
+                    "field": "CAF_2021",
+                    "type": "quantitative",
+                    "aggregate": "mean"
+                }
+            }
+        }
+    ]
+}

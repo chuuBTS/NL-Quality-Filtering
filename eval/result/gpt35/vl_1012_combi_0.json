@@ -1,0 +1,224 @@
+{
+    "nl_utterance": "What is the total sum of money in billions for each year?",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "GRA Purchases",
+            "PRGT 1/2/",
+            "Totals",
+            "Years",
+            "Billions"
+        ],
+        "table_samples": [
+            {
+                "Date": "08/31/2022",
+                "GRA Purchases": 93769635059.0,
+                "PRGT 1/2/": 15254184552.0,
+                "Totals": 109023819611.0,
+                "Years": 2022,
+                "Billions": 109.0238196
+            },
+            {
+                "Date": "12/31/2011",
+                "GRA Purchases": 87276915790.0,
+                "PRGT 1/2/": 5308609594.0,
+                "Totals": 92585525384.0,
+                "Years": 2011,
+                "Billions": 92.58552538
+            },
+            {
+                "Date": "12/31/1993",
+                "GRA Purchases": 25196745031.0,
+                "PRGT 1/2/": 3942792899.0,
+                "Totals": 29139537930.0,
+                "Years": 1993,
+                "Billions": 29.13953793
+            },
+            {
+                "Date": "12/31/2001",
+                "GRA Purchases": 53477225409.0,
+                "PRGT 1/2/": 6424578684.0,
+                "Totals": 59901804093.0,
+                "Years": 2001,
+                "Billions": 59.90180409
+            },
+            {
+                "Date": "12/31/2020",
+                "GRA Purchases": 93408630285.0,
+                "PRGT 1/2/": 12481816684.0,
+                "Totals": 105890446969.0,
+                "Years": 2020,
+                "Billions": 105.890447
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Years",
+            "type": "temporal"
+        },
+        {
+            "field": "Billions",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Billions",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1012.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1012.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1012.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1012.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "Years",
+                    "type": "temporal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Years",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Billions",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

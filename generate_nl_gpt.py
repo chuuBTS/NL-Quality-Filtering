@@ -85,7 +85,7 @@ Definition about the Taks:
     bad example: {{"column": ["country","region"], "nl_ref_type": "ambiguous", "nl_ref_phrase": "region"}}
 - You only include given constraints and no other information. 
     For example, if a column name is not in the given constraint, it will not be included in the NL utterance.
-    Also, it a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.
+    Also, if a chart mark or chart encoding channel is not in the given constraint, it will not be included in the NL utterance.
 - all 'nl_ref_phrase' shoule be included in the 'nl_utterance'. 
 
 The output format is identical to the input format, but fill in the str blanks("...").

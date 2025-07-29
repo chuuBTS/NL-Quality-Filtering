@@ -1,0 +1,220 @@
+{
+    "nl_utterance": "How has the sum of totals changed over time?",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "GRA Purchases",
+            "PRGT 1/2/",
+            "Totals",
+            "Date.1"
+        ],
+        "table_samples": [
+            {
+                "Date": "08/31/2022",
+                "GRA Purchases": 93769635059.0,
+                "PRGT 1/2/": 15254184552.0,
+                "Totals": 109023819611.0,
+                "Date.1": 2022.0
+            },
+            {
+                "Date": NaN,
+                "GRA Purchases": NaN,
+                "PRGT 1/2/": NaN,
+                "Totals": NaN,
+                "Date.1": NaN
+            },
+            {
+                "Date": "12/31/2003",
+                "GRA Purchases": 65032062712.0,
+                "PRGT 1/2/": 6880893268.0,
+                "Totals": 71912955980.0,
+                "Date.1": 2003.0
+            },
+            {
+                "Date": "12/31/2021",
+                "GRA Purchases": 89474552025.0,
+                "PRGT 1/2/": 14554823681.0,
+                "Totals": 104029375706.0,
+                "Date.1": 2021.0
+            },
+            {
+                "Date": "12/31/2002",
+                "GRA Purchases": 63601058794.0,
+                "PRGT 1/2/": 6868671012.0,
+                "Totals": 70469729806.0,
+                "Date.1": 2002.0
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "Date",
+            "type": "temporal"
+        },
+        {
+            "field": "Totals",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Totals",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0300.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_0300.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Date",
+                    "as": "Date"
+                }
+            ]
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Date",
+                    "as": "Date"
+                }
+            ]
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Date",
+                    "as": "Date"
+                }
+            ]
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Totals",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            },
+            "transform": [
+                {
+                    "calculate": "datum.Date",
+                    "as": "Date"
+                }
+            ]
+        }
+    ]
+}

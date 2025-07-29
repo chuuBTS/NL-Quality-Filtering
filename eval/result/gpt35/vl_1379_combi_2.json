@@ -1,0 +1,208 @@
+{
+    "nl_utterance": "Create a chart showing the sum of counts over time.",
+    "table_info": {
+        "table_columns": [
+            "time",
+            "count"
+        ],
+        "table_samples": [
+            {
+                "time": "2015/01/01 01:00:00",
+                "count": 2
+            },
+            {
+                "time": "2015/04/06 19:00:00",
+                "count": 1
+            },
+            {
+                "time": "2015/04/05 16:00:00",
+                "count": 8
+            },
+            {
+                "time": "2015/04/20 11:00:00",
+                "count": 2
+            },
+            {
+                "time": "2015/01/24 11:00:00",
+                "count": 1
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "time",
+            "type": "temporal"
+        },
+        {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "count",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1379.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "y": {
+                    "field": "time",
+                    "type": "temporal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal",
+                    "title": "Time"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "title": "Sum of Counts"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal",
+                    "title": "Time"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "title": "Sum of Counts"
+                }
+            }
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal",
+                    "title": "Time"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "title": "Sum of Counts"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "time",
+                    "type": "temporal",
+                    "title": "Time"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "aggregate": "sum",
+                    "title": "Sum of Counts"
+                }
+            }
+        }
+    ]
+}

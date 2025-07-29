@@ -1,0 +1,189 @@
+{
+    "nl_utterance": "What is the points per game for each team in different tournaments?",
+    "table_info": {
+        "table_columns": [
+            "ppg",
+            "team",
+            "team_tournament",
+            "tournament"
+        ],
+        "table_samples": [
+            {
+                "ppg": 484.55,
+                "team": "Virginia A",
+                "team_tournament": "2014 Virginia A",
+                "tournament": "ACF Nationals 2014"
+            },
+            {
+                "ppg": 429.09,
+                "team": "Penn A",
+                "team_tournament": "2015 Penn A",
+                "tournament": "ACF Nationals 2015"
+            },
+            {
+                "ppg": 458.0,
+                "team": "Chicago A",
+                "team_tournament": "2016 Chicago A",
+                "tournament": "ACF Nationals 2016"
+            },
+            {
+                "ppg": 427.5,
+                "team": "Yale A",
+                "team_tournament": "2012 Yale A",
+                "tournament": "ACF Nationals 2012"
+            },
+            {
+                "ppg": 399.38,
+                "team": "Virginia A",
+                "team_tournament": "2013 Virginia A",
+                "tournament": "ACF Nationals 2013"
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": "team_tournament",
+            "type": "nominal"
+        },
+        {
+            "field": "ppg",
+            "type": "quantitative"
+        }
+    ],
+    "refer_others": [],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1290.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "arc",
+            "encoding": {
+                "theta": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "team_tournament",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1290.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "team_tournament",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1290.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "team_tournament",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1290.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "team_tournament",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "team",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "tournament",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "tournament",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "team",
+                    "type": "nominal"
+                }
+            }
+        },
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "tournament",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "ppg",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "team",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+    "nl_utterance": "Show the trend of the sum of Debt-GDP over time.",
+    "table_info": {
+        "table_columns": [
+            "Date",
+            "GRA Purchases",
+            "PRGT 1/2/",
+            "Totals",
+            "Year",
+            "Unnamed: 5",
+            "Day",
+            "Total_billion",
+            "World_GDP",
+            "Debt-GDP"
+        ],
+        "table_samples": [
+            {
+                "Date": "08/31/2022",
+                "GRA Purchases": 93769635059,
+                "PRGT 1/2/": 15254184552,
+                "Totals": 109024000000.0,
+                "Year": 2022,
+                "Unnamed: 5": "31/2022",
+                "Day": 31,
+                "Total_billion": 109.02,
+                "World_GDP": 98406500000000.0,
+                "Debt-GDP": 0.11
+            },
+            {
+                "Date": "12/31/1994",
+                "GRA Purchases": 25611676952,
+                "PRGT 1/2/": 4599768498,
+                "Totals": 30211445450.0,
+                "Year": 1994,
+                "Unnamed: 5": "31/1994",
+                "Day": 31,
+                "Total_billion": 30.21,
+                "World_GDP": 27872300000000.0,
+                "Debt-GDP": 0.11
+            },
+            {
+                "Date": "12/31/1990",
+                "GRA Purchases": 20731851093,
+                "PRGT 1/2/": 2571911617,
+                "Totals": 23303762710.0,
+                "Year": 1990,
+                "Unnamed: 5": "31/1990",
+                "Day": 31,
+                "Total_billion": 23.3,
+                "World_GDP": 22780000000000.0,
+                "Debt-GDP": 0.1
+            },
+            {
+                "Date": "12/31/2009",
+                "GRA Purchases": 37221142436,
+                "PRGT 1/2/": 5079705286,
+                "Totals": 42300847722.0,
+                "Year": 2009,
+                "Unnamed: 5": "31/2009",
+                "Day": 31,
+                "Total_billion": 42.3,
+                "World_GDP": 60809100000000.0,
+                "Debt-GDP": 0.07
+            },
+            {
+                "Date": "12/31/2014",
+                "GRA Purchases": 69041563463,
+                "PRGT 1/2/": 6292755583,
+                "Totals": 75334319046.0,
+                "Year": 2014,
+                "Unnamed: 5": "31/2014",
+                "Day": 31,
+                "Total_billion": 75.33,
+                "World_GDP": 79708800000000.0,
+                "Debt-GDP": 0.09
+            }
+        ]
+    },
+    "refer_fileds": [
+        {
+            "field": [
+                "Date",
+                "Year"
+            ],
+            "type": "temporal"
+        },
+        {
+            "field": "Debt-GDP",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    ],
+    "refer_others": [
+        {
+            "c_type": "task",
+            "c_name": "trend",
+            "c_list": [
+                {
+                    "mark": [
+                        "bar",
+                        "line",
+                        "area"
+                    ],
+                    "encoding": {
+                        "x": {
+                            "type": "temporal"
+                        }
+                    }
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        },
+        {
+            "c_type": "transform",
+            "c_name": "aggregate",
+            "c_list": [
+                {
+                    "field": "Debt-GDP",
+                    "aggregate": "sum"
+                }
+            ],
+            "nl_ref_type": "explicit",
+            "nl_ref_phrase": "..."
+        }
+    ],
+    "good_generated_chart_list": [
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1121.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "https://raw.githubusercontent.com/chuuBTS/NL-Quality-Filtering/refs/heads/main/chart_dataset_csv/vl_1121.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ],
+    "predict35": [
+        {
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "point",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        },
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Debt-GDP",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}
